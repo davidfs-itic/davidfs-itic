@@ -1,4 +1,6 @@
-## Perfil professional Itic 
+## Perfil professional 
+### Centre ITIC
+<img src="https://github.com/user-attachments/assets/df91cbe6-9886-4e59-9ab4-e8855f7d4dec" width=200 style="background-color:white;">
 
 <!--
 **davidfs-itic/davidfs-itic** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
