@@ -1,7 +1,15 @@
-## Perfil professional 
-### Projectes 
+# Perfil professional
+
+## Projectes 
+
+
 ### Centre ITIC
 <img src="https://github.com/user-attachments/assets/df91cbe6-9886-4e59-9ab4-e8855f7d4dec" width=100 style="background-color:white;">
+
+
+## Hobbies
+
+
 
 ### cheatsheet de Git
 https://ndpsoftware.com/git-cheatsheet.html#loc=index;
