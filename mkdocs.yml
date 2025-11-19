@@ -1,11 +1,28 @@
 site_name: Documentació DavidFS - ITIC
 site_url: https://davidfs-itic.github.io/davidfs-itic
 site_dir: ./site
+site_author: David F
+# Tema
 theme:
   name: material
+  locale: ca
+  palette:
+      - scheme: default
+        primary: teal
+        accent: indigo
+        toggle:
+            icon: material/toggle-switch-off-outline
+            name: Canviar a mode fosc
+      - scheme: slate
+        primary: teal
+        accent: indigo
+        toggle:
+            icon: material/toggle-switch
+            name: Canviar a mode clar
   features:
   - navigation.instant
   - navigation.expand
+  - navigation.tabs
   - navigation.sections
   - search.suggest
 #  - toc.integrate
