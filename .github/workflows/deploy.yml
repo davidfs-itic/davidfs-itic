@@ -6,29 +6,65 @@ on:
   pull_request:
     branches: [ main ]
 
+name: 📚 MkDocs Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # O la branca que utilitzis com a principal (p. ex., master)
+  # Permet executar el workflow manualment des de la pestanya "Actions"
+  workflow_dispatch:
+
+# Permet que el GitHub Actions pugui escriure en el repositori i als Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# S'assegura que només s'executi un workflow a la vegada
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: ⚙️ Checkout code
         uses: actions/checkout@v4
-        
-      - name: Setup Python
-        uses: actions/setup-python@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          
-      - name: Install dependencies
+
+      - name: 📦 Install dependencies
         run: |
-          pip install mkdocs
-          pip install mkdocs-material
-          
-      - name: Build site
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material  # Pots afegir altres plugins o temes aquí
+
+      - name: 🛠️ Build MkDocs site
         run: mkdocs build
-        
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        # L'argument '--strict' pot ser útil per detectar errors
+        # run: mkdocs build --strict
+
+      - name: 🏗️ Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          # El directori 'site' és on MkDocs col·loca el HTML generat per defecte
+          path: ./site
+
+  # Job que s'encarrega del desplegament final a GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 📝 Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
