@@ -1,0 +1,12 @@
+site_name: Documentació DavidFS - ITIC
+site_url: https://davidfs-itic.github.io/davidfs-itic
+theme:
+  name: material
+  features:
+  - navigation.instant
+  - navigation.expand
+  - navigation.sections
+  - search.suggest
+#  - toc.integrate
+#  - navigation.tabs
+# No cal definir 'nav'
