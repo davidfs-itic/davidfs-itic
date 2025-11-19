@@ -1,11 +1,3 @@
-name: Deploy MkDocs
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
 name: 📚 MkDocs Deploy to GitHub Pages
 
 on:
