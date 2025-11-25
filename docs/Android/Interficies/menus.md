@@ -1,10 +1,12 @@
-# app bar
+# Menus
+
+## app bar
 
 
-# Toolbar (app bar personalitzada)
+## Toolbar (app bar personalitzada)
 
 
-# botton menu
+## botton menu
 Anem a la web de material: i busquem el component. Navigation-NavigationBar:
 https://m3.material.io/components/navigation-bar/overview
 
@@ -25,5 +27,3 @@ Afegim un menú i editem els ítems:
     android:title="Inici"
     android:id="@+id/main_bottom_menu_home"/>
 ```
-
-# Drawer menu

@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/drawermenu/</loc>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/layouts/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/menus/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/temes/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/repositori/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewmodel/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/instalacio/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/rc522/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/wifi/</loc>
-         <lastmod>2025-11-19</lastmod>
+         <lastmod>2025-11-20</lastmod>
     </url>
 </urlset>
