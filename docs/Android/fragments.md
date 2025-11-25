@@ -1,4 +1,4 @@
-# Android amb Kotlin: Fragments i ViewModel
+# Fragments
 
 ## 1-Introducció als Fragments Què són i per què utilitzar-los?
 
