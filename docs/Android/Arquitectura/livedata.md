@@ -267,6 +267,10 @@ La separació adequada entre lògica de negoci (ViewModel) i UI (Activity/Fragme
 - Cridar funcions del ViewModel en resposta a events
 - Gestionar elements visuals (animacions, diàlegs, etc.)
 
+
+
+
+
 ## Referències
 
 Livedata (amb viewbinding)

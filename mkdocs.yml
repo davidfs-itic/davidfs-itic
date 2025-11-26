@@ -38,6 +38,7 @@ nav:
             - VieweBinding: Android/Arquitectura/viewbinding.md
             - ViewModel: Android/Arquitectura/viewmodel.md
             - LiveData: Android/Arquitectura/livedata.md
+            - Observer: Android/Arquitectura/observer.md
             - Repositori: Android/Arquitectura/repositori.md
         - Interficies: 
             - Layouts: Android/Interficies/layouts.md
