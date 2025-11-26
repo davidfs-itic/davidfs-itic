@@ -29,15 +29,17 @@ theme:
 #  - navigation.tabs
 nav:
     - Inici: index.md             # Aquesta serà la primera pàgina
-    - Android: Android/index.md
+    - Android:
+        - Introducció a Android: Android/index.md
         - Activities: Android/activities.md
         - Fragments: Android/fragments.md
-        - Arquitectura: Android/Arquitectura/index.md
+        - Arquitectura:
+            - Introducció a l'Arquitectura: Android/Arquitectura/index.md
             - VieweBinding: Android/Arquitectura/viewbinding.md
             - ViewModel: Android/Arquitectura/viewmodel.md
             - LiveData: Android/Arquitectura/livedata.md
             - Repositori: Android/Arquitectura/repositori.md
-        -Interficies: Android/Interficies/index.md
+        - Interficies: 
             - Layouts: Android/Interficies/layouts.md
             - Temes i Estils: Android/Interficies/temes.md
             - Appbar: Android/Interficies/appbar.md
@@ -48,6 +50,5 @@ nav:
             - RecyclerView: Android/Interficies/recyclerview.md
             - Menús: Android/Interficies/menus.md
     - Exemples de codi: Exemples/index.md
-
     - Arduino: Arduino/index.md
     - Referència: referencia.md   # Aquesta serà la darrera pàgina del nivell superior
