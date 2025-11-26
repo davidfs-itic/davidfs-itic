@@ -10,13 +10,13 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewmodel/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/livedata/">
       
       
-        <link rel="prev" href="../viewbinding/">
+        <link rel="prev" href="../viewmodel/">
       
       
-        <link rel="next" href="../livedata/">
+        <link rel="next" href="../repositori/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>ViewModel - Documentació DavidFS - ITIC</title>
+        <title>LiveData - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewmodel" class="md-skip">
+        <a href="#livedata-i-viewmodel" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ViewModel
+              LiveData
             
           </span>
         </div>
@@ -623,6 +623,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -642,7 +670,7 @@
   <span class="md-ellipsis">
     
   
-    ViewModel
+    LiveData
   
 
     
@@ -660,7 +688,7 @@
   <span class="md-ellipsis">
     
   
-    ViewModel
+    LiveData
   
 
     
@@ -686,45 +714,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
+  <a href="#1-conceptes-fonamentals-de-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Informació Viewmodel i livedata
+        1. Conceptes fonamentals de LiveData
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
+    <nav class="md-nav" aria-label="1. Conceptes fonamentals de LiveData">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
+  <a href="#que-es-livedata-i-per-que-sutilitza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
+        Què és LiveData i per què s'utilitza
       
     </span>
   </a>
@@ -732,26 +737,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
+  <a href="#caracteristiques-principals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
+        Característiques principals:
       
     </span>
   </a>
@@ -759,10 +748,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
+  <a href="#per-que-utilitzar-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supervivència a canvis de configuració (rotacions)
+        Per què utilitzar LiveData:
       
     </span>
   </a>
@@ -775,22 +764,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
+  <a href="#2-diferencies-entre-dades-normals-i-livedatadades-normals-variables-convencionals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2-Àmbits (Scopes)
+        2. Diferències entre dades normals i LiveDataDades normals (variables convencionals):
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-patro-observer-aplicat-a-livedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El patró Observer aplicat a LiveData
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. El patró Observer aplicat a LiveData">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
+  <a href="#lifecycle-awareness" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel no compartit (viewModels())
+        Lifecycle awareness:
       
     </span>
   </a>
@@ -798,10 +798,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
+  <a href="#escenaris-practics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel compartit (activityViewModels())
+        Escenaris pràctics:
       
     </span>
   </a>
@@ -814,13 +814,136 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
+  <a href="#4-tipus-de-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3-ViewModelProvider i Factories
+        4. Tipus de LiveData
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Tipus de LiveData">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#livedata-immutable-nomes-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LiveData immutable (només lectura)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutablelivedata-lectura-i-escriptura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MutableLiveData (lectura i escriptura)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaració:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integracio-livedata-amb-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integració LiveData amb ViewModel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Integració LiveData amb ViewModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-declarar-livedata-dins-del-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com declarar LiveData dins del ViewModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-exemple-complet-amb-multiples-livedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Exemple complet amb múltiples LiveData:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Exemple complet amb múltiples LiveData:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separacio-entre-logica-de-negoci-i-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separació entre lògica de negoci i UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referències
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referències">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -828,34 +951,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../livedata/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LiveData
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1329,45 +1424,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
+  <a href="#1-conceptes-fonamentals-de-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Informació Viewmodel i livedata
+        1. Conceptes fonamentals de LiveData
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
+    <nav class="md-nav" aria-label="1. Conceptes fonamentals de LiveData">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
+  <a href="#que-es-livedata-i-per-que-sutilitza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
+        Què és LiveData i per què s'utilitza
       
     </span>
   </a>
@@ -1375,26 +1447,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
+  <a href="#caracteristiques-principals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
+        Característiques principals:
       
     </span>
   </a>
@@ -1402,10 +1458,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
+  <a href="#per-que-utilitzar-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supervivència a canvis de configuració (rotacions)
+        Per què utilitzar LiveData:
       
     </span>
   </a>
@@ -1418,22 +1474,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
+  <a href="#2-diferencies-entre-dades-normals-i-livedatadades-normals-variables-convencionals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2-Àmbits (Scopes)
+        2. Diferències entre dades normals i LiveDataDades normals (variables convencionals):
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-patro-observer-aplicat-a-livedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El patró Observer aplicat a LiveData
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. El patró Observer aplicat a LiveData">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
+  <a href="#lifecycle-awareness" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel no compartit (viewModels())
+        Lifecycle awareness:
       
     </span>
   </a>
@@ -1441,10 +1508,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
+  <a href="#escenaris-practics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel compartit (activityViewModels())
+        Escenaris pràctics:
       
     </span>
   </a>
@@ -1457,13 +1524,136 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
+  <a href="#4-tipus-de-livedata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3-ViewModelProvider i Factories
+        4. Tipus de LiveData
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Tipus de LiveData">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#livedata-immutable-nomes-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LiveData immutable (només lectura)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutablelivedata-lectura-i-escriptura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MutableLiveData (lectura i escriptura)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaració:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integracio-livedata-amb-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integració LiveData amb ViewModel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Integració LiveData amb ViewModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-declarar-livedata-dins-del-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com declarar LiveData dins del ViewModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-exemple-complet-amb-multiples-livedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Exemple complet amb múltiples LiveData:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Exemple complet amb múltiples LiveData:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separacio-entre-logica-de-negoci-i-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separació entre lògica de negoci i UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referències
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Referències">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1484,295 +1674,247 @@
 
 
 
-<h1 id="viewmodel">Viewmodel</h1>
-<p>Documentació oficial: https://developer.android.com/topic/libraries/architecture/viewmodel</p>
-<h2 id="informacio-viewmodel-i-livedata">Informació Viewmodel i livedata</h2>
-<p>View model és una arquitectura que permet separar la lògica de la activity, de l'activity mateixa.</p>
-<p>La separació és important, perque s'entén que una activity no hauria de saber (no s'hi hauria d'implementar) quines dades </p>
-<h2 id="1-conceptes-basics">1-Conceptes bàsics</h2>
-<h3 id="que-es-i-per-que-existeix-separacio-de-logica-i-ui">Què és i per què existeix (separació de lògica i UI)</h3>
-<p>El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestionar dades relacionades amb la UI de manera conscient del cicle de vida.
-Per què existeix:</p>
+<h1 id="livedata-i-viewmodel">LiveData (i ViewModel):</h1>
+<h2 id="1-conceptes-fonamentals-de-livedata">1. Conceptes fonamentals de LiveData</h2>
+<h3 id="que-es-livedata-i-per-que-sutilitza">Què és LiveData i per què s'utilitza</h3>
+<p>LiveData és una classe contenidora de dades observable que forma part d'Android Jetpack. 
+La seva funció principal és mantenir i gestionar dades que la UI necessita observar.</p>
+<h3 id="caracteristiques-principals">Característiques principals:</h3>
 <ul>
-<li>Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
--Testabilitat: Pots testejar la lògica sense necessitat de components d'Android</li>
-<li>Reutilització: Diversos Fragments poden compartir el mateix ViewModel</li>
-<li>Persistència: Les dades sobreviuen a canvis de configuració</li>
+<li>Observable: Notifica automàticament als observadors quan les dades canvien</li>
+<li>Lifecycle-aware: Respecta el cicle de vida dels components d'Android</li>
+<li>Prevé memory leaks: S'eliminen automàticament les subscripcions quan el component es destrueix</li>
+<li>Actualitzacions automàtiques: La UI sempre mostra les dades més recents</li>
 </ul>
-<h4 id="sense-viewmodel">Sense ViewModel:</h4>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var counter = 0 // Es perd en rotar la pantalla
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Lògica barrejada amb codi de UI
-        button.setOnClickListener {
-            counter++
-            textView.text = counter.toString()
-            // Crides a API, càlculs, etc...
-        }
-    }
-}
-</code></pre>
-<h4 id="amb-viewmodel">Amb ViewModel:</h4>
-<pre><code class="language-kotlin">class CounterViewModel : ViewModel() {
-    private val _counter = MutableLiveData(0)
-    val counter: LiveData&lt;Int&gt; = _counter
-
-    fun increment() {
-        _counter.value = (_counter.value ?: 0) + 1
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: CounterViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.counter.observe(this) { count -&gt;
-            textView.text = count.toString()
-        }
-
-        button.setOnClickListener {
-            viewModel.increment()
-        }
-    }
-}
-</code></pre>
-<h3 id="cicle-de-vida-del-viewmodel-vs-activityfragment">Cicle de vida del ViewModel vs Activity/Fragment</h3>
-<p>El ViewModel té un cicle de vida <strong>diferent i més llarg</strong> que l'Activity o Fragment que l'utilitza.</p>
-<p><strong>Cicle de vida:</strong></p>
-<pre><code>ActivityCreatedDestroyed (rotation) → Re-created → Finished
-    │                    │                │            │
-    ▼                    │                │            ▼
-ViewModel Created        │                │        onCleared()
-    │                    │                │
-    └────────────────────┴────────────────┘
-         (ViewModel es manté viu)
-</code></pre>
-<p>Exemple pràctic:</p>
-<pre><code class="language-kotlin">class MyViewModel : ViewModel() {
-    init {
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel creat&quot;)
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel destruït&quot;)
-        // Neteja recursos: cancel·lar coroutines, tancar connexions, etc.
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: MyViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d(&quot;Activity&quot;, &quot;onCreate&quot;)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(&quot;Activity&quot;, &quot;onDestroy&quot;)
-    }
-}
-</code></pre>
-<p><strong>Logs en rotar la pantalla:</strong></p>
-<pre><code>ViewModel creat
-Activity onCreate
-Activity onDestroy (rotació)
-Activity onCreate (nova instància)
-// ViewModel segueix viu!
-
-// Només quan tanquem l'Activity:
-Activity onDestroy
-ViewModel destruït
-</code></pre>
-<h3 id="supervivencia-a-canvis-de-configuracio-rotacions">Supervivència a canvis de configuració (rotacions)</h3>
-<p>El ViewModel sobreviu automàticament a canvis de configuració com rotacions, canvis d'idioma, etc.</p>
-<p>El problema sense ViewModel:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var userData: User? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Cada cop que rotes, has de tornar a carregar les dades
-        // i si s'han modificat, es perden les modificacions
-        userData=loadUserData() // Crida a l'API, base de dades...
-
-    }
-}
-</code></pre>
-<p>La solució amb ViewModel:</p>
-<pre><code class="language-kotlin">class UserViewModel : ViewModel() {
-    private val _userData = MutableLiveData&lt;User&gt;()
-    val userData: LiveData&lt;User&gt; = _userData
-
-    init {
-        loadUserData() // Només es crida UNA vegada
-    }
-
-    //loadUserData obté l'usuari de una bbdd, api, etc..
-    private fun loadUserData() {
-        //obtenir l'usuari de manera asíncronta (veure corrutines)
-        viewModelScope.launch {
-            _userData.value = &quot;Usuari1&quot;
-        }
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: UserViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Les dades ja estan disponibles després de rotar
-        viewModel.userData.observe(this) { user -&gt;
-            textView.text = user.name
-        }
-    }
-}
-</code></pre>
-<h2 id="2-ambits-scopes">2-Àmbits (Scopes)</h2>
-<h3 id="viewmodel-no-compartit-viewmodels">ViewModel no compartit (viewModels())</h3>
-<p>Cada Activity o Fragment té la seva pròpia instància del ViewModel.
-Àmbit d'Activity:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    // ViewModel amb àmbit d'aquesta Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class OtherActivity : AppCompatActivity() {
-    // Instància DIFERENT del mateix ViewModel
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Àmbit de Fragment:</p>
-<pre><code class="language-kotlin">class FirstFragment : Fragment() {
-    // ViewModel amb àmbit d'aquest Fragment
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class SecondFragment : Fragment() {
-    // Instància DIFERENT, inclús si estan a la mateixa Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Quan utilitzar-ho:</p>
-<p>Dades específiques d'una única pantalla
-No necessites compartir informació entre components
-Lògica aïllada d'un sol Fragment</p>
-<h3 id="viewmodel-compartit-activityviewmodels">ViewModel compartit (activityViewModels())</h3>
-<p>Diversos Fragments dins de la mateixa Activity poden accedir a la mateixa instància del ViewModel.
-Exemple de comunicació entre Fragments:</p>
-<pre><code class="language-kotlin">class SharedViewModel : ViewModel() {
-    private val _selectedItem = MutableLiveData&lt;Item&gt;()
-    val selectedItem: LiveData&lt;Item&gt; = _selectedItem
-
-    fun selectItem(item: Item) {
-        _selectedItem.value = item
-    }
-}
-
-class ListFragment : Fragment() {
-    // Obté el ViewModel de l'Activity pare
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    private fun onItemClicked(item: Item) {
-        sharedViewModel.selectItem(item)
-    }
-}
-
-class DetailFragment : Fragment() {
-    // La MATEIXA instància del ViewModel
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        sharedViewModel.selectedItem.observe(viewLifecycleOwner) { item -&gt;
-            // Mostra els detalls de l'item seleccionat
-            textView.text = item.name
-        }
-    }
-}
-</code></pre>
-<p><strong>Diagrama:</strong></p>
-<pre><code>MainActivity
-    │
-    ├─ SharedViewModel (única instància)
-    │
-    ├─ ListFragment ──→ activityViewModels() ──→ SharedViewModel
-    │
-    └─ DetailFragment ──→ activityViewModels() ──→ SharedViewModel
-                            (mateixa instància!)
-</code></pre>
-<p>Quan utilitzar-ho:</p>
+<h3 id="per-que-utilitzar-livedata">Per què utilitzar LiveData:</h3>
 <ul>
-<li>Comunicació entre Fragments</li>
-<li>Compartir estat dins d'una Activity</li>
-<li>Navegació amb dades (passar informació entre pantalles)</li>
-<li>Patró Master-detail</li>
+<li>Elimina la necessitat de gestionar manualment les subscripcions</li>
+<li>Garanteix que la UI només s'actualitzi quan està activa (STARTED o RESUMED)</li>
+<li>Evita crashes per actualitzar la UI quan l'Activity/Fragment està destruït</li>
+<li>Facilita la comunicació entre ViewModel i la capa de UI</li>
 </ul>
-<h2 id="3-viewmodelprovider-i-factories">3-ViewModelProvider i Factories</h2>
-<p>Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:</p>
-<p>ViewModel amb paràmetres:</p>
-<pre><code class="language-kotlin">class UserViewModel(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModel() {
+<h2 id="2-diferencies-entre-dades-normals-i-livedatadades-normals-variables-convencionals">2. Diferències entre dades normals i LiveDataDades normals (variables convencionals):</h2>
+<pre><code class="language-kotlin">class  ViewModel {
+    var contador: Int = 0  // Variable normal
 
-    private val _user = MutableLiveData&lt;User&gt;()
-    val user: LiveData&lt;User&gt; = _user
-
-    init {
-        loadUser()
-    }
-
-    private fun loadUser() {
-        viewModelScope.launch {
-            _user.value = repository.getUser(userId)
-        }
+    fun incrementar() {
+        contador++
+        // Necessites notificar manualment la UI del canvi
     }
 }
 </code></pre>
-<p>Crear un Factory:</p>
-<pre><code class="language-kotlin">class UserViewModelFactory(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModelProvider.Factory {
+<p>Amb LiveData:</p>
+<pre><code class="language-kotlin">ViewModel : ViewModel() {
+    private val _contador = MutableLiveData&lt;Int&gt;(0)
+    val contador: LiveData&lt;Int&gt; = _contador
 
-    override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-            @Suppress(&quot;UNCHECKED_CAST&quot;)
-            return UserViewModel(userId, repository) as T
-        }
-        throw IllegalArgumentException(&quot;Unknown ViewModel class&quot;)
+    fun incrementar() {
+        _contador.value = _contador.value?.plus(1)
+        // La UI s'actualitza automàticament (veure patro observer)
     }
 }
 </code></pre>
-<p>Utilitzar el Factory:</p>
-<pre><code class="language-kotlin">class UserActivity : AppCompatActivity() {
+<h2 id="3-el-patro-observer-aplicat-a-livedata">3. El patró Observer aplicat a LiveData</h2>
+<p>LiveData implementa el patró de disseny Observer, on:</p>
+<p>Variable (LiveData): Conté les dades i manté una llista d'observadors
+Observer (UI component): S'subscriu per rebre notificacions dels canvis</p>
+<p>Funcionament:</p>
+<p>La UI s'subscriu al LiveData utilitzant observe()
+Quan les dades canvien, LiveData notifica automàticament tots els observadors actius
+Els observadors reben les noves dades i actualitzen la UI</p>
+<p>Exemple:</p>
+<pre><code class="language-kotlin">// Al ViewModel
+class ContadorViewModel : ViewModel() {
+    private val _contador = MutableLiveData&lt;Int&gt;(0)
+    val contador: LiveData&lt;Int&gt; = _contador
 
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory(
-            userId = intent.getStringExtra(&quot;USER_ID&quot;) ?: &quot;&quot;,
-            repository = UserRepository()
-        )
+    fun incrementar() {
+        _contador.value = (_contador.value ?: 0) + 1
     }
+}
+
+// A l'Activity/Fragment
+viewModel.contador.observe(viewLifecycleOwner) { nouValor -&gt;
+    // Aquest codi s'executa automàticament cada vegada que canvia el valor
+    textViewContador.text = nouValor.toString()
+}
+</code></pre>
+<h3 id="lifecycle-awareness">Lifecycle awareness:</h3>
+<p>Una de les característiques més potents de LiveData és la seva consciència del cicle de vida dels components d'Android.</p>
+<p>La funció observe només s'executarà si el fragment és visible.</p>
+<h3 id="escenaris-practics">Escenaris pràctics:</h3>
+<ul>
+<li>App passa a background: LiveData deixa d'enviar actualitzacions</li>
+<li>App torna a foreground: LiveData envia l'última dada disponible</li>
+<li>Rotació de pantalla: El nou Activity/Fragment rep automàticament l'última dada</li>
+<li>Fragment destruït: L'observador s'elimina automàticament, no hi ha memory leaks</li>
+</ul>
+<p>Beneficis:</p>
+<ul>
+<li>No cal fer removeObserver() manualment</li>
+<li>No hi ha crashes per actualitzar vistes que ja no existeixen</li>
+<li>No es processen actualitzacions quan la UI no és visible</li>
+</ul>
+<h2 id="4-tipus-de-livedata">4. Tipus de LiveData</h2>
+<h3 id="livedata-immutable-nomes-lectura">LiveData immutable (només lectura)</h3>
+<p>LiveData és la classe base que proporciona només capacitats de lectura. Els observadors poden rebre dades però no modificar-les directament.</p>
+<p>Característiques:</p>
+<ul>
+<li>No té mètodes públics per modificar el valor</li>
+<li>S'utilitza per exposar dades a la UI</li>
+<li>Garanteix que la UI no pugui modificar les dades del ViewModel</li>
+</ul>
+<p>Declaració:</p>
+<pre><code class="language-kotlin">val nomUsuari: LiveData&lt;String&gt;  // Només lectura
+</code></pre>
+<h3 id="mutablelivedata-lectura-i-escriptura">MutableLiveData (lectura i escriptura)</h3>
+<p>MutableLiveData és una subclasse de LiveData que afegeix els mètodes setValue() i postValue() per modificar el valor.</p>
+<p>Característiques:</p>
+<ul>
+<li>Permet modificar el valor de les dades</li>
+<li>S'utilitza internament al ViewModel</li>
+<li>No s'hauria d'exposar directament a la UI</li>
+</ul>
+<h3 id="declaracio">Declaració:</h3>
+<pre><code class="language-kotlin">private val _nomUsuari = MutableLiveData&lt;String&gt;()  // Privat i mutable
+val nomUsuari: LiveData&lt;String&gt; = _nomUsuari  // Públic i immutable
+</code></pre>
+<h2 id="5-integracio-livedata-amb-viewmodel">5. Integració LiveData amb ViewModel</h2>
+<h3 id="com-declarar-livedata-dins-del-viewmodel">Com declarar LiveData dins del ViewModel</h3>
+<p>La declaració correcta de LiveData al ViewModel segueix un patró específic que garanteix l'encapsulació i la separació de responsabilitats.</p>
+<p><strong>Patró recomanat:</strong></p>
+<pre><code class="language-kotlin">class ProducteViewModel : ViewModel() {
+    // 1. Declarar MutableLiveData PRIVAT
+    private val _producte = MutableLiveData&lt;Producte&gt;()
+
+    // 2. Exposar LiveData immutable PÚBLIC
+    val producte: LiveData&lt;Producte&gt; = _producte
+
+    // 3. Funcions per modificar les dades
+    fun carregarProducte(id: Int) {
+        _producte.value = repositori.obtenirProducte(id)
+    }
+}
+</code></pre>
+<p>Amb valors inicials:</p>
+<pre><code class="language-kotlin">class ContadorViewModel : ViewModel() {
+    private val _contador = MutableLiveData&lt;Int&gt;(0)  // Valor inicial: 0
+    val contador: LiveData&lt;Int&gt; = _contador
+
+    private val _nomUsuari = MutableLiveData&lt;String&gt;().apply {
+        value = &quot;Usuari desconegut&quot;  // Alternativa per valor inicial
+    }
+    val nomUsuari: LiveData&lt;String&gt; = _nomUsuari
+}
+</code></pre>
+<p>Amb tipus complexos:</p>
+<pre><code class="language-kotlin">data class EstatUI(
+    val carregant: Boolean = false,
+    val dades: List&lt;String&gt; = emptyList(),
+    val error: String? = null
+)
+
+class DadesViewModel : ViewModel() {
+    private val _estat = MutableLiveData&lt;EstatUI&gt;(EstatUI())
+    val estat: LiveData&lt;EstatUI&gt; = _estat
+
+    fun carregarDades() {
+        _estat.value = EstatUI(carregant = true)
+        // ... lògica de càrrega
+    }
+}
+</code></pre>
+<p><strong>Exposar LiveData immutable però mantenir MutableLiveData privat</strong></p>
+<p>Aquest patró és fonamental per mantenir l'encapsulació i seguir els principis de disseny d'Android.</p>
+<p>Per què és important:</p>
+<ul>
+<li>Encapsulació: La UI no pot modificar directament les dades</li>
+<li>Únic punt de control: Només el ViewModel pot canviar les dades</li>
+<li>Mantenibilitat: Més fàcil de depurar i mantenir</li>
+<li>Testabilitat: Pots provar el ViewModel sense preocupar-te per modificacions externes</li>
+</ul>
+<h2 id="6-exemple-complet-amb-multiples-livedata">6. Exemple complet amb múltiples LiveData:</h2>
+<pre><code class="language-kotlin">class CarretCompraViewModel : ViewModel() {
+    // Articles del carret
+    private val _articles = MutableLiveData&lt;List&lt;Article&gt;&gt;(emptyList())
+    val articles: LiveData&lt;List&lt;Article&gt;&gt; = _articles
+
+    // Total del carret
+    private val _total = MutableLiveData&lt;Double&gt;(0.0)
+    val total: LiveData&lt;Double&gt; = _total
+
+    // Estat de càrrega
+    private val _carregant = MutableLiveData&lt;Boolean&gt;(false)
+    val carregant: LiveData&lt;Boolean&gt; = _carregant
+
+    fun afegirArticle(article: Article) {
+        val llistaActual = _articles.value?.toMutableList() ?: mutableListOf()
+        llistaActual.add(article)
+        _articles.value = llistaActual
+        calcularTotal()
+    }
+
+    fun eliminarArticle(article: Article) {
+        val llistaActual = _articles.value?.toMutableList() ?: return
+        llistaActual.remove(article)
+        _articles.value = llistaActual
+        calcularTotal()
+    }
+
+    private fun calcularTotal() {
+        val articles = _articles.value ?: emptyList()
+        _total.value = articles.sumOf { it.preu }
+    }
+}
+</code></pre>
+<p>Ús a l'Activity/Fragment:</p>
+<pre><code class="language-kotlin">class CarretActivity : AppCompatActivity() {
+    private val viewModel: CarretCompraViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel.user.observe(this) { user -&gt;
-            textView.text = user.name
+        // La UI només pot observar, no modificar
+        viewModel.articles.observe(this) { articles -&gt;
+            actualitzarLlistaUI(articles)
+        }
+
+        viewModel.total.observe(this) { total -&gt;
+            textViewTotal.text = &quot;Total: $total€&quot;
+        }
+
+        // Les modificacions es fan a través del ViewModel
+        buttonAfegir.setOnClickListener {
+            viewModel.afegirArticle(articleSeleccionat)
         }
     }
 }
 </code></pre>
+<h3 id="separacio-entre-logica-de-negoci-i-ui">Separació entre lògica de negoci i UI</h3>
+<p>La separació adequada entre lògica de negoci (ViewModel) i UI (Activity/Fragment) és essencial per mantenir un codi net i mantenible.</p>
+<p><strong>Responsabilitats del ViewModel:</strong></p>
+<ul>
+<li>Mantenir i gestionar les dades de la UI</li>
+<li>Implementar la lògica de negoci</li>
+<li>Comunicar-se amb repositoris o fonts de dades</li>
+<li>Processar i transformar dades</li>
+<li>Gestionar l'estat de l'aplicació</li>
+</ul>
+<p><strong>Responsabilitats de la UI:</strong></p>
+<ul>
+<li>Observar les dades del ViewModel</li>
+<li>Mostrar les dades a l'usuari</li>
+<li>Capturar events de l'usuari</li>
+<li>Cridar funcions del ViewModel en resposta a events</li>
+<li>Gestionar elements visuals (animacions, diàlegs, etc.)</li>
+</ul>
+<h2 id="referencies">Referències</h2>
+<p>Livedata (amb viewbinding)
+https://cursokotlin.com/mvvm-en-android-con-kotlin-livedata-y-view-binding-android-architecture-components/</p>
+<p>Video de Devexperto:
+https://www.youtube.com/watch?v=LHBbs6QXvic</p>
+<h3 id="codelab">Codelab</h3>
+<p>https://developer.android.com/codelabs/basic-android-kotlin-training-livedata?hl=es-419#0</p>
 
 
 

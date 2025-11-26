@@ -10,13 +10,13 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewmodel/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/toolbar/">
       
       
-        <link rel="prev" href="../viewbinding/">
+        <link rel="prev" href="../appbar/">
       
       
-        <link rel="next" href="../livedata/">
+        <link rel="next" href="../bottommenu/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>ViewModel - Documentació DavidFS - ITIC</title>
+        <title>Toolbar - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewmodel" class="md-skip">
+        <a href="#1-la-toolbar-com-a-appbar-fonaments" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ViewModel
+              Toolbar
             
           </span>
         </div>
@@ -510,8 +510,6 @@
                 
   
   
-    
-  
   
   
     
@@ -527,11 +525,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
@@ -552,7 +552,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -570,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../Arquitectura/" class="md-nav__link">
         
   
   
@@ -598,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../viewbinding/" class="md-nav__link">
+      <a href="../../Arquitectura/viewbinding/" class="md-nav__link">
         
   
   
@@ -623,37 +623,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ViewModel
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Arquitectura/viewmodel/" class="md-nav__link">
         
   
   
@@ -669,165 +642,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Informació Viewmodel i livedata
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supervivència a canvis de configuració (rotacions)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2-Àmbits (Scopes)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel no compartit (viewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel compartit (activityViewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3-ViewModelProvider i Factories
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -840,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../livedata/" class="md-nav__link">
+      <a href="../../Arquitectura/livedata/" class="md-nav__link">
         
   
   
@@ -868,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../repositori/" class="md-nav__link">
+      <a href="../../Arquitectura/repositori/" class="md-nav__link">
         
   
   
@@ -901,8 +715,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -916,13 +732,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
@@ -943,7 +757,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -961,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/layouts/" class="md-nav__link">
+      <a href="../layouts/" class="md-nav__link">
         
   
   
@@ -989,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/temes/" class="md-nav__link">
+      <a href="../temes/" class="md-nav__link">
         
   
   
@@ -1017,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/appbar/" class="md-nav__link">
+      <a href="../appbar/" class="md-nav__link">
         
   
   
@@ -1042,10 +856,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Interficies/toolbar/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbar
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1061,6 +900,219 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-la-toolbar-com-a-appbar-fonaments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. La Toolbar com a AppBar (Fonaments)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. La Toolbar com a AppBar (Fonaments)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepte-i-funcio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepte i Funció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacio-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementació Bàsica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-afegir-menus-a-la-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Afegir Menús a la Toolbar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Afegir Menús a la Toolbar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicio-del-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definició del Menú
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inflació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-clics-i-prioritat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestió de Clics i Prioritat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gestio-de-la-navegacio-a-lappbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gestió de la Navegació a l'AppBar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gestió de la Navegació a l&#39;AppBar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-boto-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El Botó "Up"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracio-de-la-navegacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integració de la Navegació
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-actualitzacio-dinamica-dels-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Actualització Dinàmica dels Menús
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Actualització Dinàmica dels Menús">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidacio-del-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalidació del Menú
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacio-del-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparació del Menú
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-action-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Action Views
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Action Views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1073,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/bottommenu/" class="md-nav__link">
+      <a href="../bottommenu/" class="md-nav__link">
         
   
   
@@ -1101,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/navigationdrawer.md" class="md-nav__link">
+      <a href="../navigationdrawer.md" class="md-nav__link">
         
   
   
@@ -1129,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/dialogs.md" class="md-nav__link">
+      <a href="../dialogs.md" class="md-nav__link">
         
   
   
@@ -1157,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/recyclerview.md" class="md-nav__link">
+      <a href="../recyclerview.md" class="md-nav__link">
         
   
   
@@ -1185,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Interficies/menus.md" class="md-nav__link">
+      <a href="../menus.md" class="md-nav__link">
         
   
   
@@ -1319,8 +1371,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1329,45 +1379,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
+  <a href="#1-la-toolbar-com-a-appbar-fonaments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Informació Viewmodel i livedata
+        1. La Toolbar com a AppBar (Fonaments)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
+    <nav class="md-nav" aria-label="1. La Toolbar com a AppBar (Fonaments)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
+  <a href="#concepte-i-funcio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
+        Concepte i Funció
       
     </span>
   </a>
@@ -1375,37 +1402,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
+  <a href="#implementacio-basica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supervivència a canvis de configuració (rotacions)
+        Implementació Bàsica
       
     </span>
   </a>
@@ -1418,22 +1418,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
+  <a href="#2-afegir-menus-a-la-toolbar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2-Àmbits (Scopes)
+        2. Afegir Menús a la Toolbar
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
+    <nav class="md-nav" aria-label="2. Afegir Menús a la Toolbar">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
+  <a href="#definicio-del-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel no compartit (viewModels())
+        Definició del Menú
       
     </span>
   </a>
@@ -1441,10 +1441,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
+  <a href="#inflacio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ViewModel compartit (activityViewModels())
+        Inflació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-clics-i-prioritat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestió de Clics i Prioritat
       
     </span>
   </a>
@@ -1457,13 +1468,108 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
+  <a href="#3-gestio-de-la-navegacio-a-lappbar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3-ViewModelProvider i Factories
+        3. Gestió de la Navegació a l'AppBar
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. Gestió de la Navegació a l&#39;AppBar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-boto-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El Botó "Up"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracio-de-la-navegacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integració de la Navegació
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-actualitzacio-dinamica-dels-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Actualització Dinàmica dels Menús
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Actualització Dinàmica dels Menús">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidacio-del-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalidació del Menú
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacio-del-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparació del Menú
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-action-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Action Views
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Action Views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1484,295 +1590,204 @@
 
 
 
-<h1 id="viewmodel">Viewmodel</h1>
-<p>Documentació oficial: https://developer.android.com/topic/libraries/architecture/viewmodel</p>
-<h2 id="informacio-viewmodel-i-livedata">Informació Viewmodel i livedata</h2>
-<p>View model és una arquitectura que permet separar la lògica de la activity, de l'activity mateixa.</p>
-<p>La separació és important, perque s'entén que una activity no hauria de saber (no s'hi hauria d'implementar) quines dades </p>
-<h2 id="1-conceptes-basics">1-Conceptes bàsics</h2>
-<h3 id="que-es-i-per-que-existeix-separacio-de-logica-i-ui">Què és i per què existeix (separació de lògica i UI)</h3>
-<p>El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestionar dades relacionades amb la UI de manera conscient del cicle de vida.
-Per què existeix:</p>
+  <h1>Toolbar</h1>
+
+<h2 id="1-la-toolbar-com-a-appbar-fonaments">1. La Toolbar com a AppBar (Fonaments)</h2>
+<h3 id="concepte-i-funcio">Concepte i Funció</h3>
+<p>L'AppBar (Barra d'Aplicacions) és el component estructural més important a la part superior de qualsevol pantalla Android. </p>
+<p>El seu propòsit és:
+- Identitat: Mostrar el títol de l'aplicació o la pantalla actual.
+- Navegació: Allotjar el botó "Up" (fletxa enrere) o la icona del Navigation Drawer.
+- Accions: Contenir les accions més importants de la pantalla (menús).</p>
+<p>La Toolbar (proporcionada per la biblioteca AndroidX Material Components) és la implementació moderna i flexible de l'AppBar. A diferència de l'antiga ActionBar nativa, la Toolbar pot ser col·locada a qualsevol lloc d'un layout i personalitzada amb facilitat.</p>
+<h3 id="implementacio-basica">Implementació Bàsica</h3>
+<p>Per utilitzar una Toolbar, primer s'ha d'afegir al fitxer XML del layout de l'Activity.
+Exemple: XML del Layout (activity_main.xml)</p>
+<pre><code class="language-XML">&lt;LinearLayout 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;&gt;
+
+    &lt;androidx.appcompat.widget.Toolbar
+        android:id=&quot;@+id/my_toolbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;?attr/actionBarSize&quot;
+        android:background=&quot;?attr/colorPrimary&quot;
+        android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot; /&gt; 
+
+    &lt;TextView 
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;El contingut de l'Activity va aquí&quot;
+        android:padding=&quot;16dp&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+<p>Després, s'ha de configurar aquesta Toolbar com l'Action Bar de l'Activity en el codi Kotlin/Java, després d'ocultar la barra nativa al tema de l'aplicació (normalment, s'usa un tema NoActionBar), amb la funció setSupportActionBar</p>
+<p>Exemple: Configuració a l'Activity (Kotlin)</p>
+<pre><code class="language-Kotlin">import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val toolbar = findViewById&lt;Toolbar&gt;(R.id.my_toolbar)
+        // 1. Configura la Toolbar com l'Action Bar del sistema
+        setSupportActionBar(toolbar) 
+
+        // Opcional: Estableix un títol
+        supportActionBar?.title = &quot;La Meva App&quot; 
+    }
+}
+</code></pre>
+<h2 id="2-afegir-menus-a-la-toolbar">2. Afegir Menús a la Toolbar</h2>
+<h3 id="definicio-del-menu">Definició del Menú</h3>
+<p>Els ítems del menú es defineixen en un fitxer XML separat a res/menu/.</p>
+<p>Exemple: Recurs de Menú (res/menu/main_menu.xml)</p>
+<pre><code class="language-XML">&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&gt;
+
+    &lt;item
+        android:id=&quot;@+id/action_cercar&quot;
+        android:icon=&quot;@drawable/ic_search&quot; 
+        android:title=&quot;Cercar&quot;
+        app:showAsAction=&quot;ifRoom&quot; /&gt;
+
+    &lt;item
+        android:id=&quot;@+id/action_configuracio&quot;
+        android:title=&quot;Configuració&quot;
+        app:showAsAction=&quot;never&quot; /&gt;
+
+&lt;/menu&gt;
+</code></pre>
+<h3 id="inflacio">Inflació</h3>
+<p>El procés d'inflar (carregar) el menú XML a la Toolbar es fa sobreescrivint el mètode onCreateOptionsMenu() de l'Activity.
+Exemple: Inflació del Menú (Kotlin)</p>
+<pre><code class="language-Kotlin">class MainActivity : AppCompatActivity() {
+    // ... onCreate ...
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // 1. Carrega el recurs de menú a l'Activity
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true // Retorna true per mostrar el menú
+    }
+    // ...
+}
+</code></pre>
+<h3 id="gestio-de-clics-i-prioritat">Gestió de Clics i Prioritat</h3>
+<p>Per respondre a les interaccions de l'usuari amb els ítems del menú, s'ha de sobreescriure el mètode onOptionsItemSelected().
+Exemple 2.3: Gestió de Clics (Kotlin)</p>
+<pre><code class="language-Kotlin">    // ...
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_cercar -&gt; {
+                // Lògica per a l'acció de cercar
+                Toast.makeText(this, &quot;S'ha premut Cerca&quot;, Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_configuracio -&gt; {
+                // Lògica per anar a Configuració
+                Toast.makeText(this, &quot;Obrint Configuració...&quot;, Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -&gt; super.onOptionsItemSelected(item)
+        }
+    }
+}
+</code></pre>
+<h2 id="3-gestio-de-la-navegacio-a-lappbar">3. Gestió de la Navegació a l'AppBar</h2>
+<h3 id="el-boto-up">El Botó "Up"</h3>
+<p>El botó "Up" (representat típicament per una fletxa cap a l'esquerra: $\leftarrow$) és una convenció de disseny que permet a l'usuari navegar cap amunt en la jerarquia lògica de l'aplicació, fins a la pantalla pare. </p>
+<p>És diferent del botó "Enrere" del sistema, que navega pel registre històric (back stack).</p>
+<h3 id="integracio-de-la-navegacio">Integració de la Navegació</h3>
+<p>Quan s'utilitza la Toolbar com a Action Bar, el sistema pot gestionar automàticament el comportament del botó "Up" basant-se en la definició de l'Activity al fitxer AndroidManifest.xml (especificant l'Activity pare amb android:parentActivityName).</p>
+<p>Si no s'utilitza la Navigation Library, es pot habilitar el botó manualment i gestionar el seu clic:</p>
+<p>Exemple: Habilitació del Botó "Up" (Kotlin)</p>
+<pre><code class="language-Kotlin">class DetailActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // ...
+
+        // Habilita el botó &quot;Up&quot; a la Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) 
+    }
+
+    // Gestió manual del clic al botó &quot;Up&quot;
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -&gt; {
+                // El mètode navigateUpFromSameTask() de l'Activity Manager 
+                // compleix la funció del botó &quot;Up&quot;
+                NavUtils.navigateUpFromSameTask(this) 
+                true
+            }
+            else -&gt; super.onOptionsItemSelected(item)
+        }
+    }
+}
+</code></pre>
+<h2 id="4-actualitzacio-dinamica-dels-menus">4. Actualització Dinàmica dels Menús</h2>
+<p>De vegades, l'estat d'un ítem de menú (p. ex., canviar una icona de "No Favorit" a "Favorit") ha de canviar mentre l'Activity està oberta.</p>
+<h3 id="invalidacio-del-menu">Invalidació del Menú</h3>
+<p>Per forçar que el sistema torni a cridar a onCreateOptionsMenu() i recreï completament el menú, s'utilitza invalidateOptionsMenu(). </p>
+<p>Això és útil si la visibilitat o el títol d'alguns ítems depèn d'un estat global que acaba de canviar.
+Exemple: Forçar la Recreació del Menú (Kotlin)</p>
+<pre><code class="language-Kotlin">// Després d'un canvi d'estat a la nostra Activity...
+fun onDataUpdated() {
+    // ... 
+    // Crida a invalidateOptionsMenu() per recrear el menú amb les noves dades
+    invalidateOptionsMenu() 
+}
+</code></pre>
+<h3 id="preparacio-del-menu">Preparació del Menú</h3>
+<p>El mètode onPrepareOptionsMenu() es crida just abans que es mostri el menú. Aquest és el lloc ideal per canviar la visibilitat o l'aparença dels ítems de menú existents sense recrear tota l'estructura.</p>
+<p>Exemple: Preparació Dinàmica (Kotlin)</p>
+<pre><code class="language-Kotlin">// Variable d'estat a l'Activity
+private var isUserLoggedIn = false
+
+override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+    val loginItem = menu?.findItem(R.id.action_login)
+    val logoutItem = menu?.findItem(R.id.action_logout)
+
+    // Mostra l'opció de login si l'usuari no està connectat, i viceversa
+    loginItem?.isVisible = !isUserLoggedIn
+    logoutItem?.isVisible = isUserLoggedIn
+
+    return super.onPrepareOptionsMenu(menu)
+}
+</code></pre>
+<h2 id="5-action-views">5. Action Views</h2>
+<p>Vegeu documentació per a detalls: https://developer.android.com/develop/ui/views/components/appbar/action-views</p>
+<h3 id="action-views">Action Views</h3>
+<p>Un Action View és un widget personalitzat (per exemple, un EditText, un SearchView, o un ProgressBar) que s'associa a un ítem de menú. En lloc de mostrar la icona i el text habituals, l'ítem de menú mostra el widget de l'Action View directament a la Toolbar.
+Característiques:
+- Widget Incrustat: El SearchView és l'exemple més comú. Quan l'usuari el selecciona, el widget s'expandeix a la barra d'aplicacions, permetent interaccions complexes (escriure, enviar) sense canviar d'Activity o mostrar un diàleg.</p>
 <ul>
-<li>Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
--Testabilitat: Pots testejar la lògica sense necessitat de components d'Android</li>
-<li>Reutilització: Diversos Fragments poden compartir el mateix ViewModel</li>
-<li>Persistència: Les dades sobreviuen a canvis de configuració</li>
+<li>
+<p>Implementació: Es defineix mitjançant l'atribut app:actionViewClass o android:actionLayout a l'XML del menú. També es pot inflar manualment en el mètode onCreateOptionsMenu().</p>
+</li>
+<li>
+<p>Gestió de Col·lapse: Quan l'Action View s'expandeix, altres accions de la Toolbar es poden col·lapsar (amagar). Pots implementar la interfície MenuItem.OnActionExpandListener per gestionar esdeveniments quan l'acció s'expandeix o es col·lapsa.</p>
+</li>
 </ul>
-<h4 id="sense-viewmodel">Sense ViewModel:</h4>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var counter = 0 // Es perd en rotar la pantalla
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Lògica barrejada amb codi de UI
-        button.setOnClickListener {
-            counter++
-            textView.text = counter.toString()
-            // Crides a API, càlculs, etc...
-        }
-    }
-}
-</code></pre>
-<h4 id="amb-viewmodel">Amb ViewModel:</h4>
-<pre><code class="language-kotlin">class CounterViewModel : ViewModel() {
-    private val _counter = MutableLiveData(0)
-    val counter: LiveData&lt;Int&gt; = _counter
-
-    fun increment() {
-        _counter.value = (_counter.value ?: 0) + 1
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: CounterViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.counter.observe(this) { count -&gt;
-            textView.text = count.toString()
-        }
-
-        button.setOnClickListener {
-            viewModel.increment()
-        }
-    }
-}
-</code></pre>
-<h3 id="cicle-de-vida-del-viewmodel-vs-activityfragment">Cicle de vida del ViewModel vs Activity/Fragment</h3>
-<p>El ViewModel té un cicle de vida <strong>diferent i més llarg</strong> que l'Activity o Fragment que l'utilitza.</p>
-<p><strong>Cicle de vida:</strong></p>
-<pre><code>ActivityCreatedDestroyed (rotation) → Re-created → Finished
-    │                    │                │            │
-    ▼                    │                │            ▼
-ViewModel Created        │                │        onCleared()
-    │                    │                │
-    └────────────────────┴────────────────┘
-         (ViewModel es manté viu)
-</code></pre>
-<p>Exemple pràctic:</p>
-<pre><code class="language-kotlin">class MyViewModel : ViewModel() {
-    init {
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel creat&quot;)
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel destruït&quot;)
-        // Neteja recursos: cancel·lar coroutines, tancar connexions, etc.
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: MyViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d(&quot;Activity&quot;, &quot;onCreate&quot;)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(&quot;Activity&quot;, &quot;onDestroy&quot;)
-    }
-}
-</code></pre>
-<p><strong>Logs en rotar la pantalla:</strong></p>
-<pre><code>ViewModel creat
-Activity onCreate
-Activity onDestroy (rotació)
-Activity onCreate (nova instància)
-// ViewModel segueix viu!
-
-// Només quan tanquem l'Activity:
-Activity onDestroy
-ViewModel destruït
-</code></pre>
-<h3 id="supervivencia-a-canvis-de-configuracio-rotacions">Supervivència a canvis de configuració (rotacions)</h3>
-<p>El ViewModel sobreviu automàticament a canvis de configuració com rotacions, canvis d'idioma, etc.</p>
-<p>El problema sense ViewModel:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var userData: User? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Cada cop que rotes, has de tornar a carregar les dades
-        // i si s'han modificat, es perden les modificacions
-        userData=loadUserData() // Crida a l'API, base de dades...
-
-    }
-}
-</code></pre>
-<p>La solució amb ViewModel:</p>
-<pre><code class="language-kotlin">class UserViewModel : ViewModel() {
-    private val _userData = MutableLiveData&lt;User&gt;()
-    val userData: LiveData&lt;User&gt; = _userData
-
-    init {
-        loadUserData() // Només es crida UNA vegada
-    }
-
-    //loadUserData obté l'usuari de una bbdd, api, etc..
-    private fun loadUserData() {
-        //obtenir l'usuari de manera asíncronta (veure corrutines)
-        viewModelScope.launch {
-            _userData.value = &quot;Usuari1&quot;
-        }
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: UserViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Les dades ja estan disponibles després de rotar
-        viewModel.userData.observe(this) { user -&gt;
-            textView.text = user.name
-        }
-    }
-}
-</code></pre>
-<h2 id="2-ambits-scopes">2-Àmbits (Scopes)</h2>
-<h3 id="viewmodel-no-compartit-viewmodels">ViewModel no compartit (viewModels())</h3>
-<p>Cada Activity o Fragment té la seva pròpia instància del ViewModel.
-Àmbit d'Activity:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    // ViewModel amb àmbit d'aquesta Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class OtherActivity : AppCompatActivity() {
-    // Instància DIFERENT del mateix ViewModel
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Àmbit de Fragment:</p>
-<pre><code class="language-kotlin">class FirstFragment : Fragment() {
-    // ViewModel amb àmbit d'aquest Fragment
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class SecondFragment : Fragment() {
-    // Instància DIFERENT, inclús si estan a la mateixa Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Quan utilitzar-ho:</p>
-<p>Dades específiques d'una única pantalla
-No necessites compartir informació entre components
-Lògica aïllada d'un sol Fragment</p>
-<h3 id="viewmodel-compartit-activityviewmodels">ViewModel compartit (activityViewModels())</h3>
-<p>Diversos Fragments dins de la mateixa Activity poden accedir a la mateixa instància del ViewModel.
-Exemple de comunicació entre Fragments:</p>
-<pre><code class="language-kotlin">class SharedViewModel : ViewModel() {
-    private val _selectedItem = MutableLiveData&lt;Item&gt;()
-    val selectedItem: LiveData&lt;Item&gt; = _selectedItem
-
-    fun selectItem(item: Item) {
-        _selectedItem.value = item
-    }
-}
-
-class ListFragment : Fragment() {
-    // Obté el ViewModel de l'Activity pare
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    private fun onItemClicked(item: Item) {
-        sharedViewModel.selectItem(item)
-    }
-}
-
-class DetailFragment : Fragment() {
-    // La MATEIXA instància del ViewModel
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        sharedViewModel.selectedItem.observe(viewLifecycleOwner) { item -&gt;
-            // Mostra els detalls de l'item seleccionat
-            textView.text = item.name
-        }
-    }
-}
-</code></pre>
-<p><strong>Diagrama:</strong></p>
-<pre><code>MainActivity
-    │
-    ├─ SharedViewModel (única instància)
-    │
-    ├─ ListFragment ──→ activityViewModels() ──→ SharedViewModel
-    │
-    └─ DetailFragment ──→ activityViewModels() ──→ SharedViewModel
-                            (mateixa instància!)
-</code></pre>
-<p>Quan utilitzar-ho:</p>
-<ul>
-<li>Comunicació entre Fragments</li>
-<li>Compartir estat dins d'una Activity</li>
-<li>Navegació amb dades (passar informació entre pantalles)</li>
-<li>Patró Master-detail</li>
-</ul>
-<h2 id="3-viewmodelprovider-i-factories">3-ViewModelProvider i Factories</h2>
-<p>Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:</p>
-<p>ViewModel amb paràmetres:</p>
-<pre><code class="language-kotlin">class UserViewModel(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModel() {
-
-    private val _user = MutableLiveData&lt;User&gt;()
-    val user: LiveData&lt;User&gt; = _user
-
-    init {
-        loadUser()
-    }
-
-    private fun loadUser() {
-        viewModelScope.launch {
-            _user.value = repository.getUser(userId)
-        }
-    }
-}
-</code></pre>
-<p>Crear un Factory:</p>
-<pre><code class="language-kotlin">class UserViewModelFactory(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModelProvider.Factory {
-
-    override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-            @Suppress(&quot;UNCHECKED_CAST&quot;)
-            return UserViewModel(userId, repository) as T
-        }
-        throw IllegalArgumentException(&quot;Unknown ViewModel class&quot;)
-    }
-}
-</code></pre>
-<p>Utilitzar el Factory:</p>
-<pre><code class="language-kotlin">class UserActivity : AppCompatActivity() {
-
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory(
-            userId = intent.getStringExtra(&quot;USER_ID&quot;) ?: &quot;&quot;,
-            repository = UserRepository()
-        )
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.user.observe(this) { user -&gt;
-            textView.text = user.name
-        }
-    }
-}
-</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Searchview sense focus</th>
+<th style="text-align: center;">Searchview amb focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Image 1" src="../Imatges/actionview1.png" /></td>
+<td style="text-align: center;"><img alt="Image 2" src="../Imatges/actionview2.png" /></td>
+</tr>
+</tbody>
+</table>
 
 
 

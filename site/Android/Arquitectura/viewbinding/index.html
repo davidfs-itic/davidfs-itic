@@ -10,13 +10,13 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewmodel/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewbinding/">
       
       
-        <link rel="prev" href="../viewbinding/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../livedata/">
+        <link rel="next" href="../viewmodel/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>ViewModel - Documentació DavidFS - ITIC</title>
+        <title>VieweBinding - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewmodel" class="md-skip">
+        <a href="#viewbinding" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ViewModel
+              VieweBinding
             
           </span>
         </div>
@@ -595,10 +595,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../viewbinding/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -614,6 +623,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -623,37 +633,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ViewModel
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../viewmodel/" class="md-nav__link">
         
   
   
@@ -669,165 +652,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Informació Viewmodel i livedata
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supervivència a canvis de configuració (rotacions)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2-Àmbits (Scopes)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel no compartit (viewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel compartit (activityViewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3-ViewModelProvider i Factories
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1322,153 +1146,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#informacio-viewmodel-i-livedata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Informació Viewmodel i livedata
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-conceptes-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1-Conceptes bàsics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1-Conceptes bàsics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-i-per-que-existeix-separacio-de-logica-i-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Què és i per què existeix (separació de lògica i UI)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Què és i per què existeix (separació de lògica i UI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sense-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sense ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amb-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Amb ViewModel:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cicle-de-vida-del-viewmodel-vs-activityfragment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cicle de vida del ViewModel vs Activity/Fragment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supervivencia-a-canvis-de-configuracio-rotacions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supervivència a canvis de configuració (rotacions)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ambits-scopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2-Àmbits (Scopes)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2-Àmbits (Scopes)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-no-compartit-viewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel no compartit (viewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewmodel-compartit-activityviewmodels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ViewModel compartit (activityViewModels())
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-viewmodelprovider-i-factories" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3-ViewModelProvider i Factories
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1484,294 +1161,38 @@
 
 
 
-<h1 id="viewmodel">Viewmodel</h1>
-<p>Documentació oficial: https://developer.android.com/topic/libraries/architecture/viewmodel</p>
-<h2 id="informacio-viewmodel-i-livedata">Informació Viewmodel i livedata</h2>
-<p>View model és una arquitectura que permet separar la lògica de la activity, de l'activity mateixa.</p>
-<p>La separació és important, perque s'entén que una activity no hauria de saber (no s'hi hauria d'implementar) quines dades </p>
-<h2 id="1-conceptes-basics">1-Conceptes bàsics</h2>
-<h3 id="que-es-i-per-que-existeix-separacio-de-logica-i-ui">Què és i per què existeix (separació de lògica i UI)</h3>
-<p>El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestionar dades relacionades amb la UI de manera conscient del cicle de vida.
-Per què existeix:</p>
-<ul>
-<li>Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
--Testabilitat: Pots testejar la lògica sense necessitat de components d'Android</li>
-<li>Reutilització: Diversos Fragments poden compartir el mateix ViewModel</li>
-<li>Persistència: Les dades sobreviuen a canvis de configuració</li>
-</ul>
-<h4 id="sense-viewmodel">Sense ViewModel:</h4>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var counter = 0 // Es perd en rotar la pantalla
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Lògica barrejada amb codi de UI
-        button.setOnClickListener {
-            counter++
-            textView.text = counter.toString()
-            // Crides a API, càlculs, etc...
-        }
+<h1 id="viewbinding">Viewbinding</h1>
+<p>https://developer.android.com/topic/libraries/view-binding</p>
+<p>El viewbinding és una característica (feature) que ens permet accedir als objectes que hi ha en una vista, directament sense haver de buscar-lo amb el findviewbyid</p>
+<p>S'activa d'aquesta manera, en el build.grade de nivell de mòdul</p>
+<pre><code class="language-Kotlin">android {
+    ...
+    buildFeatures {
+        viewBinding = true
     }
 }
 </code></pre>
-<h4 id="amb-viewmodel">Amb ViewModel:</h4>
-<pre><code class="language-kotlin">class CounterViewModel : ViewModel() {
-    private val _counter = MutableLiveData(0)
-    val counter: LiveData&lt;Int&gt; = _counter
-
-    fun increment() {
-        _counter.value = (_counter.value ?: 0) + 1
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: CounterViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.counter.observe(this) { count -&gt;
-            textView.text = count.toString()
-        }
-
-        button.setOnClickListener {
-            viewModel.increment()
-        }
-    }
+<p>El que farà aquesta característica, és generar, per cada layout, una classe amb el nom del layout+binding, per exemple  per al layout activity_main es farà la classe ActivityMainBinding 
+Aquesta classe, contindrà tantes properties com elements visuals hi hagi en el layout, per exemple botons, textboxes, etc.</p>
+<p>També té un métode getRoot() (o en kotlin, directament root) que accedeix al layout principal que conté la resta de la vista (linear o constraint layout)</p>
+<p>Per utilitzar-la, cal
+- Crear una variable d'aquest tipus (amb lateinit)
+- Crear la instància de la classe amb el métode static inflate() que crearà l'objecte amb les properties necessàries lligades als objectes que va creant del layout.
+- Utilitzar el setContentView() per a que l'activity es renderitzi a partir dels objectes creats.</p>
+<p>Exemple</p>
+<pre><code class="language-Kotlin">private lateinit var binding: ActivityMainBinding
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 }
 </code></pre>
-<h3 id="cicle-de-vida-del-viewmodel-vs-activityfragment">Cicle de vida del ViewModel vs Activity/Fragment</h3>
-<p>El ViewModel té un cicle de vida <strong>diferent i més llarg</strong> que l'Activity o Fragment que l'utilitza.</p>
-<p><strong>Cicle de vida:</strong></p>
-<pre><code>ActivityCreatedDestroyed (rotation) → Re-created → Finished
-    │                    │                │            │
-    ▼                    │                │            ▼
-ViewModel Created        │                │        onCleared()
-    │                    │                │
-    └────────────────────┴────────────────┘
-         (ViewModel es manté viu)
-</code></pre>
-<p>Exemple pràctic:</p>
-<pre><code class="language-kotlin">class MyViewModel : ViewModel() {
-    init {
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel creat&quot;)
-    }
+<p>A partir d'aquí, es pot accedir als elements de la UI directament sense el findviewbyId</p>
+<pre><code class="language-Kotlin">binding.mainTxt.setText(&quot;Login&quot;)
 
-    override fun onCleared() {
-        super.onCleared()
-        Log.d(&quot;ViewModel&quot;, &quot;ViewModel destruït&quot;)
-        // Neteja recursos: cancel·lar coroutines, tancar connexions, etc.
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: MyViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d(&quot;Activity&quot;, &quot;onCreate&quot;)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(&quot;Activity&quot;, &quot;onDestroy&quot;)
-    }
-}
-</code></pre>
-<p><strong>Logs en rotar la pantalla:</strong></p>
-<pre><code>ViewModel creat
-Activity onCreate
-Activity onDestroy (rotació)
-Activity onCreate (nova instància)
-// ViewModel segueix viu!
-
-// Només quan tanquem l'Activity:
-Activity onDestroy
-ViewModel destruït
-</code></pre>
-<h3 id="supervivencia-a-canvis-de-configuracio-rotacions">Supervivència a canvis de configuració (rotacions)</h3>
-<p>El ViewModel sobreviu automàticament a canvis de configuració com rotacions, canvis d'idioma, etc.</p>
-<p>El problema sense ViewModel:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    private var userData: User? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Cada cop que rotes, has de tornar a carregar les dades
-        // i si s'han modificat, es perden les modificacions
-        userData=loadUserData() // Crida a l'API, base de dades...
-
-    }
-}
-</code></pre>
-<p>La solució amb ViewModel:</p>
-<pre><code class="language-kotlin">class UserViewModel : ViewModel() {
-    private val _userData = MutableLiveData&lt;User&gt;()
-    val userData: LiveData&lt;User&gt; = _userData
-
-    init {
-        loadUserData() // Només es crida UNA vegada
-    }
-
-    //loadUserData obté l'usuari de una bbdd, api, etc..
-    private fun loadUserData() {
-        //obtenir l'usuari de manera asíncronta (veure corrutines)
-        viewModelScope.launch {
-            _userData.value = &quot;Usuari1&quot;
-        }
-    }
-}
-
-class MainActivity : AppCompatActivity() {
-    private val viewModel: UserViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Les dades ja estan disponibles després de rotar
-        viewModel.userData.observe(this) { user -&gt;
-            textView.text = user.name
-        }
-    }
-}
-</code></pre>
-<h2 id="2-ambits-scopes">2-Àmbits (Scopes)</h2>
-<h3 id="viewmodel-no-compartit-viewmodels">ViewModel no compartit (viewModels())</h3>
-<p>Cada Activity o Fragment té la seva pròpia instància del ViewModel.
-Àmbit d'Activity:</p>
-<pre><code class="language-kotlin">class MainActivity : AppCompatActivity() {
-    // ViewModel amb àmbit d'aquesta Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class OtherActivity : AppCompatActivity() {
-    // Instància DIFERENT del mateix ViewModel
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Àmbit de Fragment:</p>
-<pre><code class="language-kotlin">class FirstFragment : Fragment() {
-    // ViewModel amb àmbit d'aquest Fragment
-    private val viewModel: MyViewModel by viewModels()
-}
-
-class SecondFragment : Fragment() {
-    // Instància DIFERENT, inclús si estan a la mateixa Activity
-    private val viewModel: MyViewModel by viewModels()
-}
-</code></pre>
-<p>Quan utilitzar-ho:</p>
-<p>Dades específiques d'una única pantalla
-No necessites compartir informació entre components
-Lògica aïllada d'un sol Fragment</p>
-<h3 id="viewmodel-compartit-activityviewmodels">ViewModel compartit (activityViewModels())</h3>
-<p>Diversos Fragments dins de la mateixa Activity poden accedir a la mateixa instància del ViewModel.
-Exemple de comunicació entre Fragments:</p>
-<pre><code class="language-kotlin">class SharedViewModel : ViewModel() {
-    private val _selectedItem = MutableLiveData&lt;Item&gt;()
-    val selectedItem: LiveData&lt;Item&gt; = _selectedItem
-
-    fun selectItem(item: Item) {
-        _selectedItem.value = item
-    }
-}
-
-class ListFragment : Fragment() {
-    // Obté el ViewModel de l'Activity pare
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    private fun onItemClicked(item: Item) {
-        sharedViewModel.selectItem(item)
-    }
-}
-
-class DetailFragment : Fragment() {
-    // La MATEIXA instància del ViewModel
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        sharedViewModel.selectedItem.observe(viewLifecycleOwner) { item -&gt;
-            // Mostra els detalls de l'item seleccionat
-            textView.text = item.name
-        }
-    }
-}
-</code></pre>
-<p><strong>Diagrama:</strong></p>
-<pre><code>MainActivity
-    │
-    ├─ SharedViewModel (única instància)
-    │
-    ├─ ListFragment ──→ activityViewModels() ──→ SharedViewModel
-    │
-    └─ DetailFragment ──→ activityViewModels() ──→ SharedViewModel
-                            (mateixa instància!)
-</code></pre>
-<p>Quan utilitzar-ho:</p>
-<ul>
-<li>Comunicació entre Fragments</li>
-<li>Compartir estat dins d'una Activity</li>
-<li>Navegació amb dades (passar informació entre pantalles)</li>
-<li>Patró Master-detail</li>
-</ul>
-<h2 id="3-viewmodelprovider-i-factories">3-ViewModelProvider i Factories</h2>
-<p>Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:</p>
-<p>ViewModel amb paràmetres:</p>
-<pre><code class="language-kotlin">class UserViewModel(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModel() {
-
-    private val _user = MutableLiveData&lt;User&gt;()
-    val user: LiveData&lt;User&gt; = _user
-
-    init {
-        loadUser()
-    }
-
-    private fun loadUser() {
-        viewModelScope.launch {
-            _user.value = repository.getUser(userId)
-        }
-    }
-}
-</code></pre>
-<p>Crear un Factory:</p>
-<pre><code class="language-kotlin">class UserViewModelFactory(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModelProvider.Factory {
-
-    override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-            @Suppress(&quot;UNCHECKED_CAST&quot;)
-            return UserViewModel(userId, repository) as T
-        }
-        throw IllegalArgumentException(&quot;Unknown ViewModel class&quot;)
-    }
-}
-</code></pre>
-<p>Utilitzar el Factory:</p>
-<pre><code class="language-kotlin">class UserActivity : AppCompatActivity() {
-
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory(
-            userId = intent.getStringExtra(&quot;USER_ID&quot;) ?: &quot;&quot;,
-            repository = UserRepository()
-        )
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.user.observe(this) { user -&gt;
-            textView.text = user.name
-        }
-    }
-}
+binding.btnLogin.setOnClickListener({
+    doLogin()
+})
 </code></pre>
 
 

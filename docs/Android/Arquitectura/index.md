@@ -2,13 +2,3 @@
 
 Si seguim les indicacions de google i de molts altres desenvolupadors, veurem que qualsevol aplicació ha d'estar estructurada per "capes", o funcionalitats separades.
 Vegeu com a referència aquest document: https://developer.android.com/topic/architecture
-
-
-
-- Viewbinding
-- Arquitectura
-- Capes
-    - Viewmodel 
-    - Datamodel
-- Patrons de disseny
-    - Principis SOLID

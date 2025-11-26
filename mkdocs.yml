@@ -45,10 +45,10 @@ nav:
             - Appbar: Android/Interficies/appbar.md
             - Toolbar: Android/Interficies/toolbar.md
             - Bottom Menu: Android/Interficies/bottommenu.md
-            - Navigation Drawer: Android/Interficies/navigationdrawer.md
+            - Navigation Drawer: Android/Interficies/navdrawermenu.md
             - Dialegs: Android/Interficies/dialogs.md
             - RecyclerView: Android/Interficies/recyclerview.md
             - Menús: Android/Interficies/menus.md
-    - Exemples de codi: Exemples/index.md
+    - Exemples de codi Android: Exemples/index.md
     - Arduino: Arduino/index.md
-    - Referència: referencia.md   # Aquesta serà la darrera pàgina del nivell superior
+    - Referències: referencies.md
