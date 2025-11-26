@@ -9,193 +9,316 @@ View model és una arquitectura que permet separar la lògica de la activity, de
 La separació és important, perque s'entén que una activity no hauria de saber (no s'hi hauria d'implementar) quines dades 
 
 
+## 1-Conceptes bàsics
+### Què és i per què existeix (separació de lògica i UI)
+El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestionar dades relacionades amb la UI de manera conscient del cicle de vida.
+Per què existeix:
 
-## Referències
+- Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
+-Testabilitat: Pots testejar la lògica sense necessitat de components d'Android
+- Reutilització: Diversos Fragments poden compartir el mateix ViewModel
+- Persistència: Les dades sobreviuen a canvis de configuració
 
-Livedata (amb viewbinding)
-https://cursokotlin.com/mvvm-en-android-con-kotlin-livedata-y-view-binding-android-architecture-components/
-
-Video de Devexperto:
-https://www.youtube.com/watch?v=LHBbs6QXvic
-
-### Codelab
-https://developer.android.com/codelabs/basic-android-kotlin-training-livedata?hl=es-419#0
-
-
-# FRAGMENTS AMB VIEWMODEL
-## 1-Introducció a ViewModel
-### Problemes que resol
-Pèrdua d'estat: Les dades es mantenen en rotacions de pantalla
-
-Comunicació complexa: Facilita compartir dades entre fragments
-
-Fugues de memòria: Gestió automàtica del cicle de vida
-
-### Conceptes clau
-Sobrevivència: El ViewModel no es destrueix en canvis de configuració
-
-Scope: Associat al Lifecycle de l'Activity o Fragment
-
-Netega automàtica: Es destrueix quan el propietari finalitza
-
-### Referència: 
-Guia de ViewModel https://developer.android.com/topic/libraries/architecture/viewmodel
-
-## 2-ViewModel amb Fragments
-### Escollir l'scope correcte
+#### Sense ViewModel:
 ```kotlin
-// ViewModel PER FRAGMENT INDIVIDUAL
-private val viewModel: MyViewModel by viewModels()
-
-// ViewModel COMPARTIT entre TOTS els fragments de l'activity  
-private val sharedViewModel: SharedViewModel by activityViewModels()
-```
-### Quan utilitzar cada un
-
-- viewModels(): Dades específiques d'un sol fragment
-- activityViewModels(): Dades que múltiples fragments necessiten
-
-## 3-LiveData i StateFlow
-### Observar canvis de dades
-```kotlin
-// LiveData (tradicional)
-viewModel.myLiveData.observe(viewLifecycleOwner) { dades ->
-    // Actualitzar UI amb les noves dades
-}
-
-// StateFlow (modern)
-lifecycleScope.launch {
-    viewModel.myStateFlow.collect { dades ->
-        // Actualitzar UI
-    }
-}
-```
-
-### Pattern recomanat
-```kotlin
-class MyViewModel : ViewModel() {
-    // Privat - només el ViewModel pot modificar
-    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
+class MainActivity : AppCompatActivity() {
+    private var counter = 0 // Es perd en rotar la pantalla
     
-    // Públic - els fragments només poden observar
-    val uiState: StateFlow<UiState> = _uiState.asStateFlow()
-    
-    fun updateData() {
-        _uiState.value = UiState.Success(dades)
-    }
-}
-```
-### Referència: 
-StateFlow i SharedFlow: https://developer.android.com/kotlin/flow/stateflow-and-sharedflow
-
-## 4-Arquitectura amb Fragments + ViewModel
-### Separació de responsabilitats
-ViewModel: Lògica de negoci, dades, estat
-
-Fragment: UI, interaccions usuari, navegació
-
-Activity: Coordinació, gestió de fragments, permisos
-
-### Comunicació entre fragments
-```kotlin
-// ✅ CORRECTE - ViewModel compartit
-class FragmentA : Fragment() {
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-    
-    fun onButtonClick() {
-        sharedViewModel.updateData(novaDada)
-    }
-}
-
-class FragmentB : Fragment() {
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-    
-    override fun onViewCreated() {
-        lifecycleScope.launch {
-            sharedViewModel.dades.collect { dades ->
-                // Rep les actualitzacions de FragmentA
-            }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Lògica barrejada amb codi de UI
+        button.setOnClickListener {
+            counter++
+            textView.text = counter.toString()
+            // Crides a API, càlculs, etc...
         }
     }
 }
 ```
 
-## 5 - Casos Pràctics Avançats
-### Compartir dades complexes
-Usuari autenticat: Estat de sessió compartit per tota l'app
-
-Carro de la compra: Dades persistents durant la sessió
-
-Configuracions: Preferències que afecten múltiples pantalles
-
-### Navegació amb Navigation Component
+#### Amb ViewModel:
 ```kotlin
-// ViewModel compartit per tots els fragments del nav graph
-private val viewModel: SharedViewModel by navGraphViewModels(R.id.nav_graph)
-
-// Passar arguments segurs
-val directions = MyFragmentDirections.actionToNextFragment(argument = valor)
-findNavController().navigate(directions)
-```
-
-### Gestió d'errors i loading
-```kotlin
-// Al ViewModel
-sealed class UiState {
-    object Loading : UiState()
-    data class Success(val data: Data) : UiState()
-    data class Error(val message: String) : UiState()
+class CounterViewModel : ViewModel() {
+    private val _counter = MutableLiveData(0)
+    val counter: LiveData<Int> = _counter
+    
+    fun increment() {
+        _counter.value = (_counter.value ?: 0) + 1
+    }
 }
 
-// Al Fragment
-when (val state = viewModel.uiState.value) {
-    is UiState.Loading -> showLoading()
-    is UiState.Success -> showData(state.data)
-    is UiState.Error -> showError(state.message)
+class MainActivity : AppCompatActivity() {
+    private val viewModel: CounterViewModel by viewModels()
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        viewModel.counter.observe(this) { count ->
+            textView.text = count.toString()
+        }
+        
+        button.setOnClickListener {
+            viewModel.increment()
+        }
+    }
 }
 ```
-## 6 - QUÈ S'HA DE TENIR EN COMPTE
-### Aspectes Clau
 
-- Scope del ViewModel: Pensa si les dades són per un fragment o per compartir
+### Cicle de vida del ViewModel vs Activity/Fragment
 
-- Cicle de vida: Assegura't que observes les dades amb el lifecycle correcte
+El ViewModel té un cicle de vida **diferent i més llarg** que l'Activity o Fragment que l'utilitza.
 
-- Netega: Els ViewModel es netegen sols, però tanca recursos externs (base de dades, xarxa)
-
-- Testeig: Els ViewModel són fàcils de testejar, aprofita-ho
-
-### Errors Comuns a Evitar
-
+**Cicle de vida:**
+```
+ActivityCreatedDestroyed (rotation) → Re-created → Finished
+    │                    │                │            │
+    ▼                    │                │            ▼
+ViewModel Created        │                │        onCleared()
+    │                    │                │
+    └────────────────────┴────────────────┘
+         (ViewModel es manté viu)
+```
+Exemple pràctic:
 ```kotlin
-//MAI - Passar context al ViewModel
-class MyViewModel(val context: Context) : ViewModel()
-
-//Correcte - Demanar context quan es necessiti
 class MyViewModel : ViewModel() {
-    fun getData(context: Context) { ... }
+    init {
+        Log.d("ViewModel", "ViewModel creat")
+    }
+    
+    override fun onCleared() {
+        super.onCleared()
+        Log.d("ViewModel", "ViewModel destruït")
+        // Neteja recursos: cancel·lar coroutines, tancar connexions, etc.
+    }
 }
 
-//MAI- Utilitzar viewModels() quan es necessita compartir
-private val sharedViewModel: SharedViewModel by viewModels() 
-// Cada fragment té la seva instància
-
-//Correcte - Utilitzar activityViewModels() per compartir
-private val sharedViewModel: SharedViewModel by activityViewModels() // Tots comparteixen
+class MainActivity : AppCompatActivity() {
+    private val viewModel: MyViewModel by viewModels()
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("Activity", "onCreate")
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Activity", "onDestroy")
+    }
+}
 ```
-### Bones Pràctiques
-- ViewModel net d'Android: Sense imports de UI al ViewModel
 
-- Estats exhaustius: Gestiona tots els estats possibles (loading, èxit, error)
+**Logs en rotar la pantalla:**
+```
+ViewModel creat
+Activity onCreate
+Activity onDestroy (rotació)
+Activity onCreate (nova instància)
+// ViewModel segueix viu!
 
-- Coroutines: Utilitza coroutines per operacions async al ViewModel
+// Només quan tanquem l'Activity:
+Activity onDestroy
+ViewModel destruït
+```
+### Supervivència a canvis de configuració (rotacions)
+El ViewModel sobreviu automàticament a canvis de configuració com rotacions, canvis d'idioma, etc.
 
-- Immutabilitat: Exposa dades immutables als fragments
+El problema sense ViewModel:
+```kotlin
+class MainActivity : AppCompatActivity() {
+    private var userData: User? = null
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        // Cada cop que rotes, has de tornar a carregar les dades
+        // i si s'han modificat, es perden les modificacions
+        userData=loadUserData() // Crida a l'API, base de dades...
+        
+    }
+}
+```
 
-## Referències addicionals:
+La solució amb ViewModel:
+```kotlin
+class UserViewModel : ViewModel() {
+    private val _userData = MutableLiveData<User>()
+    val userData: LiveData<User> = _userData
+    
+    init {
+        loadUserData() // Només es crida UNA vegada
+    }
 
-- Guia d'arquitectura Android https://developer.android.com/topic/architecture
+    //loadUserData obté l'usuari de una bbdd, api, etc..
+    private fun loadUserData() {
+        //obtenir l'usuari de manera asíncronta (veure corrutines)
+        viewModelScope.launch {
+            _userData.value = "Usuari1"
+        }
+    }
+}
 
-- Patterns de navegació https://developer.android.com/guide/navigation/navigation-principles
+class MainActivity : AppCompatActivity() {
+    private val viewModel: UserViewModel by viewModels()
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        // Les dades ja estan disponibles després de rotar
+        viewModel.userData.observe(this) { user ->
+            textView.text = user.name
+        }
+    }
+}
+```
 
-- Guia de coroutines https://developer.android.com/kotlin/coroutines
+## 2-Àmbits (Scopes)
+### ViewModel no compartit (viewModels())
+Cada Activity o Fragment té la seva pròpia instància del ViewModel.
+Àmbit d'Activity:
+```kotlin
+class MainActivity : AppCompatActivity() {
+    // ViewModel amb àmbit d'aquesta Activity
+    private val viewModel: MyViewModel by viewModels()
+}
+
+class OtherActivity : AppCompatActivity() {
+    // Instància DIFERENT del mateix ViewModel
+    private val viewModel: MyViewModel by viewModels()
+}
+```
+
+Àmbit de Fragment:
+```kotlin
+class FirstFragment : Fragment() {
+    // ViewModel amb àmbit d'aquest Fragment
+    private val viewModel: MyViewModel by viewModels()
+}
+
+class SecondFragment : Fragment() {
+    // Instància DIFERENT, inclús si estan a la mateixa Activity
+    private val viewModel: MyViewModel by viewModels()
+}
+```
+
+Quan utilitzar-ho:
+
+Dades específiques d'una única pantalla
+No necessites compartir informació entre components
+Lògica aïllada d'un sol Fragment
+
+### ViewModel compartit (activityViewModels())
+Diversos Fragments dins de la mateixa Activity poden accedir a la mateixa instància del ViewModel.
+Exemple de comunicació entre Fragments:
+```kotlin
+class SharedViewModel : ViewModel() {
+    private val _selectedItem = MutableLiveData<Item>()
+    val selectedItem: LiveData<Item> = _selectedItem
+    
+    fun selectItem(item: Item) {
+        _selectedItem.value = item
+    }
+}
+
+class ListFragment : Fragment() {
+    // Obté el ViewModel de l'Activity pare
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+    
+    private fun onItemClicked(item: Item) {
+        sharedViewModel.selectItem(item)
+    }
+}
+
+class DetailFragment : Fragment() {
+    // La MATEIXA instància del ViewModel
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        sharedViewModel.selectedItem.observe(viewLifecycleOwner) { item ->
+            // Mostra els detalls de l'item seleccionat
+            textView.text = item.name
+        }
+    }
+}
+```
+
+**Diagrama:**
+```
+MainActivity
+    │
+    ├─ SharedViewModel (única instància)
+    │
+    ├─ ListFragment ──→ activityViewModels() ──→ SharedViewModel
+    │
+    └─ DetailFragment ──→ activityViewModels() ──→ SharedViewModel
+                            (mateixa instància!)
+```
+Quan utilitzar-ho:
+
+- Comunicació entre Fragments
+- Compartir estat dins d'una Activity
+- Navegació amb dades (passar informació entre pantalles)
+- Patró Master-detail
+
+## 3-ViewModelProvider i Factories
+Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:
+
+ViewModel amb paràmetres:
+```kotlin
+class UserViewModel(
+    private val userId: String,
+    private val repository: UserRepository
+) : ViewModel() {
+    
+    private val _user = MutableLiveData<User>()
+    val user: LiveData<User> = _user
+    
+    init {
+        loadUser()
+    }
+    
+    private fun loadUser() {
+        viewModelScope.launch {
+            _user.value = repository.getUser(userId)
+        }
+    }
+}
+```
+
+Crear un Factory:
+```kotlin
+class UserViewModelFactory(
+    private val userId: String,
+    private val repository: UserRepository
+) : ViewModelProvider.Factory {
+    
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return UserViewModel(userId, repository) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+```
+Utilitzar el Factory:
+```kotlin
+class UserActivity : AppCompatActivity() {
+    
+    private val viewModel: UserViewModel by viewModels {
+        UserViewModelFactory(
+            userId = intent.getStringExtra("USER_ID") ?: "",
+            repository = UserRepository()
+        )
+    }
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        viewModel.user.observe(this) { user ->
+            textView.text = user.name
+        }
+    }
+}
+```

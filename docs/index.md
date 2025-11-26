@@ -5,6 +5,7 @@ Aquest és el lloc principal de documentació
 
 ## Contingut
 
-- [Android](Android/README.md)
-- [Exemples de codi](exemples/python.md)
+- [Android](Android/index.md)
+- [Arduino](Arduino/index.md)
+- [Exemples de codi](Exemples/index.md)
     

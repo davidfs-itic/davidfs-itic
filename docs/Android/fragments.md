@@ -1,4 +1,11 @@
 # Fragments
+Documentació oficial
+
+- https://developer.android.com/guide/fragments
+
+Exemple pas a pas
+- https://cursokotlin.com/capitulo-22-fragments-en-kotlin/
+
 
 ## 1-Introducció als Fragments Què són i per què utilitzar-los?
 
@@ -14,8 +21,8 @@ Avantatges:
 
 - Comparació: Els fragments són com "sub-activitats" amb cicle de vida propi
 
-Referència: Documentació oficial Android - Fragments https://developer.android.com/guide/fragments
-
+Mostra visual d'una activity amb 2 fragments:
+![fragment overview](./Imatges/fragmentlayout.png)
 
 ## 2-Anatomia d'un Fragment
 
