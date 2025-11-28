@@ -50,6 +50,7 @@ nav:
             - Dialegs: Android/Interficies/dialogs.md
             - RecyclerView: Android/Interficies/recyclerview.md
             - Menús: Android/Interficies/menus.md
+            - Splash Screen: Android/Interficies/splashscreen.md
     - Exemples de codi Android: Exemples/index.md
     - Arduino: Arduino/index.md
     - Referències: referencies.md
