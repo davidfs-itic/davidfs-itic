@@ -7,7 +7,9 @@ El seu propòsit és:
 - Navegació: Allotjar el botó "Up" (fletxa enrere) o la icona del Navigation Drawer.
 - Accions: Contenir les accions més importants de la pantalla (menús).
 
-La Toolbar (proporcionada per la biblioteca AndroidX Material Components) és la implementació moderna i flexible de l'AppBar. A diferència de l'antiga ActionBar nativa, la Toolbar pot ser col·locada a qualsevol lloc d'un layout i personalitzada amb facilitat.
+La Toolbar (proporcionada per la biblioteca AndroidX Material Components) és la implementació moderna i flexible de l'AppBar. A diferència de l'antiga ActionBar nativa, la Toolbar pot ser personalitzada amb facilitat.
+
+La utilitzarem quan volguem personalitzar la appbar que apareix per defecte amb els temes.
 
 ### Implementació Bàsica
 Per utilitzar una Toolbar, primer s'ha d'afegir al fitxer XML del layout de l'Activity.
@@ -55,6 +57,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 ## 2. Afegir Menús a la Toolbar
 ### Definició del Menú
 Els ítems del menú es defineixen en un fitxer XML separat a res/menu/.
@@ -154,7 +157,6 @@ class DetailActivity : AppCompatActivity() {
     }
 }
 ```
-
 ## 4. Actualització Dinàmica dels Menús
 De vegades, l'estat d'un ítem de menú (p. ex., canviar una icona de "No Favorit" a "Favorit") ha de canviar mentre l'Activity està oberta.
 ### Invalidació del Menú
@@ -189,7 +191,6 @@ override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
     return super.onPrepareOptionsMenu(menu)
 }
 ```
-
 ## 5. Action Views
 Vegeu documentació per a detalls: https://developer.android.com/develop/ui/views/components/appbar/action-views
 
@@ -206,4 +207,37 @@ Searchview sense focus     |  Searchview amb focus
 :-------------------------:|:-------------------------:
 ![Image 1](./Imatges/actionview1.png) | ![Image 2](./Imatges/actionview2.png)
 
+## 6. Estil i Comportament Avançat (Material Design)
+## Estil
+L'estil de l'AppBar (colors, fons, elevació) es controla principalment a través del Tema de l'aplicació. Les propietats clau que afecten l'AppBar són:
 
+- colorPrimary: El color de fons principal de la barra.
+
+- colorPrimaryVariant: S'utilitza sovint per a la Barra d'Estat (Status Bar).
+
+## Comportament Avançat amb CoordinatorLayout
+Per a les aplicacions amb un disseny més sofisticat, la Toolbar s'integra amb un CoordinatorLayout i un AppBarLayout per crear efectes de desplaçament dinàmics.
+
+### **Exemple d'Efecte de Desplaçament:**
+ Si col·loques la Toolbar dins d'un AppBarLayout i el contingut desplaçable (com un RecyclerView) també dins del CoordinatorLayout, pots utilitzar les scroll flags de l'AppBarLayout:
+
+```XML
+<androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            ...
+            app:layout_scrollFlags="scroll|enterAlways" /> </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        ...
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+```
+
+**scroll:**
+Fa que la barra es mogui fora de la pantalla quan l'usuari es desplaça cap avall.
+
+**enterAlways:**
+ Fa que la barra torni a aparèixer tan aviat com l'usuari comença a desplaçar-se cap amunt, fins i tot lleugerament.
