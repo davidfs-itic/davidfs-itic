@@ -40,13 +40,15 @@ nav:
             - LiveData: Android/Arquitectura/livedata.md
             - Observer: Android/Arquitectura/observer.md
             - Repositori: Android/Arquitectura/repositori.md
+            - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
+            - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md
         - Interficies: 
             - Layouts: Android/Interficies/layouts.md
             - Temes i Estils: Android/Interficies/temes.md
             - Appbar: Android/Interficies/appbar.md
             - Toolbar: Android/Interficies/toolbar.md
             - Bottom Menu: Android/Interficies/bottommenu.md
-            - Navigation Drawer: Android/Interficies/navdrawermenu.md
+            - Navigation Drawer: Android/Interficies/drawermenu.md
             - Dialegs: Android/Interficies/dialogs.md
             - RecyclerView: Android/Interficies/recyclerview.md
             - Menús: Android/Interficies/menus.md
