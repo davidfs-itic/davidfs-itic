@@ -2468,12 +2468,16 @@ Substitueix l’antic ListView i ofereix més flexibilitat (layout managers, ani
 <h2 id="2-model-de-dades-data-class-i-llista">2. Model de dades (data class i llista)</h2>
 <h3 id="data-class">Data Class</h3>
 <p>Creem una classe senzilla per representar cada element de la llista.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: MyItem.kt</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Fitxer: MyItem.kt</span>
 <span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyItem</span><span class="p">(</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span>
 <span class="p">)</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="llista-de-dades-en-un-object-kotlin">Llista de dades en un object (Kotlin)</h3>
 <h4 id="que-es-un-object-a-kotlin">Què és un object a Kotlin?</h4>
 <p>En Kotlin, un object és una construcció que crea una única instància (patró Singleton) de manera automàtica.

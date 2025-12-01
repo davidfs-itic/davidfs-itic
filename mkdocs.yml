@@ -5,7 +5,7 @@ site_author: David F
 plugins:
     - search
     - awesome-pages
-    
+
 markdown_extensions:
   - admonition
   - pymdownx.details      # For collapsible admonitions

@@ -24,7 +24,7 @@ Per utilitzar un RecyclerView cal:
 
 Creem una classe senzilla per representar cada element de la llista.
 
-```kotlin
+```kotlin  linenums="1"
 // Fitxer: MyItem.kt
 data class MyItem(
     val title: String,
@@ -48,7 +48,7 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 
 Objecte que conté la llista: DataProvider
 
-```kotlin
+```kotlin  linenums="1"
 // Fitxer: DataProvider.kt
 
 /**
@@ -70,13 +70,13 @@ object DataProvider {
 
 
 
-```kotlin
+```kotlin  linenums="1"
 object DataProvider
 ```
 - Declara un objecte únic anomenat DataProvider.
 - No s’instancia amb DataProvider(), sinó que s’utilitza directament pel nom.
 
-```kotlin
+```kotlin  linenums="1"
 val items: List<MyItem>
 ```
 - És una propietat pública que conté la llista en memòria.
@@ -158,7 +158,7 @@ En un RecyclerView aquestes classes sempre treballen juntes:
 Sense Adapter i ViewHolder, el RecyclerView no sap ni quantes files mostrar, ni com dibuixar-les.
 
 ### Exemple codi Holder
-```kotlin
+```kotlin linenums="1"
 // MyViewHolder.kt
 import android.view.View
 import android.widget.TextView
@@ -196,7 +196,7 @@ class MyViewHolder(
 
 **Classe**
 
-```kotlin
+```kotlin 
 class MyViewHolder(... ) : RecyclerView.ViewHolder(itemView)
 ```
 Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una funció de clic (onItemClick).​
@@ -214,7 +214,7 @@ El ViewHolder busca una sola vega*da les vistes del layout item_row.xml i s’hi
 Això treu responsabilitat de “pintar dades” de l’Adapter i la concentra al ViewHolder.
 
 ### Exemple codi Adapter
-```kotlin
+```kotlin linenums="1"
 // MyAdapter.kt
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -266,7 +266,7 @@ Responsabilitats clares de cada mètode (tal com recomana la documentació ofici
 Exemple de codi en l'activity. 
 Els comentaris expliquen els passos que s'han de seguir.
 
-```kotlin
+```kotlin linenums="1"
 // MainActivity.kt
 import android.os.Bundle
 import android.widget.Toast

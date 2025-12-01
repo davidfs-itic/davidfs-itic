@@ -163,7 +163,7 @@ Així es mantenen tots els colors i estils del tema de l'aplicació, però sense
 #### Assignar tema per Activity
 Al AndroidManifest.xml pots dir quines activities porten appbar (tema base) i quines no (tema sense barra):
 
-```xml
+```xml 
 <application
     ...
     android:theme="@style/Theme.MyCustomApp">

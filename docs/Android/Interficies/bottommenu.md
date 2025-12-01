@@ -58,7 +58,7 @@ Exemple: Layout de l'activity
 
 Exemple: Gestió Manual de la Navegació (Kotlin)
 
-```Kotlin
+```Kotlin 
 
 // ...
 val bottomNav: BottomNavigationView = findViewById(R.id.bottom_navigation)
