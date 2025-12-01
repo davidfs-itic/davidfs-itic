@@ -59,6 +59,26 @@ nav:
         - RecyclerView: Android/Interficies/recyclerview.md
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
+      - Llenguatge Kotlin: 
+        - Introducció a Kotlin: Android/Kotlin/introduccio.md
+        - Variables i Constats: Android/Kotlin/variables.md
+        - Funcions: Android/Kotlin/funcions.md
+        - Classes i Objectes: Android/Kotlin/classesobjectes.md
+        - Null Safety: Android/Kotlin/nullsafety.md
+        - Collections: Android/Kotlin/collections.md
+        - Funcions d'extensió: Android/Kotlin/fextensio.md
+        - Coroutines: Android/Kotlin/coroutines.md
+        - Flow: Android/Kotlin/flow.md
+      - Bases de Dades:
+        - Room: Android/BasesDeDades/room.md
+        - SharedPreferences: Android/BasesDeDades/sharedpreferences.md
+      - Firebase:
+        - Introducció a Firebase: Android/Firebase/introduccio.md
+        - Setup de Firebase a Android: Android/Firebase/fbsetup.md
+        - Autenticació: Android/Firebase/autenticacio.md
+        - Firestore: Android/Firebase/firestore.md
+        - Storage: Android/Firebase/storage.md
+        - FireCloud Messaging: Android/Firebase/fcm.md
     - Exemples de codi Android: Exemples/index.md
     - Arduino: Arduino/index.md
     - Referències: referencies.md
