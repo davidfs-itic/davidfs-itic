@@ -2,94 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/referencies/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/activities/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/fragments/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/inversiodependencies/</loc>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/livedata/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/observer/</loc>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/recyclerinversio/</loc>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/repositori/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewbinding/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/viewmodel/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Firebase/</loc>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Firebase/fbsetup/</loc>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/appbar/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/bottommenu/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/dialegs/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/drawermenu/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/layouts/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/menus/</loc>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/recyclerview/</loc>
+         <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+         <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/splashscreen/</loc>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/temes/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/toolbar/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Android/Patrons/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/instalacio/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/rc522/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Arduino/wifi/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://davidfs-itic.github.io/davidfs-itic/Exemples/</loc>
-         <lastmod>2025-11-26</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
 </urlset>

@@ -10,13 +10,13 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/appbar/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/recyclerview/">
       
       
-        <link rel="prev" href="../temes/">
+        <link rel="prev" href="../dialegs/">
       
       
-        <link rel="next" href="../toolbar/">
+        <link rel="next" href="../menus/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Appbar - Documentació DavidFS - ITIC</title>
+        <title>RecyclerView - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#appbar" class="md-skip">
+        <a href="#recyclerview-amb-llista-en-memoria-kotlin" class="md-skip">
           Salta el contingut
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Appbar
+              RecyclerView
             
           </span>
         </div>
@@ -898,37 +898,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Appbar
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../appbar/" class="md-nav__link">
         
   
   
@@ -944,154 +917,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-concepte-i-funcio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Concepte i funció
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Concepte i funció">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitacions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitacions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rols-principals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rols Principals:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-implementacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Implementació
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-gestio-de-menus-igual-que-la-toolbar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Gestió de Menús (Igual que la Toolbar)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-gestio-de-la-appbar-amb-els-temes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Gestió de la appbar amb els temes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Gestió de la appbar amb els temes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#personalitzacio-dactivities-amb-o-sense-appbar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Personalització d'activities amb o sense appbar.
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Personalització d&#39;activities amb o sense appbar.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tema-base-de-laplicacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tema Base de l'Aplicació
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tema-fill-sense-appbar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tema fill sense AppBar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assignar-tema-per-activity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assignar tema per Activity
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1213,10 +1038,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../recyclerview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1232,6 +1084,271 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-un-recyclerview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Què és un RecyclerView?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-model-de-dades-data-class-i-llista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Model de dades (data class i llista)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Model de dades (data class i llista)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llista-de-dades-en-un-object-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llista de dades en un object (Kotlin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Llista de dades en un object (Kotlin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-object-a-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què és un object a Kotlin?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques principals:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-layout-de-cada-element-item_rowxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Layout de cada element (item_row.xml)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-layout-amb-el-recyclerview-activity_mainxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Layout amb el RecyclerView (activity_main.xml)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-adapter-i-viewholder-myadapterkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Adapter i ViewHolder (MyAdapter.kt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Adapter i ViewHolder (MyAdapter.kt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-adapter-sap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El Adapter sap:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-viewholder-sap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El ViewHolder sap:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-codi-holder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple codi Holder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple codi Holder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicació:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-codi-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple codi Adapter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple codi Adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicació:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea-clau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea clau:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frase-resum-que-podeu-recordar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frase “resum” que podeu recordar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1416,22 +1533,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-concepte-i-funcio" class="md-nav__link">
+  <a href="#1-que-es-un-recyclerview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Concepte i funció
+        1. Què és un RecyclerView?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Concepte i funció">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-model-de-dades-data-class-i-llista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Model de dades (data class i llista)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Model de dades (data class i llista)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#limitacions" class="md-nav__link">
+  <a href="#data-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitacions
+        Data Class
       
     </span>
   </a>
@@ -1439,10 +1567,33 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rols-principals" class="md-nav__link">
+  <a href="#llista-de-dades-en-un-object-kotlin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rols Principals:
+        Llista de dades en un object (Kotlin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Llista de dades en un object (Kotlin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-object-a-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què és un object a Kotlin?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques principals:
       
     </span>
   </a>
@@ -1453,12 +1604,17 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#2-implementacio" class="md-nav__link">
+  <a href="#3-layout-de-cada-element-item_rowxml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Implementació
+        3. Layout de cada element (item_row.xml)
       
     </span>
   </a>
@@ -1466,10 +1622,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-gestio-de-menus-igual-que-la-toolbar" class="md-nav__link">
+  <a href="#4-layout-amb-el-recyclerview-activity_mainxml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gestió de Menús (Igual que la Toolbar)
+        4. Layout amb el RecyclerView (activity_main.xml)
       
     </span>
   </a>
@@ -1477,56 +1633,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-gestio-de-la-appbar-amb-els-temes" class="md-nav__link">
+  <a href="#5-adapter-i-viewholder-myadapterkt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Gestió de la appbar amb els temes
+        5. Adapter i ViewHolder (MyAdapter.kt)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Gestió de la appbar amb els temes">
+    <nav class="md-nav" aria-label="5. Adapter i ViewHolder (MyAdapter.kt)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#personalitzacio-dactivities-amb-o-sense-appbar" class="md-nav__link">
+  <a href="#el-adapter-sap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Personalització d'activities amb o sense appbar.
+        El Adapter sap:
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Personalització d&#39;activities amb o sense appbar.">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-viewholder-sap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El ViewHolder sap:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-codi-holder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple codi Holder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple codi Holder">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tema-base-de-laplicacio" class="md-nav__link">
+  <a href="#explicacio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tema Base de l'Aplicació
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tema-fill-sense-appbar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tema fill sense AppBar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assignar-tema-per-activity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assignar tema per Activity
+        Explicació:
       
     </span>
   </a>
@@ -1535,6 +1691,84 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-codi-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple codi Adapter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple codi Adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicació:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea-clau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea clau:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frase-resum-que-podeu-recordar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frase “resum” que podeu recordar:
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1560,180 +1794,293 @@
 
 
 
-<h1 id="appbar">Appbar</h1>
+<h1 id="recyclerview-amb-llista-en-memoria-kotlin">RecyclerView amb llista en memòria (Kotlin)</h1>
 <p>Documentació oficial:
-https://developer.android.com/develop/ui/views/components/appbar</p>
-<h2 id="1-concepte-i-funcio">1. Concepte i funció</h2>
-<p>Originalment coneguda com a Action Bar, aquesta barra estava estretament lligada a la temàtica de l'activitat. 
-Va ser la solució estàndard per a la barra d'aplicacions abans de la introducció del widget Toolbar (introduït formalment a Android 5.0 Lollipop i el Support Library).</p>
-<p>Amb l'arribada de Material Design, es va evolucionar al component Toolbar, oferint molta més flexibilitat en estil, posicionament i funcionalitats. Avui, quan parlem d'AppBar, generalment ens referim a una Toolbar configurada a la part superior de la pantalla.</p>
-<p>En aquest tema només parlarem de la appbar predefinida pel sistema. Si es vol personalitzar, s'ha d'utilitzar una toolbar.</p>
-<p>La Appbar no s'ha de confondre amb la status bar.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Status bar</th>
-<th style="text-align: center;">Appbar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><img alt="status bar" src="../Imatges/statusbar.png" /></td>
-<td style="text-align: center;"><img alt="appbar" src="../Imatges/appbar.png" /></td>
-</tr>
-</tbody>
-</table>
-<h3 id="limitacions">Limitacions</h3>
-<p>La raó principal per la qual es va promoure la Toolbar és la falta de flexibilitat de l'Action Bar per defecte.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Característica</th>
-<th style="text-align: left;">Action Bar (Per Defecte)</th>
-<th style="text-align: left;">Toolbar (Widget Manual)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Posicionament</td>
-<td style="text-align: left;">Sempre fixada a la part superior de la finestra de l'Activity.</td>
-<td style="text-align: left;">Es pot col·locar a qualsevol lloc del disseny (part inferior, central, etc.).</td>
-</tr>
-<tr>
-<td style="text-align: left;">Integració amb Scroll</td>
-<td style="text-align: left;">No es coordina amb el contingut desplaçable (no es pot col·lapsar).</td>
-<td style="text-align: left;">Integració nativa amb CoordinatorLayout per a efectes de col·lapsament.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Contingut Personalitzat</td>
-<td style="text-align: left;">Molt limitat. Només permet canviar el text/icona.</td>
-<td style="text-align: left;">Es poden afegir widgets personalitzats (camps de cerca, imatges, etc.) directament al seu XML.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gestió</td>
-<td style="text-align: left;">Gestionada per la finestra de l'Activity (Mètode getSupportActionBar()).</td>
-<td style="text-align: left;">Gestionada com qualsevol altre widget de vista (findViewById()).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="rols-principals">Rols Principals:</h3>
+https://developer.android.com/develop/ui/views/layout/recyclerview</p>
+<p>Exemple:
+https://github.com/davidfs-itic/RecyclerView</p>
+<h2 id="1-que-es-un-recyclerview">1. Què és un RecyclerView?</h2>
+<p>Un RecyclerView és un component que permet mostrar llistes (o graelles) d’elements reciclant les vistes per millorar el rendiment.
+Substitueix l’antic ListView i ofereix més flexibilitat (layout managers, animacions, etc.).</p>
+<p>Per utilitzar un RecyclerView cal:</p>
 <ul>
-<li>
-<p><strong>Identitat:</strong> Mostrar el nom de l'aplicació o de la vista actual (Títol).</p>
-</li>
-<li>
-<p><strong>Navegació:</strong> Oferir un mitjà per moure's cap enrere o accedir a un calaix de navegació (Navigation Icon).</p>
-</li>
-<li>
-<p><strong>Accions:</strong> Proporcionar accés ràpid a les accions més importants del context actual (Action Menu).</p>
-</li>
+<li>Una llista de dades (en memòria, en aquest exemple).</li>
+<li>Un layout XML per a la pantalla que conté el RecyclerView.</li>
+<li>Un layout XML per a cada fila (ítem) de la llista.</li>
+<li>Un Adapter amb un ViewHolder per “pintar” les dades a cada fila.</li>
 </ul>
-<h2 id="2-implementacio">2. Implementació</h2>
-<p>L'Action Bar no es declara al fitxer XML del layout. La seva presència i estil es controlen exclusivament a través del Tema de l'aplicació.</p>
-<p>Requisit de Tema: Per defecte, si el vostre tema hereta d'un tema que inclou una Action Bar (com ara Theme.AppCompat.Light.DarkActionBar), el sistema la dibuixarà automàticament a la part superior de l'activitat.</p>
-<p>Temes Sense Barra: Si voleu eliminar-la (per exemple, per substituir-la per una Toolbar personalitzada), cal utilitzar un tema "Sense Action Bar", com ara:</p>
-<p>Theme.AppCompat.NoActionBar</p>
-<p>Theme.MaterialComponents.Light.NoActionBar</p>
-<p>Per accedir a la appbar si es configura a través del tema, podem obtenir una referència així:</p>
-<pre><code class="language-kotlin">var toolbar= this.supportActionBar
+<h2 id="2-model-de-dades-data-class-i-llista">2. Model de dades (data class i llista)</h2>
+<h3 id="data-class">Data Class</h3>
+<p>Creem una classe senzilla per representar cada element de la llista.</p>
+<pre><code class="language-kotlin">// Fitxer: MyItem.kt
+data class MyItem(
+    val title: String,
+    val subtitle: String
+)
 </code></pre>
-<h2 id="3-gestio-de-menus-igual-que-la-toolbar">3. Gestió de Menús (Igual que la Toolbar)</h2>
-<p>En aquest aspecte, l'Action Bar es comporta de manera idèntica a la Toolbar:</p>
-<p><strong>Inflament del Menú:</strong> El contingut de les accions es defineix en un fitxer XML de menú i s'infla mitjançant el mètode onCreateOptionsMenu().</p>
-<pre><code class="language-Kotlin">override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-    menuInflater.inflate(R.menu.main_menu, menu)
-    return true
+<h3 id="llista-de-dades-en-un-object-kotlin">Llista de dades en un object (Kotlin)</h3>
+<h4 id="que-es-un-object-a-kotlin">Què és un object a Kotlin?</h4>
+<p>En Kotlin, un object és una construcció que crea una única instància (patró Singleton) de manera automàtica.
+S’utilitza quan es vol un únic punt d’accés compartit, per exemple una llista de dades comuna per a diferents pantalles.</p>
+<h4 id="caracteristiques-principals">Característiques principals:</h4>
+<ul>
+<li>No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataProvider.items).</li>
+<li>Es crea la instància la primera vegada que es fa servir.</li>
+<li>És útil per guardar dades en memòria mentre l’app està en execució.</li>
+</ul>
+<p>Objecte que conté la llista: DataProvider</p>
+<pre><code class="language-kotlin">// Fitxer: DataProvider.kt
+
+/**
+ * Objecte singleton que proporciona dades en memòria
+ * per ser utilitzades al RecyclerView.
+ */
+object DataProvider {
+
+    // Llista de dades en memòria (només de lectura)
+    val items: List&lt;MyItem&gt; = listOf(
+        MyItem(&quot;Element 1&quot;, &quot;Subtítol 1&quot;),
+        MyItem(&quot;Element 2&quot;, &quot;Subtítol 2&quot;),
+        MyItem(&quot;Element 3&quot;, &quot;Subtítol 3&quot;),
+        MyItem(&quot;Element 4&quot;, &quot;Subtítol 4&quot;)
+    )
 }
 </code></pre>
-<p><strong>Gestió de Clics:</strong> La lògica del clic continua estant en onOptionsItemSelected(), on es gestionen tant les accions del menú com la fletxa "Amunt" (android.R.id.home).</p>
-<pre><code class="language-kotlin">override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Obtenim l'identificador de l'ítem clicat
-        return when (item.itemId) {
-            ...
+<p><strong>Què fà aquest codi?</strong></p>
+<pre><code class="language-kotlin">object DataProvider
+</code></pre>
+<ul>
+<li>Declara un objecte únic anomenat DataProvider.</li>
+<li>No s’instancia amb DataProvider(), sinó que s’utilitza directament pel nom.</li>
+</ul>
+<pre><code class="language-kotlin">val items: List&lt;MyItem&gt;
+</code></pre>
+<ul>
+<li>És una propietat pública que conté la llista en memòria.</li>
+<li>El tipus és List<MyItem>, per tant és immutable (no es poden afegir/eliminar elements).</li>
+<li>Es pot canviar a MutableList<MyItem> si es vol modificar la llista durant l’execució.</li>
+</ul>
+<p>L’objecte DataProvider actua com un “mini repositori de dades” senzill, sense base de dades ni API.</p>
+<p>(Per a veure com s'ha de crear un repositori de dades, veure l'apartat repositori a Arquitectura)</p>
+<h2 id="3-layout-de-cada-element-item_rowxml">3. Layout de cada element (item_row.xml)</h2>
+<p>Aquest layout defineix com es veu una fila de la llista.</p>
+<pre><code class="language-xml">&lt;!-- Fitxer: res/layout/item_row.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;16dp&quot;&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvTitle&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Títol&quot;
+        android:textStyle=&quot;bold&quot;
+        android:textSize=&quot;18sp&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvSubtitle&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Subtítol&quot;
+        android:textSize=&quot;14sp&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+<h2 id="4-layout-amb-el-recyclerview-activity_mainxml">4. Layout amb el RecyclerView (activity_main.xml)</h2>
+<p>Aquest layout conté el RecyclerView que ocuparà tota la pantalla.</p>
+<pre><code class="language-xml">&lt;!-- Fitxer: res/layout/activity_main.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;androidx.recyclerview.widget.RecyclerView
+        android:id=&quot;@+id/recyclerView&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:layout_constraintTop_toTopOf=&quot;parent&quot;
+        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot; /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+</code></pre>
+<h2 id="5-adapter-i-viewholder-myadapterkt">5. Adapter i ViewHolder (MyAdapter.kt)</h2>
+<p>En un RecyclerView aquestes classes sempre treballen juntes:</p>
+<h4 id="el-adapter-sap">El Adapter sap:</h4>
+<ul>
+<li>Quantes files hi ha.</li>
+<li>Quin layout s’utilitza per a cada fila.</li>
+<li>Quines dades s’han de mostrar a cada posició.</li>
+</ul>
+<h4 id="el-viewholder-sap">El ViewHolder sap:</h4>
+<ul>
+<li>Quines vistes (TextView, ImageView, etc.) té una fila.</li>
+<li>On escriure les dades quan l’Adapter li digui “pinta l’element X”.</li>
+</ul>
+<p>Sense Adapter i ViewHolder, el RecyclerView no sap ni quantes files mostrar, ni com dibuixar-les.</p>
+<h3 id="exemple-codi-holder">Exemple codi Holder</h3>
+<pre><code class="language-kotlin">// MyViewHolder.kt
+import android.view.View
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
+/**
+ * ViewHolder responsable d'una fila del RecyclerView.
+ * Encapsula la vista de la fila i sap com &quot;pintar-hi&quot; un MyItem.
+ */
+class MyViewHolder(
+    itemView: View,
+    private val onItemClick: (MyItem) -&gt; Unit
+) : RecyclerView.ViewHolder(itemView) {
+
+    private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
+    private val tvSubtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
+
+    /**
+     * Actualitza les vistes de la fila amb les dades de MyItem
+     * i configura els listeners d'esdeveniments.
+     */
+    fun bind(item: MyItem) {
+        tvTitle.text = item.title
+        tvSubtitle.text = item.subtitle
+
+        // Exemple de gestió de clic sobre tota la fila
+        itemView.setOnClickListener {
+            onItemClick(item)
         }
-}
-</code></pre>
-<p><strong>Gestió dels elements del menú:</strong></p>
-<p>Quan l'usuari fa click i s'ha de mostrar el menú, podem aprofitar per habilitar o deshabilitar algun element. </p>
-<pre><code class="language-kotlin">//Quan l'usuari fa click
-override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-    if (true){
-        var item=menu?.findItem(R.id.profile_nav_home)
-       item?.setEnabled(false)
-        Log.i(&quot;Toolbaronly_prepareoptionsmenu&quot;,item?.title.toString())
     }
-    return super.onPrepareOptionsMenu(menu)
 }
 </code></pre>
-<h2 id="4-gestio-de-la-appbar-amb-els-temes">4. Gestió de la appbar amb els temes</h2>
-<p>La appbar per defecte, es mostra o no en funció del tema que estigui aplicat a l'activity:</p>
-<p><strong>Tema amb appbar:</strong></p>
-<pre><code class="language-xml">    &lt;style name=&quot;Base.Theme.LaMevaApp&quot; parent=&quot;Theme.Material3.DayNight.DarkActionBar&quot;&gt;
-        &lt;!-- Customize your dark theme here. --&gt;
-        &lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_dark_primary&lt;/item&gt; --&gt;
-    &lt;/style&gt;
+<h4 id="explicacio">Explicació:</h4>
+<p><strong>Classe</strong></p>
+<pre><code class="language-kotlin">class MyViewHolder(... ) : RecyclerView.ViewHolder(itemView)
 </code></pre>
-<p><strong>Tema sense appbar:</strong></p>
-<pre><code class="language-xml">    &lt;style name=&quot;Base.Theme.LaMevaApp&quot; parent=&quot;Theme.Material3.DayNight.NoActionBar&quot;&gt;
-        &lt;!-- Customize your dark theme here. --&gt;
-        &lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_dark_primary&lt;/item&gt; --&gt;
-    &lt;/style&gt;
+<p>Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una funció de clic (onItemClick).​</p>
+<p><strong>Propietats privades (tvTitle, tvSubtitle):</strong></p>
+<p>El ViewHolder busca una sola vega*da les vistes del layout item_row.xml i s’hi queda la referència.</p>
+<p><strong>Mètode bind(item: MyItem):</strong></p>
+<p>És el punt únic per:
+ - Escriure dades a les vistes.
+ - Configurar listeners específics d’aquesta fila (clic, long‑click…).</p>
+<p>Això treu responsabilitat de “pintar dades” de l’Adapter i la concentra al ViewHolder.</p>
+<h3 id="exemple-codi-adapter">Exemple codi Adapter</h3>
+<pre><code class="language-kotlin">// MyAdapter.kt
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+
+/**
+ * Adapter que crea ViewHolder (MyViewHolder),
+ * indica quants elements hi ha i demana que es &quot;pintin&quot; amb bind().
+ */
+class MyAdapter(
+    private val items: List&lt;MyItem&gt;,
+    private val onItemClick: (MyItem) -&gt; Unit
+) : RecyclerView.Adapter&lt;MyViewHolder&gt;() {
+
+    /**
+     * Crea (infla) la vista de la fila i construeix el ViewHolder.
+     */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.item_row, parent, false)
+        return MyViewHolder(view, onItemClick)
+    }
+
+    /**
+     * Retorna quants elements hi ha a la llista de dades.
+     */
+    override fun getItemCount(): Int = items.size
+
+    /**
+     * Demana al ViewHolder que mostri les dades de la posició donada.
+     */
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val item = items[position]
+        holder.bind(item)
+    }
+}
 </code></pre>
-<h3 id="personalitzacio-dactivities-amb-o-sense-appbar">Personalització d'activities amb o sense appbar.</h3>
-<p>Podem definir un conjunt de temes coherent que permeti que algunes de les teves activitats tinguin una barra d'aplicació i altres no, tot utilitzant els mateixos colors de marca.</p>
-<h4 id="tema-base-de-laplicacio"><strong>Tema Base de l'Aplicació</strong></h4>
-<p>Primer, crea un <strong>tema base</strong> al teu fitxer themes.xml que contingui tots els teus colors, tipografies i estils personalitzats. </p>
-<p>També definim el <strong>tema de l'aplicació</strong>  Aquest serà el tema principal de la teva aplicació. (Theme.MyCustomApp)
-(Cal definir també els colors a colors.xml)</p>
-<p>Tant el tema base com el de l'aplicació tenen appbar (hereten de DarkActionBar)</p>
-<pre><code class="language-XML">&lt;resources xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;
+<h4 id="explicacio_1">Explicació:</h4>
+<p>L’Adapter ja no sap com s’actualitzen exactament les vistes; delega aquesta feina a holder.bind(item).</p>
+<p>Responsabilitats clares de cada mètode (tal com recomana la documentació oficial):​</p>
+<ul>
+<li>onCreateViewHolder: infla el layout i crea el ViewHolder.</li>
+<li>getItemCount: diu al RecyclerView quantes files han de existir.</li>
+<li>onBindViewHolder: passa el model (MyItem) al ViewHolder perquè l’actualitzi.</li>
+</ul>
+<h2 id="6-activity">6. Activity</h2>
+<p>Exemple de codi en l'activity. 
+Els comentaris expliquen els passos que s'han de seguir.</p>
+<pre><code class="language-kotlin">// MainActivity.kt
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-    &lt;style name=&quot;Base.Theme.MyCustomApp&quot; parent=&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;&gt;
-        &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_primary_color&lt;/item&gt;
-        &lt;item name=&quot;colorSecondary&quot;&gt;@color/my_secondary_color&lt;/item&gt;
-        &lt;item name=&quot;android:textColorPrimary&quot;&gt;@color/my_text_primary&lt;/item&gt;
-        &lt;/style&gt;
-    &lt;style name=&quot;Theme.MyCustomApp&quot; parent=&quot;Base.Theme.MyCustomApp&quot;&gt;
+class MainActivity : AppCompatActivity() {
 
-&lt;/resources&gt;
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: MyAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // 1. Obtenir referència al RecyclerView del layout
+        recyclerView = findViewById(R.id.recyclerView)
+
+        // 2. Configurar LayoutManager (com es col·loquen les files)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // 3. Crear llista de dades (des de DataProvider o directament)
+        val items = DataProvider.items
+
+        // 4. Crear l'Adapter passant les dades + funció de callback per clics
+        adapter = MyAdapter(
+            items = items,
+            onItemClick = { item -&gt;
+                // AQUÍ gestionem el clic: mostrem un Toast amb el títol
+                Toast.makeText(
+                    this,
+                    &quot;Has clicat: ${item.title}&quot;,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        )
+
+        // 5. Assignar l'Adapter al RecyclerView
+        recyclerView.adapter = adapter
+    }
+}
 </code></pre>
-<p>Aquest serà el tema per defecte de l’aplicació (amb AppBar).​</p>
-<p>A AndroidManifest.xml, aplica’l a l’<application>:</p>
-<p><code>xml
-&lt;application
-    ...
-    android:theme="@style/Theme.MyCustomApp"&gt;
-    ...</code>
-Això fa que totes les activities usin aquest tema, excepte les que el sobreescriguin.​</p>
-<h4 id="tema-fill-sense-appbar">Tema fill sense AppBar</h4>
-<p>Crea un tema que hereti del base però desactivi la barra d’acció (ideal per pantalles fullscreen, login, splash, etc.):</p>
-<pre><code class="language-xml">&lt;style name=&quot;Theme.MyCustomApp.NoActionBar&quot; parent=&quot;Theme.MyCustomApp&quot;&gt;
-    &lt;item name=&quot;windowNoTitle&quot;&gt;true&lt;/item&gt;
-    &lt;item name=&quot;windowActionBar&quot;&gt;false&lt;/item&gt;
-&lt;/style&gt;
-</code></pre>
-<p>Així es mantenen tots els colors i estils del tema de l'aplicació, però sense AppBar.​</p>
-<h4 id="assignar-tema-per-activity">Assignar tema per Activity</h4>
-<p>Al AndroidManifest.xml pots dir quines activities porten appbar (tema base) i quines no (tema sense barra):</p>
-<pre><code class="language-xml">&lt;application
-    ...
-    android:theme=&quot;@style/Theme.MyCustomApp&quot;&gt;
-
-    &lt;!-- Activity amb AppBar (usa el tema base) --&gt;
-    &lt;activity
-        android:name=&quot;.MainActivity&quot; /&gt;
-
-    &lt;!-- Activity sense AppBar --&gt;
-    &lt;activity
-        android:name=&quot;.LoginActivity&quot;
-        android:theme=&quot;@style/Theme.MyCustomApp.NoActionBar&quot; /&gt;
-
-    &lt;!-- Activity amb AppBar personalitzada --&gt;
-    &lt;activity
-        android:name=&quot;.DetailsActivity&quot;
-        android:theme=&quot;@style/Theme.MyCustomApp.AppBar&quot; /&gt;
-&lt;/application&gt;
-</code></pre>
+<p>Tot i que s'utilitza una funció (anomenada callback) per passar la lògica de gestió del click en un ítem (recodem que aixó ho gestiona el ViewHolder), no és una pràctica recomenada. Està aquí per simplicitat.</p>
+<p>Veieu "Exemple inversió de dependències amb RecyclerView" a l'apartat Arquitectura</p>
+<h2 id="7-resum">7. Resum</h2>
+<h3 id="idea-clau">Idea clau:</h3>
+<p>En un RecyclerView, el ViewHolder encapsula la vista d’una fila, en guarda les referències a les seves sub‑vistes i pot contenir la lògica específica d’aquesta fila (com ara actualitzar les dades o gestionar clics), mentre que l’Adapter crea aquests ViewHolder, els recicla i els alimenta amb les dades correctes de la llista.</p>
+<ul>
+<li>onCreateViewHolder crea la vista i el ViewHolder.</li>
+<li>onBindViewHolder omple aquesta vista amb les dades de la posició concreta.</li>
+</ul>
+<h3 id="frase-resum-que-podeu-recordar">Frase “resum” que podeu recordar:</h3>
+<p>L’Adapter:</p>
+<ul>
+<li>Crea ViewHolder nous (onCreateViewHolder).</li>
+<li>Diu quantes files hi ha (getItemCount).</li>
+<li>Omple les vistes del ViewHolder amb dades (onBindViewHolder).</li>
+</ul>
+<p>El ViewHolder 
+- Guarda referències a les vistes de la fila (TextView, ImageView, etc.).
+- Encapsula la lògica de “bind”: té una funció bind(item: MyItem) que rep el model i actualitza totes les vistes.
+- Gestiona esdeveniments de la fila: per exemple, configurar setOnClickListener sobre itemView o sobre algun botó concret, i notifica l’Adapter o un listener extern.</p>
 
 
 

@@ -2,10 +2,14 @@ site_name: Documentació DavidFS - ITIC
 site_url: https://davidfs-itic.github.io/davidfs-itic
 site_dir: ./site
 site_author: David F
+plugins:
+    - search
+    - awesome-pages
 # Tema
 theme:
   name: material
-  locale: ca
+  language: ca
+  #locale: ca
   palette:
       - scheme: default
         primary: teal
@@ -23,36 +27,38 @@ theme:
   - navigation.instant
   - navigation.expand
   - navigation.tabs
-  - navigation.sections
-  - search.suggest
+#  - navigation.sections
+#  - navigation.path
+#  - search.suggest
+#  //El toc.integrate està de moment desactivat perquè fa que no es vegi el toc a la dreta de la pàgina
 #  - toc.integrate
-#  - navigation.tabs
+
 nav:
     - Inici: index.md             # Aquesta serà la primera pàgina
-    - Android:
-        - Introducció a Android: Android/index.md
-        - Activities: Android/activities.md
-        - Fragments: Android/fragments.md
-        - Arquitectura:
-            - Introducció a l'Arquitectura: Android/Arquitectura/index.md
-            - VieweBinding: Android/Arquitectura/viewbinding.md
-            - ViewModel: Android/Arquitectura/viewmodel.md
-            - LiveData: Android/Arquitectura/livedata.md
-            - Observer: Android/Arquitectura/observer.md
-            - Repositori: Android/Arquitectura/repositori.md
-            - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
-            - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md
-        - Interficies: 
-            - Layouts: Android/Interficies/layouts.md
-            - Temes i Estils: Android/Interficies/temes.md
-            - Appbar: Android/Interficies/appbar.md
-            - Toolbar: Android/Interficies/toolbar.md
-            - Bottom Menu: Android/Interficies/bottommenu.md
-            - Navigation Drawer: Android/Interficies/drawermenu.md
-            - Dialegs: Android/Interficies/dialogs.md
-            - RecyclerView: Android/Interficies/recyclerview.md
-            - Menús: Android/Interficies/menus.md
-            - Splash Screen: Android/Interficies/splashscreen.md
+    - Android:  
+      - Introducció a Android: Android/index.md
+      - Activities: Android/activities.md
+      - Fragments: Android/fragments.md
+      - Arquitectura:
+        - Introducció a l'Arquitectura: Android/Arquitectura/index.md
+        - VieweBinding: Android/Arquitectura/viewbinding.md
+        - ViewModel: Android/Arquitectura/viewmodel.md
+        - LiveData: Android/Arquitectura/livedata.md
+        - Observer: Android/Arquitectura/observer.md
+        - Repositori: Android/Arquitectura/repositori.md
+        - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
+        - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md
+      - Interficies: 
+        - Layouts: Android/Interficies/layouts.md
+        - Temes i Estils: Android/Interficies/temes.md
+        - Appbar: Android/Interficies/appbar.md
+        - Toolbar: Android/Interficies/toolbar.md
+        - Bottom Menu: Android/Interficies/bottommenu.md
+        - Navigation Drawer: Android/Interficies/drawermenu.md
+        - Dialegs: Android/Interficies/dialegs.md
+        - RecyclerView: Android/Interficies/recyclerview.md
+        - Menús: Android/Interficies/menus.md
+        - Splash Screen: Android/Interficies/splashscreen.md
     - Exemples de codi Android: Exemples/index.md
     - Arduino: Arduino/index.md
     - Referències: referencies.md
