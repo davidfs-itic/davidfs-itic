@@ -202,12 +202,13 @@ class SecondFragment : Fragment() {
 
 Quan utilitzar-ho:
 
-Dades específiques d'una única pantalla
-No necessites compartir informació entre components
-Lògica aïllada d'un sol Fragment
+ - Dades específiques d'una única pantalla
+ - No necessites compartir informació entre components
+ - Lògica aïllada d'un sol Fragment
 
 ### ViewModel compartit (activityViewModels())
 Diversos Fragments dins de la mateixa Activity poden accedir a la mateixa instància del ViewModel.
+
 Exemple de comunicació entre Fragments:
 ```kotlin
 class SharedViewModel : ViewModel() {

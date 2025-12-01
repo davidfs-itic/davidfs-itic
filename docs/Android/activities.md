@@ -1,1 +1,1 @@
-# Activi    ties
+# Activities
