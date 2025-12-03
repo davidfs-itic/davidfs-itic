@@ -89,11 +89,11 @@ nav:
     - Referències: referencies.md
     - IoT:
       - Introducció a l'IoT: IoT/introduccio.md
-      - Dispositius IoT: IoT/dispositius.md
+      - Dispositius IoT:
         - Sensors IoT: IoT/sensors.md
         - Raspberry Pi: IoT/raspberrypi.md
         - Arduino IoT: IoT/arduinoiot.md
-      - Backends IoT: IoT/backends.md
+      - Backends IoT:
         - InfluxDB: IoT/influxdb.md
         - Node-RED: IoT/nodered.md
         - ThingsBoard: IoT/thingsboard.md
