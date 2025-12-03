@@ -41,21 +41,21 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 
 #### Característiques principals:
 
-- No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataProvider.items).
+- No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataSource.items).
 - Es crea la instància la primera vegada que es fa servir.
 - És útil per guardar dades en memòria mentre l’app està en execució.
 
 
-Objecte que conté la llista: DataProvider
+Objecte que conté la llista: DataSource
 
 ```kotlin  linenums="1"
-// Fitxer: DataProvider.kt
+// Fitxer: DataSource.kt
 
 /**
  * Objecte singleton que proporciona dades en memòria
  * per ser utilitzades al RecyclerView.
  */
-object DataProvider {
+object DataSource {
 
     // Llista de dades en memòria (només de lectura)
     val items: List<MyItem> = listOf(
@@ -71,10 +71,10 @@ object DataProvider {
 
 
 ```kotlin  linenums="1"
-object DataProvider
+object DataSource
 ```
-- Declara un objecte únic anomenat DataProvider.
-- No s’instancia amb DataProvider(), sinó que s’utilitza directament pel nom.
+- Declara un objecte únic anomenat DataSource.
+- No s’instancia amb DataSource(), sinó que s’utilitza directament pel nom.
 
 ```kotlin  linenums="1"
 val items: List<MyItem>
@@ -83,7 +83,7 @@ val items: List<MyItem>
 - El tipus és List<MyItem>, per tant és immutable (no es poden afegir/eliminar elements).
 - Es pot canviar a MutableList<MyItem> si es vol modificar la llista durant l’execució.
 
-L’objecte DataProvider actua com un “mini repositori de dades” senzill, sense base de dades ni API.
+L’objecte DataSource actua com un “mini repositori de dades” senzill, sense base de dades ni API.
 
 (Per a veure com s'ha de crear un repositori de dades, veure l'apartat repositori a Arquitectura)
 
@@ -289,8 +289,8 @@ class MainActivity : AppCompatActivity() {
         // 2. Configurar LayoutManager (com es col·loquen les files)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // 3. Crear llista de dades (des de DataProvider o directament)
-        val items = DataProvider.items
+        // 3. Crear llista de dades (des de DataSource o directament)
+        val items = DataSource.items
 
         // 4. Crear l'Adapter passant les dades + funció de callback per clics
         adapter = MyAdapter(

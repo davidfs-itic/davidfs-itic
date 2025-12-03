@@ -2484,18 +2484,33 @@ Substitueix l’antic ListView i ofereix més flexibilitat (layout managers, ani
 S’utilitza quan es vol un únic punt d’accés compartit, per exemple una llista de dades comuna per a diferents pantalles.</p>
 <h4 id="caracteristiques-principals">Característiques principals:</h4>
 <ul>
-<li>No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataProvider.items).</li>
+<li>No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataSource.items).</li>
 <li>Es crea la instància la primera vegada que es fa servir.</li>
 <li>És útil per guardar dades en memòria mentre l’app està en execució.</li>
 </ul>
-<p>Objecte que conté la llista: DataProvider</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: DataProvider.kt</span>
+<p>Objecte que conté la llista: DataSource</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Fitxer: DataSource.kt</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Objecte singleton que proporciona dades en memòria</span>
 <span class="cm"> * per ser utilitzades al RecyclerView.</span>
 <span class="cm"> */</span>
-<span class="kd">object</span><span class="w"> </span><span class="nc">DataProvider</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">object</span><span class="w"> </span><span class="nc">DataSource</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// Llista de dades en memòria (només de lectura)</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
@@ -2505,18 +2520,18 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 <span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 4&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <strong>Què fà aquest codi?</strong></p>
-<p><div class="highlight"><pre><span></span><code><span class="kd">object</span><span class="w"> </span><span class="nc">DataProvider</span>
-</code></pre></div>
-- Declara un objecte únic anomenat DataProvider.
-- No s’instancia amb DataProvider(), sinó que s’utilitza directament pel nom.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
-</code></pre></div>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">object</span><span class="w"> </span><span class="nc">DataSource</span>
+</code></pre></div></td></tr></table></div>
+- Declara un objecte únic anomenat DataSource.
+- No s’instancia amb DataSource(), sinó que s’utilitza directament pel nom.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
+</code></pre></div></td></tr></table></div>
 - És una propietat pública que conté la llista en memòria.
 - El tipus és List<MyItem>, per tant és immutable (no es poden afegir/eliminar elements).
 - Es pot canviar a MutableList<MyItem> si es vol modificar la llista durant l’execució.</p>
-<p>L’objecte DataProvider actua com un “mini repositori de dades” senzill, sense base de dades ni API.</p>
+<p>L’objecte DataSource actua com un “mini repositori de dades” senzill, sense base de dades ni API.</p>
 <p>(Per a veure com s'ha de crear un repositori de dades, veure l'apartat repositori a Arquitectura)</p>
 <h2 id="3-layout-de-cada-element-item_rowxml">3. Layout de cada element (item_row.xml)</h2>
 <p>Aquest layout defineix com es veu una fila de la llista.</p>
@@ -2581,7 +2596,37 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 </ul>
 <p>Sense Adapter i ViewHolder, el RecyclerView no sap ni quantes files mostrar, ni com dibuixar-les.</p>
 <h3 id="exemple-codi-holder">Exemple codi Holder</h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// MyViewHolder.kt</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MyViewHolder.kt</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.view.View</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
@@ -2612,7 +2657,7 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="explicacio">Explicació:</h4>
 <p><strong>Classe</strong></p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MyViewHolder</span><span class="p">(...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">itemView</span><span class="p">)</span>
@@ -2626,7 +2671,42 @@ Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una fun
  - Configurar listeners específics d’aquesta fila (clic, long‑click…).</p>
 <p>Això treu responsabilitat de “pintar dades” de l’Adapter i la concentra al ViewHolder.</p>
 <h3 id="exemple-codi-adapter">Exemple codi Adapter</h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// MyAdapter.kt</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MyAdapter.kt</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.view.LayoutInflater</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.view.ViewGroup</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
@@ -2662,7 +2742,7 @@ Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una fun
 <span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">bind</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="explicacio_1">Explicació:</h4>
 <p>L’Adapter ja no sap com s’actualitzen exactament les vistes; delega aquesta feina a holder.bind(item).</p>
 <p>Responsabilitats clares de cada mètode (tal com recomana la documentació oficial):​</p>
@@ -2674,7 +2754,48 @@ Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una fun
 <h2 id="6-activity">6. Activity</h2>
 <p>Exemple de codi en l'activity. 
 Els comentaris expliquen els passos que s'han de seguir.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// MainActivity.kt</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MainActivity.kt</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">android.widget.Toast</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span>
@@ -2696,8 +2817,8 @@ Els comentaris expliquen els passos que s'han de seguir.</p>
 <span class="w">        </span><span class="c1">// 2. Configurar LayoutManager (com es col·loquen les files)</span>
 <span class="w">        </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">layoutManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinearLayoutManager</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
 
-<span class="w">        </span><span class="c1">// 3. Crear llista de dades (des de DataProvider o directament)</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataProvider</span><span class="p">.</span><span class="na">items</span>
+<span class="w">        </span><span class="c1">// 3. Crear llista de dades (des de DataSource o directament)</span>
+<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataSource</span><span class="p">.</span><span class="na">items</span>
 
 <span class="w">        </span><span class="c1">// 4. Crear l&#39;Adapter passant les dades + funció de callback per clics</span>
 <span class="w">        </span><span class="n">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyAdapter</span><span class="p">(</span>
@@ -2716,7 +2837,7 @@ Els comentaris expliquen els passos que s'han de seguir.</p>
 <span class="w">        </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adapter</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>Tot i que s'utilitza una funció (anomenada callback) per passar la lògica de gestió del click en un ítem (recodem que aixó ho gestiona el ViewHolder), no és una pràctica recomenada. Està aquí per simplicitat.</p>
 <p>Veieu "Exemple inversió de dependències amb RecyclerView" a l'apartat Arquitectura</p>
 <h2 id="7-resum">7. Resum</h2>
