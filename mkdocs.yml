@@ -73,7 +73,8 @@ nav:
         - Observer: Android/Arquitectura/observer.md
         - Repositori: Android/Arquitectura/repositori.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
-        - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md        
+        - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
+        - Principis SOLID: Android/Arquitectura/solid.md       
       - Bases de Dades:
         - Room: Android/BasesDeDades/room.md
         - SharedPreferences: Android/BasesDeDades/sharedpreferences.md
@@ -85,7 +86,8 @@ nav:
         - Storage: Android/Firebase/storage.md
         - FireCloud Messaging: Android/Firebase/fcm.md
     - Exemples de codi Android: Exemples/index.md
-    - Arduino: Arduino/index.md
+    - Arduino:
+      - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
     - Referències: referencies.md
     - IoT:
       - Introducció a l'IoT: IoT/introduccio.md
