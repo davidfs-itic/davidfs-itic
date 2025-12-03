@@ -54,6 +54,7 @@ nav:
         - Funcions d'extensió: Android/Kotlin/fextensio.md
         - Coroutines: Android/Kotlin/coroutines.md
         - Flow: Android/Kotlin/flow.md
+        - Anotadors: Android/Kotlin/anotadors.md
       - Interficies: 
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md
