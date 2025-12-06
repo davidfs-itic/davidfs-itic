@@ -91,11 +91,10 @@ Des del fragment, podem accedir al fragmentmanager de la app, amb la funció get
 
 ### Afegir fragment a un fragmentcontainer
 
-Hi ha 2 maneres, afegint el fragment a l'stack, o reemplaçant-lo
+Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo
 
-
-Back Stack: Permet tornar enrrere per tota la pila (stack) de fragments afegits.
-Replace: Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituit.
+- **BackStack:** Permet tornar enrrere per tota la pila (stack) de fragments afegits.
+- **Replace:** Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituit.
 
 ![fragmentmanager stack](./Imatges/fragmentstack.png)
 

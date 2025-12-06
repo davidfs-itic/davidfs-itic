@@ -55,7 +55,7 @@ nav:
         - Coroutines: Android/Kotlin/coroutines.md
         - Flow: Android/Kotlin/flow.md
         - Anotadors: Android/Kotlin/anotadors.md
-      - Interficies: 
+      - Interficies:
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md
         - Appbar: Android/Interficies/appbar.md
@@ -66,14 +66,17 @@ nav:
         - RecyclerView: Android/Interficies/recyclerview.md
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
+        - Voice Recognition: Android/Interficies/voicerecognition.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - VieweBinding: Android/Arquitectura/viewbinding.md
         - ViewModel: Android/Arquitectura/viewmodel.md
+        - Application ViewModel: Android/Arquitectura/applicationviewmodel.md
         - LiveData: Android/Arquitectura/livedata.md
         - Observer: Android/Arquitectura/observer.md
         - Repositori: Android/Arquitectura/repositori.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
+        - Patró Factory: Android/Arquitectura/factory.md
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
         - Principis SOLID: Android/Arquitectura/solid.md       
       - Bases de Dades:

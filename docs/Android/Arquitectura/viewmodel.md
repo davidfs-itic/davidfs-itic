@@ -244,23 +244,21 @@ class DetailFragment : Fragment() {
 }
 ```
 
-**Diagrama:**
-```
-MainActivity
-    │
-    ├─ SharedViewModel (única instància)
-    │
-    ├─ ListFragment ──→ activityViewModels() ──→ SharedViewModel
-    │
-    └─ DetailFragment ──→ activityViewModels() ──→ SharedViewModel
-                            (mateixa instància!)
-```
 Quan utilitzar-ho:
 
 - Comunicació entre Fragments
 - Compartir estat dins d'una Activity
 - Navegació amb dades (passar informació entre pantalles)
 - Patró Master-detail
+
+
+### Resum:
+
+Delegat	|On s'utilitza |	Àmbit de Cicle de Vida |	Propòsit principal
+:-------|:-------------|:--------------------------|:----------------
+by viewModels()	| Fragment o ComponentActivity	|Lligat al cicle de vida de la Fragment o Activity actual.|	ViewModel local per a una sola pantalla (Fragment o Activity).
+by activityViewModels()|	Fragment (només)	|Lligat al cicle de vida de l'Activity que conté el Fragment.|Compartir dades i lògica entre múltiples Fragments dins de la mateixa Activity.
+by viewModel()|	ComponentActivity (o Activity en general)	|Lligat al cicle de vida de l'Activity actual.	|ViewModel local per a una sola Activity. (És l'equivalent de by viewModels() utilitzat en una Activity).
 
 ## 3-ViewModelProvider i Factories
 Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:
@@ -323,3 +321,5 @@ class UserActivity : AppCompatActivity() {
     }
 }
 ```
+### 4. Recursos
+https://www.youtube.com/watch?v=orH4K6qBzvE
