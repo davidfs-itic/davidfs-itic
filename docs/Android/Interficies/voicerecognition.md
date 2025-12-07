@@ -5,8 +5,9 @@ Android ja porta el reconeixedor integrat i no cal cap SDK extern.
 Passos:
 
 ### 1. Permís al manifest
+```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
+```
 ### 2. Crear el reconeixedor
 private lateinit var recognizer: SpeechRecognizer
 

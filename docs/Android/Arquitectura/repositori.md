@@ -197,7 +197,6 @@ Dins el DataLayer:
 
 - Single Responsibility: Cada classe té una única responsabilitat
 - Dependency Inversion: Les capes superiors no depenen de les inferiors directament
-- Interface Segregation: Contractes específics per a cada funcionalitat
 - Separation of Concerns: Cada capa té la seva responsabilitat ben definida
 
 

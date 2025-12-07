@@ -4,10 +4,11 @@ Si seguim les indicacions de google i de molts altres desenvolupadors, veurem qu
 
 Vegeu com a referència aquest document: https://developer.android.com/topic/architecture
 
+Cursos (tutorial) de Android: https://developer.android.com/courses/pathways/android-architecture
+
 Elements de l'arquitectura:
 
-- VieweBinding: Android/Arquitectura/viewbinding.md
-- ViewModel: Android/Arquitectura/viewmodel.md
-- LiveData: Android/Arquitectura/livedata.md
-- Observer: Android/Arquitectura/observer.md
-- Repositori: Android/Arquitectura/repositori.md
+- ViewModel: [Android/Arquitectura/viewmodel.md](./viewmodel.md)
+- LiveData: [Android/Arquitectura/livedata.md](./livedata.md)
+- Observer: [Android/Arquitectura/observer.md](./observer.md)
+- Repositori: [Android/Arquitectura/repositori.md](./repositori.md)

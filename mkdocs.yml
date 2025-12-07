@@ -51,6 +51,7 @@ nav:
         - Classes i Objectes: Android/Kotlin/classesobjectes.md
         - Null Safety: Android/Kotlin/nullsafety.md
         - Collections: Android/Kotlin/collections.md
+        - VieweBinding: Android/Arquitectura/viewbinding.md        
         - Funcions d'extensió: Android/Kotlin/fextensio.md
         - Coroutines: Android/Kotlin/coroutines.md
         - Flow: Android/Kotlin/flow.md
@@ -69,12 +70,11 @@ nav:
         - Voice Recognition: Android/Interficies/voicerecognition.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
-        - VieweBinding: Android/Arquitectura/viewbinding.md
         - ViewModel: Android/Arquitectura/viewmodel.md
         - Application ViewModel: Android/Arquitectura/applicationviewmodel.md
         - LiveData: Android/Arquitectura/livedata.md
         - Observer: Android/Arquitectura/observer.md
-        - Repositori: Android/Arquitectura/repositori.md
+        - Dommini (Repositori) i Dades: Android/Arquitectura/repositori.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
         - Patró Factory: Android/Arquitectura/factory.md
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
