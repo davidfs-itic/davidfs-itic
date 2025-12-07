@@ -3,35 +3,25 @@
 ## 1. Situació inicial
 
 
-Partint del codi on està explicat el recyclerview, veurem que té algunes mancances o dificultats.
+Partint del codi relatiu al Recyclerview, veurem que té algunes mancances o dificultats.
 No respecta els principis de clean code, ni té cap arquitectura definida:
 
 
 ### Problemes d'arquitectura
 
 **Absència de separació de capes:** 
- La MainActivity accedeix directament a DataSource.Això crea un acoblament fort i dificulta enormement el testing i el manteniment.
+ La Activity accedeix directament a les dades (directament a la llista en memòria o através d'una API).Això crea un acoblament fort i dificulta enormement el testing i el manteniment.
 
 **DataSource com a singleton estàtic:** 
-Tenir les dades amb una llista és una pràctica molt dolenta. Qualsevol canvi en com s'obtenen les dades (API, base de dades local, etc.) requerirà modificar directament aquest objecte i tots els llocs on s'utilitza.
+Qualsevol canvi en com s'obtenen les dades (API, base de dades local, etc.) requerirà modificar directament la Activity, però també tots els llocs on s'utilitza.
 
-**Lògica de negoci a la UI:** La MainActivity està fent massa coses: configura el RecyclerView, gestiona el clic, i decideix què mostrar (el Toast). No hi ha cap ViewModel ni cap capa intermèdia que gestioni l'estat o la lògica.
+**Lògica de negoci a la UI:** La Activity està fent massa coses: configura el RecyclerView, gestiona el clic, i decideix què mostrar (el Toast o ). No hi ha cap ViewModel ni cap capa intermèdia que gestioni l'estat o la lògica.
 
-### Problemes de Clean Code
-
-**Acoblament fort:** MyAdapter rep la lambda onItemClick i la passa directament a MyViewHolder. Això crea una cadena de dependències rígida. Si necessites canviar com es gestionen els clics, has de tocar múltiples classes.
-
-**Responsabilitat única no complerta:** MyViewHolder no només presenta dades, sinó que també gestiona esdeveniments. La MainActivity ha de 
-
-**Falta de testabilitat:** És impossible testejar aquest codi adequadament. No pots fer unit tests de la lògica de negoci perquè està barrejada amb Android framework (Toast, Context). No pots fer un joc de proves amb DataSource perquè és un objecte singleton.
 
 ## Problemes que pot ocasionar
 - Escalabilitat nul·la: Quan el projecte creixi i necessitis múltiples fonts de dades, càrrega asíncrona, caché, o sincronització, aquest codi serà molt difícil de mantenir.
 - Impossibilitat de testing automàtic: Aquest codi fa els tests pràcticament impossibles.
 - Duplicació de codi futura: Sense una arquitectura clara, cada nova funcionalitat similar acabarà repetint patrons, copiant i enganxant codi.
-- Rigidesa extrema: Qualsevol canvi de requisits (per exemple, fer les dades editables, carregar-les d'una API, afegir paginació) requerirà refactoritzar gran part del codi.
-- Dificultat de col·laboració: En un equip, aquest codi seria un malson perquè no segueix cap estructura reconeguda, fent que altres desenvolupadors no sàpiguen on posar nova funcionalitat.
-- Problemes de configuració i cicle de vida: Tot està lligat al cicle de vida de l'Activity sense cap gestió adequada. Si l'Activity es destrueix i recrea (rotació de pantalla), pots tenir problemes amb referències i estat.
 
 ## 2. Anàlisi codi Incorrecte:(sense separació de capa)
 
@@ -65,7 +55,7 @@ object DataSource {
     )
 }
 ```
-Des de l'activity, es crea la llista d'items. Aixó és incorrecte doncs 
+Des de l'activity, es crea la llista d'items. Aixó és incorrecte doncs no és la tasca de l'activity.
 ```kotlin
         // 3. Crear llista de dades (des de DataSource o directament)
         val items = DataSource.items
@@ -75,11 +65,17 @@ Des de l'activity, es crea la llista d'items. Aixó és incorrecte doncs
 
 ### Objectiu del Clean Clode i arquitectura per capes
 
-Hem de fer independent les dades de la implementació, perque la UI pugui cridar un métode  genèric.
+Hem de fer independent les dades de la implementació, perque la UI pugui cridar un métode  genèric. Per tant, ha de ser independent 
 
-Aquesta classe s'anomena Repositori.
+Aquesta classe s'anomena Repositori, i correspón a la **Capa de domini**
 
-Repository: Coordinador i font de dades. Recupera les dades, pero no directament, sinó a través dels datasources.
+#### D'aquesta manera, tindrem 3 capes:
+
+1. UI (Activities, ViewModels)
+2. Domini (Repositori)
+3. Dades (Datasources amb Interface)
+
+**Repository**: Coordinador i font de dades. Recupera les dades, pero no directament, sinó a través dels datasources.
 
 Per exemple:
 ```kotlin 
@@ -93,12 +89,35 @@ class ItemsRepository(
 }
 ```
 
-D'aquesta manera, passant un datasource qualsevol el repositori pot obtenir el llistat, i no importa com estigui implementat aquest repositori.
+Per què necessites la capa de Domini (amb el Repositori)?
+Per diferents responsabilitats
 
-Però no podem fer un datasource com un objecte (com hem fet abans), perque si ara volem recuperar les dades de una base de dades, Api, o altres, (Implementació) el repositori no funcionaria, si no és que:
+- Repository: S'encarrega de la lògica de negoci relacionada amb les dades:
+    - Gestió de caché
+    - Combinació de múltiples fonts de dades (local + remota)
+    - Decisió de quan usar dades locals vs remotes
+    - Transformació de dades entre capes
+    - Gestió d'errors i fallbacks
+- DataSource: S'encarrega NOMÉS d'obtenir/guardar dades d'una font específica (mock, API, base de dades).
 
-## 3. Implementació correcte (amb separació de capes UI,Domini,DataSource)
-**El datasource no és un objecte o classe, sinó un interface**
+## 3. Implementació correcte (amb separació de capes UI,Domini,Dades)
+
+### Capa Domini
+(la classe repositori que hem vist abans), hi ha diferents maneres d'implementar-la i a més es poden afegir els casos d'ús.
+
+```kotlin 
+class ItemsRepository(
+    private val dataSource: ItemsDataSource
+) {
+    
+    fun getItems(): List<MyItem> {
+         dataSource.getItems()   
+    }
+}
+```
+### Capa Dades
+
+Interface +  Datasources concrets.
 
 ```kotlin
 interface ItemDataSource {

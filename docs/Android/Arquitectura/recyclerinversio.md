@@ -75,5 +75,4 @@ Beneficis pràctics:
 2. L'Adapter es pot reutilitzar en qualsevol Activity/Fragment
 3. No té memory leaks (no captura 'this' directament dins lambda)
 4. Testejable: mockejar ItemClickListener
-5. Arquitectura limpia i professional
 
