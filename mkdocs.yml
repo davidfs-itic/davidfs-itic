@@ -46,25 +46,25 @@ nav:
       - Fragments: Android/fragments.md
       - Llenguatge Kotlin: 
         - Introducció a Kotlin: Android/Kotlin/introduccio.md
-        - Variables i Constats: Android/Kotlin/variables.md
+        - Variables i Constants: Android/Kotlin/variables.md
         - Funcions: Android/Kotlin/funcions.md
         - Classes i Objectes: Android/Kotlin/classesobjectes.md
         - Null Safety: Android/Kotlin/nullsafety.md
-        - Collections: Android/Kotlin/collections.md
-        - VieweBinding: Android/Arquitectura/viewbinding.md        
         - Funcions d'extensió: Android/Kotlin/fextensio.md
+        - LiveData: Android/Kotlin/livedata.md
         - Coroutines: Android/Kotlin/coroutines.md
-        - Flow: Android/Kotlin/flow.md
         - Anotadors: Android/Kotlin/anotadors.md
       - Interficies:
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md
+        - VieweBinding: Android/Interficies/viewbinding.md        
         - Appbar: Android/Interficies/appbar.md
         - Toolbar: Android/Interficies/toolbar.md
         - Bottom Menu: Android/Interficies/bottommenu.md
         - Navigation Drawer: Android/Interficies/drawermenu.md
         - Dialegs: Android/Interficies/dialegs.md
         - RecyclerView: Android/Interficies/recyclerview.md
+        - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
         - Voice Recognition: Android/Interficies/voicerecognition.md
@@ -72,13 +72,15 @@ nav:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md
         - Application ViewModel: Android/Arquitectura/applicationviewmodel.md
-        - LiveData: Android/Arquitectura/livedata.md
         - Observer: Android/Arquitectura/observer.md
         - Dommini (Repositori) i Dades: Android/Arquitectura/repositori.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
         - Patró Factory: Android/Arquitectura/factory.md
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
-        - Principis SOLID: Android/Arquitectura/solid.md       
+        - Principis SOLID: Android/Arquitectura/solid.md
+      - Llibreries:
+        - Retrofit: Android/Llibreries/retrofit.md
+        - Glide: Android/Llibreries/glide.md              
       - Bases de Dades:
         - Room: Android/BasesDeDades/room.md
         - SharedPreferences: Android/BasesDeDades/sharedpreferences.md

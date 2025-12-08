@@ -1,4 +1,4 @@
-Ús de SpeechRecognizer (API nativa, sense TTS)
+## Ús de SpeechRecognizer (API nativa)
 
 Android ja porta el reconeixedor integrat i no cal cap SDK extern.
 
