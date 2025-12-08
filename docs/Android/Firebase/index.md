@@ -1,4 +1,14 @@
-# Les eines de Firebase es poden dividir en 4 blocs principals:
+# Firebase
+
+Continguts:
+
+- Setup de Firebase a Android: [Android/Firebase/fbsetup.md](Android/Firebase/fbsetup.md)
+- Autenticació: (Pendent)
+- Firestore:  (Pendent)
+- Storage:  (Pendent)
+- FireCloud Messaging:  (Pendent)
+
+## Les eines de Firebase es poden dividir en 4 blocs principals:
 
 ## 1. Back-end en temps real (les més importants)
 ### Firestore (Base de dades NoSQL en temps real)

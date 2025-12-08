@@ -45,7 +45,7 @@ nav:
       - Activities: Android/activities.md
       - Fragments: Android/fragments.md
       - Llenguatge Kotlin: 
-        - Introducció a Kotlin: Android/Kotlin/introduccio.md
+        - Introducció a Kotlin: Android/Kotlin/index.md
         - Variables i Constants: Android/Kotlin/variables.md
         - Funcions: Android/Kotlin/funcions.md
         - Classes i Objectes: Android/Kotlin/classesobjectes.md
@@ -55,6 +55,7 @@ nav:
         - Coroutines: Android/Kotlin/coroutines.md
         - Anotadors: Android/Kotlin/anotadors.md
       - Interficies:
+        - Introducció a les Interficies: Android/Interficies/index.md
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md
         - VieweBinding: Android/Interficies/viewbinding.md        
@@ -84,7 +85,7 @@ nav:
       - Bases de Dades:
         - SharedPreferences: Android/BasesDeDades/sharedpreferences.md
       - Firebase:
-        - Introducció a Firebase: Android/Firebase/introduccio.md
+        - Introducció a Firebase: Android/Firebase/index.md
         - Setup de Firebase a Android: Android/Firebase/fbsetup.md
         - Autenticació: Android/Firebase/autenticacio.md
         - Firestore: Android/Firebase/firestore.md

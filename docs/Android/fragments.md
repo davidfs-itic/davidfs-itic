@@ -9,17 +9,17 @@ Exemple pas a pas
 
 ## 1-Introducció als Fragments Què són i per què utilitzar-los?
 
-Definició: Components reutilitzables d'UI que representen una part d'una pantalla dins d'una Activity. Cada fragment té el seu cicle de vida. Han d'existir dins d'una activity o un altre fragment.
+Definició: Components reutilitzables d'UI que representen una part d'una pantalla dins d'una Activity. Cada fragment té el seu cicle de vida. Han d'existir dins d'una activity o d'un altre fragment.
 
 Avantatges:
 
-- Reutilització: El mateix fragment pot usar-se en múltiples activities
+- Reutilització: El mateix fragment pot usar-se en múltiples activities.
 
-- Disseny adaptable: Diferents layouts per mòbils/tablets
+- Disseny adaptable: Diferents layouts per mòbils/tablets.
 
-- Modularitat: Divideix la UI en components independents
+- Modularitat: Divideix la UI en components independents.
 
-- Comparació: Els fragments són com "sub-activitats" amb cicle de vida propi
+- Comparació: Els fragments són com "sub-activitats" amb cicle de vida propi.
 
 Mostra visual d'una activity amb 2 fragments:
 ![fragment overview](./Imatges/fragmentlayout.png)
@@ -30,7 +30,7 @@ Mostra visual d'una activity amb 2 fragments:
 
 Els fragments tenen layouts igual que les activities, en xml.
 
-També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau
+També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau:
 ```kolin
 class NewFragment : Fragment() {
 
@@ -53,23 +53,23 @@ class NewFragment : Fragment() {
 
 ### Mètodes essencials:
 
-- onCreateView(): Infla el layout i retorna la View
+- onCreateView(): Infla el layout i retorna la View.
 
-- onViewCreated(): Configura les vistes un cop creades
+- onViewCreated(): Configura les vistes un cop creades.
 
 
 ### Cicle de vida del Fragment
 
 ![Cicle de vida del Fragment](./Imatges/fragmentlc.png)
 
-Punt important: onDestroyView() es crida abans que onDestroy(), alliberant la vista
+Punt important: onDestroyView() es crida abans que onDestroy(), alliberant la vista.
 
 Referència: Cicle de vida dels Fragments: https://developer.android.com/guide/fragments/lifecycle
 
 ## 3-Implementació Bàsica
 ### Afegir fragments a una Activity
 
-Mètode estàtic: Via XML amb etiqueta (per fragments fixos)
+Mètode estàtic: Via XML amb etiqueta (per fragments fixos).
 ```xml
 <androidx.fragment.app.FragmentContainerView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -77,21 +77,21 @@ Mètode estàtic: Via XML amb etiqueta (per fragments fixos)
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 ```
-Mètode dinàmic: Via FragmentManager i FragmentTransaction (més flexible)
+Mètode dinàmic: Via FragmentManager i FragmentTransaction (més flexible).
 
 ### FragmentManager i FragmentTransaction
  Referències: https://developer.android.com/guide/fragments/fragmentmanager
 
 El fragmentmanager és la classe responsable d'afegir, eliminar i la resta d'accions sobre un fragment.
-Al fragmentmanager hi accedim des de l'activity a través de la funció supportFragmentManager
+Al fragmentmanager hi accedim des de l'activity a través de la funció supportFragmentManager.
 
-Des del fragment, podem accedir al fragmentmanager de la app, amb la funció getParentFragmentManager()
+Des del fragment, podem accedir al fragmentmanager de la app, amb la funció getParentFragmentManager().
 
 ![fragmentmanager relacions](./Imatges/fragmentmanager.png)
 
 ### Afegir fragment a un fragmentcontainer
 
-Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo
+Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo.
 
 - **BackStack:** Permet tornar enrrere per tota la pila (stack) de fragments afegits.
 - **Replace:** Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituit.
@@ -118,7 +118,7 @@ Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo
     }
 ```
 
-Amb la versió més moderna (segons la documentació de android)
+Amb la versió més moderna (segons la documentació de android).
 
 Cal afegir les dependiencies:
 ```kotlin
@@ -158,16 +158,47 @@ val activity = activity
 
 ### Patró de Callbacks
 ```kotlin
-// 1. Definir interfície al Fragment
-interface OnButtonClickListener {
-    fun onButtonClicked(data: String)
+class ExempleFragment : Fragment() {
+
+    interface OnDataListener {
+        fun onDataReceived(data: String)
+    }
+
+    private var callback: OnDatatListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnDataListener) {
+            callback = context
+        } else {
+            throw RuntimeException("$context must implement OnDataListener")
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callback = null
+    }
+
+    // Exemple: algú prem un botó al fragment
+    private fun enviarDades() {
+        callback?.onDataReceived("Hola des del fragment!")
+    }
 }
 
-// 2. Activity implementa la interfície
-// 3. Fragment captura la referència a onAttach()
-```
-Vantatge: Desacobla el fragment de l'activity específica
+class MainActivity : AppCompatActivity(), ExempleFragment.OnDataListener {
 
+    override fun onDataReceived(data: String) {
+        // Fer alguna cosa amb les dades rebudes
+        Log.d("MainActivity", data)
+    }
+}
+```
+Avantatge: Desacobla el fragment de l'activity específica.
+
+### Amb shared Viewmodels
+
+Vegeu documentació a [Shared Viewmodels](./Arquitectura/viewmodel.md)
 
 ## 5-Animació de les transicions entre fragments
 

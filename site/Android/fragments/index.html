@@ -16,7 +16,7 @@
         <link rel="prev" href="../activities/">
       
       
-        <link rel="next" href="../Kotlin/introduccio/">
+        <link rel="next" href="../Kotlin/">
       
       
         
@@ -706,6 +706,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amb-shared-viewmodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amb shared Viewmodels
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -807,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Kotlin/introduccio/" class="md-nav__link">
+      <a href="../Kotlin/" class="md-nav__link">
         
   
   
@@ -1963,34 +1974,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BasesDeDades/room.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Room
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3490,6 +3473,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amb-shared-viewmodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amb shared Viewmodels
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3548,20 +3542,20 @@
 <p>Exemple pas a pas
 - https://cursokotlin.com/capitulo-22-fragments-en-kotlin/</p>
 <h2 id="1-introduccio-als-fragments-que-son-i-per-que-utilitzar-los">1-Introducció als Fragments Què són i per què utilitzar-los?</h2>
-<p>Definició: Components reutilitzables d'UI que representen una part d'una pantalla dins d'una Activity. Cada fragment té el seu cicle de vida. Han d'existir dins d'una activity o un altre fragment.</p>
+<p>Definició: Components reutilitzables d'UI que representen una part d'una pantalla dins d'una Activity. Cada fragment té el seu cicle de vida. Han d'existir dins d'una activity o d'un altre fragment.</p>
 <p>Avantatges:</p>
 <ul>
 <li>
-<p>Reutilització: El mateix fragment pot usar-se en múltiples activities</p>
+<p>Reutilització: El mateix fragment pot usar-se en múltiples activities.</p>
 </li>
 <li>
-<p>Disseny adaptable: Diferents layouts per mòbils/tablets</p>
+<p>Disseny adaptable: Diferents layouts per mòbils/tablets.</p>
 </li>
 <li>
-<p>Modularitat: Divideix la UI en components independents</p>
+<p>Modularitat: Divideix la UI en components independents.</p>
 </li>
 <li>
-<p>Comparació: Els fragments són com "sub-activitats" amb cicle de vida propi</p>
+<p>Comparació: Els fragments són com "sub-activitats" amb cicle de vida propi.</p>
 </li>
 </ul>
 <p>Mostra visual d'una activity amb 2 fragments:
@@ -3569,7 +3563,7 @@
 <h2 id="2-anatomia-dun-fragment">2-Anatomia d'un Fragment</h2>
 <h3 id="estructura-basica">Estructura bàsica</h3>
 <p>Els fragments tenen layouts igual que les activities, en xml.</p>
-<p>També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau
+<p>També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau:
 <div class="highlight"><pre><span></span><code>class NewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -3591,34 +3585,34 @@
 <h3 id="metodes-essencials">Mètodes essencials:</h3>
 <ul>
 <li>
-<p>onCreateView(): Infla el layout i retorna la View</p>
+<p>onCreateView(): Infla el layout i retorna la View.</p>
 </li>
 <li>
-<p>onViewCreated(): Configura les vistes un cop creades</p>
+<p>onViewCreated(): Configura les vistes un cop creades.</p>
 </li>
 </ul>
 <h3 id="cicle-de-vida-del-fragment">Cicle de vida del Fragment</h3>
 <p><img alt="Cicle de vida del Fragment" src="../Imatges/fragmentlc.png" /></p>
-<p>Punt important: onDestroyView() es crida abans que onDestroy(), alliberant la vista</p>
+<p>Punt important: onDestroyView() es crida abans que onDestroy(), alliberant la vista.</p>
 <p>Referència: Cicle de vida dels Fragments: https://developer.android.com/guide/fragments/lifecycle</p>
 <h2 id="3-implementacio-basica">3-Implementació Bàsica</h2>
 <h3 id="afegir-fragments-a-una-activity">Afegir fragments a una Activity</h3>
-<p>Mètode estàtic: Via XML amb etiqueta (per fragments fixos)
+<p>Mètode estàtic: Via XML amb etiqueta (per fragments fixos).
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
 <span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 <span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/fragmentContainerView&quot;</span>
 <span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
 <span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
-Mètode dinàmic: Via FragmentManager i FragmentTransaction (més flexible)</p>
+Mètode dinàmic: Via FragmentManager i FragmentTransaction (més flexible).</p>
 <h3 id="fragmentmanager-i-fragmenttransaction">FragmentManager i FragmentTransaction</h3>
 <p>Referències: https://developer.android.com/guide/fragments/fragmentmanager</p>
 <p>El fragmentmanager és la classe responsable d'afegir, eliminar i la resta d'accions sobre un fragment.
-Al fragmentmanager hi accedim des de l'activity a través de la funció supportFragmentManager</p>
-<p>Des del fragment, podem accedir al fragmentmanager de la app, amb la funció getParentFragmentManager()</p>
+Al fragmentmanager hi accedim des de l'activity a través de la funció supportFragmentManager.</p>
+<p>Des del fragment, podem accedir al fragmentmanager de la app, amb la funció getParentFragmentManager().</p>
 <p><img alt="fragmentmanager relacions" src="../Imatges/fragmentmanager.png" /></p>
 <h3 id="afegir-fragment-a-un-fragmentcontainer">Afegir fragment a un fragmentcontainer</h3>
-<p>Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo</p>
+<p>Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo.</p>
 <ul>
 <li><strong>BackStack:</strong> Permet tornar enrrere per tota la pila (stack) de fragments afegits.</li>
 <li><strong>Replace:</strong> Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituit.</li>
@@ -3641,7 +3635,7 @@ Al fragmentmanager hi accedim des de l'activity a través de la funció supportF
 <span class="w">        </span><span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">commit</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>Amb la versió més moderna (segons la documentació de android)</p>
+<p>Amb la versió més moderna (segons la documentació de android).</p>
 <p>Cal afegir les dependiencies:
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s">&quot;androidx.fragment:fragment-ktx:1.6.2&quot;</span>
@@ -3670,15 +3664,45 @@ Al fragmentmanager hi accedim des de l'activity a través de la funció supportF
 <span class="p">(</span><span class="n">requireActivity</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">).</span><span class="na">supportActionBar</span><span class="o">?.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Nou Títol&quot;</span>
 </code></pre></div>
 <h3 id="patro-de-callbacks">Patró de Callbacks</h3>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// 1. Definir interfície al Fragment</span>
-<span class="kd">interface</span><span class="w"> </span><span class="nc">OnButtonClickListener</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onButtonClicked</span><span class="p">(</span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ExempleFragment</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Fragment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">interface</span><span class="w"> </span><span class="nc">OnDataListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="p">(</span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">callback</span><span class="p">:</span><span class="w"> </span><span class="n">OnDatatListener? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onAttach</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onAttach</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">OnDataListener</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="n">context</span><span class="s"> must implement OnDataListener&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDetach</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onDetach</span><span class="p">()</span>
+<span class="w">        </span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Exemple: algú prem un botó al fragment</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">enviarDades</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">callback</span><span class="o">?.</span><span class="na">onDataReceived</span><span class="p">(</span><span class="s">&quot;Hola des del fragment!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// 2. Activity implementa la interfície</span>
-<span class="c1">// 3. Fragment captura la referència a onAttach()</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">(),</span><span class="w"> </span><span class="n">ExempleFragment</span><span class="p">.</span><span class="na">OnDataListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="p">(</span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Fer alguna cosa amb les dades rebudes</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MainActivity&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-Vantatge: Desacobla el fragment de l'activity específica</p>
+Avantatge: Desacobla el fragment de l'activity específica.</p>
+<h3 id="amb-shared-viewmodels">Amb shared Viewmodels</h3>
+<p>Vegeu documentació a <a href="../Arquitectura/viewmodel/">Shared Viewmodels</a></p>
 <h2 id="5-animacio-de-les-transicions-entre-fragments">5-Animació de les transicions entre fragments</h2>
 <p>Podem definir les animacions a la carpeta res/anim (tipus anim)</p>
 <p>Arxius:</p>

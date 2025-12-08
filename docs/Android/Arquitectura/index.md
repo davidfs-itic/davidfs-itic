@@ -9,5 +9,10 @@ Cursos (tutorial) de Android: https://developer.android.com/courses/pathways/and
 Elements de l'arquitectura:
 
 - ViewModel: [Android/Arquitectura/viewmodel.md](./viewmodel.md)
+- Application ViewModel: [Android/Arquitectura/applicationviewmodel.md](Android/Arquitectura/applicationviewmodel.md)
 - Observer: [Android/Arquitectura/observer.md](./observer.md)
-- Repositori: [Android/Arquitectura/repositori.md](./repositori.md)
+- Dommini (Repositori) i Dades: [Android/Arquitectura/repositori.md](Android/Arquitectura//repositori.md)
+- Inversió de Dependències: [Android/Arquitectura/inversiodependencies.md](Android/Arquitectura/inversiodependencies.md)
+- Patró Factory: [Android/Arquitectura/factory.md](Android/Arquitectura/factory.md)
+- Exemple DIP recycler: [Android/Arquitectura/recyclerinversio.md](Android/Arquitectura/recyclerinversio.md) 
+- Principis SOLID: [Android/Arquitectura/solid.md](Android/Arquitectura/solid.md)
