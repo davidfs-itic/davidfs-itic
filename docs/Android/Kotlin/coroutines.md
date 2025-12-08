@@ -23,9 +23,9 @@ Quan programem, especialment en aplicacions Android, sovint tenim tasques com:
 - Llegir fitxers
 - Fer càlculs costosos
 
-Si aquestes tasques s'executessin al fil principal → bloquejaria la interfície gràfica.
+Si aquestes tasques s'executessin al fil principal, bloquejaria la interfície gràfica.
 
-Les corrutines resolen aquest problema executant-se en un fil secundari, i tornant el resultat quan està llest.
+Les corrutines resolen aquest problema executant-se en un fil secundari i tornant el resultat quan està llest.
 
 
 ## Elements principals de les corrutines

@@ -82,7 +82,6 @@ nav:
         - Retrofit: Android/Llibreries/retrofit.md
         - Glide: Android/Llibreries/glide.md              
       - Bases de Dades:
-        - Room: Android/BasesDeDades/room.md
         - SharedPreferences: Android/BasesDeDades/sharedpreferences.md
       - Firebase:
         - Introducció a Firebase: Android/Firebase/introduccio.md
