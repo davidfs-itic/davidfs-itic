@@ -2,14 +2,14 @@
 
 Continguts:
 
-- Variables i Constants: [Android/Kotlin/variables.md](Android/Kotlin/variables.md)
-- Funcions: [Android/Kotlin/funcions.md](Android/Kotlin/funcions.md)
-- Classes i Objectes: [Android/Kotlin/classesobjectes.md](Android/Kotlin/classesobjectes.md)
-- Null Safety: [Android/Kotlin/nullsafety.md](Android/Kotlin/nullsafety.md)
-- Funcions d'extensió: [Android/Kotlin/fextensio.md](Android/Kotlin/fextensio.md)
-- LiveData: [Android/Kotlin/livedata.md](Android/Kotlin/livedata.md)
-- Coroutines: [Android/Kotlin/coroutines.md](Android/Kotlin/coroutines.md)
-- Anotadors: [Android/Kotlin/anotadors.md](Android/Kotlin/anotadors.md)
+- [Variables i Constants: ](./variables.md)
+- [Funcions: ](./funcions.md)
+- [Classes i Objectes:](./classesobjectes.md)
+- [Null Safety: ](./nullsafety.md)
+- [Funcions d'extensió:](./fextensio.md)
+- [LiveData: ](./livedata.md)
+- [Coroutines:](./coroutines.md)
+- [Anotadors:](./anotadors.md)
 
 ## Introducció
 

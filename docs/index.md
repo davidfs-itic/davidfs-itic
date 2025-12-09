@@ -6,8 +6,7 @@
 - [Android](Android/index.md)
 - [Exemples de codi Android](Exemples/index.md)
 
-- [Arduino](Arduino/index.md)
-- [Referències](referencies.md)    
+- [Arduino](Arduino/index.md)   
 
 - [IoT](IoT/index.md)
 ## 

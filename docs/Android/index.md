@@ -3,8 +3,8 @@
 
 ## Contingut
 
-- [Llenguatge Kotlin](Android/Kotlin/index.md)
-- [Interficies](Android/Interficies/index.md)
-- [Arquitectura](Android/Arquitectura/index.md)
-- [Llibreries](Android/Llibreries/index.md)
-- [Firebase](Android/Firebase/index.md)
+- [Llenguatge Kotlin](./Kotlin/index.md)
+- [Interficies](./Interficies/index.md)
+- [Arquitectura](./Arquitectura/index.md)
+- [Llibreries](./Llibreries/index.md)
+- [Firebase](./Firebase/index.md)
