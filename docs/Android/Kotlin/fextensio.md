@@ -13,7 +13,8 @@ Imagina que sovint necessites una funció per capitalitzar la primera lletra d'u
 ### Codi de la Funció d'Extensió
 Definim una funció d'extensió anomenada capitalizeFirstLetter per al tipus String:
 
-```Kotlin
+
+```kotlin
 // Extensions.kt
 fun String.capitalizeFirstLetter(): String {
     // Si la cadena està buida o és null (tot i que String no pot ser null), 
@@ -25,6 +26,7 @@ fun String.capitalizeFirstLetter(): String {
     return this.substring(0, 1).uppercase() + this.substring(1)
 }
 ```
+
 
 ### Com S'Utiliza
 Ara, pots cridar aquesta funció directament sobre qualsevol instància de String, com si fos un mètode propi de la classe:
