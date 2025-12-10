@@ -207,18 +207,29 @@ Searchview sense focus     |  Searchview amb focus
 :-------------------------:|:-------------------------:
 ![Image 1](./Imatges/actionview1.png) | ![Image 2](./Imatges/actionview2.png)
 
+
+## Resum de les funcion:
+
+- onCreateOptionsMenu(): Inflar el menú
+- onOptionsItemSelected(): Gestionar clics
+- onPrepareOptionsMenu(): Actualitzar dinàmicament
+- invalidateOptionsMenu(): Forçar recreació del menú
+
+Utilitza AppBarLayout per a comportaments avançats (amagar/mostrar en scroll)
+(veure a continuació)
+
 ## 6. Estil i Comportament Avançat (Material Design)
-## Estil
+### Estil
 L'estil de l'AppBar (colors, fons, elevació) es controla principalment a través del Tema de l'aplicació. Les propietats clau que afecten l'AppBar són:
 
 - colorPrimary: El color de fons principal de la barra.
 
 - colorPrimaryVariant: S'utilitza sovint per a la Barra d'Estat (Status Bar).
 
-## Comportament Avançat amb CoordinatorLayout
+### Comportament Avançat amb CoordinatorLayout
 Per a les aplicacions amb un disseny més sofisticat, la Toolbar s'integra amb un CoordinatorLayout i un AppBarLayout per crear efectes de desplaçament dinàmics.
 
-### **Exemple d'Efecte de Desplaçament:**
+#### **Exemple d'Efecte de Desplaçament:**
  Si col·loques la Toolbar dins d'un AppBarLayout i el contingut desplaçable (com un RecyclerView) també dins del CoordinatorLayout, pots utilitzar les scroll flags de l'AppBarLayout:
 
 ```XML

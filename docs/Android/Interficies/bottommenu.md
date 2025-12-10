@@ -72,6 +72,8 @@ Es vincula el component amb el menú. (també es pot fer per programació)
 Exemple: Gestió Manual de la Navegació (Kotlin).
 Cal afegir un listener al component, tal i com fariem amb un botó.
 
+En aquest cas estem utiitzant fragments, però és el mateix amb activities, simplement faríem la gestió de la navegació amb intents i startactivity
+
 ```Kotlin 
 
 // ...
