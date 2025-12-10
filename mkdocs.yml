@@ -58,12 +58,13 @@ nav:
         - Anotadors: Android/Kotlin/anotadors.md
       - Interficies:
         - Introducció a les Interficies: Android/Interficies/index.md
+        - Layout en Activities: Android/Interficies/layoutactivities.md
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md
         - VieweBinding: Android/Interficies/viewbinding.md        
+        - Bottom Menu: Android/Interficies/bottommenu.md
         - Appbar: Android/Interficies/appbar.md
         - Toolbar: Android/Interficies/toolbar.md
-        - Bottom Menu: Android/Interficies/bottommenu.md
         - Navigation Drawer: Android/Interficies/drawermenu.md
         - Dialegs: Android/Interficies/dialegs.md
         - RecyclerView: Android/Interficies/recyclerview.md

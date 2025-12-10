@@ -1,5 +1,11 @@
 # Apunts sobre els diferents móduls
 
+Fets amb Markdown i mkdocs.
+Referències:
+- https://squidfunk.github.io/mkdocs-material/reference/
+
+
+
 # Mòdul 07 DAM - Desenvolupament d'interfícies
 
 ## Teoria Accesibilitat i usuabilitat

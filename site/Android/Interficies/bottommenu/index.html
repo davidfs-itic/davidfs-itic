@@ -1107,6 +1107,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Menú de Navegació Inferior (BottomNavigationView)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-de-menu-de-la-navegacio-inferior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML de Menú de la Navegació Inferior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2107,6 +2124,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Menú de Navegació Inferior (BottomNavigationView)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-de-menu-de-la-navegacio-inferior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML de Menú de la Navegació Inferior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2129,11 +2163,14 @@
   <h1>Bottom Menu</h1>
 
 <h2 id="menu-de-navegacio-inferior-bottomnavigationview">Menú de Navegació Inferior (BottomNavigationView)<a class="headerlink" href="#menu-de-navegacio-inferior-bottomnavigationview" title="Permanent link">&para;</a></h2>
-<p>El BottomNavigationView gestiona la navegació de nivell superior entre un nombre reduït de vistes principals. Explicació sense NavController.</p>
-<p>XML de Menú de la Navegació Inferior</p>
-<p>Aquest fitxer defineix els ítems, però la seva funció principal és la navegació entre fragments, no les accions.</p>
-<p>Exemple: Recurs de Menú (res/menu/bottom_nav_menu.xml)</p>
-<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
+<p>El BottomNavigationView gestiona la navegació de nivell superior entre un nombre reduït de vistes principals.</p>
+<p>La seva funció principal és la navegació entre fragments o activities.</p>
+<h3 id="xml-de-menu-de-la-navegacio-inferior">XML de Menú de la Navegació Inferior<a class="headerlink" href="#xml-de-menu-de-la-navegacio-inferior" title="Permanent link">&para;</a></h3>
+<p>Per definir un menú, cal afegir-lo a la carpeta menú, en l'apartat recursos.
+(si no existeix, cal crear-lo fent un nou recurs de tipus menú)</p>
+<p><img alt="Creació del recurs menú" src="../Imatges/crearmenu.png" /></p>
+<p>Exemple: Recurs de Menú (res/menu/bottom_nav_menu.xml)
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;item</span>
 <span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/home_fragment&quot;</span>
 <span class="w">        </span><span class="na">android:icon=</span><span class="s">&quot;@drawable/ic_home&quot;</span>
@@ -2148,7 +2185,7 @@
 <span class="w">        </span><span class="na">android:title=</span><span class="s">&quot;Avisos&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/menu&gt;</span>
 </code></pre></div>
-Exemple: Layout de l'activity
+Exemple: Layout de l'activity (fixeu-vos en la linia ressaltada)
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 <span class="w">    </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
@@ -2173,8 +2210,8 @@ Exemple: Layout de l'activity
 <span class="w">        </span><span class="na">android:background=</span><span class="s">&quot;?android:attr/windowBackground&quot;</span>
 <span class="w">        </span><span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&quot;parent&quot;</span>
 <span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span>
-<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
-<span class="w">        </span><span class="na">app:menu=</span><span class="s">&quot;@menu/bottom_nav_menu&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>
+<span class="hll"><span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span>
+</span><span class="w">        </span><span class="na">app:menu=</span><span class="s">&quot;@menu/bottom_nav_menu&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
 </code></pre></div></p>
 <p>Exemple: Gestió Manual de la Navegació (Kotlin)</p>

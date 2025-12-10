@@ -1,14 +1,26 @@
 ## Menú de Navegació Inferior (BottomNavigationView)
-El BottomNavigationView gestiona la navegació de nivell superior entre un nombre reduït de vistes principals. Explicació sense NavController.
 
-XML de Menú de la Navegació Inferior
+El BottomNavigationView gestiona la navegació de nivell superior entre un nombre reduït de vistes principals.
 
-Aquest fitxer defineix els ítems, però la seva funció principal és la navegació entre fragments, no les accions.
+La seva funció principal és la navegació entre fragments o activities.
+
+Vegeu la referència en Material 3 aquí:
+
+https://m3.material.io/components/navigation-bar/overview
+
+I aneu a l'apartat Implementation: [MDC-Android (pàgina de Github)](https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md)
+
+
+### XML de Menú de la Navegació Inferior
+
+Per definir un menú, cal afegir-lo a la carpeta menú, en l'apartat recursos.
+(si no existeix, cal crear-lo fent un nou recurs de tipus menú)
+
+![Creació del recurs menú](./Imatges/crearmenu.png)
+
 
 Exemple: Recurs de Menú (res/menu/bottom_nav_menu.xml)
-
 ```XML
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_fragment"
@@ -24,8 +36,9 @@ Exemple: Recurs de Menú (res/menu/bottom_nav_menu.xml)
         android:title="Avisos" />
 </menu>
 ```
-Exemple: Layout de l'activity
-```XML
+Exemple: Layout de l'activity (fixeu-vos en la linia ressaltada)
+Es vincula el component amb el menú. (també es pot fer per programació)
+```XML hl_lines="26"
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -56,7 +69,8 @@ Exemple: Layout de l'activity
 ```
 
 
-Exemple: Gestió Manual de la Navegació (Kotlin)
+Exemple: Gestió Manual de la Navegació (Kotlin).
+Cal afegir un listener al component, tal i com fariem amb un botó.
 
 ```Kotlin 
 
@@ -81,3 +95,4 @@ bottomNav.setOnItemSelectedListener { item ->
 }
 // ...
 ```
+
