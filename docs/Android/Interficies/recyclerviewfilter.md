@@ -1,4 +1,4 @@
-## Com aplicar filtres a un RecyclerVew
+## Com aplicar filtres de categoria a un RecyclerVew
 
 ## 1. Cal fer una funció per actualitzar el Recyclerview
 
@@ -58,16 +58,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.menu_cerca, menu)
         
-        // 3. (OPCIONAL) **Configuració del SearchView:**
-        // Aquí és on continuaries per obtenir les referències del SearchView
-        // i configurar els seus listeners.
-        
-        // Exemple d'obtenció del SearchView:
-        // val searchItem: MenuItem? = menu?.findItem(R.id.action_cerca)
-        // val searchView = searchItem?.actionView as? SearchView
-        // Incialitzar el searchView amb les opcions i listeners.
-
-        return true // Retorna 'true' per indicar que el menú s'ha mostrat
+       return true // Retorna 'true' per indicar que el menú s'ha mostrat
     }
 ```
 

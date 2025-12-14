@@ -69,6 +69,7 @@ nav:
         - Dialegs: Android/Interficies/dialegs.md
         - RecyclerView: Android/Interficies/recyclerview.md
         - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
+        - RecyclerView amb searchview: Android/Interficies/recyclerviewsearchview.m
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
         - Voice Recognition: Android/Interficies/voicerecognition.md
