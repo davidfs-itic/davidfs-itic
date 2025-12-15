@@ -1,5 +1,5 @@
 # Layouts 
-Per fer !
+Per Fer!
 
 Documentació oficial:
 https://developer.android.com/develop/ui/views/layout/declaring-layout

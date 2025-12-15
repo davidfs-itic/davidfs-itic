@@ -9,7 +9,7 @@ Afegir la Dependència: Afegir la biblioteca androidx.core:core-splashscreen al 
 ```kotlin
 dependencies {
     ...
-    implementation 'androidx.core:core-splashscreen' 
+    implementation 'androidx.core:core-splashscreen:1.2.0' 
     ...
 ```
 

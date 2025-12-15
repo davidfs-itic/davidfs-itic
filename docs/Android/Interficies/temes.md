@@ -1,6 +1,6 @@
 # Temes
 
-Per Fer !
+Per Fer!
 
 Documentació 
 https://developer.android.com/develop/ui/views/theming/themes

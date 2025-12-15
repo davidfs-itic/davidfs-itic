@@ -1,5 +1,5 @@
 # Dialogs i dialogfragment
-
+Per Fer!
 
 Utilitzant dialogfragment i una subclasse d'aquest:
 Oficial: https://developer.android.com/guide/fragments/dialogs
