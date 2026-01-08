@@ -15,7 +15,7 @@ El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestio
 Per què existeix:
 
 - Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
--Testabilitat: Pots testejar la lògica sense necessitat de components d'Android
+- Testabilitat: Pots testejar la lògica sense necessitat de components d'Android
 - Reutilització: Diversos Fragments poden compartir el mateix ViewModel
 - Persistència: Les dades sobreviuen a canvis de configuració
 
