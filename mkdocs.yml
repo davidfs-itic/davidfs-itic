@@ -86,16 +86,14 @@ nav:
       - Llibreries:
         - Introducció a les Llibreries: Android/Llibreries/index.md
         - Retrofit: Android/Llibreries/retrofit.md
-        # - Glide: Android/Llibreries/glide.md              
-      # - Bases de Dades:
-      #  - SharedPreferences: Android/BasesDeDades/sharedpreferences.md
-      - Firebase:
-        - Introducció a Firebase: Android/Firebase/index.md
-        - Setup de Firebase a Android: Android/Firebase/fbsetup.md
-        # - Autenticació: Android/Firebase/autenticacio.md
-        # - Firestore: Android/Firebase/firestore.md
-        # - Storage: Android/Firebase/storage.md
-        # - FireCloud Messaging: Android/Firebase/fcm.md
+        - MPAndroidChart: Android/Llibreries/mpandroidchart.md
+        - Firebase:
+          - Introducció a Firebase: Android/Firebase/index.md
+          - Setup de Firebase a Android: Android/Firebase/fbsetup.md
+          - Storage: Android/Firebase/storage.md
+          # - Autenticació: Android/Firebase/autenticacio.md
+          # - Firestore: Android/Firebase/firestore.md
+          # - FireCloud Messaging: Android/Firebase/fcm.md
     - Exemples de codi Android: Exemples/index.md
     - Unity:
       - Reconeixement de Veu a Unity: Unity/recveu.md

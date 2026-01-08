@@ -3,151 +3,142 @@
 Continguts:
 
 - Setup de Firebase a Android: [Android/Firebase/fbsetup.md](./fbsetup.md)
-- Autenticació: (Pendent)
 - Firestore:  (Pendent)
+- Autenticació: (Pendent)
 - Storage:  (Pendent)
 - FireCloud Messaging:  (Pendent)
 
 ## Les eines de Firebase es poden dividir en 4 blocs principals:
 
-## 1. Back-end en temps real (les més importants)
-### Firestore (Base de dades NoSQL en temps real)
+## 1. Back-end Database
+### 1.1. Firestore (Base de dades NoSQL)
 
-La més potent i fàcil per a apps mòbils.
-
-Emmagatzema documents i col·leccions (JSON)
-
-Actualitza automàticament la UI quan hi ha canvis
-
-Permet consultes (filters, orders)
-
-Funciona offline
-
-Permet permisos basats en usuari (rules)
+- Base de Dades NoSQL Documental
+    - Estructura flexible: Documents → Col·leccions → Subcol·leccions
+    - Sense esquema fix: Pots afegir camps dinàmicament
+    - Millor escalabilitat que bases de dades SQL per a certs casos d'ús
+- Sincronització en Temps Real
+    - Listeners automàtics: Rebes canvis immediatament
+    - Multiplataforma: Tots els clients reben les dades actualitzades
+    - Offline-first: Funciona sense connexió i sincronitza després
+- Seguretat Integrada
+    - Regles de seguretat: Control d'accés a nivell de document
+    - Validació de dades: A les mateixes regles
+    - Autenticació integrada: Amb Firebase Auth
+- Limitacions clau:
+    - Sense JOINs: Has de desnormalitzar dades
+    - Sense consultes entre col·leccions: Tot en una consulta ha d'estar a la mateixa col·lecció
+    - Restriccions en filtres: No pots filtrar per dos camps diferents sense índex compost
 
 #### Projectes típics:
 
-Xat en temps real
+App de Tasques (Todoist-like)
+App de Fitness (Strava-like)
 
-Notes/fites compartides
+#### En general:
+- Firestore és ideal quan:
+    - Necessites temps real
+    - Tens dades jeràrquiques o estructurades
+    - Vols escalar automàticament
+    - El teu model de dades no necessita JOINs complexos
+    - Pots desnormalitzar les dades
+- Millor evitar Firestore quan:
+    - Necessites moltes agregacions (SUM, AVG, GROUP BY)
+    - Tens relacions complexes entre entitats
+    - Necessites consistència estricta en tot moment
+    - Tens volums massius d'escriptura contínua
 
-CRUD complet sense backend propi
+### 1.2 Realtime Database
 
-Llistes sincronitzades amb RecyclerView
+- Estructura Única: Arbre JSON Gran
+    - Un gran JSON: Totes les dades en un sol arbre
+    - Anidació profunda: nodes/ins/outre/loques/sigui/profund
+    - Sense esquema: Totalment flexible
 
-### Realtime Database
+- Sincronització Ultra Ràpida
+    - Baixíssima latència: Mil·lisegons per actualitzacions
+    - WebSocket persistent: Connexió contínua
+    - Broadcast automàtic: Tots els clients reben canvis immediatament
 
-La base de dades clàssica de Firebase.
-
-També en temps real
-
-Més senzilla però menys flexible que Firestore
+- Consultes Limitades Simples
+    - Consultes bàsiques: .orderByChild(), .orderByValue(), .orderByKey()
+    - Un sol filtre per consulta: No pots combinar múltiples where()
+    - Sense índexs complexos: Més simple de gestionar
 
 #### Projectes:
-CRUD molt simple, jocs o apps col·laboratives.
+- Aplicacions de Xat en Temps Real
+- Jocs Multijugador i Competició
+- Aplicacions de Presència i Estat (connectat, escrivint...)
+- Control i Monitorització IoT
+
+#### En general:
+
+- Tria Realtime Database quan:
+    - Necessites latència ultra baixa (<100ms)
+    - Tens dades que canvien constantment (cada segon)
+    - El teu model de dades és plà o arbre simple
+    - Necessites broadcast a tots els clients simultàniament
+    - Tens pocs usuaris concurrents (o acceptes el límit)
+
+- Millor evitar RTDB quan:
+    - Necessites consultes complexes amb múltiples filtres
+    - Esperes creixement massiu (>200k usuaris concurrents)
+    - Tens dades amb estructura molt jeràrquica
+    - Necessites transaccions complexes
+    - Vols paginació avançada i ordenació
 
 ## 2. Autenticació i seguretat
-### Firebase Authentication (imprescindible)
+### 2.1, Firebase Authentication (imprescindible)
 
-Manera fàcil i moderna d’autenticar usuaris:
-
-Correu + contrasenya
-
-Google, Facebook, Apple
-
-Anònim
-
-Enviament de correus de verificació
+- Manera fàcil i moderna d’autenticar usuaris:
+- Correu + contrasenya
+- Google, Facebook, Apple
+- Anònim
+- Enviament de correus de verificació
 
 #### Perfeta per:
-Login + registre complet en 15 minuts, sense backend.
+- Login + registre complet en 15 minuts, sense backend.
 
-### Cloud Firestore Security Rules
+### 2.2, Cloud Firestore Security Rules
 
-Sistema per definir permisos:
-
-Qui pot llegir?
-
-Qui pot escriure?
-
-Condicions basades en usuari?
+- Sistema per definir permisos:
+    - Qui pot llegir?
+    - Qui pot escriure?
+    - Condicions basades en usuari?
 
 #### Projectes:
-Apps multi-usuari segures sense servidor.
+
+- Apps multi-usuari segures sense servidor.
 
 ## 3. Comunicació i notificacions
 ### Firebase Cloud Messaging (FCM)
 
-Servei professional per a notificacions push.
-
-Enviar notificacions a dispositius Android
-
-Des de consola o backend
-
-Personalització per topic (“novetats”, “promocions”…)
-
-Rebre notificacions en segon pla
+- Servei professional per a notificacions push.
+- Enviar notificacions a dispositius Android
+- Des de consola o backend
+- Personalització per topic (“novetats”, “promocions”…)
+- Rebre notificacions en segon pla
 
 #### Perfecte per:
-Enviar avisos a moda de “backend real”.
+
+- Enviar avisos a moda de “backend real”.
 
 ## 4. Eines complementàries (molt útils segons el projecte)
 ### Firebase Storage
 
-Emmagatzemament d’arxius:
-
-Imatges
-
-PDFs
-
-Audios
-
-Vídeos
+- Emmagatzemament d’arxius:
+    - Imatges
+    - PDFs
+    - Audios
+    - Vídeos
 
 #### Projectes:
-Perfil d’usuari amb foto, pujar documents.
+
+- Perfil d’usuari amb foto, pujar documents.
 
 ### Firebase Analytics
 
-Analítica integrada:
-
-Pantalles visitades
-
-Temps en cada vista
-
-Esdeveniments personalitzats
-
-
-# RECOMANACIÓ: El “Pac de 4” imprescindible
-
-Per a projectes, els quatre serveis més rellevants i aplicables són:
-
-## 1. Firebase Authentication
-
-- login i registre sense servidor.
-
-## 2. Firebase Firestore
-
-- CRUD en temps real i sincronització automàtica.
-
-## 3. Firebase Cloud Messaging (FCM)
-
-- notificacions push reals.
-
-## 4. Firebase Storage
-
-- pujar i descarregar imatges.
-
-## Amb sols aquests 4, els alumnes poden construir:
-
-- Una xarxa social bàsica
-
-- App de xat
-
-- Gestor de tasques multiusuari
-
-- Aplicació de notícies amb notificacions push
-
-- App amb perfils d’usuari i fotos
-
-- Qualsevol CRUD sincronitzat i multi-dispositiu
+- Analítica integrada:
+    - Pantalles visitades
+    - Temps en cada vista
+    - Esdeveniments personalitzats
