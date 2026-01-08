@@ -90,7 +90,7 @@ nav:
         - Firebase:
           - Introducció a Firebase: Android/Firebase/index.md
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
-          - Storage: Android/Firebase/storage.md
+          - Firestore: Android/Firebase/firestore.md
           # - Autenticació: Android/Firebase/autenticacio.md
           # - Firestore: Android/Firebase/firestore.md
           # - FireCloud Messaging: Android/Firebase/fcm.md
