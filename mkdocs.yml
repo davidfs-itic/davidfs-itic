@@ -100,7 +100,7 @@ nav:
     - Arduino:
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
     # - Referències: referencies.md
-    # - IoT:
+    - IoT: IoT/index.md
     #   - Introducció a l'IoT: IoT/introduccio.md
     #   - Dispositius IoT:
     #     - Sensors IoT: IoT/sensors.md
