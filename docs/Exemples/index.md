@@ -20,7 +20,7 @@ Conté també com utilitzar el ViewModel.
 
 Projecte de prova que crea una api amb springboot i kotlin, i la desplega automàticament en un servidor AWS, mitjançant Github Actions.
 
-!!!  NOTE
+!!! note
     Vegeu l'arxiu que hi ha a .github/workflows per veure les instruccions de desplegament.
 
 [https://github.com/davidfs-itic/firstspringboot](https://github.com/davidfs-itic/firstspringboot)
