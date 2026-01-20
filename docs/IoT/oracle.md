@@ -41,6 +41,19 @@ Si no teniu cap clau generada, o voleu crear-ne una específicament per aquesta 
 ssh-keygen -t rsa -b 4096 -C "oracle-key" -f oracle.key -N ""
 ```
 
+Aixó crearà un arxiu oracke.key, i un arxiu oracle.key.pub. Aquest últim és el que s'ha de copiar i enganxar a la instància
+
+## Connexió a la instància
+
+Preneu nota de quina és la ip pública que se us donarà quan s'engegui la instància
+![ip publica](./imatges/instancepublic.png)
+
+La connexió es realitza per ssh:
+
+```bash
+ssh ubuntu@ippublica -i oracle.key
+```
+
 
 ## Obir ports en Oracle Cloud
 

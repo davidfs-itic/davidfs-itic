@@ -96,6 +96,9 @@ nav:
           # - FireCloud Messaging: Android/Firebase/fcm.md
     - Exemples de codi Android: Exemples/index.md
     - Unity:
+      - Introducció a Unity: Unity/index.md
+      - Scenes i Sprites: Unity/scenesprites.md
+      - Fisiques i moviment: Unity/fisiquesmoviment.md
       - Reconeixement de Veu a Unity: Unity/recveu.md
     - Arduino:
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
