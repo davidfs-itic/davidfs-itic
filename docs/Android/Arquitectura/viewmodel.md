@@ -6,8 +6,10 @@ Documentació oficial: https://developer.android.com/topic/libraries/architectur
 ## Informació Viewmodel i livedata
 View model és una arquitectura que permet separar la lògica de la activity, de l'activity mateixa.
 
-La separació és important, perque s'entén que una activity no hauria de saber (no s'hi hauria d'implementar) quines dades 
+La separació és important, perque s'entén que una activity no hauria de saber quines dades s'utilitzen
+per implementar la lògica, només li cal saber com gestionar la UI. Si volem modificar una variable que no pertany a la UI, ho haurà de fer per la via d'una funció.
 
+El livedata ([veure els apunts en l'apartat de Llenguatge Kotlin](../Kotlin/livedata.md))
 
 ## 1-Conceptes bàsics
 ### Què és i per què existeix (separació de lògica i UI)
@@ -70,12 +72,12 @@ El ViewModel té un cicle de vida **diferent i més llarg** que l'Activity o Fra
 
 **Cicle de vida:**
 ```
-ActivityCreatedDestroyed (rotation) → Re-created → Finished
-    │                    │                │            │
-    ▼                    │                │            ▼
-ViewModel Created        │                │        onCleared()
-    │                    │                │
-    └────────────────────┴────────────────┘
+ActivityCreated -> (rotation) → Re-created → Finished
+    │                                     │         │
+    ▼                                     │         ▼
+ViewModel Created                         │     onCleared()
+    │                                     │
+    └─────────────────────────────────────┘
          (ViewModel es manté viu)
 ```
 Exemple pràctic:
@@ -321,4 +323,4 @@ class UserActivity : AppCompatActivity() {
 }
 ```
 ### 4. Recursos
-https://www.youtube.com/watch?v=orH4K6qBzvE
+[https://www.youtube.com/watch?v=orH4K6qBzvE](https://www.youtube.com/watch?v=orH4K6qBzvE)
