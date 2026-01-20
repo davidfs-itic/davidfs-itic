@@ -23,6 +23,7 @@ També té un métode getRoot() (o en kotlin, directament root) que accedeix al 
 
 Per utilitzar-la, cal:
 
+
 - Crear una variable d'aquest tipus (amb lateinit)
 - Crear la instància de la classe amb el métode static inflate() que crearà l'objecte amb les properties necessàries lligades als objectes que va creant del layout.
 - Utilitzar el setContentView() per a que l'activity es renderitzi a partir dels objectes creats.
