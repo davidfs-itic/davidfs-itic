@@ -103,6 +103,12 @@ nav:
     - Arduino:
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
     # - Referències: referencies.md
+    - Transversal:
+      #- Git i GitHub: Transversal/gitgithub.md
+      - Docker: Transversal/docker.md
+      #- Kubernetes: Transversal/kubernetes.md
+      #- DevOps: Transversal/devops.md
+      #- Metodologies Àgils: Transversal/metodologiesagils.md
     - IoT: 
       - Introducció a l'IoT: IoT/index.md
       - Guia Oracle Cloud: IoT/oracle.md

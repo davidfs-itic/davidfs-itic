@@ -16,12 +16,13 @@ El livedata ([veure els apunts en l'apartat de Llenguatge Kotlin](../Kotlin/live
 El ViewModel és un component d'arquitectura dissenyat per emmagatzemar i gestionar dades relacionades amb la UI de manera conscient del cicle de vida.
 Per què existeix:
 
-- Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment)
-- Testabilitat: Pots testejar la lògica sense necessitat de components d'Android
-- Reutilització: Diversos Fragments poden compartir el mateix ViewModel
-- Persistència: Les dades sobreviuen a canvis de configuració
+- Separació de responsabilitats: La lògica de negoci i les dades estan separades de la UI (Activity/Fragment).
+- Testabilitat: Pots testejar la lògica sense necessitat de components d'Android.
+- Reutilització: Diversos Fragments poden compartir el mateix ViewModel.
+- Persistència: Les dades sobreviuen a canvis de configuració.
 
 #### Sense ViewModel:
+
 ```kotlin
 class MainActivity : AppCompatActivity() {
     private var counter = 0 // Es perd en rotar la pantalla
@@ -37,6 +38,8 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
+
 
 #### Amb ViewModel:
 ```kotlin
