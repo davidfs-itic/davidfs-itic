@@ -114,6 +114,13 @@ nav:
     - IoT: 
       - Introducció a l'IoT: IoT/index.md
       - Guia Oracle Cloud: IoT/oracle.md
+      - IIoT (Internet Industrial de les Coses):
+        - Protocols Industrials: IoT/iiot/protocols.md
+        # - Introducció a l'IIoT: IoT/iiot/index.md
+        # - Protocols Industrials: IoT/iiot/protocols.md
+        # - Plataformes IIoT: IoT/iiot/plataformes.md
+        # - Casos d'Ús IIoT: IoT/iiot/casos.md
+        # - Recursos IIoT: IoT/iiot/recursos.md
     #   - Introducció a l'IoT: IoT/introduccio.md
     #   - Dispositius IoT:
     #     - Sensors IoT: IoT/sensors.md

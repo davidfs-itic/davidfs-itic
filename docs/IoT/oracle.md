@@ -50,14 +50,14 @@ Instància->Networking->Vnic_instance
 
 ![vnic instance](./imatges/addip_vnic.png)
 
-Fer click a la instància i:
+Fer click a la instància vnic i:
 
 IpAdministration->Edit
 
 ![Editip](./imatges/addip_edit.png)
 
-I ara sí, triar una ip Ephi
-![ephemeral ip](./imatges/addip_ephemeral.png)
+I ara sí, triar una ip Ephemereal public ip
+![ephemereal ip](./imatges/addip_ephemeral.png)
 
 Referència: [https://docs.oracle.com/es-ww/iaas/Content/Network/Tasks/assigning-ephemeral-public-existing-private-ip.htm](https://docs.oracle.com/es-ww/iaas/Content/Network/Tasks/assigning-ephemeral-public-existing-private-ip.htm)
 
