@@ -41,7 +41,25 @@ Si no teniu cap clau generada, o voleu crear-ne una específicament per aquesta 
 ssh-keygen -t rsa -b 4096 -C "oracle-key" -f oracle.key -N ""
 ```
 
-Aixó crearà un arxiu oracke.key, i un arxiu oracle.key.pub. Aquest últim és el que s'ha de copiar i enganxar a la instància
+Aixó crearà un arxiu oracke.key, i un arxiu oracle.key.pub. Aquest últim és el que s'ha de copiar i enganxar a la instància.
+
+## Ip publica de la instància.
+Per defecte s'hauria de crear una ip publica, però si no ho fà, caldrà anar a:
+
+Instància->Networking->Vnic_instance
+
+![vnic instance](./imatges/addip_vnic.png)
+
+Fer click a la instància i:
+
+IpAdministration->Edit
+
+![Editip](./imatges/addip_edit.png)
+
+I ara sí, triar una ip Ephi
+![ephemeral ip](./imatges/addip_ephemeral.png)
+
+Referència: [https://docs.oracle.com/es-ww/iaas/Content/Network/Tasks/assigning-ephemeral-public-existing-private-ip.htm](https://docs.oracle.com/es-ww/iaas/Content/Network/Tasks/assigning-ephemeral-public-existing-private-ip.htm)
 
 ## Connexió a la instància
 

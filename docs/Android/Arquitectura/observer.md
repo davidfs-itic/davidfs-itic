@@ -49,6 +49,6 @@ class MeuFragment : Fragment() {
 Per què viewLifecycleOwner en Fragments:
 
 Els Fragments tenen DOS cicles de vida: el del Fragment i el de la View
-La View pot destruir-se i recrear-se mentre el Fragment segueix viu
+La View pot destruir-se i recrear-se mentre el Fragment segueix viu.
 Usar this pot causar que l'observer segueixi actiu quan la View ja no existeix
-viewLifecycleOwner s'atura quan la View es destrueix, evitant memory leaks
+viewLifecycleOwner s'atura quan la View es destrueix, evitant fugues de memòria (memory leaks).

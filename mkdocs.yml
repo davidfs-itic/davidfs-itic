@@ -56,6 +56,9 @@ nav:
         - LiveData: Android/Kotlin/livedata.md
         - Coroutines: Android/Kotlin/coroutines.md
         - Anotadors: Android/Kotlin/anotadors.md
+#      - Usabilitat:
+#        - Introducció a la Usabilitat: Android/Usabilitat/index.md
+#        - Accessibilitat: Android/Usabilitat/accessibilitat.md
       - Interficies:
         - Introducció a les Interficies: Android/Interficies/index.md
         - Layout en Activities: Android/Interficies/layoutactivities.md
@@ -92,7 +95,6 @@ nav:
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
           - Firestore: Android/Firebase/firestore.md
           # - Autenticació: Android/Firebase/autenticacio.md
-          # - Firestore: Android/Firebase/firestore.md
           # - FireCloud Messaging: Android/Firebase/fcm.md
     - Exemples de codi Android: Exemples/index.md
     - Unity:
