@@ -87,3 +87,12 @@ Cal anar a la instància i buscar el seguent camí:
 I allà afegir-ne una semblant a la del port 22.
 
 ![Afegir port en oracle](./imatges/oracle_add_port.png)
+
+
+
+
+```kotlin
+lkdsjflsf
+sdlkfjsdf
+dsklfsdf
+```

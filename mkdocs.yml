@@ -55,7 +55,7 @@ nav:
         - Funcions d'extensió: Android/Kotlin/fextensio.md
         - LiveData: Android/Kotlin/livedata.md
         - Coroutines: Android/Kotlin/coroutines.md
-        - Anotadors: Android/Kotlin/anotadors.md
+        - Anotadors: Android/Kotlin/anotadors.md        
 #      - Usabilitat:
 #        - Introducció a la Usabilitat: Android/Usabilitat/index.md
 #        - Accessibilitat: Android/Usabilitat/accessibilitat.md
@@ -115,7 +115,7 @@ nav:
       - Introducció a l'IoT: IoT/index.md
       - Guia Oracle Cloud: IoT/oracle.md
       - IIoT (Internet Industrial de les Coses):
-        - Protocols Industrials: IoT/iiot/protocols.md
+        - Protocols Industrials: IoT/IIoT/protocols.md
         # - Introducció a l'IIoT: IoT/iiot/index.md
         # - Protocols Industrials: IoT/iiot/protocols.md
         # - Plataformes IIoT: IoT/iiot/plataformes.md

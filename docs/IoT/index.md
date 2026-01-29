@@ -6,7 +6,7 @@ Programa: [programa_iot.pdf](./programa_iot.pdf)
 
 ## Treball amb instàncies d'Oracle
 
-Veure apartat [IOT/Oracle](oracle.md)
+Veure apartat [IOT/Guia Oracle Cloud ](oracle.md)
 
 ## Documentació Contenidors
 
