@@ -21,8 +21,11 @@ Referències:
 https://ndpsoftware.com/git-cheatsheet.html#loc=index;
 
 ## Material de markdown:
+O com s'han fet aquests apunts:
 
-https://squidfunk.github.io/mkdocs-material/setup/
+- [https://www.mkdocs.org/user-guide/configuration/#introduction](https://www.mkdocs.org/user-guide/configuration/#introduction)
 
-https://albrittonanalytics.com/
+- [https://squidfunk.github.io/mkdocs-material/setup/](https://squidfunk.github.io/mkdocs-material/setup/)
+
+- [https://albrittonanalytics.com/](https://albrittonanalytics.com/)
 

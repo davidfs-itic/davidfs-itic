@@ -75,6 +75,7 @@ nav:
         - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
+        - Dialog Fragment amb ViewModel: Android/Interficies/dialogfragmentviewmodel.md
         - Voice Recognition: Android/Interficies/voicerecognition.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
