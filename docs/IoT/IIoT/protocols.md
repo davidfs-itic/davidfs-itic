@@ -384,13 +384,12 @@ asyncio.run(main())
 
 ### Avantatges i inconvenients
 
-✅ Seguretat integrada (certificats, xifrat)
-✅ Interoperabilitat multi-fabricant
-✅ Model de dades ric i extensible
-✅ Companion Specifications per sectors
-❌ Major complexitat d'implementació
-❌ Requereix més recursos computacionals
-
+- Seguretat integrada (certificats, xifrat)
+- Interoperabilitat multi-fabricant
+- Model de dades ric i extensible
+- Companion Specifications per sectors
+- Major complexitat d'implementació
+- Requereix més recursos computacionals
 
 
 ## PROFINET
@@ -456,11 +455,11 @@ Protocol REST-like per dispositius amb recursos limitats.
 
 | Protocol | Xifratge | Autenticació |
 |----------|----------|--------------|
-| Modbus TCP | ❌ | ❌ |
-| EtherNet/IP | ⚠️ CIP Security | ⚠️ Opcional |
-| FINS | ❌ | ❌ |
-| OPC UA | ✅ TLS | ✅ Certificats |
-| PROFINET | ⚠️ Classe 4 | ⚠️ Opcional |
+| Modbus TCP | No | No |
+| EtherNet/IP | CIP Security | Opcional |
+| FINS | No | No |
+| OPC UA | TLS | Certificats |
+| PROFINET | Classe 4 | Opcional |
 
 
 ## Referències
