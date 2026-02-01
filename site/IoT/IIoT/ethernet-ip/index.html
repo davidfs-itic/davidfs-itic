@@ -1,0 +1,3974 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="David F">
+      
+      
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/IoT/IIoT/ethernet-ip/">
+      
+      
+        <link rel="prev" href="../modbus-tcp/">
+      
+      
+        <link rel="next" href="../fins/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Ethernet/IP - Documentació DavidFS - ITIC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ethernetip-llibreries-i-exemples" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../../.." title="Documentació DavidFS - ITIC" class="md-header__button md-logo" aria-label="Documentació DavidFS - ITIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentació DavidFS - ITIC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ethernet/IP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Android/" class="md-tabs__link">
+          
+  
+  
+  Android
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Exemples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Exemples de codi Android
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Unity/" class="md-tabs__link">
+          
+  
+  
+  Unity
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Arduino/instalacio/" class="md-tabs__link">
+          
+  
+  
+  Arduino
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Transversal/docker/" class="md-tabs__link">
+          
+  
+  
+  Transversal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  IoT
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Documentació DavidFS - ITIC" class="md-nav__button md-logo" aria-label="Documentació DavidFS - ITIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentació DavidFS - ITIC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Android
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/activities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/fragments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fragments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Llenguatge Kotlin
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Llenguatge Kotlin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a Kotlin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables i Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/funcions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/classesobjectes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes i Objectes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/nullsafety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Null Safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/fextensio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcions d'extensió
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/livedata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiveData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/coroutines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coroutines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Kotlin/anotadors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anotadors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interficies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interficies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a les Interficies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/layoutactivities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout en Activities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/temes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Temes i Estils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/viewbinding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VieweBinding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/bottommenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bottom Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/appbar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appbar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/toolbar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/drawermenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Drawer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/dialegs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dialegs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/recyclerview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/recyclerviewfilter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recyclerview filtrat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/recyclersearchview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView amb searchview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Menús
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/splashscreen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Splash Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/dialogfragmentviewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dialog Fragment amb ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Interficies/voicerecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recognition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a l'Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/applicationviewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/observer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/repositori/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dommini (Repositori) i Dades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/inversiodependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inversió de Dependències
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patró Factory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/recyclerinversio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exemple DIP recycler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Arquitectura/solid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Principis SOLID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Llibreries
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Llibreries
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Llibreries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a les Llibreries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Llibreries/retrofit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrofit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Llibreries/mpandroidchart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPAndroidChart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_4" id="__nav_2_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firebase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Firebase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Firebase/fbsetup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup de Firebase a Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Android/Firebase/firestore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firestore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Exemples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exemples de codi Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Unity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a Unity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Unity/scenesprites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenes i Sprites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Unity/fisiquesmoviment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fisiques i moviment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Unity/recveu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reconeixement de Veu a Unity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arduino
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arduino/instalacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instal·lació de l'IDE d'Arduino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transversal
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Transversal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Transversal/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IoT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a l'IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia Oracle Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IIoT (Internet Industrial de les Coses)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IIoT (Internet Industrial de les Coses)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a l'IIoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols Industrials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modbus-tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modbus TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet/IP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet/IP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducció
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llibreries-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-pycomm3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python: pycomm3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python: pycomm3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plcs-suportats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PLCs suportats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llegir-i-escriure-multiples-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llegir i escriure múltiples tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballar-amb-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballar amb arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballar-amb-estructures-udt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballar amb estructures (UDT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtenir-llista-de-tags-del-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtenir llista de tags del PLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexio-amb-slot-especific" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connexió amb slot específic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-derrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestió d'errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-libplctag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python: libplctag
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python: libplctag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-cpu-suportats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de CPU suportats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-per-omron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple per Omron
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs-ethernet-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js: ethernet-ip
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node.js: ethernet-ip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llegir-i-escriure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llegir i escriure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grups-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grups de tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscripcio-a-canvis-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscripció a canvis (polling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nodes disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-de-llibreries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparativa de llibreries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducció
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llibreries-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-pycomm3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python: pycomm3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python: pycomm3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plcs-suportats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PLCs suportats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llegir-i-escriure-multiples-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llegir i escriure múltiples tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballar-amb-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballar amb arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballar-amb-estructures-udt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treballar amb estructures (UDT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtenir-llista-de-tags-del-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtenir llista de tags del PLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexio-amb-slot-especific" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connexió amb slot específic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-derrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestió d'errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-libplctag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python: libplctag
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python: libplctag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-cpu-suportats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de CPU suportats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-per-omron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple per Omron
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs-ethernet-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js: ethernet-ip
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node.js: ethernet-ip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-basic_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple bàsic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llegir-i-escriure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llegir i escriure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grups-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grups de tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscripcio-a-canvis-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscripció a canvis (polling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instal·lació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nodes disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-de-llibreries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparativa de llibreries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ethernetip-llibreries-i-exemples">EtherNet/IP - Llibreries i exemples<a class="headerlink" href="#ethernetip-llibreries-i-exemples" title="Permanent link">&para;</a></h1>
+<h2 id="introduccio">Introducció<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
+<p>EtherNet/IP (Industrial Protocol) és un protocol industrial que utilitza CIP (Common Industrial Protocol) sobre TCP/IP i UDP/IP. És el protocol natiu dels PLCs Allen-Bradley (Rockwell Automation) i també és suportat per Omron Sysmac i altres fabricants.</p>
+<h2 id="llibreries-disponibles">Llibreries disponibles<a class="headerlink" href="#llibreries-disponibles" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Llibreria</th>
+<th>Llenguatge</th>
+<th>PLCs suportats</th>
+<th>Llicència</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pycomm3</strong></td>
+<td>Python</td>
+<td>Allen-Bradley (ControlLogix, CompactLogix, Micro800)</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>libplctag</strong></td>
+<td>C, Python, .NET</td>
+<td>Allen-Bradley, Omron, Modbus</td>
+<td>LGPL/MPL</td>
+</tr>
+<tr>
+<td><strong>ethernet-ip</strong></td>
+<td>Node.js</td>
+<td>Allen-Bradley, genèric CIP</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>node-red-contrib-cip-ethernet-ip</strong></td>
+<td>Node-RED</td>
+<td>Allen-Bradley</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="python-pycomm3">Python: pycomm3<a class="headerlink" href="#python-pycomm3" title="Permanent link">&para;</a></h2>
+<p>La llibreria més popular i ben mantinguda per a Allen-Bradley en Python.</p>
+<h3 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pycomm3
+</code></pre></div>
+<h3 id="plcs-suportats">PLCs suportats<a class="headerlink" href="#plcs-suportats" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ControlLogix (L6x, L7x, L8x)</li>
+<li>CompactLogix (L1x, L2x, L3x)</li>
+<li>Micro800 (810, 820, 830, 850)</li>
+</ul>
+<h3 id="exemple-basic">Exemple bàsic<a class="headerlink" href="#exemple-basic" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="c1"># Connexió a un ControlLogix/CompactLogix</span>
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="c1"># Llegir un tag</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;MyTag&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tipus: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Escriure un valor</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;MyTag&#39;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="llegir-i-escriure-multiples-tags">Llegir i escriure múltiples tags<a class="headerlink" href="#llegir-i-escriure-multiples-tags" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="c1"># Llegir múltiples tags (més eficient que llegir un a un)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;Tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;Tag2&#39;</span><span class="p">,</span> <span class="s1">&#39;Tag3&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tag</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tag</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Escriure múltiples tags</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s1">&#39;Tag1&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tag2&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tag3&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="treballar-amb-arrays">Treballar amb arrays<a class="headerlink" href="#treballar-amb-arrays" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="c1"># Llegir un array complet</span>
+    <span class="n">array_data</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;MyArray&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">array_data</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Llista de valors</span>
+
+    <span class="c1"># Llegir una porció de l&#39;array (10 elements des de l&#39;índex 5)</span>
+    <span class="n">partial</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;MyArray[5]</span><span class="si">{10}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Escriure a un array</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;MyArray&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+    <span class="c1"># Escriure a una posició específica</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;MyArray[0]&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="treballar-amb-estructures-udt">Treballar amb estructures (UDT)<a class="headerlink" href="#treballar-amb-estructures-udt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="c1"># Llegir una estructura completa</span>
+    <span class="n">recipe</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;Recipe1&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Retorna un diccionari amb tots els membres</span>
+    <span class="c1"># Exemple: {&#39;Name&#39;: &#39;Recipe A&#39;, &#39;Temperature&#39;: 75.5, &#39;Time&#39;: 120}</span>
+
+    <span class="c1"># Llegir un membre específic</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;Recipe1.Temperature&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperatura: </span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Escriure a un membre de l&#39;estructura</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Recipe1.Temperature&#39;</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">)</span>
+
+    <span class="c1"># Escriure estructura completa</span>
+    <span class="n">plc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Recipe1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Recipe B&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">:</span> <span class="mf">85.0</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">})</span>
+</code></pre></div>
+<h3 id="obtenir-llista-de-tags-del-plc">Obtenir llista de tags del PLC<a class="headerlink" href="#obtenir-llista-de-tags-del-plc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="c1"># Obtenir tots els tags</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">get_tag_list</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nom: </span><span class="si">{</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;tag_name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tipus: </span><span class="si">{</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;data_type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimensió: </span><span class="si">{</span><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dimensions&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Filtrar per programa</span>
+    <span class="n">program_tags</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">get_tag_list</span><span class="p">(</span><span class="n">program</span><span class="o">=</span><span class="s1">&#39;MainProgram&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="connexio-amb-slot-especific">Connexió amb slot específic<a class="headerlink" href="#connexio-amb-slot-especific" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+
+<span class="c1"># Per defecte, slot 0</span>
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Especificar slot (per exemple, slot 2)</span>
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100/2&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Ruta completa per a configuracions més complexes</span>
+<span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;1/0/2/192.168.2.100/0&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="gestio-derrors">Gestió d'errors<a class="headerlink" href="#gestio-derrors" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogixDriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pycomm3.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">CommError</span><span class="p">,</span> <span class="n">ResponseError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">LogixDriver</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">plc</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">plc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;TagQueNoExisteix&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error llegint tag: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="n">CommError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error de comunicació: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ResponseError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error de resposta del PLC: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="python-libplctag">Python: libplctag<a class="headerlink" href="#python-libplctag" title="Permanent link">&para;</a></h2>
+<p>Llibreria més genèrica que suporta múltiples fabricants.</p>
+<h3 id="installacio_1">Instal·lació<a class="headerlink" href="#installacio_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>libplctag
+</code></pre></div>
+<h3 id="exemple-basic_1">Exemple bàsic<a class="headerlink" href="#exemple-basic_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">libplctag</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tag</span>
+
+<span class="c1"># Configuració del tag</span>
+<span class="n">tag_path</span> <span class="o">=</span> <span class="s2">&quot;protocol=ab-eip&amp;gateway=192.168.1.100&amp;path=1,0&amp;cpu=LGX&amp;name=MyTag&amp;elem_type=DINT&quot;</span>
+
+<span class="c1"># Crear tag</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">()</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">tag_path</span><span class="p">)</span>
+
+<span class="c1"># Llegir</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">get_int32</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Escriure</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">set_int32</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5678</span><span class="p">)</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+<span class="c1"># Alliberar recursos</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="tipus-de-cpu-suportats">Tipus de CPU suportats<a class="headerlink" href="#tipus-de-cpu-suportats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paràmetre cpu</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LGX</code></td>
+<td>ControlLogix, CompactLogix</td>
+</tr>
+<tr>
+<td><code>PLC5</code></td>
+<td>PLC-5</td>
+</tr>
+<tr>
+<td><code>SLC</code></td>
+<td>SLC 500</td>
+</tr>
+<tr>
+<td><code>MLGX</code></td>
+<td>MicroLogix</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemple-per-omron">Exemple per Omron<a class="headerlink" href="#exemple-per-omron" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">libplctag</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tag</span>
+
+<span class="c1"># Omron NJ/NX via EtherNet/IP</span>
+<span class="n">tag_path</span> <span class="o">=</span> <span class="s2">&quot;protocol=ab-eip&amp;gateway=192.168.1.100&amp;path=18,10.10.10.1,1,0&amp;cpu=omron-njnx&amp;name=MyVar&quot;</span>
+
+<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">()</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">tag_path</span><span class="p">)</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">get_float32</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="nodejs-ethernet-ip">Node.js: ethernet-ip<a class="headerlink" href="#nodejs-ethernet-ip" title="Permanent link">&para;</a></h2>
+<h3 id="installacio_2">Instal·lació<a class="headerlink" href="#installacio_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>ethernet-ip
+</code></pre></div>
+<h3 id="exemple-basic_2">Exemple bàsic<a class="headerlink" href="#exemple-basic_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ethernet-ip&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">plc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Controller</span><span class="p">();</span>
+
+<span class="c1">// Connexió</span>
+<span class="nx">plc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Connectat al PLC&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Nom: </span><span class="si">${</span><span class="nx">plc</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Slot: </span><span class="si">${</span><span class="nx">plc</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">slot</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Crear un tag</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">myTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;MyTag&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Llegir</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTag</span><span class="p">(</span><span class="nx">myTag</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Valor: </span><span class="si">${</span><span class="nx">myTag</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipus: </span><span class="si">${</span><span class="nx">myTag</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error de connexió:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="llegir-i-escriure">Llegir i escriure<a class="headerlink" href="#llegir-i-escriure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ethernet-ip&#39;</span><span class="p">);</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">plc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Controller</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Llegir</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">tempTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTag</span><span class="p">(</span><span class="nx">tempTag</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Temperatura actual: </span><span class="si">${</span><span class="nx">tempTag</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Escriure</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">setpointTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Setpoint&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">setpointTag</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">75.5</span><span class="p">;</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">writeTag</span><span class="p">(</span><span class="nx">setpointTag</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Setpoint actualitzat&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">plc</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">main</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="grups-de-tags">Grups de tags<a class="headerlink" href="#grups-de-tags" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="p">,</span><span class="w"> </span><span class="nx">TagGroup</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ethernet-ip&#39;</span><span class="p">);</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">plc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Controller</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Crear grup de tags per lectura/escriptura eficient</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TagGroup</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;FlowRate&#39;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// Llegir tots els tags del grup (una sola petició)</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTagGroup</span><span class="p">(</span><span class="nx">group</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">group</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">tag</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">tag</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">tag</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Modificar i escriure</span>
+<span class="w">    </span><span class="nx">group</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">tag</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">tag</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">writeTagGroup</span><span class="p">(</span><span class="nx">group</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">main</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="subscripcio-a-canvis-polling">Subscripció a canvis (polling)<a class="headerlink" href="#subscripcio-a-canvis-polling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ethernet-ip&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">plc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Controller</span><span class="p">();</span>
+
+<span class="nx">plc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Afegir tags a monitoritzar</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;AlarmStatus&#39;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// Configurar interval de polling (ms)</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">scan_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Event quan un tag canvia de valor</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;TagChanged&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span><span class="w"> </span><span class="nx">prevValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">tag</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">prevValue</span><span class="si">}</span><span class="sb"> -&gt; </span><span class="si">${</span><span class="nx">tag</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Event d&#39;error</span>
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error de comunicació:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+
+<span class="c1">// Per aturar el polling</span>
+<span class="c1">// plc.scan_rate = 0;</span>
+</code></pre></div>
+<h3 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="p">,</span><span class="w"> </span><span class="nx">TagGroup</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ethernet-ip&#39;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">ProcessData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">temperature</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">pressure</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">readProcessData</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ProcessData</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">plc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Controller</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">tempTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">pressTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">runTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s1">&#39;Running&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTag</span><span class="p">(</span><span class="nx">tempTag</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTag</span><span class="p">(</span><span class="nx">pressTag</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plc</span><span class="p">.</span><span class="nx">readTag</span><span class="p">(</span><span class="nx">runTag</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">plc</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">temperature</span><span class="o">:</span><span class="w"> </span><span class="kt">tempTag.value</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">pressure</span><span class="o">:</span><span class="w"> </span><span class="kt">pressTag.value</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="kt">runTag.value</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="node-red">Node-RED<a class="headerlink" href="#node-red" title="Permanent link">&para;</a></h2>
+<p>Per a Node-RED existeix el paquet <code>node-red-contrib-cip-ethernet-ip</code>.</p>
+<h3 id="installacio_3">Instal·lació<a class="headerlink" href="#installacio_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/.node-red
+npm<span class="w"> </span>install<span class="w"> </span>node-red-contrib-cip-ethernet-ip
+</code></pre></div>
+<h3 id="nodes-disponibles">Nodes disponibles<a class="headerlink" href="#nodes-disponibles" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>eth-ip-endpoint</strong>: Configuració de connexió al PLC</li>
+<li><strong>eth-ip-read</strong>: Llegir tags</li>
+<li><strong>eth-ip-write</strong>: Escriure tags</li>
+</ul>
+<hr />
+<h2 id="comparativa-de-llibreries">Comparativa de llibreries<a class="headerlink" href="#comparativa-de-llibreries" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>pycomm3</th>
+<th>libplctag</th>
+<th>ethernet-ip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Llenguatge</td>
+<td>Python</td>
+<td>Multi</td>
+<td>Node.js</td>
+</tr>
+<tr>
+<td>Facilitat d'ús</td>
+<td>Alta</td>
+<td>Mitjana</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Suport UDT</td>
+<td>Sí</td>
+<td>Parcial</td>
+<td>Bàsic</td>
+</tr>
+<tr>
+<td>Multi-fabricant</td>
+<td>No (AB només)</td>
+<td>Sí</td>
+<td>No (AB només)</td>
+</tr>
+<tr>
+<td>Async/await</td>
+<td>No</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Documentació</td>
+<td>Excel·lent</td>
+<td>Bona</td>
+<td>Bona</td>
+</tr>
+<tr>
+<td>Manteniment</td>
+<td>Actiu</td>
+<td>Actiu</td>
+<td>Actiu</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">Recursos<a class="headerlink" href="#recursos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/ottowayi/pycomm3">pycomm3 GitHub</a></li>
+<li><a href="https://docs.pycomm3.dev/">pycomm3 Documentació</a></li>
+<li><a href="https://github.com/libplctag/libplctag">libplctag GitHub</a></li>
+<li><a href="https://www.npmjs.com/package/ethernet-ip">ethernet-ip npm</a></li>
+<li><a href="https://www.odva.org/">ODVA - EtherNet/IP</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.expand", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

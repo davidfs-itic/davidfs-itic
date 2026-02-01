@@ -116,7 +116,11 @@ nav:
       - Introducció a l'IoT: IoT/index.md
       - Guia Oracle Cloud: IoT/oracle.md
       - IIoT (Internet Industrial de les Coses):
+        - Introducció a l'IIoT: IoT/IIoT/index.md
         - Protocols Industrials: IoT/IIoT/protocols.md
+        - Modbus TCP: IoT/IIoT/modbus-tcp.md
+        - Ethernet/IP: IoT/IIoT/ethernet-ip.md
+        - Fins: IoT/IIoT/fins.md
         # - Introducció a l'IIoT: IoT/iiot/index.md
         # - Protocols Industrials: IoT/iiot/protocols.md
         # - Plataformes IIoT: IoT/iiot/plataformes.md

@@ -39,20 +39,20 @@ app/
 │  • Modifica TasksList                                                              │
 │  • Emet LiveData<TascaAction> (AFEGIDA/MODIFICADA/ELIMINADA)                       │
 │  • Emet LiveData<String?> (errorMessage)                                           │
-└───┬─────────────────────────────────────────────┬───────────────────────────┬──────┘
-    │                                             ▲                           │
-    │  observa tascaActionEvent                   │ AfegirTasca VM            │ observa errorMessage
-    │                                             │                           │
-    ▼                                             │                           ▼
-┌──────────────────────────────────────┐         ┌──────────────────────────────┐
-│        HomeFragment                  │         │   AfegirTascaDialog          │
-│                                      │         │   ModificarTascaDialog       │
-│  • Observa tascaActionEvent          │         │                              │
-│  • Actualitza RecyclerView           │────────▶│  • Observa errorMessage      │
-│  • Mostra Toast de confirmació       │         │  • Mostra Toast d'error      │
-│  • Crida dialogs                     │         │  • Crida viewModel           │
-│                                      │         │    amb dades del formulari   │
-└──────────────────────────────────────┘         └──────────────────────────────┘
+└───┬─────────────────────────────────────────┬─────────────────┬────────────────────┘
+    │                                         ▲                 │
+    │  observa tascaActionEvent               │ AfegirTasca VM  │ observa errorMessage
+    │                                         │                 │
+    ▼                                         │                 ▼
+┌──────────────────────────────────┐         ┌──────────────────────────────────────┐
+│        HomeFragment              │         │   AfegirTascaDialog                  │
+│                                  │         │                                      │
+│  • Observa tascaActionEvent      │         │  • Observa errorMessage              │
+│  • Actualitza RecyclerView       │────────▶│  • Mostra Toast d'error              │
+│  • Mostra Toast de confirmació   │         │  • Crida viewModel                   │
+│  • Crida dialogs                 │         │    amb dades del formulari           │
+│                                  │         │                                      │
+└──────────────────────────────────┘         └──────────────────────────────────────┘
 
 
 ```
@@ -490,7 +490,7 @@ class TasksAdapter(
 
 
 
-## 9. Dependències (build.gradle)
+## 8. Dependències (build.gradle)
 
 ```gradle
 dependencies {

@@ -13,8 +13,10 @@
         <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/IoT/IIoT/protocols/">
       
       
-        <link rel="prev" href="../../oracle/">
+        <link rel="prev" href="../">
       
+      
+        <link rel="next" href="../modbus-tcp/">
       
       
         
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#protocols-industrials" class="md-skip">
+        <a href="#protocols-de-comunicacions-industrials" class="md-skip">
           Salta el contingut
         </a>
       
@@ -1330,6 +1332,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Android/Interficies/dialogfragmentviewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dialog Fragment amb ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Android/Interficies/voicerecognition/" class="md-nav__link">
         
   
@@ -2505,6 +2535,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a l'IIoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2568,32 +2626,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ethernetip-cip" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EtherNet/IP (CIP)
+        Introducció
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducció">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-els-protocols-industrials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què són els protocols industrials?
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#opc-ua-servidor-integrat" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#evolucio-historica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OPC UA (Servidor integrat)
+        Evolució històrica
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#fins-tcp-o-udp" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#model-de-capes-en-protocols-industrials" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FINS (TCP o UDP)
+        Model de capes en protocols industrials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencies-entre-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferències entre IT i OT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptes-clau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptes clau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piramide-dautomatitzacio-i-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piràmide d'automatització i protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparativa ràpida
       
     </span>
   </a>
@@ -2609,12 +2728,523 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Modbus TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcions-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcions principals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-i-inconvenients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avantatges i inconvenients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethernetip-cip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EtherNet/IP (CIP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EtherNet/IP (CIP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-comunicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de comunicació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptes-clau_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptes clau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fins-factory-interface-network-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FINS (Factory Interface Network Service)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FINS (Factory Interface Network Service)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandes-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandes principals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arees-de-memoria-omron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Àrees de memòria Omron
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-ua-unified-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPC UA (Unified Architecture)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPC UA (Unified Architecture)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Address Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodeId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-amb-python-opcua-asyncio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple amb Python (opcua-asyncio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eines-utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eines útils
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-i-inconvenients_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avantatges i inconvenients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profinet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROFINET
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROFINET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-comunicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes de comunicació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencies-amb-ethernetip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferències amb EtherNet/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altres-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altres protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altres protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacnetip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dnp3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNP3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQTT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguretat-en-protocols-industrials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguretat en protocols industrials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seguretat en protocols industrials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consideracions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideracions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols-i-seguretat-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocols i seguretat nativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referències
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modbus-tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modbus TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ethernet-ip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet/IP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2662,32 +3292,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ethernetip-cip" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EtherNet/IP (CIP)
+        Introducció
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducció">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-els-protocols-industrials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què són els protocols industrials?
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#opc-ua-servidor-integrat" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#evolucio-historica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OPC UA (Servidor integrat)
+        Evolució històrica
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#fins-tcp-o-udp" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#model-de-capes-en-protocols-industrials" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FINS (TCP o UDP)
+        Model de capes en protocols industrials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencies-entre-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferències entre IT i OT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptes-clau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptes clau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piramide-dautomatitzacio-i-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piràmide d'automatització i protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparativa ràpida
       
     </span>
   </a>
@@ -2699,6 +3390,433 @@
     <span class="md-ellipsis">
       
         Modbus TCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modbus TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcions-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcions principals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-i-inconvenients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avantatges i inconvenients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethernetip-cip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EtherNet/IP (CIP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EtherNet/IP (CIP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-comunicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de comunicació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptes-clau_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptes clau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fins-factory-interface-network-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FINS (Factory Interface Network Service)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FINS (Factory Interface Network Service)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandes-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandes principals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arees-de-memoria-omron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Àrees de memòria Omron
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llibreries-disponibles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llibreries disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-ua-unified-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPC UA (Unified Architecture)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPC UA (Unified Architecture)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Address Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodeId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-amb-python-opcua-asyncio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple amb Python (opcua-asyncio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eines-utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eines útils
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-i-inconvenients_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avantatges i inconvenients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profinet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROFINET
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROFINET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-comunicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes de comunicació
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencies-amb-ethernetip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferències amb EtherNet/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altres-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altres protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altres protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacnetip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dnp3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNP3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQTT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguretat-en-protocols-industrials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguretat en protocols industrials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seguretat en protocols industrials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consideracions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideracions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols-i-seguretat-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocols i seguretat nativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referències
       
     </span>
   </a>
@@ -2722,47 +3840,758 @@
 
 
 
-<h1 id="protocols-industrials">Protocols industrials<a class="headerlink" href="#protocols-industrials" title="Permanent link">&para;</a></h1>
-<h2 id="ethernetip-cip">EtherNet/IP (CIP)<a class="headerlink" href="#ethernetip-cip" title="Permanent link">&para;</a></h2>
-<p>És el protocol natiu de la plataforma Sysmac. Utilitza el protocol CIP (Common Industrial Protocol).</p>
+<h1 id="protocols-de-comunicacions-industrials">Protocols de Comunicacions Industrials<a class="headerlink" href="#protocols-de-comunicacions-industrials" title="Permanent link">&para;</a></h1>
+<h2 id="introduccio">Introducció<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
+<h3 id="que-son-els-protocols-industrials">Què són els protocols industrials?<a class="headerlink" href="#que-son-els-protocols-industrials" title="Permanent link">&para;</a></h3>
+<p>Un <strong>protocol de comunicació industrial</strong> és un conjunt de regles que defineixen com els dispositius d'un sistema d'automatització (PLCs, sensors, actuadors, HMIs, SCADA) intercanvien informació. A diferència dels protocols IT convencionals, els protocols industrials han de garantir:</p>
 <ul>
-<li>
-<p>Avantatges: És molt ràpid i permet treballar amb "Variable Names" (tags) directament, sense haver de fer servir adreces de memòria tipus D0 o H0.</p>
-</li>
-<li>
-<p>Ús des de PC: Hi ha llibreries com libplctag (Open Source) o drivers comercials de pagament (com Kepware o l'SDK de Omron).</p>
-</li>
+<li><strong>Determinisme:</strong> Les dades han d'arribar en un temps que es pugui predir.</li>
+<li><strong>Fiabilitat:</strong> Tolerància a soroll elèctric i condicions adverses.</li>
+<li><strong>Temps real:</strong> Resposta dins de terminis estrictes (mil·lisegons o microsegons)</li>
+<li><strong>Disponibilitat:</strong> Funcionament continu 24/7</li>
 </ul>
-<p>https://github.com/libplctag/libplctag</p>
-<h2 id="opc-ua-servidor-integrat">OPC UA (Servidor integrat)<a class="headerlink" href="#opc-ua-servidor-integrat" title="Permanent link">&para;</a></h2>
-<p>Aquesta és, probablement, la millor opció per a una connexió amb un ordinador modern. El NX1P2 té un servidor OPC UA integrat al mateix hardware.</p>
+<h3 id="evolucio-historica">Evolució històrica<a class="headerlink" href="#evolucio-historica" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1970s          1980s-90s           2000s              2010s-Actualitat
+  │               │                  │                      │
+  ▼               ▼                  ▼                      ▼
+┌─────┐      ┌─────────┐      ┌────────────┐      ┌─────────────────┐
+│Sèrie│  →   │Fieldbus │  →   │ Ethernet   │  →   │ IIoT / Indústria│
+│RS232│      │Profibus │      │ Industrial │      │      4.0        │
+│RS485│      │DeviceNet│      │EtherNet/IP │      │   OPC UA + TSN  │
+└─────┘      │Modbus   │      │PROFINET    │      │   MQTT + Cloud  │
+             └─────────┘      └────────────┘      └─────────────────┘
+</code></pre></div>
+<p><strong>Comunicació sèrie (1970s):</strong>
+Connexions punt a punt amb RS-232/RS-485. Simples però limitades en distància i nombre de dispositius.</p>
+<p><strong>Fieldbus (1980s-90s):</strong>
+Xarxes industrials dedicades (Profibus, DeviceNet, Modbus RTU). Permetien connectar múltiples dispositius en un bus compartit.</p>
+<p><strong>Ethernet Industrial (2000s):</strong>
+Adaptació d'Ethernet estàndard per entorns industrials. Aprofita infraestructura IT existent i permet velocitats més altes.</p>
+<p><strong>IIoT i Indústria 4.0 (2010s-actualitat):</strong>
+Convergència IT/OT, connectivitat al núvol, i estàndards com OPC UA amb TSN per temps real sobre Ethernet estàndard.</p>
+<h3 id="model-de-capes-en-protocols-industrials">Model de capes en protocols industrials<a class="headerlink" href="#model-de-capes-en-protocols-industrials" title="Permanent link">&para;</a></h3>
+<p>Els protocols industrials s'organitzen sobre el model OSI, però amb adaptacions específiques:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────┐
+│  Capa 7 - Aplicació                                             │
+│  ┌─────────┐ ┌─────────┐ ┌──────┐ ┌────────┐ ┌────────────────┐ │
+│  │ Modbus  │ │  FINS   │ │ CIP  │ │ OPC UA │ │ S7 (Siemens)   │ │
+│  └─────────┘ └─────────┘ └──────┘ └────────┘ └────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│  Capa 4 - Transport                                             │
+│  ┌─────────────────────┐  ┌─────────────────────┐               │
+│  │        TCP          │  │        UDP          │               │
+│  └─────────────────────┘  └─────────────────────┘               │
+├─────────────────────────────────────────────────────────────────┤
+│  Capa 3 - Xarxa                                                 │
+│  ┌─────────────────────────────────────────────┐                │
+│  │                    IP                       │                │
+│  └─────────────────────────────────────────────┘                │
+├─────────────────────────────────────────────────────────────────┤
+│  Capa 2 - Enllaç                                                │
+│  ┌─────────────────────┐  ┌─────────────────────┐               │
+│  │  Ethernet estàndard │  │  PROFINET IRT/TSN   │               │
+│  └─────────────────────┘  └─────────────────────┘               │
+├─────────────────────────────────────────────────────────────────┤
+│  Capa 1 - Física                                                │
+│  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌──────────────────┐ │
+│  │ 100BASE-TX│ │1000BASE-T │ │   Fibra   │ │ Industrial (M12) │ │
+│  └───────────┘ └───────────┘ └───────────┘ └──────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="diferencies-entre-it-i-ot">Diferències entre IT i OT<a class="headerlink" href="#diferencies-entre-it-i-ot" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>IT (Tecnologies Informació)</th>
+<th>OT (Tecnologies Operació)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prioritat</td>
+<td>Confidencialitat</td>
+<td>Disponibilitat</td>
+</tr>
+<tr>
+<td>Latència</td>
+<td>Tolerable (ms-s)</td>
+<td>Crítica (µs-ms)</td>
+</tr>
+<tr>
+<td>Cicle de vida</td>
+<td>3-5 anys</td>
+<td>15-20 anys</td>
+</tr>
+<tr>
+<td>Actualitzacions</td>
+<td>Freqüents</td>
+<td>Poc freqüents</td>
+</tr>
+<tr>
+<td>Fallades</td>
+<td>Reinici acceptable</td>
+<td>Inacceptable (seguretat)</td>
+</tr>
+<tr>
+<td>Protocols</td>
+<td>HTTP, SQL, REST</td>
+<td>Modbus, OPC UA, PROFINET</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conceptes-clau">Conceptes clau<a class="headerlink" href="#conceptes-clau" title="Permanent link">&para;</a></h3>
+<h4 id="temps-real-vs-determinisme">Temps real vs Determinisme<a class="headerlink" href="#temps-real-vs-determinisme" title="Permanent link">&para;</a></h4>
+<p>Aquests dos conceptes estan molt relacionats però <strong>no són sinònims</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Concepte</th>
+<th>Definició</th>
+<th>Pregunta clau</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temps real</strong></td>
+<td>El sistema respon dins d'un termini definit (deadline)</td>
+<td><em>Quan</em> ha d'arribar la resposta?</td>
+</tr>
+<tr>
+<td><strong>Determinisme</strong></td>
+<td>El comportament del sistema és predictible i repetible</td>
+<td><em>Com de predictible</em> és el temps de resposta?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Temps real</strong> no significa "molt ràpid". Un sistema pot tenir un deadline d'1 segon i ser temps real si <strong>sempre</strong> compleix aquest termini. El que importa és la <strong>garantia</strong> de complir el termini, no la velocitat absoluta.</p>
+<p><strong>Determinisme</strong> és la propietat que permet aconseguir temps real. Un sistema determinista té un temps de resposta amb <strong>variació mínima</strong> (baixa jitter). Sense determinisme, no pots garantir deadlines.</p>
+<div class="highlight"><pre><span></span><code>              Temps de resposta (latència)
+
+No determinista (Ethernet estàndard):
+    ├──────────────────────────────────────────────────────►
+    │    ○      ○  ○       ○           ○    ○        ○
+    │  (variació alta - no pots garantir deadline)
+
+Determinista (PROFINET IRT, EtherCAT):
+    ├──────────────────────────────────────────────────────►
+    │         ○○○○○○○○
+    │       (variació mínima - pots garantir deadline)
+              ▲
+              └── Latència consistent
+</code></pre></div>
+<p><strong>Relació pràctica:</strong></p>
 <ul>
-<li>
-<p>Avantatges: És un estàndard industrial universal i segur (suporta certificats i xifrat). No necessites drivers propietaris a l'ordinador, només un client OPC UA (com UaExpert per testar o llibreries en Python/C#).</p>
-</li>
-<li>
-<p>Nota: Requereix una configuració prèvia des de Sysmac Studio per triar quines variables vols exposar.</p>
-</li>
+<li>Per tenir <strong>temps real</strong>, necessites <strong>determinisme</strong></li>
+<li>Pots tenir determinisme sense requisits de temps real (sistema predictible però sense deadlines estrictes)</li>
+<li>Ethernet estàndard <strong>no és determinista</strong> perquè el temps d'accés al medi varia (col·lisions, congestió)</li>
 </ul>
-<h2 id="fins-tcp-o-udp">FINS (TCP o UDP)<a class="headerlink" href="#fins-tcp-o-udp" title="Permanent link">&para;</a></h2>
-<p>És el protocol clàssic de Omron. Encara que és antic, el NX1P2 el manté per retrocompatibilitat.</p>
-<ul>
-<li>
-<p>Avantatges: Molt senzill d'implementar si fas la teva pròpia aplicació (és un protocol de trama fixa bastant documentat).</p>
-</li>
-<li>
-<p>Inconvenient: Només pot accedir a zones de memòria clàssiques (com l'àrea E o D que hagis mapejat prèviament).</p>
-</li>
-</ul>
+<h4 id="tipus-de-temps-real">Tipus de temps real<a class="headerlink" href="#tipus-de-temps-real" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Comportament si falla el deadline</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hard Real-Time</strong></td>
+<td>Fallada catastròfica del sistema</td>
+<td>Control de moviment, airbag</td>
+</tr>
+<tr>
+<td><strong>Firm Real-Time</strong></td>
+<td>El resultat ja no és útil, però no és catastròfic</td>
+<td>Vídeo en streaming</td>
+</tr>
+<tr>
+<td><strong>Soft Real-Time</strong></td>
+<td>Degradació acceptable de qualitat</td>
+<td>Monitorització SCADA</td>
+</tr>
+</tbody>
+</table>
+<h4 id="com-saconsegueix-determinisme-en-ethernet">Com s'aconsegueix determinisme en Ethernet?<a class="headerlink" href="#com-saconsegueix-determinisme-en-ethernet" title="Permanent link">&para;</a></h4>
+<p>Ethernet estàndard no és determinista. Les solucions industrials modifiquen el comportament:</p>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Mètode</th>
+<th>Capa OSI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PROFINET IRT</strong></td>
+<td>Reserves de temps (time slots) a capa 2</td>
+<td>Capa 2</td>
+</tr>
+<tr>
+<td><strong>EtherCAT</strong></td>
+<td>Processament "on the fly" sense store-and-forward</td>
+<td>Capa 2</td>
+</tr>
+<tr>
+<td><strong>TSN</strong></td>
+<td>IEEE 802.1 - Prioritats, time-aware shaping</td>
+<td>Capa 2</td>
+</tr>
+<tr>
+<td><strong>EtherNet/IP amb CIP Sync</strong></td>
+<td>Sincronització de rellotges (IEEE 1588 PTP)</td>
+<td>Capa 3-4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="piramide-dautomatitzacio-i-protocols">Piràmide d'automatització i protocols<a class="headerlink" href="#piramide-dautomatitzacio-i-protocols" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>                    ┌───────────────┐
+         Nivell 4   │   ERP/MES     │  ── HTTP, REST, SQL
+                    │   (Gestió)    │
+                    └───────┬───────┘
+                            │ OPC UA, MQTT
+                    ┌───────┴───────┐
+         Nivell 3   │    SCADA      │  ── OPC UA, Modbus TCP
+                    │  (Supervisió) │
+                    └───────┬───────┘
+                            │ EtherNet/IP, PROFINET
+                    ┌───────┴───────┐
+         Nivell 2   │  PLC / DCS    │  ── PROFINET, EtherNet/IP
+                    │   (Control)   │
+                    └───────┬───────┘
+                            │ PROFINET, EtherCAT, IO-Link
+                    ┌───────┴───────┐
+         Nivell 1   │   I/O remota  │  ── Fieldbus, IO-Link
+                    │  (Dispositius)│
+                    └───────┬───────┘
+                            │ Senyals elèctrics
+                    ┌───────┴───────┐
+         Nivell 0   │Sensors/Actuad.│  ── 4-20mA, 0-10V, Digital
+                    │   (Camp)      │
+                    └───────────────┘
+</code></pre></div>
+<hr />
+<h2 id="comparativa-rapida">Comparativa ràpida<a class="headerlink" href="#comparativa-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Capa</th>
+<th>Port</th>
+<th>Temps real</th>
+<th>Seguretat</th>
+<th>Complexitat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modbus TCP</td>
+<td>Aplicació/TCP</td>
+<td>502</td>
+<td>No</td>
+<td>Baixa</td>
+<td>Baixa</td>
+</tr>
+<tr>
+<td>EtherNet/IP</td>
+<td>Aplicació/TCP-UDP</td>
+<td>44818, 2222</td>
+<td>Sí (CIP Sync)</td>
+<td>Mitjana</td>
+<td>Mitjana</td>
+</tr>
+<tr>
+<td>FINS</td>
+<td>Aplicació/TCP-UDP</td>
+<td>9600</td>
+<td>No</td>
+<td>Baixa</td>
+<td>Baixa</td>
+</tr>
+<tr>
+<td>OPC UA</td>
+<td>Aplicació/TCP</td>
+<td>4840</td>
+<td>Sí (TSN)</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>PROFINET</td>
+<td>Capa 2 + TCP/IP</td>
+<td>-</td>
+<td>Sí (IRT)</td>
+<td>Mitjana</td>
+<td>Alta</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="modbus-tcp">Modbus TCP<a class="headerlink" href="#modbus-tcp" title="Permanent link">&para;</a></h2>
-<p>El NX1P2 pot actuar tant com a Client com a Server Modbus TCP.</p>
+<p>Protocol obert basat en l'arquitectura client/servidor. És l'evolució del Modbus RTU (sèrie) cap a Ethernet.</p>
+<h3 id="caracteristiques">Característiques<a class="headerlink" href="#caracteristiques" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>Com funciona: No és "natiu" en el sentit que hagis de marcar una casella, sinó que s'utilitzen Function Blocks (FB) gratuïtes que Omron proporciona a la seva llibreria oficial.</p>
-</li>
-<li>
-<p>Ús: Ideal si l'ordinador ja té un software que parla Modbus de forma estàndard.</p>
-</li>
+<li><strong>Port:</strong> 502 (TCP)</li>
+<li><strong>Model:</strong> Client (Master) / Servidor (Slave)</li>
+<li><strong>Adreçament:</strong> Unit ID (0-255) + Registres (0-65535)</li>
+<li><strong>Format dades:</strong> Big-endian</li>
+</ul>
+<h3 id="funcions-principals">Funcions principals<a class="headerlink" href="#funcions-principals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Codi</th>
+<th>Funció</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Read Coils</td>
+<td>Llegir sortides digitals</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Read Discrete Inputs</td>
+<td>Llegir entrades digitals</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Read Holding Registers</td>
+<td>Llegir registres de 16 bits</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Read Input Registers</td>
+<td>Llegir registres d'entrada</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Write Single Coil</td>
+<td>Escriure una sortida</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Write Single Register</td>
+<td>Escriure un registre</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Write Multiple Coils</td>
+<td>Escriure múltiples sortides</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Write Multiple Registers</td>
+<td>Escriure múltiples registres</td>
+</tr>
+</tbody>
+</table>
+<h3 id="llibreries-disponibles">Llibreries disponibles<a class="headerlink" href="#llibreries-disponibles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Llibreria</th>
+<th>Llenguatge</th>
+<th>Rol</th>
+<th>Llicència</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pymodbus</strong></td>
+<td>Python</td>
+<td>Client i Server</td>
+<td>BSD</td>
+</tr>
+<tr>
+<td><strong>modbus-serial</strong></td>
+<td>Node.js</td>
+<td>Client</td>
+<td>ISC</td>
+</tr>
+<tr>
+<td><strong>jsmodbus</strong></td>
+<td>Node.js</td>
+<td>Client i Server</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<p><strong><a href="../modbus-tcp/">Exemples complets amb Python i Node.js</a></strong></p>
+<h3 id="avantatges-i-inconvenients">Avantatges i inconvenients<a class="headerlink" href="#avantatges-i-inconvenients" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple d'implementar</li>
+<li>Àmpliament suportat</li>
+<li>Obert i sense llicències</li>
+<li>Sense seguretat integrada</li>
+<li>No és temps real</li>
+<li>Limitat a 65536 registres per tipus</li>
+</ul>
+<h2 id="ethernetip-cip">EtherNet/IP (CIP)<a class="headerlink" href="#ethernetip-cip" title="Permanent link">&para;</a></h2>
+<p>Protocol industrial desenvolupat per ODVA. Utilitza CIP (Common Industrial Protocol) sobre TCP/IP i UDP/IP.</p>
+<h3 id="caracteristiques_1">Característiques<a class="headerlink" href="#caracteristiques_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ports:</strong> 44818 (TCP), 2222 (UDP per I/O implícit)</li>
+<li><strong>Model:</strong> Productor/Consumidor i Client/Servidor</li>
+<li><strong>Suport:</strong> Allen-Bradley (Rockwell), Omron Sysmac, altres</li>
+</ul>
+<h3 id="tipus-de-comunicacio">Tipus de comunicació<a class="headerlink" href="#tipus-de-comunicacio" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Explicit Messaging (TCP):</strong> Peticions tipus request/response per configuració i diagnòstic</li>
+<li><strong>Implicit Messaging (UDP):</strong> Comunicació cíclica en temps real per I/O</li>
+</ol>
+<h3 id="conceptes-clau_1">Conceptes clau<a class="headerlink" href="#conceptes-clau_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tag-based:</strong> Accés per nom de variable, no per adreça de memòria</li>
+<li><strong>Assemblies:</strong> Agrupacions de dades per comunicació eficient</li>
+<li><strong>CIP Objects:</strong> Model orientat a objectes (Identity, Connection Manager, etc.)</li>
+</ul>
+<h3 id="llibreries-disponibles_1">Llibreries disponibles<a class="headerlink" href="#llibreries-disponibles_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Llibreria</th>
+<th>Llenguatge</th>
+<th>PLCs suportats</th>
+<th>Llicència</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pycomm3</strong></td>
+<td>Python</td>
+<td>Allen-Bradley</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>libplctag</strong></td>
+<td>C, Python, .NET</td>
+<td>Allen-Bradley, Omron</td>
+<td>LGPL/MPL</td>
+</tr>
+<tr>
+<td><strong>ethernet-ip</strong></td>
+<td>Node.js</td>
+<td>Allen-Bradley</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>Kepware</strong></td>
+<td>Multi</td>
+<td>Multi-fabricant</td>
+<td>Comercial</td>
+</tr>
+</tbody>
+</table>
+<p><strong><a href="../ethernet-ip/">Exemples complets amb Python i Node.js</a></strong></p>
+<h2 id="fins-factory-interface-network-service">FINS (Factory Interface Network Service)<a class="headerlink" href="#fins-factory-interface-network-service" title="Permanent link">&para;</a></h2>
+<p>Protocol propietari d'Omron per comunicació amb PLCs de la sèrie CS, CJ, CP i NX/NJ.</p>
+<h3 id="caracteristiques_2">Característiques<a class="headerlink" href="#caracteristiques_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ports:</strong> 9600 (TCP/UDP)</li>
+<li><strong>Model:</strong> Client/Servidor</li>
+<li><strong>Adreçament:</strong> Àrees de memòria (D, W, H, A, E, etc.)</li>
+</ul>
+<h3 id="comandes-principals">Comandes principals<a class="headerlink" href="#comandes-principals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Codi</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0101</td>
+<td>Memory Area Read</td>
+</tr>
+<tr>
+<td>0102</td>
+<td>Memory Area Write</td>
+</tr>
+<tr>
+<td>0501</td>
+<td>Controller Data Read</td>
+</tr>
+<tr>
+<td>0601</td>
+<td>Controller Status Read</td>
+</tr>
+<tr>
+<td>0401</td>
+<td>Run/Stop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arees-de-memoria-omron">Àrees de memòria Omron<a class="headerlink" href="#arees-de-memoria-omron" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Codi</th>
+<th>Àrea</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>82</td>
+<td>D</td>
+<td>Data Memory</td>
+</tr>
+<tr>
+<td>B0</td>
+<td>W</td>
+<td>Work Area</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>H</td>
+<td>Holding Area</td>
+</tr>
+<tr>
+<td>00</td>
+<td>CIO</td>
+<td>Core I/O</td>
+</tr>
+</tbody>
+</table>
+<h3 id="llibreries-disponibles_2">Llibreries disponibles<a class="headerlink" href="#llibreries-disponibles_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Llibreria</th>
+<th>Llenguatge</th>
+<th>Llicència</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>omron-fins</strong></td>
+<td>Node.js</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>Socket raw</strong></td>
+<td>Python</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>📖 <strong><a href="../fins/">Exemples complets amb Python i Node.js</a></strong></p>
+<h2 id="opc-ua-unified-architecture">OPC UA (Unified Architecture)<a class="headerlink" href="#opc-ua-unified-architecture" title="Permanent link">&para;</a></h2>
+<p>Estàndard internacional (IEC 62541) per interoperabilitat industrial. Successor d'OPC Classic (COM/DCOM).</p>
+<h3 id="caracteristiques_3">Característiques<a class="headerlink" href="#caracteristiques_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Port:</strong> 4840 (per defecte)</li>
+<li><strong>Model:</strong> Client/Servidor i Pub/Sub</li>
+<li><strong>Seguretat:</strong> Certificats X.509, xifrat, autenticació</li>
+</ul>
+<h3 id="arquitectura">Arquitectura<a class="headerlink" href="#arquitectura" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────┐
+│           OPC UA Application            │
+├─────────────────────────────────────────┤
+│     Information Model (Address Space)   │
+├─────────────────────────────────────────┤
+│  Services (Read, Write, Subscribe...)   │
+├─────────────────────────────────────────┤
+│   Security (Authentication, Encryption) │
+├─────────────────────────────────────────┤
+│        Transport (TCP, HTTPS, WSS)      │
+└─────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="address-space">Address Space<a class="headerlink" href="#address-space" title="Permanent link">&para;</a></h3>
+<p>Els nodes s'organitzen en un espai d'adreces jeràrquic:</p>
+<ul>
+<li><strong>Objects:</strong> Contenidors de variables i mètodes</li>
+<li><strong>Variables:</strong> Valors llegibles/escrivibles</li>
+<li><strong>Methods:</strong> Funcions executables</li>
+<li><strong>Views:</strong> Vistes filtrades de l'espai d'adreces</li>
+</ul>
+<h3 id="nodeid">NodeId<a class="headerlink" href="#nodeid" title="Permanent link">&para;</a></h3>
+<p>Identificador únic de cada node:</p>
+<div class="highlight"><pre><span></span><code>ns=2;s=MyDevice.Temperature    (String)
+ns=2;i=1234                     (Numeric)
+</code></pre></div>
+<h3 id="exemple-amb-python-opcua-asyncio">Exemple amb Python (opcua-asyncio)<a class="headerlink" href="#exemple-amb-python-opcua-asyncio" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">asyncua</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;opc.tcp://192.168.1.100:4840&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+        <span class="c1"># Llegir un node</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;ns=2;s=Temperature&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="k">await</span> <span class="n">node</span><span class="o">.</span><span class="n">read_value</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperatura: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Subscripció a canvis</span>
+        <span class="n">handler</span> <span class="o">=</span> <span class="n">SubHandler</span><span class="p">()</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">sub</span><span class="o">.</span><span class="n">subscribe_data_change</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SubHandler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">datachange_notification</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Canvi: </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="eines-utils">Eines útils<a class="headerlink" href="#eines-utils" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>UaExpert</strong> - Client gràfic gratuït per explorar servidors</li>
+<li><strong>opcua-asyncio</strong> - Llibreria Python</li>
+<li><strong>node-opcua</strong> - Llibreria Node.js</li>
+<li><strong>open62541</strong> - Implementació C open source</li>
+</ul>
+<h3 id="avantatges-i-inconvenients_1">Avantatges i inconvenients<a class="headerlink" href="#avantatges-i-inconvenients_1" title="Permanent link">&para;</a></h3>
+<p>✅ Seguretat integrada (certificats, xifrat)
+✅ Interoperabilitat multi-fabricant
+✅ Model de dades ric i extensible
+✅ Companion Specifications per sectors
+❌ Major complexitat d'implementació
+❌ Requereix més recursos computacionals</p>
+<h2 id="profinet">PROFINET<a class="headerlink" href="#profinet" title="Permanent link">&para;</a></h2>
+<p>Protocol de Siemens basat en Ethernet industrial. Estàndard IEC 61158/61784.</p>
+<h3 id="classes-de-comunicacio">Classes de comunicació<a class="headerlink" href="#classes-de-comunicacio" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Nom</th>
+<th>Cicle</th>
+<th>Ús</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CC-A</td>
+<td>RT</td>
+<td>10-100 ms</td>
+<td>Automatització estàndard</td>
+</tr>
+<tr>
+<td>CC-B</td>
+<td>RT</td>
+<td>1-10 ms</td>
+<td>Aplicacions ràpides</td>
+</tr>
+<tr>
+<td>CC-C</td>
+<td>IRT</td>
+<td>&lt; 1 ms</td>
+<td>Motion control, sincronització</td>
+</tr>
+</tbody>
+</table>
+<h3 id="caracteristiques_4">Característiques<a class="headerlink" href="#caracteristiques_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Capa 2 (IRT):</strong> Accés directe a Ethernet per temps real</li>
+<li><strong>TCP/IP (RT):</strong> Compatible amb infraestructura IT estàndard</li>
+<li><strong>GSD/GSDML:</strong> Fitxers de descripció de dispositius</li>
+</ul>
+<h3 id="diferencies-amb-ethernetip">Diferències amb EtherNet/IP<a class="headerlink" href="#diferencies-amb-ethernetip" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>PROFINET</th>
+<th>EtherNet/IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origen</td>
+<td>Siemens</td>
+<td>Rockwell/ODVA</td>
+</tr>
+<tr>
+<td>Temps real</td>
+<td>IRT (Capa 2)</td>
+<td>CIP Sync</td>
+</tr>
+<tr>
+<td>Configuració</td>
+<td>GSDML (XML)</td>
+<td>EDS</td>
+</tr>
+<tr>
+<td>Adopció</td>
+<td>Europa</td>
+<td>Amèrica</td>
+</tr>
+</tbody>
+</table>
+<h2 id="altres-protocols">Altres protocols<a class="headerlink" href="#altres-protocols" title="Permanent link">&para;</a></h2>
+<h3 id="bacnetip">BACnet/IP<a class="headerlink" href="#bacnetip" title="Permanent link">&para;</a></h3>
+<p>Protocol per automatització d'edificis (HVAC, il·luminació).
+- Port UDP 47808</p>
+<h3 id="dnp3">DNP3<a class="headerlink" href="#dnp3" title="Permanent link">&para;</a></h3>
+<p>Protocol per sistemes SCADA en utilities (electricitat, aigua).
+- Port TCP 20000</p>
+<h3 id="mqtt">MQTT<a class="headerlink" href="#mqtt" title="Permanent link">&para;</a></h3>
+<p>Protocol lleuger pub/sub per IoT. Molt usat per connectar dispositius industrials amb el núvol.
+- Port TCP 1883 (sense TLS), 8883 (amb TLS)</p>
+<h3 id="coap">CoAP<a class="headerlink" href="#coap" title="Permanent link">&para;</a></h3>
+<p>Protocol REST-like per dispositius amb recursos limitats.
+- Port UDP 5683</p>
+<h2 id="seguretat-en-protocols-industrials">Seguretat en protocols industrials<a class="headerlink" href="#seguretat-en-protocols-industrials" title="Permanent link">&para;</a></h2>
+<h3 id="consideracions">Consideracions<a class="headerlink" href="#consideracions" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Segmentació de xarxa:</strong> Separar OT de IT amb firewalls i DMZ</li>
+<li><strong>Xifratge:</strong> Utilitzar TLS quan sigui possible (OPC UA, MQTT)</li>
+<li><strong>Autenticació:</strong> Implementar control d'accés</li>
+<li><strong>Monitorització:</strong> Detectar anomalies en el tràfic</li>
+<li><strong>Actualitzacions:</strong> Mantenir firmware i software actualitzats</li>
+</ol>
+<h3 id="protocols-i-seguretat-nativa">Protocols i seguretat nativa<a class="headerlink" href="#protocols-i-seguretat-nativa" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Xifratge</th>
+<th>Autenticació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modbus TCP</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>EtherNet/IP</td>
+<td>⚠️ CIP Security</td>
+<td>⚠️ Opcional</td>
+</tr>
+<tr>
+<td>FINS</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>OPC UA</td>
+<td>✅ TLS</td>
+<td>✅ Certificats</td>
+</tr>
+<tr>
+<td>PROFINET</td>
+<td>⚠️ Classe 4</td>
+<td>⚠️ Opcional</td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://modbus.org/">Modbus Organization</a></li>
+<li><a href="https://www.odva.org/">ODVA - EtherNet/IP</a></li>
+<li><a href="https://opcfoundation.org/">OPC Foundation</a></li>
+<li><a href="https://www.profibus.com/">PROFIBUS &amp; PROFINET International</a></li>
+<li><a href="https://github.com/libplctag/libplctag">libplctag</a></li>
+<li><a href="https://github.com/FreeOpcUa/opcua-asyncio">opcua-asyncio</a></li>
 </ul>
 
 
