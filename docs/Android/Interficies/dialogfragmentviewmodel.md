@@ -1,7 +1,4 @@
 # Guia Simplificada: DialogFragment amb ViewModel
-## Per estudiants de DAM - Afegir, Modificar i Eliminar
-
-
 
 ## Estructura del Projecte
 
