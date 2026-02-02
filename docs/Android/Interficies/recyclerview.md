@@ -57,8 +57,8 @@ Objecte que conté la llista: DataSource
  */
 object DataSource {
 
-    // Llista de dades en memòria (només de lectura)
-    val items: List<MyItem> = listOf(
+    // Llista de dades en memòria
+    val items: MutableList<MyItem> = listOf(
         MyItem("Element 1", "Subtítol 1"),
         MyItem("Element 2", "Subtítol 2"),
         MyItem("Element 3", "Subtítol 3"),

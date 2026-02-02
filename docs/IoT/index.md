@@ -37,16 +37,13 @@ Veure apartat [Transversal/Docker](../Transversal/docker.md)
 
 ## Pila de Contenidors
 
-Enllaços a projectes de GIT amb Readme:
-
-- [Observabilitat-Stack-Grafana](https://github.com/davidfs-itic/Observabilitat-Stack-Grafana)
-
-- [Stack IoT](https://github.com/davidfs-itic/Iot_Stack)
-    - Influxdb v3
-    - Grafana
-    - Mqtt
-    - Telegraf
-    - Node-Red
+- [Grafana](./contenidors/grafana.md)
+- [Influxdb3](./contenidors/influxdb3.md)
+- [Mqtt](./contenidors/mqtt.md)
+- [Node-Red](./contenidors/nodered.md)
+- [Telegraf](./contenidors/telegraf.md)
+- [ThingsBoard](./contenidors/thingsboard.md)
+- [ChirpStack](./contenidors/chirpstack.md)
 
 ## IIot
 

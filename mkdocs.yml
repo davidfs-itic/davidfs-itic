@@ -71,6 +71,7 @@ nav:
         - Navigation Drawer: Android/Interficies/drawermenu.md
         - Dialegs: Android/Interficies/dialegs.md
         - RecyclerView: Android/Interficies/recyclerview.md
+        - RecyclerView Afegir i eliminar: Android/Interficies/recyclerviewaddelete.md
         - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
         - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
         - Menús: Android/Interficies/menus.md
@@ -84,8 +85,8 @@ nav:
         - Observer: Android/Arquitectura/observer.md
         - Dommini (Repositori) i Dades: Android/Arquitectura/repositori.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
-        - Patró Factory: Android/Arquitectura/factory.md
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
+        - Patró Factory: Android/Arquitectura/factory.md
         - Principis SOLID: Android/Arquitectura/solid.md
       - Llibreries:
         - Introducció a les Llibreries: Android/Llibreries/index.md
@@ -115,6 +116,14 @@ nav:
     - IoT: 
       - Introducció a l'IoT: IoT/index.md
       - Guia Oracle Cloud: IoT/oracle.md
+      - Backends IoT:
+        - Grafana: IoT/contenidors/grafana.md
+        - InfluxDB: IoT/contenidors/influxdb3.md
+        - MQTT: IoT/contenidors/mqtt.md
+        - Node-RED: IoT/contenidors/nodered.md
+        - Telegraf: IoT/contenidors/telegraf.md
+        - ThingsBoard: IoT/contenidors/thingsboard.md
+        - ChirpStack: IoT/contenidors/chirpstack.md      
       - IIoT (Internet Industrial de les Coses):
         - Introducció a l'IIoT: IoT/IIoT/index.md
         - Protocols Industrials: IoT/IIoT/protocols.md
@@ -131,13 +140,7 @@ nav:
     #     - Sensors IoT: IoT/sensors.md
     #     - Raspberry Pi: IoT/raspberrypi.md
     #     - Arduino IoT: IoT/arduinoiot.md
-    #   - Backends IoT:
-    #     - InfluxDB: IoT/influxdb.md
-    #     - Node-RED: IoT/nodered.md
-    #     - ThingsBoard: IoT/thingsboard.md
-    #     - Grafana: IoT/grafana.md
-    #     - MQTT: IoT/mqtt.md
-    #     - ChirpStack: IoT/chirpstack.md
+
     #   - Protocols IoT:
     #     - HTTP/HTTPS: IoT/http.md
     #     - MQTT: IoT/mqttprotocol.md
