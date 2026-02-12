@@ -12,6 +12,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+#https://github.com/christo-ph/mkdocs_build_plantuml      
 # Tema
 theme:
   name: material
@@ -83,7 +84,8 @@ nav:
         - ViewModel: Android/Arquitectura/viewmodel.md
         - Application ViewModel: Android/Arquitectura/applicationviewmodel.md
         - Observer: Android/Arquitectura/observer.md
-        - Dommini (Repositori) i Dades: Android/Arquitectura/repositori.md
+        - Capa de Dades en Android: Android/Arquitectura/capa_dades_android.md
+        - Capa de Dades amb Clean Architecture: Android/Arquitectura/capa_dades_clean_architecture.md
         - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
         - Patró Factory: Android/Arquitectura/factory.md

@@ -10,10 +10,10 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/repositori/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/capa_dades_clean_architecture/">
       
       
-        <link rel="prev" href="../observer/">
+        <link rel="prev" href="../capa_dades_android/">
       
       
         <link rel="next" href="../inversiodependencies/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Dommini (Repositori) i Dades - Documentació DavidFS - ITIC</title>
+        <title>Capa de Dades amb Clean Architecture - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#capa-repositori-i-dades" class="md-skip">
+        <a href="#de-larquitectura-android-a-clean-architecture" class="md-skip">
           Salta el contingut
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dommini (Repositori) i Dades
+              Capa de Dades amb Clean Architecture
             
           </span>
         </div>
@@ -1588,6 +1588,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../capa_dades_android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capa de Dades en Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1607,7 +1635,7 @@
   <span class="md-ellipsis">
     
   
-    Dommini (Repositori) i Dades
+    Capa de Dades amb Clean Architecture
   
 
     
@@ -1625,7 +1653,7 @@
   <span class="md-ellipsis">
     
   
-    Dommini (Repositori) i Dades
+    Capa de Dades amb Clean Architecture
   
 
     
@@ -1651,22 +1679,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-situacio-inicial" class="md-nav__link">
+  <a href="#1-punt-de-partida-arquitectura-android" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Situació inicial
+        1. Punt de partida: Arquitectura Android
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Situació inicial">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pas-1-clean-architecture-minima-afegir-la-interface-del-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pas 1 — Clean Architecture mínima: afegir la interface del Repository
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pas 1 — Clean Architecture mínima: afegir la interface del Repository">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problemes-darquitectura" class="md-nav__link">
+  <a href="#que-canvia-i-que-no-canvia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problemes d'arquitectura
+        Què canvia i què no canvia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-resultant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama resultant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hem-guanyat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què hem guanyat?
       
     </span>
   </a>
@@ -1679,33 +1751,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problemes-que-pot-ocasionar" class="md-nav__link">
+  <a href="#3-pas-2-clean-architecture-completa-afegir-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problemes que pot ocasionar
+        3. Pas 2 — Clean Architecture completa: afegir Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Pas 2 — Clean Architecture completa: afegir Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-canvia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què canvia
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-analisi-codi-incorrectesense-separacio-de-capa" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-resultant_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Anàlisi codi Incorrecte:(sense separació de capa)
+        Diagrama resultant
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Anàlisi codi Incorrecte:(sense separació de capa)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#objectiu-del-clean-clode-i-arquitectura-per-capes" class="md-nav__link">
+  <a href="#codi_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectiu del Clean Clode i arquitectura per capes
+        Codi
       
     </span>
   </a>
@@ -1718,22 +1801,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-implementacio-correcte-amb-separacio-de-capes-uidominidades" class="md-nav__link">
+  <a href="#4-resum-de-la-transicio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Implementació correcte (amb separació de capes UI,Domini,Dades)
+        4. Resum de la transició
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Implementació correcte (amb separació de capes UI,Domini,Dades)">
+    <nav class="md-nav" aria-label="4. Resum de la transició">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#capa-domini" class="md-nav__link">
+  <a href="#classes-per-capa-a-cada-pas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capa Domini
+        Classes per capa a cada pas
       
     </span>
   </a>
@@ -1741,10 +1824,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#capa-dades" class="md-nav__link">
+  <a href="#direccio-de-les-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capa Dades
+        Direcció de les dependències
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taula-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taula comparativa
       
     </span>
   </a>
@@ -1757,41 +1851,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-explicacio-capes" class="md-nav__link">
+  <a href="#5-quan-utilitzar-cada-enfocament" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Explicació capes
+        5. Quan utilitzar cada enfocament?
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Explicació capes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#principis-de-clean-code-aplicats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Principis de Clean Code aplicats:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esquema-general" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esquema general:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3189,22 +3255,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-situacio-inicial" class="md-nav__link">
+  <a href="#1-punt-de-partida-arquitectura-android" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Situació inicial
+        1. Punt de partida: Arquitectura Android
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Situació inicial">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pas-1-clean-architecture-minima-afegir-la-interface-del-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pas 1 — Clean Architecture mínima: afegir la interface del Repository
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pas 1 — Clean Architecture mínima: afegir la interface del Repository">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problemes-darquitectura" class="md-nav__link">
+  <a href="#que-canvia-i-que-no-canvia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problemes d'arquitectura
+        Què canvia i què no canvia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-resultant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama resultant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-hem-guanyat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què hem guanyat?
       
     </span>
   </a>
@@ -3217,33 +3327,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problemes-que-pot-ocasionar" class="md-nav__link">
+  <a href="#3-pas-2-clean-architecture-completa-afegir-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problemes que pot ocasionar
+        3. Pas 2 — Clean Architecture completa: afegir Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Pas 2 — Clean Architecture completa: afegir Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-canvia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què canvia
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-analisi-codi-incorrectesense-separacio-de-capa" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-resultant_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Anàlisi codi Incorrecte:(sense separació de capa)
+        Diagrama resultant
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Anàlisi codi Incorrecte:(sense separació de capa)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#objectiu-del-clean-clode-i-arquitectura-per-capes" class="md-nav__link">
+  <a href="#codi_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectiu del Clean Clode i arquitectura per capes
+        Codi
       
     </span>
   </a>
@@ -3256,22 +3377,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-implementacio-correcte-amb-separacio-de-capes-uidominidades" class="md-nav__link">
+  <a href="#4-resum-de-la-transicio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Implementació correcte (amb separació de capes UI,Domini,Dades)
+        4. Resum de la transició
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Implementació correcte (amb separació de capes UI,Domini,Dades)">
+    <nav class="md-nav" aria-label="4. Resum de la transició">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#capa-domini" class="md-nav__link">
+  <a href="#classes-per-capa-a-cada-pas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capa Domini
+        Classes per capa a cada pas
       
     </span>
   </a>
@@ -3279,10 +3400,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#capa-dades" class="md-nav__link">
+  <a href="#direccio-de-les-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capa Dades
+        Direcció de les dependències
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taula-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taula comparativa
       
     </span>
   </a>
@@ -3295,41 +3427,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-explicacio-capes" class="md-nav__link">
+  <a href="#5-quan-utilitzar-cada-enfocament" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Explicació capes
+        5. Quan utilitzar cada enfocament?
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Explicació capes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#principis-de-clean-code-aplicats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Principis de Clean Code aplicats:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esquema-general" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esquema general:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3350,194 +3454,425 @@
 
 
 
-<h1 id="capa-repositori-i-dades">Capa repositori i dades<a class="headerlink" href="#capa-repositori-i-dades" title="Permanent link">&para;</a></h1>
-<h2 id="1-situacio-inicial">1. Situació inicial<a class="headerlink" href="#1-situacio-inicial" title="Permanent link">&para;</a></h2>
-<p>Partint del codi relatiu al Recyclerview, veurem que té algunes mancances o dificultats.
-No respecta els principis de clean code, ni té cap arquitectura definida:</p>
-<h3 id="problemes-darquitectura">Problemes d'arquitectura<a class="headerlink" href="#problemes-darquitectura" title="Permanent link">&para;</a></h3>
-<p><strong>Absència de separació de capes:</strong> 
- La Activity accedeix directament a les dades (directament a la llista en memòria o através d'una API).Això crea un acoblament fort i dificulta enormement el testing i el manteniment.</p>
-<p><strong>DataSource com a singleton estàtic:</strong> 
-Qualsevol canvi en com s'obtenen les dades (API, base de dades local, etc.) requerirà modificar directament la Activity, però també tots els llocs on s'utilitza.</p>
-<p><strong>Lògica de negoci a la UI:</strong> La Activity està fent massa coses: configura el RecyclerView, gestiona el clic, i decideix què mostrar (el Toast o ). No hi ha cap ViewModel ni cap capa intermèdia que gestioni l'estat o la lògica.</p>
-<h2 id="problemes-que-pot-ocasionar">Problemes que pot ocasionar<a class="headerlink" href="#problemes-que-pot-ocasionar" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Escalabilitat nul·la: Quan el projecte creixi i necessitis múltiples fonts de dades, càrrega asíncrona, caché, o sincronització, aquest codi serà molt difícil de mantenir.</li>
-<li>Impossibilitat de testing automàtic: Aquest codi fa els tests pràcticament impossibles.</li>
-<li>Duplicació de codi futura: Sense una arquitectura clara, cada nova funcionalitat similar acabarà repetint patrons, copiant i enganxant codi.</li>
-</ul>
-<h2 id="2-analisi-codi-incorrectesense-separacio-de-capa">2. Anàlisi codi Incorrecte:(sense separació de capa)<a class="headerlink" href="#2-analisi-codi-incorrectesense-separacio-de-capa" title="Permanent link">&para;</a></h2>
-<p>Item: Classe que conté les dades que necessitem (pot ser recepta, pelicula, reserva, itemcompra, ticket, etc..)</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: MyItem.kt</span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyItem</span><span class="p">(</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span>
-<span class="p">)</span>
+<h1 id="de-larquitectura-android-a-clean-architecture">De l'arquitectura Android a Clean Architecture<a class="headerlink" href="#de-larquitectura-android-a-clean-architecture" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Prerequisit</p>
+<p>Aquest document parteix de l'arquitectura en 2 capes (UI + Dades) explicada a <a href="../capa_dades_android/">Capa repositori i dades</a>. Es recomana llegir-lo primer.</p>
+</div>
+<h2 id="1-punt-de-partida-arquitectura-android">1. Punt de partida: Arquitectura Android<a class="headerlink" href="#1-punt-de-partida-arquitectura-android" title="Permanent link">&para;</a></h2>
+<p>Recordem l'arquitectura que teníem:</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  UI LAYER                                        │
+│  Activity/Fragment → ViewModel                   │
+│  (depèn de ItemsRepository, classe concreta)     │
+└──────────────┬───────────────────────────────────┘
+               │
+               ▼
+┌──────────────────────────────────────────────────┐
+│  DATA LAYER                                      │
+│                                                  │
+│  ItemsRepository (classe concreta)               │
+│  └─→ ItemsDataSource (interface)                 │
+│      ├─→ MockItemsDataSource                     │
+│      └─→ RetrofitItemsDataSource                 │
+└──────────────────────────────────────────────────┘
 </code></pre></div>
-<p>Datasource: Classe (objecte en aquest cas) que conté la llista d'items</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: DataSource.kt</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * Objecte singleton que proporciona dades en memòria</span>
-<span class="cm"> * per ser utilitzades al RecyclerView.</span>
-<span class="cm"> */</span>
-<span class="kd">object</span><span class="w"> </span><span class="nc">DataSource</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="c1">// Llista de dades en memòria (només de lectura)</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 1&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 2&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 3&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 4&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-Des de l'activity, es crea la llista d'items. Aixó és incorrecte doncs no és la tasca de l'activity.
-<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="c1">// 3. Crear llista de dades (des de DataSource o directament)</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataSource</span><span class="p">.</span><span class="na">items</span>
-</code></pre></div></p>
-<h3 id="objectiu-del-clean-clode-i-arquitectura-per-capes">Objectiu del Clean Clode i arquitectura per capes<a class="headerlink" href="#objectiu-del-clean-clode-i-arquitectura-per-capes" title="Permanent link">&para;</a></h3>
-<p>Hem de fer independent les dades de la implementació, perque la UI pugui cridar un métode  genèric. Per tant, ha de ser independent </p>
-<p>Aquesta classe s'anomena Repositori, i correspón a la <strong>Capa de domini</strong></p>
-<h4 id="daquesta-manera-tindrem-3-capes">D'aquesta manera, tindrem 3 capes:<a class="headerlink" href="#daquesta-manera-tindrem-3-capes" title="Permanent link">&para;</a></h4>
-<ol>
-<li>UI (Activities, ViewModels)</li>
-<li>Domini (Repositori)</li>
-<li>Dades (Datasources amb Interface)</li>
-</ol>
-<p><strong>Repository</strong>: Coordinador i font de dades. Recupera les dades, pero no directament, sinó a través dels datasources.</p>
-<p>Per exemple:
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">(</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span>
-<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span><span class="w">   </span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<p>Per què necessites la capa de Domini (amb el Repositori)?
-Per diferents responsabilitats</p>
-<ul>
-<li>Repository: S'encarrega de la lògica de negoci relacionada amb les dades:<ul>
-<li>Gestió de caché</li>
-<li>Combinació de múltiples fonts de dades (local + remota)</li>
-<li>Decisió de quan usar dades locals vs remotes</li>
-<li>Transformació de dades entre capes</li>
-<li>Gestió d'errors i fallbacks</li>
-</ul>
-</li>
-<li>DataSource: S'encarrega NOMÉS d'obtenir/guardar dades d'una font específica (mock, API, base de dades).</li>
-</ul>
-<h2 id="3-implementacio-correcte-amb-separacio-de-capes-uidominidades">3. Implementació correcte (amb separació de capes UI,Domini,Dades)<a class="headerlink" href="#3-implementacio-correcte-amb-separacio-de-capes-uidominidades" title="Permanent link">&para;</a></h2>
-<h3 id="capa-domini">Capa Domini<a class="headerlink" href="#capa-domini" title="Permanent link">&para;</a></h3>
-<p>(la classe repositori que hem vist abans), hi ha diferents maneres d'implementar-la i a més es poden afegir els casos d'ús.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">(</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span>
-<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span><span class="w">   </span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="capa-dades">Capa Dades<a class="headerlink" href="#capa-dades" title="Permanent link">&para;</a></h3>
-<p>Interface +  Datasources concrets.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">ItemDataSource</span><span class="w"> </span><span class="p">{</span>
+<p>Amb les classes:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Data Layer</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nc">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
 <span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
 <span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
 <span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>I ara podem crear múltiples datasources, amb implementacions diferents (Mock, api, bbdd)</p>
-<div class="admonition note">
-<p class="admonition-title">Què és Mock?</p>
-<p>Mock es refereix a dades falses, i s'utilitza en programació per provar les classes abans no es tingui una base de dades, api, etc.
-En aquest cas, el MockItemDataSource és una llista precodificada (com havíem fet abans en el nostre object Datasource)</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MockItemDataSource</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span>
-<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element A&quot;</span><span class="p">),</span>
-<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element B&quot;</span><span class="p">),</span>
-<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element C&quot;</span><span class="p">)</span>
-<span class="w">   </span><span class="p">)</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//implementacio  }</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//implementacio }</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="p">}</span>
 
-
-<span class="kd">class</span><span class="w"> </span><span class="nc">RetrofitItemDataSource</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">       </span><span class="n">RetrofitClient</span><span class="p">.</span><span class="na">instance</span><span class="p">.</span><span class="na">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">id</span><span class="p">).</span><span class="na">execute</span><span class="p">()</span>
-<span class="w">   </span><span class="p">}</span>
+<span class="c1">// UI Layer</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsViewModel</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="w">  </span><span class="c1">// classe concreta</span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>D'aquesta manera el Repositori no necessita saber com estan implementades (com s'aconsegueixen, es guarden, etc) les dades.</p>
-<p>Ara podem fer fàcilment un 
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">ItemDataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">“</span><span class="n">Testing</span><span class="err">”</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">CreateMockItemDataSource</span><span class="p">()</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">CreateRetrofitItemDataSource</span><span class="p">()</span>
+<p><strong>Què ja funciona bé</strong>: Gràcies a la interface <code>ItemsDataSource</code>, podem canviar la font de dades (Mock, Retrofit, Room) sense modificar ni el Repository ni el ViewModel. Per testejar amb dades falses, n'hi ha prou passant un <code>MockItemsDataSource</code> al Repository.</p>
+<p><strong>Limitació</strong>: El ViewModel depèn de la classe concreta <code>ItemsRepository</code>. Si volem testejar el ViewModel de forma <strong>aïllada</strong> (sense cap Repository real), no podem crear fàcilment un "fake Repository" perquè no hi ha una interface per implementar. Necessitaríem una llibreria de mocking (com Mockk) per simular la classe concreta.</p>
+<p>Amb Clean Architecture, aplicarem DIP <strong>entre capes</strong>: el ViewModel dependrà d'una interface del Repository (definida al Domain), cosa que permetrà substituir el Repository complet per un fake en els tests.</p>
+<h2 id="2-pas-1-clean-architecture-minima-afegir-la-interface-del-repository">2. Pas 1 — Clean Architecture mínima: afegir la interface del Repository<a class="headerlink" href="#2-pas-1-clean-architecture-minima-afegir-la-interface-del-repository" title="Permanent link">&para;</a></h2>
+<p>El canvi mínim per passar a Clean Architecture és:</p>
+<ol>
+<li>Crear una <strong>capa de Domini</strong> (Domain Layer)</li>
+<li>Crear la <strong>interface del Repository</strong> al Domain</li>
+<li>Moure l'<strong>entitat</strong> (<code>MyItem</code>) al Domain</li>
+<li>La implementació del Repository queda al Data Layer</li>
+</ol>
+<h3 id="que-canvia-i-que-no-canvia">Què canvia i què no canvia<a class="headerlink" href="#que-canvia-i-que-no-canvia" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Android Architecture</th>
+<th>Clean Architecture mínima</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MyItem</code></td>
+<td>Data Layer</td>
+<td><strong>→ Domain Layer</strong></td>
+</tr>
+<tr>
+<td><code>ItemsRepository</code> (interface)</td>
+<td>No existia</td>
+<td><strong>→ Domain Layer (NOVA)</strong></td>
+</tr>
+<tr>
+<td><code>ItemsRepository</code> (classe concreta)</td>
+<td>Data Layer</td>
+<td><strong>→ Reanomenada a <code>ItemsRepositoryImpl</code></strong>, es queda al Data Layer</td>
+</tr>
+<tr>
+<td><code>ItemsDataSource</code> (interface)</td>
+<td>Data Layer</td>
+<td>Data Layer (sense canvis)</td>
+</tr>
+<tr>
+<td><code>MockItemsDataSource</code></td>
+<td>Data Layer</td>
+<td>Data Layer (sense canvis)</td>
+</tr>
+<tr>
+<td><code>RetrofitItemsDataSource</code></td>
+<td>Data Layer</td>
+<td>Data Layer (sense canvis)</td>
+</tr>
+<tr>
+<td><code>ItemsViewModel</code></td>
+<td>UI Layer</td>
+<td>UI Layer (canvia el tipus de dependència)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagrama-resultant">Diagrama resultant<a class="headerlink" href="#diagrama-resultant" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  UI LAYER                                        │
+│  ItemsViewModel                                  │
+│  (depèn de ItemsRepository, INTERFACE del Domain)│
+└──────────────┬───────────────────────────────────┘
+               │ depèn de
+               ▼
+┌──────────────────────────────────────────────────┐
+│  DOMAIN LAYER                                    │
+│                                                  │
+│  ItemsRepository (interface)                     │
+│  MyItem (entitat)                                │
+└──────────────────────────────────────────────────┘
+               ▲
+               │ implementa (depèn de)
+┌──────────────┴───────────────────────────────────┐
+│  DATA LAYER                                      │
+│                                                  │
+│  ItemsRepositoryImpl (implementa la interface)   │
+│  └─→ ItemsDataSource (interface)                 │
+│      ├─→ MockItemsDataSource                     │
+│      └─→ RetrofitItemsDataSource                 │
+└──────────────────────────────────────────────────┘
+</code></pre></div>
+<p>Fixeu-vos en la <strong>direcció de les fletxes</strong>: tant la UI com el Data apunten cap al Domain. El Domain no depèn de ningú. Aquesta és la inversió de dependències entre capes.</p>
+<h3 id="codi">Codi<a class="headerlink" href="#codi" title="Permanent link">&para;</a></h3>
+<h4 id="domain-layer">Domain Layer<a class="headerlink" href="#domain-layer" title="Permanent link">&para;</a></h4>
+<p>L'entitat i la interface del Repository:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// domain/model/MyItem.kt</span>
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyItem</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span>
+<span class="p">)</span>
+
+<span class="c1">// domain/repository/ItemsRepository.kt</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El Domain <strong>només conté definicions</strong> (interfaces i entitats). No conté cap implementació ni cap dependència externa.</p>
+<h4 id="data-layer">Data Layer<a class="headerlink" href="#data-layer" title="Permanent link">&para;</a></h4>
+<p>La implementació del Repository i els DataSources (gairebé igual que abans):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// data/datasource/ItemsDataSource.kt</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nc">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// data/repository/ItemsRepositoryImpl.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepositoryImpl</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// ← implementa la interface del DOMAIN</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// data/datasource/MockItemsDataSource.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">MockItemsDataSource</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol A&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol B&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol C&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* implementació */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* implementació */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>L'únic canvi respecte l'arquitectura Android és que <code>ItemsRepositoryImpl</code> ara implementa <code>ItemsRepository</code> (interface del Domain) en lloc de ser una classe independent.</p>
+<h4 id="ui-layer">UI Layer<a class="headerlink" href="#ui-layer" title="Permanent link">&para;</a></h4>
+<p>El ViewModel ara depèn de la <strong>interface</strong> (Domain), no de la classe concreta (Data):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ui/ItemsViewModel.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsViewModel</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="w">  </span><span class="c1">// ← INTERFACE, no classe concreta</span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="com-es-connecta-tot">Com es connecta tot<a class="headerlink" href="#com-es-connecta-tot" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isTesting</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MockItemsDataSource</span><span class="p">()</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">RetrofitItemsDataSource</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1">// El tipus declarat és la INTERFACE (Domain), la implementació és del Data</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemsRepositoryImpl</span><span class="p">(</span><span class="n">dataSource</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">viewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemsViewModel</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="que-hem-guanyat">Què hem guanyat?<a class="headerlink" href="#que-hem-guanyat" title="Permanent link">&para;</a></h3>
+<p>Amb aquest canvi mínim (una interface + moure l'entitat):</p>
+<ul>
+<li><strong>DIP entre capes</strong>: La UI i el Data depenen del Domain. El Domain no depèn de ningú.</li>
+<li><strong>Testabilitat del ViewModel</strong>: Podem crear un mock del Repository sense necessitar cap DataSource.</li>
+<li><strong>Domain estable</strong>: Si canviem tota la capa de dades (de Retrofit a Room, per exemple), el Domain i la UI no es veuen afectats.</li>
+</ul>
+<h2 id="3-pas-2-clean-architecture-completa-afegir-use-cases">3. Pas 2 — Clean Architecture completa: afegir Use Cases<a class="headerlink" href="#3-pas-2-clean-architecture-completa-afegir-use-cases" title="Permanent link">&para;</a></h2>
+<p>El pas anterior ja ens dóna Clean Architecture. Però el ViewModel encara crida directament el Repository. En projectes grans, això pot ser un problema:</p>
+<ul>
+<li>Si dos ViewModels necessiten la mateixa operació amb la mateixa lògica, la dupliquem.</li>
+<li>La lògica de negoci queda escampada entre ViewModels.</li>
+</ul>
+<p>La solució són els <strong>Use Cases</strong> (o Interactors): classes al Domain que encapsulen <strong>una única operació de negoci</strong>.</p>
+<h3 id="que-canvia">Què canvia<a class="headerlink" href="#que-canvia" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Clean mínima</th>
+<th>Clean completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetItemsUseCase</code></td>
+<td>No existia</td>
+<td><strong>→ Domain Layer (NOU)</strong></td>
+</tr>
+<tr>
+<td><code>AddItemUseCase</code></td>
+<td>No existia</td>
+<td><strong>→ Domain Layer (NOU)</strong></td>
+</tr>
+<tr>
+<td><code>ItemsViewModel</code></td>
+<td>Depèn de <code>ItemsRepository</code></td>
+<td><strong>→ Depèn dels Use Cases</strong></td>
+</tr>
+<tr>
+<td>Resta de classes</td>
+<td>—</td>
+<td>Sense canvis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagrama-resultant_1">Diagrama resultant<a class="headerlink" href="#diagrama-resultant_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  UI LAYER                                        │
+│  ItemsViewModel                                  │
+│  (depèn dels Use Cases)                          │
+└──────────────┬───────────────────────────────────┘
+               │ depèn de
+               ▼
+┌──────────────────────────────────────────────────┐
+│  DOMAIN LAYER                                    │
+│                                                  │
+│  GetItemsUseCase ──┐                             │
+│  AddItemUseCase    ├─→ ItemsRepository (interface)│
+│  ...               ┘                             │
+│  MyItem (entitat)                                │
+└──────────────────────────────────────────────────┘
+               ▲
+               │ implementa (depèn de)
+┌──────────────┴───────────────────────────────────┐
+│  DATA LAYER                                      │
+│                                                  │
+│  ItemsRepositoryImpl                             │
+│  └─→ ItemsDataSource (interface)                 │
+│      ├─→ MockItemsDataSource                     │
+│      └─→ RetrofitItemsDataSource                 │
+└──────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="codi_1">Codi<a class="headerlink" href="#codi_1" title="Permanent link">&para;</a></h3>
+<h4 id="domain-layer-use-cases">Domain Layer — Use Cases<a class="headerlink" href="#domain-layer-use-cases" title="Permanent link">&para;</a></h4>
+<p>Cada Use Case té una única responsabilitat: executar una operació.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// domain/usecase/GetItemsUseCase.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">GetItemsUseCase</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">execute</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="kd">val</span><span class="w"> </span><span class="nv">itemRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemRepository</span><span class="p">(</span><span class="n">ItemDataSource</span><span class="p">)</span>
+<span class="c1">// domain/usecase/AddItemUseCase.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">AddItemUseCase</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Per què una classe per operació?</p>
+<p>Pot semblar excessiu crear una classe per cada operació. Però els Use Cases són el lloc on afegir lògica de negoci (validacions, transformacions, combinació de repositoris). Si un Use Case només delega al Repository, és perquè encara no té lògica pròpia — però ja tenim l'estructura preparada per quan en necessitem.</p>
+</div>
+<h4 id="ui-layer-viewmodel-amb-use-cases">UI Layer — ViewModel amb Use Cases<a class="headerlink" href="#ui-layer-viewmodel-amb-use-cases" title="Permanent link">&para;</a></h4>
+<p>El ViewModel ja no coneix el Repository. Només coneix els Use Cases:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ui/ItemsViewModel.kt</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsViewModel</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">getItemsUseCase</span><span class="p">:</span><span class="w"> </span><span class="n">GetItemsUseCase</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">addItemUseCase</span><span class="p">:</span><span class="w"> </span><span class="n">AddItemUseCase</span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="c1">//i ja es pot fer additem independentment de si es testing o si es api, room, etc…</span>
-<span class="n">itemRepository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">newitem</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getItemsUseCase</span><span class="p">.</span><span class="na">execute</span><span class="p">()</span>
+
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addItemUseCase</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
-Es poden crear altres datasources per coses diferents, però el repositori no té accés a les dades, ho fa a través del interface.</p>
-<h2 id="4-explicacio-capes">4. Explicació capes<a class="headerlink" href="#4-explicacio-capes" title="Permanent link">&para;</a></h2>
-<p>Aquestes són les capes que han intervingut:</p>
-<p><img alt="Domain layer" src="../Imatges/domainlayer.png" /></p>
-<ul>
-<li>Presentation (UI) Layer: ViewModel, estats UI i la Activity</li>
-<li>Domain Layer: Conté l'entitat Item, el contracte ItemRepository i els Use Cases per a cada operació CRUD. Els Use Cases els explicarem en un altre apartat.</li>
-<li>Data Layer: Implementa el repository i datasources. Conté l'entitat de base de dades, DAO (si n'hi ha).</li>
-</ul>
-<p>Dins el DataLayer:
-<img alt="Data layer" src="../Imatges/datalayer.png" />{ align=left style="height: 30%; width: 30%; border-radius: 5px;" loading=lazy}</p>
-<h3 id="principis-de-clean-code-aplicats">Principis de Clean Code aplicats:<a class="headerlink" href="#principis-de-clean-code-aplicats" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Single Responsibility: Cada classe té una única responsabilitat</li>
-<li>Dependency Inversion: Les capes superiors no depenen de les inferiors directament</li>
-<li>Separation of Concerns: Cada capa té la seva responsabilitat ben definida</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>El Domain Layer és el nucli de l'aplicació i roman estable independentment de com implementis la persistència o la presentació. Això és el que fa que l'arquitectura sigui tan robusta i mantenible.</p>
-</div>
-<h3 id="esquema-general">Esquema general:<a class="headerlink" href="#esquema-general" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>┌─────────────────────┐
-│   PRESENTATION      │  ← Depèn del Domain
-│  (Activity/Fragment)│
-└──────────┬──────────┘
-           │ depèn de (a través dels casos d’ús o repositori)
-           ▼
-┌─────────────────────┐
-│     DOMAIN          │  ← INDEPENDENT (no depèn de res)
-│   (Use Cases)       │    Defineix contractes (interfaces)
-└──────────▲──────────┘    i els casos d’us
-           │ implementa
-           │
-┌─────────────────────┐
-│      DATA           │  ← Depèn del Domain (implementa les interfaces)
-│  (Repository Impl)  │    a través de la inversió de dependències.
-└─────────────────────┘
+<h4 id="com-es-connecta-tot_1">Com es connecta tot<a class="headerlink" href="#com-es-connecta-tot_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Capa de dades</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RetrofitItemsDataSource</span><span class="p">()</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemsRepositoryImpl</span><span class="p">(</span><span class="n">dataSource</span><span class="p">)</span>
+
+<span class="c1">// Capa de domini</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">getItemsUseCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetItemsUseCase</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">addItemUseCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AddItemUseCase</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+
+<span class="c1">// Capa UI</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">viewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemsViewModel</span><span class="p">(</span><span class="n">getItemsUseCase</span><span class="p">,</span><span class="w"> </span><span class="n">addItemUseCase</span><span class="p">)</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Veure apartat d'inversió de dependències</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Veure exemple implementació RecyclerView amb inversió de dependències
-(Exemple DIP recycler)</p>
+<h2 id="4-resum-de-la-transicio">4. Resum de la transició<a class="headerlink" href="#4-resum-de-la-transicio" title="Permanent link">&para;</a></h2>
+<h3 id="classes-per-capa-a-cada-pas">Classes per capa a cada pas<a class="headerlink" href="#classes-per-capa-a-cada-pas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ANDROID ARCHITECTURE (2 capes):
+  UI:     ItemsViewModel → ItemsRepository (concreta)
+  Data:   ItemsRepository, ItemsDataSource(I), Mock, Retrofit
+
+CLEAN MÍNIMA (3 capes, sense Use Cases):
+  UI:     ItemsViewModel → ItemsRepository (interface)
+  Domain: ItemsRepository(I), MyItem
+  Data:   ItemsRepositoryImpl, ItemsDataSource(I), Mock, Retrofit
+
+CLEAN COMPLETA (3 capes, amb Use Cases):
+  UI:     ItemsViewModel → GetItemsUseCase, AddItemUseCase
+  Domain: GetItemsUseCase, AddItemUseCase, ItemsRepository(I), MyItem
+  Data:   ItemsRepositoryImpl, ItemsDataSource(I), Mock, Retrofit
+</code></pre></div>
+<h3 id="direccio-de-les-dependencies">Direcció de les dependències<a class="headerlink" href="#direccio-de-les-dependencies" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Android:        UI ──────▶ Data              (cap avall)
+Clean mínima:   UI ──────▶ Domain ◀────── Data  (inversió entre capes)
+Clean completa: UI ──────▶ Domain ◀────── Data  (igual, amb Use Cases)
+</code></pre></div>
+<h3 id="taula-comparativa">Taula comparativa<a class="headerlink" href="#taula-comparativa" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Android</th>
+<th>Clean mínima</th>
+<th>Clean completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Capes</strong></td>
+<td>2 (UI + Data)</td>
+<td>3 (UI + Domain + Data)</td>
+<td>3 (UI + Domain + Data)</td>
+</tr>
+<tr>
+<td><strong>Repository</strong></td>
+<td>Classe concreta</td>
+<td>Interface (Domain) + Impl (Data)</td>
+<td>Interface (Domain) + Impl (Data)</td>
+</tr>
+<tr>
+<td><strong>ViewModel depèn de</strong></td>
+<td><code>ItemsRepository</code> (classe)</td>
+<td><code>ItemsRepository</code> (interface)</td>
+<td>Use Cases</td>
+</tr>
+<tr>
+<td><strong>Domain conté</strong></td>
+<td>—</td>
+<td>Interface Repository + Entitats</td>
+<td>Interface Repository + Use Cases + Entitats</td>
+</tr>
+<tr>
+<td><strong>DIP entre capes</strong></td>
+<td>No</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>Lògica de negoci</strong></td>
+<td>Al ViewModel</td>
+<td>Al ViewModel</td>
+<td>Als Use Cases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-quan-utilitzar-cada-enfocament">5. Quan utilitzar cada enfocament?<a class="headerlink" href="#5-quan-utilitzar-cada-enfocament" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Android Architecture (2 capes)</strong>: Projectes petits o prototips. Suficient quan no necessites testejar el ViewModel de forma aïllada i la lògica de negoci és mínima.</p>
+</li>
+<li>
+<p><strong>Clean mínima (3 capes, sense Use Cases)</strong>: Projectes mitjans. Vols independència entre capes i testabilitat, però no tens lògica de negoci complexa ni compartida entre ViewModels.</p>
+</li>
+<li>
+<p><strong>Clean completa (3 capes, amb Use Cases)</strong>: Projectes grans. Tens lògica de negoci que es reutilitza entre ViewModels, múltiples fonts de dades, o necessites una capa de domini sòlida i testable.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Nota important</p>
+<p>La documentació oficial d'Android inclou aquesta nota: <em>"The term 'domain layer' is used in other software architectures, such as 'clean' architecture, and has a different meaning there. Don't confuse the definition of 'domain layer' defined in the Android official architecture guidance with other definitions you may have read elsewhere."</em></p>
+<p>El Domain Layer d'Android (opcional, dependències cap avall) <strong>no és el mateix</strong> que el Domain Layer de Clean Architecture (obligatori, independent, amb inversió de dependències).</p>
 </div>
 
 

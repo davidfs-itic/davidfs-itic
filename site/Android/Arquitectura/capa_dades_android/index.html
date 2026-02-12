@@ -10,13 +10,13 @@
         <meta name="author" content="David F">
       
       
-        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Interficies/recyclerview/">
+        <link rel="canonical" href="https://davidfs-itic.github.io/davidfs-itic/Android/Arquitectura/capa_dades_android/">
       
       
-        <link rel="prev" href="../dialegs/">
+        <link rel="prev" href="../observer/">
       
       
-        <link rel="next" href="../recyclerviewaddelete/">
+        <link rel="next" href="../capa_dades_clean_architecture/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>RecyclerView - Documentació DavidFS - ITIC</title>
+        <title>Capa de Dades en Android - Documentació DavidFS - ITIC</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recyclerview-amb-llista-en-memoria-kotlin" class="md-skip">
+        <a href="#capa-repositori-i-dades" class="md-skip">
           Salta el contingut
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RecyclerView
+              Capa de Dades en Android
             
           </span>
         </div>
@@ -860,8 +860,6 @@
                 
   
   
-    
-  
   
   
     
@@ -872,11 +870,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -897,7 +897,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -915,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../Interficies/" class="md-nav__link">
         
   
   
@@ -943,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layoutactivities/" class="md-nav__link">
+      <a href="../../Interficies/layoutactivities/" class="md-nav__link">
         
   
   
@@ -971,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layouts/" class="md-nav__link">
+      <a href="../../Interficies/layouts/" class="md-nav__link">
         
   
   
@@ -999,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../temes/" class="md-nav__link">
+      <a href="../../Interficies/temes/" class="md-nav__link">
         
   
   
@@ -1027,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../viewbinding/" class="md-nav__link">
+      <a href="../../Interficies/viewbinding/" class="md-nav__link">
         
   
   
@@ -1055,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bottommenu/" class="md-nav__link">
+      <a href="../../Interficies/bottommenu/" class="md-nav__link">
         
   
   
@@ -1083,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../appbar/" class="md-nav__link">
+      <a href="../../Interficies/appbar/" class="md-nav__link">
         
   
   
@@ -1111,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toolbar/" class="md-nav__link">
+      <a href="../../Interficies/toolbar/" class="md-nav__link">
         
   
   
@@ -1139,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drawermenu/" class="md-nav__link">
+      <a href="../../Interficies/drawermenu/" class="md-nav__link">
         
   
   
@@ -1167,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dialegs/" class="md-nav__link">
+      <a href="../../Interficies/dialegs/" class="md-nav__link">
         
   
   
@@ -1175,6 +1175,402 @@
     
   
     Dialegs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/recyclerview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/recyclerviewaddelete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView Afegir i eliminar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/recyclerviewfilter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recyclerview filtrat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/recyclersearchview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView amb searchview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Menús
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/splashscreen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Splash Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/dialogfragmentviewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dialog Fragment amb ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interficies/voicerecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recognition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció a l'Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../applicationviewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer
   
 
     
@@ -1211,7 +1607,7 @@
   <span class="md-ellipsis">
     
   
-    RecyclerView
+    Capa de Dades en Android
   
 
     
@@ -1229,7 +1625,7 @@
   <span class="md-ellipsis">
     
   
-    RecyclerView
+    Capa de Dades en Android
   
 
     
@@ -1255,33 +1651,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-que-es-un-recyclerview" class="md-nav__link">
+  <a href="#1-situacio-inicial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Què és un RecyclerView?
+        1. Situació inicial
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-model-de-dades-data-class-i-llista" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Model de dades (data class i llista)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Model de dades (data class i llista)">
+    <nav class="md-nav" aria-label="1. Situació inicial">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-class" class="md-nav__link">
+  <a href="#problemes-darquitectura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Class
+        Problemes d'arquitectura
       
     </span>
   </a>
@@ -1289,10 +1674,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#llista-de-dades-en-un-object-kotlin" class="md-nav__link">
+  <a href="#problemes-que-pot-ocasionar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Llista de dades en un object (Kotlin)
+        Problemes que pot ocasionar
       
     </span>
   </a>
@@ -1305,55 +1690,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-layout-de-cada-element-item_rowxml" class="md-nav__link">
+  <a href="#2-analisi-del-codi-incorrecte-sense-separacio-de-capes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Layout de cada element (item_row.xml)
+        2. Anàlisi del codi incorrecte (sense separació de capes)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-layout-amb-el-recyclerview-activity_mainxml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Layout amb el RecyclerView (activity_main.xml)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-adapter-i-viewholder-myadapterkt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Adapter i ViewHolder (MyAdapter.kt)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Adapter i ViewHolder (MyAdapter.kt)">
+    <nav class="md-nav" aria-label="2. Anàlisi del codi incorrecte (sense separació de capes)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exemple-codi-holder" class="md-nav__link">
+  <a href="#objectiu-separar-la-ui-de-les-dades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemple codi Holder
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple-codi-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemple codi Adapter
+        Objectiu: separar la UI de les dades
       
     </span>
   </a>
@@ -1366,10 +1718,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-activity" class="md-nav__link">
+  <a href="#3-arquitectura-en-2-capes-ui-dades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Activity
+        3. Arquitectura en 2 capes (UI + Dades)
       
     </span>
   </a>
@@ -1377,22 +1729,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-resum" class="md-nav__link">
+  <a href="#4-implementacio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Resum
+        4. Implementació
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7. Resum">
+    <nav class="md-nav" aria-label="4. Implementació">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#idea-clau" class="md-nav__link">
+  <a href="#capa-de-dades-data-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Idea clau:
+        Capa de Dades (Data Layer)
       
     </span>
   </a>
@@ -1400,10 +1752,88 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#frase-resum-que-podeu-recordar" class="md-nav__link">
+  <a href="#capa-ui-ui-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Frase “resum” que podeu recordar:
+        Capa UI (UI Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-es-connecta-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com es connecta tot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-capa-de-domini-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Capa de Domini (opcional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-principis-aplicats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Principis aplicats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Principis aplicats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inversio-de-dependencies-dip-entre-repository-i-datasource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inversió de dependències (DIP) entre Repository i DataSource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-diferencies-amb-clean-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Diferències amb Clean Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Diferències amb Clean Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-comparatiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama comparatiu
       
     </span>
   </a>
@@ -1431,403 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recyclerviewaddelete/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RecyclerView Afegir i eliminar
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recyclerviewfilter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Recyclerview filtrat
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recyclersearchview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RecyclerView amb searchview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../menus/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Menús
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../splashscreen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Splash Screen
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dialogfragmentviewmodel/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dialog Fragment amb ViewModel
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../voicerecognition/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Voice Recognition
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Arquitectura
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Arquitectura
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introducció a l'Arquitectura
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/viewmodel/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ViewModel
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/applicationviewmodel/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Application ViewModel
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/observer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Observer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/capa_dades_android/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Capa de Dades en Android
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Arquitectura/capa_dades_clean_architecture/" class="md-nav__link">
+      <a href="../capa_dades_clean_architecture/" class="md-nav__link">
         
   
   
@@ -1855,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Arquitectura/inversiodependencies/" class="md-nav__link">
+      <a href="../inversiodependencies/" class="md-nav__link">
         
   
   
@@ -1883,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Arquitectura/recyclerinversio/" class="md-nav__link">
+      <a href="../recyclerinversio/" class="md-nav__link">
         
   
   
@@ -1911,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Arquitectura/factory/" class="md-nav__link">
+      <a href="../factory/" class="md-nav__link">
         
   
   
@@ -1939,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Arquitectura/solid/" class="md-nav__link">
+      <a href="../solid/" class="md-nav__link">
         
   
   
@@ -3233,33 +3267,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-que-es-un-recyclerview" class="md-nav__link">
+  <a href="#1-situacio-inicial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Què és un RecyclerView?
+        1. Situació inicial
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-model-de-dades-data-class-i-llista" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Model de dades (data class i llista)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Model de dades (data class i llista)">
+    <nav class="md-nav" aria-label="1. Situació inicial">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-class" class="md-nav__link">
+  <a href="#problemes-darquitectura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Class
+        Problemes d'arquitectura
       
     </span>
   </a>
@@ -3267,10 +3290,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#llista-de-dades-en-un-object-kotlin" class="md-nav__link">
+  <a href="#problemes-que-pot-ocasionar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Llista de dades en un object (Kotlin)
+        Problemes que pot ocasionar
       
     </span>
   </a>
@@ -3283,55 +3306,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-layout-de-cada-element-item_rowxml" class="md-nav__link">
+  <a href="#2-analisi-del-codi-incorrecte-sense-separacio-de-capes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Layout de cada element (item_row.xml)
+        2. Anàlisi del codi incorrecte (sense separació de capes)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-layout-amb-el-recyclerview-activity_mainxml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Layout amb el RecyclerView (activity_main.xml)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-adapter-i-viewholder-myadapterkt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Adapter i ViewHolder (MyAdapter.kt)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Adapter i ViewHolder (MyAdapter.kt)">
+    <nav class="md-nav" aria-label="2. Anàlisi del codi incorrecte (sense separació de capes)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exemple-codi-holder" class="md-nav__link">
+  <a href="#objectiu-separar-la-ui-de-les-dades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemple codi Holder
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple-codi-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemple codi Adapter
+        Objectiu: separar la UI de les dades
       
     </span>
   </a>
@@ -3344,10 +3334,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-activity" class="md-nav__link">
+  <a href="#3-arquitectura-en-2-capes-ui-dades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Activity
+        3. Arquitectura en 2 capes (UI + Dades)
       
     </span>
   </a>
@@ -3355,22 +3345,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-resum" class="md-nav__link">
+  <a href="#4-implementacio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Resum
+        4. Implementació
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7. Resum">
+    <nav class="md-nav" aria-label="4. Implementació">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#idea-clau" class="md-nav__link">
+  <a href="#capa-de-dades-data-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Idea clau:
+        Capa de Dades (Data Layer)
       
     </span>
   </a>
@@ -3378,10 +3368,88 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#frase-resum-que-podeu-recordar" class="md-nav__link">
+  <a href="#capa-ui-ui-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Frase “resum” que podeu recordar:
+        Capa UI (UI Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-es-connecta-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com es connecta tot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-capa-de-domini-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Capa de Domini (opcional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-principis-aplicats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Principis aplicats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Principis aplicats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inversio-de-dependencies-dip-entre-repository-i-datasource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inversió de dependències (DIP) entre Repository i DataSource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-diferencies-amb-clean-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Diferències amb Clean Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Diferències amb Clean Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-comparatiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama comparatiu
       
     </span>
   </a>
@@ -3410,61 +3478,38 @@
 
 
 
-<h1 id="recyclerview-amb-llista-en-memoria-kotlin">RecyclerView amb llista en memòria (Kotlin)<a class="headerlink" href="#recyclerview-amb-llista-en-memoria-kotlin" title="Permanent link">&para;</a></h1>
-<p>Documentació oficial:
-https://developer.android.com/develop/ui/views/layout/recyclerview</p>
-<p>Exemple:
-https://github.com/davidfs-itic/RecyclerView</p>
-<h2 id="1-que-es-un-recyclerview">1. Què és un RecyclerView?<a class="headerlink" href="#1-que-es-un-recyclerview" title="Permanent link">&para;</a></h2>
-<p>Un RecyclerView és un component que permet mostrar llistes (o graelles) d’elements reciclant les vistes per millorar el rendiment.
-Substitueix l’antic ListView i ofereix més flexibilitat (layout managers, animacions, etc.).</p>
-<p>Per utilitzar un RecyclerView cal:</p>
+<h1 id="capa-repositori-i-dades">Capa repositori i dades<a class="headerlink" href="#capa-repositori-i-dades" title="Permanent link">&para;</a></h1>
+<p>Documents rellevants:</p>
 <ul>
-<li>Una llista de dades (en memòria, en aquest exemple).</li>
-<li>Un layout XML per a la pantalla que conté el RecyclerView.</li>
-<li>Un layout XML per a cada fila (ítem) de la llista.</li>
-<li>Un Adapter amb un ViewHolder per “pintar” les dades a cada fila.</li>
+<li>https://developer.android.com/topic/architecture/data-layer</li>
+<li>https://developer.android.com/topic/architecture/domain-layer</li>
 </ul>
-<h2 id="2-model-de-dades-data-class-i-llista">2. Model de dades (data class i llista)<a class="headerlink" href="#2-model-de-dades-data-class-i-llista" title="Permanent link">&para;</a></h2>
-<h3 id="data-class">Data Class<a class="headerlink" href="#data-class" title="Permanent link">&para;</a></h3>
-<p>Creem una classe senzilla per representar cada element de la llista.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Fitxer: MyItem.kt</span>
+<h2 id="1-situacio-inicial">1. Situació inicial<a class="headerlink" href="#1-situacio-inicial" title="Permanent link">&para;</a></h2>
+<p>Partint del codi relatiu al RecyclerView, veurem que té algunes mancances o dificultats.
+No respecta els principis de clean code, ni té cap arquitectura definida:</p>
+<h3 id="problemes-darquitectura">Problemes d'arquitectura<a class="headerlink" href="#problemes-darquitectura" title="Permanent link">&para;</a></h3>
+<p><strong>Absència de separació de capes:</strong>
+La Activity accedeix directament a les dades (directament a la llista en memòria o mitjançant una API). Això crea un acoblament fort i dificulta enormement el testing i el manteniment.</p>
+<p><strong>DataSource com a singleton estàtic:</strong>
+Qualsevol canvi en com s'obtenen les dades (API, base de dades local, etc.) requerirà modificar directament la Activity, però també tots els llocs on s'utilitza.</p>
+<p><strong>Lògica de negoci a la UI:</strong> La Activity està fent massa coses: configura el RecyclerView, gestiona el clic, i decideix què mostrar (el Toast o l'error). No hi ha cap ViewModel ni cap capa intermèdia que gestioni l'estat o la lògica.</p>
+<h3 id="problemes-que-pot-ocasionar">Problemes que pot ocasionar<a class="headerlink" href="#problemes-que-pot-ocasionar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Escalabilitat nul·la: Quan el projecte creixi i necessitis múltiples fonts de dades, càrrega asíncrona, caché, o sincronització, aquest codi serà molt difícil de mantenir.</li>
+<li>Impossibilitat de testing automàtic: Aquest codi fa els tests pràcticament impossibles.</li>
+<li>Duplicació de codi futura: Sense una arquitectura clara, cada nova funcionalitat similar acabarà repetint patrons, copiant i enganxant codi.</li>
+</ul>
+<h2 id="2-analisi-del-codi-incorrecte-sense-separacio-de-capes">2. Anàlisi del codi incorrecte (sense separació de capes)<a class="headerlink" href="#2-analisi-del-codi-incorrecte-sense-separacio-de-capes" title="Permanent link">&para;</a></h2>
+<p>Item: Classe que conté les dades que necessitem (pot ser recepta, pel·lícula, reserva, itemcompra, ticket, etc.)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: MyItem.kt</span>
 <span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyItem</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">subtitle</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span>
 <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="llista-de-dades-en-un-object-kotlin">Llista de dades en un object (Kotlin)<a class="headerlink" href="#llista-de-dades-en-un-object-kotlin" title="Permanent link">&para;</a></h3>
-<h4 id="que-es-un-object-a-kotlin">Què és un object a Kotlin?<a class="headerlink" href="#que-es-un-object-a-kotlin" title="Permanent link">&para;</a></h4>
-<p>En Kotlin, un object és una construcció que crea una única instància (patró Singleton) de manera automàtica.
-S’utilitza quan es vol un únic punt d’accés compartit, per exemple una llista de dades comuna per a diferents pantalles.</p>
-<h4 id="caracteristiques-principals">Característiques principals:<a class="headerlink" href="#caracteristiques-principals" title="Permanent link">&para;</a></h4>
-<ul>
-<li>No cal fer new ni cridar cap constructor; s’accedeix pel nom (DataSource.items).</li>
-<li>Es crea la instància la primera vegada que es fa servir.</li>
-<li>És útil per guardar dades en memòria mentre l’app està en execució.</li>
-</ul>
-<p>Objecte que conté la llista: DataSource</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Fitxer: DataSource.kt</span>
+</code></pre></div>
+<p>DataSource: Classe (objecte en aquest cas) que conté la llista d'items</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Fitxer: DataSource.kt</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Objecte singleton que proporciona dades en memòria</span>
@@ -3472,352 +3517,276 @@ S’utilitza quan es vol un únic punt d’accés compartit, per exemple una lli
 <span class="cm"> */</span>
 <span class="kd">object</span><span class="w"> </span><span class="nc">DataSource</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// Llista de dades en memòria</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">MutableList</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 1&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 2&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 3&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="s">&quot;Element 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 4&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Llista de dades en memòria (només de lectura)</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 1&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 2&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 3&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">MyItem</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Element 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol 4&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<strong>Què fà aquest codi?</strong></p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">object</span><span class="w"> </span><span class="nc">DataSource</span>
-</code></pre></div></td></tr></table></div>
-- Declara un objecte únic anomenat DataSource.
-- No s’instancia amb DataSource(), sinó que s’utilitza directament pel nom.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
-</code></pre></div></td></tr></table></div>
-- És una propietat pública que conté la llista en memòria.
-- El tipus és List<MyItem>, per tant és immutable (no es poden afegir/eliminar elements).
-- Es pot canviar a MutableList<MyItem> si es vol modificar la llista durant l’execució.</p>
-<p>L’objecte DataSource actua com un “mini repositori de dades” senzill, sense base de dades ni API.</p>
-<p>(Per a veure com s'ha de crear un repositori de dades, veure l'apartat repositori a Arquitectura)</p>
-<h2 id="3-layout-de-cada-element-item_rowxml">3. Layout de cada element (item_row.xml)<a class="headerlink" href="#3-layout-de-cada-element-item_rowxml" title="Permanent link">&para;</a></h2>
-<p>Aquest layout defineix com es veu una fila de la llista.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Fitxer: res/layout/item_row.xml --&gt;</span>
-<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
-<span class="w">    </span><span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
-<span class="w">    </span><span class="na">android:padding=</span><span class="s">&quot;16dp&quot;</span><span class="nt">&gt;</span>
-
-<span class="w">    </span><span class="nt">&lt;TextView</span>
-<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/tvTitle&quot;</span>
-<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
-<span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;Títol&quot;</span>
-<span class="w">        </span><span class="na">android:textStyle=</span><span class="s">&quot;bold&quot;</span>
-<span class="w">        </span><span class="na">android:textSize=</span><span class="s">&quot;18sp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-
-<span class="w">    </span><span class="nt">&lt;TextView</span>
-<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/tvSubtitle&quot;</span>
-<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
-<span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;Subtítol&quot;</span>
-<span class="w">        </span><span class="na">android:textSize=</span><span class="s">&quot;14sp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-
-<span class="nt">&lt;/LinearLayout&gt;</span>
 </code></pre></div>
-<h2 id="4-layout-amb-el-recyclerview-activity_mainxml">4. Layout amb el RecyclerView (activity_main.xml)<a class="headerlink" href="#4-layout-amb-el-recyclerview-activity_mainxml" title="Permanent link">&para;</a></h2>
-<p>Aquest layout conté el RecyclerView que ocuparà tota la pantalla.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Fitxer: res/layout/activity_main.xml --&gt;</span>
-<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span><span class="w"> </span>
-<span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<span class="w">    </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
-<span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
-
-<span class="w">    </span><span class="nt">&lt;androidx.recyclerview.widget.RecyclerView</span>
-<span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/recyclerView&quot;</span>
-<span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-<span class="w">        </span><span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&quot;parent&quot;</span>
-<span class="w">        </span><span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&quot;parent&quot;</span>
-<span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">&quot;parent&quot;</span>
-<span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">&quot;parent&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+<p>Des de <strong>l'Activity</strong>, es crea la llista d'items, la qual cosa és incorrecte doncs no és la tasca de l'Activity.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// A dins de l&#39;Activity:</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataSource</span><span class="p">.</span><span class="na">items</span>
 </code></pre></div>
-<h2 id="5-adapter-i-viewholder-myadapterkt">5. Adapter i ViewHolder (MyAdapter.kt)<a class="headerlink" href="#5-adapter-i-viewholder-myadapterkt" title="Permanent link">&para;</a></h2>
-<p>En un RecyclerView aquestes classes sempre treballen juntes:</p>
-<h4 id="el-adapter-sap">El Adapter sap:<a class="headerlink" href="#el-adapter-sap" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Quantes files hi ha.</li>
-<li>Quin layout s’utilitza per a cada fila.</li>
-<li>Quines dades s’han de mostrar a cada posició.</li>
-</ul>
-<h4 id="el-viewholder-sap">El ViewHolder sap:<a class="headerlink" href="#el-viewholder-sap" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Quines vistes (TextView, ImageView, etc.) té una fila.</li>
-<li>On escriure les dades quan l’Adapter li digui “pinta l’element X”.</li>
-</ul>
-<p>Sense Adapter i ViewHolder, el RecyclerView no sap ni quantes files mostrar, ni com dibuixar-les.</p>
-<h3 id="exemple-codi-holder">Exemple codi Holder<a class="headerlink" href="#exemple-codi-holder" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MyViewHolder.kt</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.view.View</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
+<h3 id="objectiu-separar-la-ui-de-les-dades">Objectiu: separar la UI de les dades<a class="headerlink" href="#objectiu-separar-la-ui-de-les-dades" title="Permanent link">&para;</a></h3>
+<p>Hem de fer que les dades siguin independents de la UI, perquè la UI pugui cridar un mètode genèric sense saber d'on venen les dades ni com s'obtenen.</p>
+<p>La classe que coordina l'accés a les dades s'anomena <strong>Repository</strong>, i pertany a la <strong>capa de dades</strong> (Data Layer).</p>
+<h2 id="3-arquitectura-en-2-capes-ui-dades">3. Arquitectura en 2 capes (UI + Dades)<a class="headerlink" href="#3-arquitectura-en-2-capes-ui-dades" title="Permanent link">&para;</a></h2>
+<p>Seguint l'arquitectura oficial d'Android, separarem el codi en dues capes:</p>
+<ol>
+<li><strong>UI Layer</strong> (Activity, Fragment, ViewModel)</li>
+<li><strong>Data Layer</strong> (Repository + DataSources)</li>
+</ol>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────────┐
+│  UI LAYER                                            │
+│  Activity/Fragment → ViewModel                       │
+│  (depèn del Repository)                              │
+└──────────────┬───────────────────────────────────────┘
+               │
+               ▼
+┌──────────────────────────────────────────────────────┐
+│  DATA LAYER                                          │
+│                                                      │
+│  ItemsRepository (classe concreta)                   │
+│  └─→ ItemsDataSource (interface)                     │
+│      ├─→ MockItemsDataSource                         │
+│      ├─→ RetrofitItemsDataSource                     │
+│      └─→ RoomItemsDataSource                         │
+└──────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>El <strong>Repository</strong> és una classe concreta que actua com a punt d'entrada a la capa de dades. El ViewModel el rep directament.</p>
+<p>Els <strong>DataSources</strong> són classes que implementen una interface, la qual cosa permet intercanviar la font de dades (Mock, API, Room) sense modificar el Repository.</p>
+<h2 id="4-implementacio">4. Implementació<a class="headerlink" href="#4-implementacio" title="Permanent link">&para;</a></h2>
+<h3 id="capa-de-dades-data-layer">Capa de Dades (Data Layer)<a class="headerlink" href="#capa-de-dades-data-layer" title="Permanent link">&para;</a></h3>
+<h4 id="interface-del-datasource">Interface del DataSource<a class="headerlink" href="#interface-del-datasource" title="Permanent link">&para;</a></h4>
+<p>Defineix el contracte que han de complir totes les fonts de dades:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span>
+<span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="w">   </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="datasources-concrets">DataSources concrets<a class="headerlink" href="#datasources-concrets" title="Permanent link">&para;</a></h4>
+<p>Ara podem crear múltiples DataSources, amb implementacions diferents (Mock, API, base de dades):</p>
+<div class="admonition note">
+<p class="admonition-title">Què és Mock?</p>
+<p>Mock es refereix a dades falses, i s'utilitza en programació per provar les classes abans no es tingui una base de dades, API, etc.
+En aquest cas, el MockItemsDataSource és una llista precodificada (com havíem fet abans en el nostre object DataSource).</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MockItemsDataSource</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span>
+<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol A&quot;</span><span class="p">),</span>
+<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol B&quot;</span><span class="p">),</span>
+<span class="w">       </span><span class="n">MyItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Títol 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol C&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="p">)</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* implementació */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* implementació */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * ViewHolder responsable d&#39;una fila del RecyclerView.</span>
-<span class="cm"> * Encapsula la vista de la fila i sap com &quot;pintar-hi&quot; un MyItem.</span>
-<span class="cm"> */</span>
-<span class="kd">class</span><span class="w"> </span><span class="nc">MyViewHolder</span><span class="p">(</span>
-<span class="w">    </span><span class="n">itemView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="p">,</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">onItemClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span>
-<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">itemView</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">tvTitle</span><span class="p">:</span><span class="w"> </span><span class="n">TextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itemView</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">tvTitle</span><span class="p">)</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">tvSubtitle</span><span class="p">:</span><span class="w"> </span><span class="n">TextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itemView</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">tvSubtitle</span><span class="p">)</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">RetrofitItemsDataSource</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* crida a l&#39;API */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* crida a l&#39;API */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* crida a l&#39;API */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="n">RetrofitClient</span><span class="p">.</span><span class="na">instance</span><span class="p">.</span><span class="na">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">id</span><span class="p">).</span><span class="na">execute</span><span class="p">()</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="repository">Repository<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h4>
+<p>El Repository és una <strong>classe concreta</strong> (sense interface). Rep un DataSource i li delega l'accés a les dades. No sap (ni li importa) si el DataSource és Mock, Retrofit o Room:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Actualitza les vistes de la fila amb les dades de MyItem</span>
-<span class="cm">     * i configura els listeners d&#39;esdeveniments.</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">bind</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">tvTitle</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">title</span>
-<span class="w">        </span><span class="n">tvSubtitle</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">subtitle</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">dataSource</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">        </span><span class="c1">// Exemple de gestió de clic sobre tota la fila</span>
-<span class="w">        </span><span class="n">itemView</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">onItemClick</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">dataSource</span><span class="p">.</span><span class="na">updateItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">dataSource</span><span class="p">.</span><span class="na">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="explicacio">Explicació:<a class="headerlink" href="#explicacio" title="Permanent link">&para;</a></h4>
-<p><strong>Classe</strong></p>
-<p><div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MyViewHolder</span><span class="p">(...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">itemView</span><span class="p">)</span>
 </code></pre></div>
-Hereta de RecyclerView.ViewHolder i rep la vista de la fila (itemView) i una funció de clic (onItemClick).​</p>
-<p><strong>Propietats privades (tvTitle, tvSubtitle):</strong></p>
-<p>El ViewHolder busca una sola vega*da les vistes del layout item_row.xml i s’hi queda la referència.</p>
-<p><strong>Mètode bind(item: MyItem):</strong></p>
-<p>És el punt únic per:
- - Escriure dades a les vistes.
- - Configurar listeners específics d’aquesta fila (clic, long‑click…).</p>
-<p>Això treu responsabilitat de “pintar dades” de l’Adapter i la concentra al ViewHolder.</p>
-<h3 id="exemple-codi-adapter">Exemple codi Adapter<a class="headerlink" href="#exemple-codi-adapter" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MyAdapter.kt</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.view.LayoutInflater</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.view.ViewGroup</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
+<p>Per què el Repository és útil, si ara mateix només delega al DataSource?
+Perquè quan el projecte creixi, el Repository serà el lloc on afegir:</p>
+<ul>
+<li>Gestió de caché</li>
+<li>Combinació de múltiples fonts de dades (local + remota)</li>
+<li>Decisió de quan usar dades locals vs remotes</li>
+<li>Transformació de dades entre capes</li>
+<li>Gestió d'errors i fallbacks</li>
+</ul>
+<p>El DataSource, en canvi, s'encarrega NOMÉS d'obtenir/guardar dades d'una font específica.</p>
+<h3 id="capa-ui-ui-layer">Capa UI (UI Layer)<a class="headerlink" href="#capa-ui-ui-layer" title="Permanent link">&para;</a></h3>
+<p>El ViewModel rep el Repository directament:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ItemsViewModel</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsRepository</span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Adapter que crea ViewHolder (MyViewHolder),</span>
-<span class="cm"> * indica quants elements hi ha i demana que es &quot;pintin&quot; amb bind().</span>
-<span class="cm"> */</span>
-<span class="kd">class</span><span class="w"> </span><span class="nc">MyAdapter</span><span class="p">(</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">onItemClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span>
-<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">MyViewHolder</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Crea (infla) la vista de la fila i construeix el ViewHolder.</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreateViewHolder</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span><span class="w"> </span><span class="n">ViewGroup</span><span class="p">,</span><span class="w"> </span><span class="n">viewType</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">MyViewHolder</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">inflater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LayoutInflater</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">context</span><span class="p">)</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">item_row</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">MyViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">,</span><span class="w"> </span><span class="n">onItemClick</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Retorna quants elements hi ha a la llista de dades.</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItemCount</span><span class="p">():</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">size</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Demana al ViewHolder que mostri les dades de la posició donada.</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onBindViewHolder</span><span class="p">(</span><span class="n">holder</span><span class="p">:</span><span class="w"> </span><span class="n">MyViewHolder</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="o">[</span><span class="n">position</span><span class="o">]</span>
-<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">bind</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">MyItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="explicacio_1">Explicació:<a class="headerlink" href="#explicacio_1" title="Permanent link">&para;</a></h4>
-<p>L’Adapter ja no sap com s’actualitzen exactament les vistes; delega aquesta feina a holder.bind(item).</p>
-<p>Responsabilitats clares de cada mètode (tal com recomana la documentació oficial):​</p>
+</code></pre></div>
+<h3 id="com-es-connecta-tot">Com es connecta tot<a class="headerlink" href="#com-es-connecta-tot" title="Permanent link">&para;</a></h3>
+<p>A l'hora de crear les instàncies, decidim quina implementació del DataSource utilitzem:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Triem el DataSource segons l&#39;entorn</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isTesting</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MockItemsDataSource</span><span class="p">()</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">RetrofitItemsDataSource</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1">// Creem el Repository amb el DataSource triat</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemsRepository</span><span class="p">(</span><span class="n">dataSource</span><span class="p">)</span>
+
+<span class="c1">// Ja podem fer servir el repository independentment de la font de dades</span>
+<span class="n">repository</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="n">MyItem</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nou element&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Subtítol nou&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="5-capa-de-domini-opcional">5. Capa de Domini (opcional)<a class="headerlink" href="#5-capa-de-domini-opcional" title="Permanent link">&para;</a></h2>
+<p>Segons la documentació oficial d'Android, la capa de Domini és <strong>opcional</strong>. S'afegeix quan necessitem <strong>Use Cases</strong>: lògica de negoci reutilitzable entre diferents ViewModels.</p>
+<p><a href="https://developer.android.com/topic/architecture/domain-layer">Veure la documentació oficial de Domain Layer</a></p>
+<p>En l'arquitectura Android, la direcció de les dependències és natural (cap avall):</p>
+<div class="highlight"><pre><span></span><code>┌───────────────────────────────┐
+│  UI LAYER                     │
+│  ViewModel                    │
+└──────────────┬────────────────┘
+               │ depèn de
+               ▼
+┌───────────────────────────────┐
+│  DOMAIN LAYER (opcional)      │
+│  Use Cases                    │
+└──────────────┬────────────────┘
+               │ depèn de
+               ▼
+┌───────────────────────────────┐
+│  DATA LAYER                   │
+│  Repository + DataSources     │
+└───────────────────────────────┘
+</code></pre></div>
+<p>El Domain Layer depèn del Data Layer (utilitza el Repository). Simplement afegeix una capa d'intermediaris (Use Cases) entre la UI i les dades.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Veure apartat de Use Cases per a més detalls.</p>
+</div>
+<h2 id="6-principis-aplicats">6. Principis aplicats<a class="headerlink" href="#6-principis-aplicats" title="Permanent link">&para;</a></h2>
 <ul>
-<li>onCreateViewHolder: infla el layout i crea el ViewHolder.</li>
-<li>getItemCount: diu al RecyclerView quantes files han de existir.</li>
-<li>onBindViewHolder: passa el model (MyItem) al ViewHolder perquè l’actualitzi.</li>
+<li><strong>Single Responsibility</strong>: Cada classe té una única responsabilitat.</li>
+<li><strong>Separation of Concerns</strong>: La UI no sap d'on venen les dades, el Repository no sap com s'obtenen, el DataSource no sap qui el crida.</li>
 </ul>
-<h2 id="6-activity">6. Activity<a class="headerlink" href="#6-activity" title="Permanent link">&para;</a></h2>
-<p>Exemple de codi en l'activity. 
-Els comentaris expliquen els passos que s'han de seguir.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// MainActivity.kt</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">android.widget.Toast</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.LinearLayoutManager</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
+<h3 id="inversio-de-dependencies-dip-entre-repository-i-datasource">Inversió de dependències (DIP) entre Repository i DataSource<a class="headerlink" href="#inversio-de-dependencies-dip-entre-repository-i-datasource" title="Permanent link">&para;</a></h3>
+<p>Dins la capa de dades, s'aplica el principi d'inversió de dependències entre el Repository i els DataSources.</p>
+<p><strong>Sense DIP</strong>, el Repository dependria directament d'una implementació concreta:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ❌ Sense DIP: el Repository depèn d&#39;una classe concreta</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockItemsDataSource</span><span class="p">()</span><span class="w">  </span><span class="c1">// acoblament fort</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">recyclerView</span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">adapter</span><span class="p">:</span><span class="w"> </span><span class="n">MyAdapter</span>
-
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// 1. Obtenir referència al RecyclerView del layout</span>
-<span class="w">        </span><span class="n">recyclerView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">recyclerView</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// 2. Configurar LayoutManager (com es col·loquen les files)</span>
-<span class="w">        </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">layoutManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinearLayoutManager</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// 3. Crear llista de dades (des de DataSource o directament)</span>
-<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataSource</span><span class="p">.</span><span class="na">items</span>
-
-<span class="w">        </span><span class="c1">// 4. Crear l&#39;Adapter passant les dades + funció de callback per clics</span>
-<span class="w">        </span><span class="n">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyAdapter</span><span class="p">(</span>
-<span class="w">            </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">,</span>
-<span class="w">            </span><span class="n">onItemClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">                </span><span class="c1">// AQUÍ gestionem el clic: mostrem un Toast amb el títol</span>
-<span class="w">                </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span>
-<span class="w">                    </span><span class="k">this</span><span class="p">,</span>
-<span class="w">                    </span><span class="s">&quot;Has clicat: </span><span class="si">${</span><span class="n">item</span><span class="p">.</span><span class="na">title</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span>
-<span class="w">                </span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// 5. Assignar l&#39;Adapter al RecyclerView</span>
-<span class="w">        </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adapter</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p>Tot i que s'utilitza una funció (anomenada callback) per passar la lògica de gestió del click en un ítem (recodem que aixó ho gestiona el ViewHolder), no és una pràctica recomenada. Està aquí per simplicitat.</p>
-<p>Veieu "Exemple inversió de dependències amb RecyclerView" a l'apartat Arquitectura</p>
-<h2 id="7-resum">7. Resum<a class="headerlink" href="#7-resum" title="Permanent link">&para;</a></h2>
-<h3 id="idea-clau">Idea clau:<a class="headerlink" href="#idea-clau" title="Permanent link">&para;</a></h3>
-<p>En un RecyclerView, el ViewHolder encapsula la vista d’una fila, en guarda les referències a les seves sub‑vistes i pot contenir la lògica específica d’aquesta fila (com ara actualitzar les dades o gestionar clics), mentre que l’Adapter crea aquests ViewHolder, els recicla i els alimenta amb les dades correctes de la llista.</p>
-<ul>
-<li>onCreateViewHolder crea la vista i el ViewHolder.</li>
-<li>onBindViewHolder omple aquesta vista amb les dades de la posició concreta.</li>
-</ul>
-<h3 id="frase-resum-que-podeu-recordar">Frase “resum” que podeu recordar:<a class="headerlink" href="#frase-resum-que-podeu-recordar" title="Permanent link">&para;</a></h3>
-<p>L’Adapter:</p>
-<ul>
-<li>Crea ViewHolder nous (onCreateViewHolder).</li>
-<li>Diu quantes files hi ha (getItemCount).</li>
-<li>Omple les vistes del ViewHolder amb dades (onBindViewHolder).</li>
-</ul>
-<p>El ViewHolder 
-- Guarda referències a les vistes de la fila (TextView, ImageView, etc.).
-- Encapsula la lògica de “bind”: té una funció bind(item: MyItem) que rep el model i actualitza totes les vistes.
-- Gestiona esdeveniments de la fila: per exemple, configurar setOnClickListener sobre itemView o sobre algun botó concret, i notifica l’Adapter o un listener extern.</p>
+</code></pre></div>
+<p>Si volem canviar de <code>MockItemsDataSource</code> a <code>RetrofitItemsDataSource</code>, hem de modificar el Repository.</p>
+<p><strong>Amb DIP</strong>, el Repository depèn d'una abstracció (interface):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ Amb DIP: el Repository depèn de la interface</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ItemsRepository</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataSource</span><span class="p">:</span><span class="w"> </span><span class="n">ItemsDataSource</span><span class="w">  </span><span class="c1">// interface, no implementació</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItems</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyItem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getItems</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>                    ItemsDataSource (interface)
+                   ╱                          ╲
+                  ╱   depèn de      implementa ╲
+                 ╱                               ╲
+    ItemsRepository              MockItemsDataSource
+    (mòdul alt nivell)           RetrofitItemsDataSource
+                                 RoomItemsDataSource
+                                 (mòduls baix nivell)
+</code></pre></div>
+<p>Tant el mòdul d'alt nivell (Repository) com els de baix nivell (DataSources concrets) depenen de l'abstracció. Això és el principi DIP:</p>
+<blockquote>
+<p><em>"Els mòduls d'alt nivell no han de dependre dels mòduls de baix nivell. Ambdós han de dependre d'abstraccions."</em></p>
+</blockquote>
+<p>D'aquesta manera, podem canviar la implementació del DataSource (de Mock a Retrofit, de Retrofit a Room) sense tocar ni una línia del Repository ni de la UI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En l'arquitectura Android, la DIP s'aplica <strong>a nivell de classe</strong> (entre Repository i DataSource), no entre capes. Per veure la DIP aplicada entre capes, consulteu l'apartat de Clean Architecture (secció 7).</p>
+</div>
+<p><img alt="Data Layer" src="../Imatges/datalayer.png" /></p>
+<h2 id="7-diferencies-amb-clean-architecture">7. Diferències amb Clean Architecture<a class="headerlink" href="#7-diferencies-amb-clean-architecture" title="Permanent link">&para;</a></h2>
+<p>L'arquitectura oficial d'Android i Clean Architecture (Uncle Bob) comparteixen la idea de separar en capes, però tenen diferències importants:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Arquitectura Android</th>
+<th>Clean Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Repository</strong></td>
+<td>Classe concreta al Data Layer</td>
+<td>Interface al Domain + Implementació al Data</td>
+</tr>
+<tr>
+<td><strong>Domain Layer</strong></td>
+<td>Opcional. Conté Use Cases</td>
+<td>Obligatori. És el nucli de l'aplicació</td>
+</tr>
+<tr>
+<td><strong>Domain depèn de...</strong></td>
+<td>Data Layer (direcció natural)</td>
+<td>Res. És completament independent</td>
+</tr>
+<tr>
+<td><strong>Direcció dependències</strong></td>
+<td>UI → Domain → Data (cap avall)</td>
+<td>UI → Domain ← Data (inversió entre capes)</td>
+</tr>
+<tr>
+<td><strong>DIP entre capes</strong></td>
+<td>No. Només a nivell de classe (DataSource interface)</td>
+<td>Sí. El Data Layer implementa interfaces definides al Domain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagrama-comparatiu">Diagrama comparatiu<a class="headerlink" href="#diagrama-comparatiu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ANDROID ARCHITECTURE:           CLEAN ARCHITECTURE:
+
+UI ──────▶ Domain ──────▶ Data  UI ──────▶ Domain ◀────── Data
+          (opcional)                     (obligatori)
+     tot cap avall                  tot apunta al Domain
+</code></pre></div>
+<p>En Clean Architecture, el Domain defineix les interfaces (contractes): la UI en depèn (a través dels Use Cases) i el Data les implementa. El Domain no depèn de ningú, és el nucli estable de l'aplicació.</p>
+<div class="admonition warning">
+<p class="admonition-title">Nota important</p>
+<p>La documentació oficial d'Android inclou aquesta nota: <em>"The term 'domain layer' is used in other software architectures, such as 'clean' architecture, and has a different meaning there. Don't confuse the definition of 'domain layer' defined in the Android official architecture guidance with other definitions you may have read elsewhere."</em></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Veure apartat d'inversió de dependències per aprofundir en Clean Architecture.</p>
+</div>
 
 
 
