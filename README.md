@@ -1,19 +1,16 @@
-# Informació general
+# Aqui hi trobareu:
 
-## Apunts sobre els diferents móduls
+## Apunts dels mòduls:
+
 [https://davidfs-itic.github.io/davidfs-itic/](https://davidfs-itic.github.io/davidfs-itic/)
-(Fets amb Markdown i mkdocs.)
 
-Referències:
+Estan fets amb mkdocs: 
 - [ https://squidfunk.github.io/mkdocs-material/reference/]( https://squidfunk.github.io/mkdocs-material/reference/)
 
-## Pàgina amb diferents exemples d'android studio
+## Repositoris amb diferents exemples de desenvolupament en Android.
 
 [https://davidfs-itic.github.io/davidfs-itic/Exemples/](https://davidfs-itic.github.io/davidfs-itic/Exemples/)
 
-## Repositoris de git 
-
-[https://github.com/davidfs-itic](https://github.com/davidfs-itic)
 
 # Altres:
 
