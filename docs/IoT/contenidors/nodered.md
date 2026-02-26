@@ -28,6 +28,7 @@ docker network create xarxa_IOT
 sudo mkdir -p /opt/docker/node-red/data/
 chown 1000:1000 /opt/docker/node-red/data/
 chmod 750 /opt/docker/node-red/data/
+cd /opt/docker/node-red/
 ```
 
 L'usuari 1000 és l'usuari `node-red` dins del contenidor.
@@ -37,7 +38,7 @@ L'usuari 1000 és l'usuari `node-red` dins del contenidor.
 ```yaml
 services:
   nodered:
-    image: nodered/node-red:latest
+    image: nodered/node-red:4.1.6-22
     container_name: nodered
     restart: unless-stopped
     ports:
@@ -62,7 +63,20 @@ docker compose up -d
 
 ## Accés
 
+- **URL:** `http://ip:1880`
+
+## Accés per port forwarding (sense obrir el port)
+
+Executar la comanda ssh des del nostre ordinador:
+```bash
+ssh -i .ssh/clauprivada ubuntu@adreçaip -L 1880:localhost:1880
+```
+Mentre la connexió ssh estigui establerta, tenim el port 1880 obert en el nostre localhost, i el tràfic es redirigeix al localhost:1880 **del servidor**
+Per tant, podem anar a la url:
+
 - **URL:** `http://localhost:1880`
+
+
 
 ## Configurar autenticació
 
@@ -146,3 +160,5 @@ docker restart nodered
 | Port | Descripció |
 |------|------------|
 | 1880 | Interfície web i API |
+
+
