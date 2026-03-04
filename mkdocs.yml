@@ -73,6 +73,7 @@ nav:
         - Dialegs: Android/Interficies/dialegs.md
         - RecyclerView: Android/Interficies/recyclerview.md
         - RecyclerView Afegir i eliminar: Android/Interficies/recyclerviewaddelete.md
+        - RecyclerView SwipetoDelete: Android/Interficies/recyclerviewswipetodelete.md
         - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
         - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
         - Menús: Android/Interficies/menus.md

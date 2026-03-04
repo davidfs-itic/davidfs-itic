@@ -1248,6 +1248,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Android/Interficies/recyclerviewswipetodelete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RecyclerView SwipetoDelete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Android/Interficies/recyclerviewfilter/" class="md-nav__link">
         
   
@@ -2838,6 +2866,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#acces-per-port-forwarding-sense-obrir-el-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accés per port forwarding (sense obrir el port)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configurar-autenticacio" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3394,6 +3433,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#acces-per-port-forwarding-sense-obrir-el-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accés per port forwarding (sense obrir el port)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configurar-autenticacio" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3552,12 +3602,13 @@
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/docker/node-red/data/
 chown<span class="w"> </span><span class="m">1000</span>:1000<span class="w"> </span>/opt/docker/node-red/data/
 chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>/opt/docker/node-red/data/
+<span class="nb">cd</span><span class="w"> </span>/opt/docker/node-red/
 </code></pre></div>
 <p>L'usuari 1000 és l'usuari <code>node-red</code> dins del contenidor.</p>
 <h3 id="3-docker-compose">3. Docker Compose<a class="headerlink" href="#3-docker-compose" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">nodered</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodered/node-red:latest</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodered/node-red:4.1.6-22</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodered</span>
 <span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
@@ -3577,6 +3628,15 @@ chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>/
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <h2 id="acces">Accés<a class="headerlink" href="#acces" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>URL:</strong> <code>http://ip:1880</code></li>
+</ul>
+<h2 id="acces-per-port-forwarding-sense-obrir-el-port">Accés per port forwarding (sense obrir el port)<a class="headerlink" href="#acces-per-port-forwarding-sense-obrir-el-port" title="Permanent link">&para;</a></h2>
+<p>Executar la comanda ssh des del nostre ordinador:
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-i<span class="w"> </span>.ssh/clauprivada<span class="w"> </span>ubuntu@adreçaip<span class="w"> </span>-L<span class="w"> </span><span class="m">1880</span>:localhost:1880
+</code></pre></div>
+Mentre la connexió ssh estigui establerta, tenim el port 1880 obert en el nostre localhost, i el tràfic es redirigeix al localhost:1880 <strong>del servidor</strong>
+Per tant, podem anar a la url:</p>
 <ul>
 <li><strong>URL:</strong> <code>http://localhost:1880</code></li>
 </ul>
