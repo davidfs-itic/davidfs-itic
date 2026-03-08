@@ -1792,6 +1792,178 @@
                 
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proves
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proves
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció al Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proves/disseny/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disseny de Proves (TDD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proves/unitaris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests Unitaris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proves/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests d'Integració (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1808,10 +1980,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   
@@ -1829,8 +2001,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2057,10 +2229,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_7_4" id="__nav_2_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8_4" id="__nav_2_8_4_label" tabindex="0">
             
   
   
@@ -2078,8 +2250,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3255,10 +3427,19 @@
 - Gràfics de línies (LineChart)
 - Gràfics de sectors (PieChart)</p>
 <h2 id="2-afegir-la-llibreria-al-projecte">2. Afegir la llibreria al projecte<a class="headerlink" href="#2-afegir-la-llibreria-al-projecte" title="Permanent link">&para;</a></h2>
-<p>Al fitxer <strong>build.gradle (Module: app)</strong>:</p>
-<div class="highlight"><pre><span></span><code>dependencies {
-    implementation(&quot;com.github.PhilJay:MPAndroidChart:v3.1.0&quot;)
-}
+<p>Al fitxer <strong>settings.gradle.kts</strong>, afegeix el repositori de JitPack:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dependencyResolutionManagement</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">google</span><span class="p">()</span>
+<span class="w">        </span><span class="n">mavenCentral</span><span class="p">()</span>
+<span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uri</span><span class="p">(</span><span class="s">&quot;https://jitpack.io&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Al fitxer <strong>build.gradle.kts (Module: app)</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.github.PhilJay:MPAndroidChart:v3.1.0&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Després fes <strong>Sync Now</strong>.</p>
 <h2 id="3-afegir-un-grafic-al-layout-xml">3. Afegir un gràfic al layout (XML)<a class="headerlink" href="#3-afegir-un-grafic-al-layout-xml" title="Permanent link">&para;</a></h2>
@@ -3274,8 +3455,8 @@
 - <code>PieChart</code></p>
 <h2 id="4-preparar-les-dades">4. Preparar les dades<a class="headerlink" href="#4-preparar-les-dades" title="Permanent link">&para;</a></h2>
 <p>En un arxiu <strong>Datasource</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kd">object</span><span class="w"> </span><span class="nc">dades</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kd">object</span><span class="w"> </span><span class="nc">Dades</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
 <span class="w">    </span><span class="n">Entry</span><span class="p">(</span><span class="m">1f</span><span class="p">,</span><span class="w"> </span><span class="m">10f</span><span class="p">),</span>
 <span class="w">    </span><span class="n">Entry</span><span class="p">(</span><span class="m">2f</span><span class="p">,</span><span class="w"> </span><span class="m">15f</span><span class="p">),</span>
 <span class="w">    </span><span class="n">Entry</span><span class="p">(</span><span class="m">3f</span><span class="p">,</span><span class="w"> </span><span class="m">12f</span><span class="p">),</span>
@@ -3286,7 +3467,7 @@
 <h2 id="5-crear-el-dataset-per-al-grafic">5. Crear el DataSet per al gràfic.<a class="headerlink" href="#5-crear-el-dataset-per-al-grafic" title="Permanent link">&para;</a></h2>
 <p>En l'activity
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">lineChart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">LineChart</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">lineChart</span><span class="p">)</span>
-<span class="kd">val</span><span class="w"> </span><span class="nv">dataSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LineDataSet</span><span class="p">(</span><span class="n">dades</span><span class="p">.</span><span class="na">entries</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Vendes mensuals&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">dataSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LineDataSet</span><span class="p">(</span><span class="n">Dades</span><span class="p">.</span><span class="na">entries</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Vendes mensuals&quot;</span><span class="p">)</span>
 <span class="n">dataSet</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="na">BLUE</span>
 <span class="n">dataSet</span><span class="p">.</span><span class="na">setCircleColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">RED</span><span class="p">)</span>
 <span class="n">dataSet</span><span class="p">.</span><span class="na">valueTextSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12f</span>

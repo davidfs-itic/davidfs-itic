@@ -91,6 +91,11 @@ nav:
         - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
         - Patró Factory: Android/Arquitectura/factory.md
         - Principis SOLID: Android/Arquitectura/solid.md
+      - Proves:
+        - Introducció al Testing: Android/Proves/index.md
+        - Disseny de Proves (TDD): Android/Proves/disseny.md
+        - Tests Unitaris: Android/Proves/unitaris.md
+        - Tests d'Integració (UI): Android/Proves/ui.md
       - Llibreries:
         - Introducció a les Llibreries: Android/Llibreries/index.md
         - Retrofit: Android/Llibreries/retrofit.md
