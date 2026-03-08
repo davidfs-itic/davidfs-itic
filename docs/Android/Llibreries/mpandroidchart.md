@@ -10,9 +10,21 @@
 
 ## 2. Afegir la llibreria al projecte
 
-Al fitxer **build.gradle (Module: app)**:
+Al fitxer **settings.gradle.kts**, afegeix el repositori de JitPack:
 
-```gradle
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+Al fitxer **build.gradle.kts (Module: app)**:
+
+```kotlin
 dependencies {
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
@@ -43,8 +55,8 @@ Altres opcions habituals:
 En un arxiu **Datasource**
 
 ```kotlin
-object dades {
-    val entries = listOf<Entry>(
+object Dades {
+    val entries = listOf(
     Entry(1f, 10f),
     Entry(2f, 15f),
     Entry(3f, 12f),
@@ -61,7 +73,7 @@ object dades {
 En l'activity
 ```kotlin
 val lineChart = findViewById<LineChart>(R.id.lineChart)
-val dataSet = LineDataSet(dades.entries, "Vendes mensuals")
+val dataSet = LineDataSet(Dades.entries, "Vendes mensuals")
 dataSet.color = Color.BLUE
 dataSet.setCircleColor(Color.RED)
 dataSet.valueTextSize = 12f
