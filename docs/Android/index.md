@@ -8,3 +8,4 @@
 - [Arquitectura](./Arquitectura/index.md)
 - [Llibreries](./Llibreries/index.md)
 - [Firebase](./Firebase/index.md)
+- [Proves](./Proves/index.md)
