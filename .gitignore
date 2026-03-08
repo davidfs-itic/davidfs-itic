@@ -17,7 +17,12 @@ __pycache__/
 
 # Ignora el HTML generat per MkDocs
 /site/
+/site/*
+
 
 # Ignora els fitxers de sistema operatiu
 .DS_Store
 .vscode/
+
+# ignora arxius de text ocults de linux
+.*.txt

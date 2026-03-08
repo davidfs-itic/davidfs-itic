@@ -109,8 +109,14 @@ nav:
     - Exemples de codi Android: Exemples/index.md
     - Unity:
       - Introducció a Unity: Unity/index.md
-      - Scenes i Sprites: Unity/scenesprites.md
-      - Fisiques i moviment: Unity/fisiquesmoviment.md
+      - Escena, Tiles i Sprites: Unity/scenesprites.md
+      - Scripting C# a Unity: Unity/scripting.md
+      - Físiques i Moviment: Unity/fisiquesmoviment.md
+      - Animacions: Unity/animacions.md
+      - Prefabs i Instanciació: Unity/prefabs.md
+      - Col·lisions i Triggers: Unity/collisions.md
+      - Enemics amb IA bàsica: Unity/enemics.md
+      - Càmera, Fons i So: Unity/audiovisual.md
       - Reconeixement de Veu a Unity: Unity/recveu.md
     - Arduino:
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
