@@ -32,34 +32,21 @@ Important: No afegeixis aquest fitxer al repositori públic de GitHub si conté 
 
 Firebase utilitza el plugin de Google Services. Hauràs d’afegir-lo al projecte.
 
-### Pas 1: Afegir els repositoris i dependències a build.gradle (Project-level)
+### Pas 1: Afegir els plugins a build.gradle.kts (Project-level)
 ```kotlin
-buildscript {
-    repositories {
-        google()  // Necessari per Firebase
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.1.0"  // Versió d’exemple
-        classpath "com.google.gms:google-services:4.4.0"   // Plugin de Google Services
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+plugins {
+    id("com.android.application") version "8.1.0" apply false
+    id("com.google.gms.google-services") version "4.4.0" apply false
 }
 ```
-### Pas 2: Aplicar el plugin a build.gradle (App-level)
+### Pas 2: Aplicar el plugin a build.gradle.kts (App-level)
 
-A app/build.gradle:
+A app/build.gradle.kts:
 
 ```kotlin
 plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'  // Firebase plugin
+    id("com.android.application")
+    id("com.google.gms.google-services")  // Firebase plugin
 }
 ```
 
@@ -112,11 +99,10 @@ Tot i que encara no hem configurat cap servei concret, la millor manera de compr
    └─ ⚠️ No pujar-lo a repositoris públics
 
 4. Configuració del projecte a Android Studio
-   ├─ build.gradle (Project-level):
-   │   ├─ Afegir repositoris: google(), mavenCentral()
-   │   └─ Afegir classpath: com.google.gms:google-services
-   ├─ build.gradle (App-level):
-   │   └─ Aplicar plugin: id 'com.google.gms.google-services'
+   ├─ build.gradle.kts (Project-level):
+   │   └─ Afegir plugin: id("com.google.gms.google-services")
+   ├─ build.gradle.kts (App-level):
+   │   └─ Aplicar plugin: id("com.google.gms.google-services")
    └─ (Opcional) Afegir dependències Firebase
 
 5. Sincronització amb Gradle

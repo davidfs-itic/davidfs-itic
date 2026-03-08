@@ -88,7 +88,7 @@ App de Fitness (Strava-like)
     - Vols paginació avançada i ordenació
 
 ## 2. Autenticació i seguretat
-### 2.1, Firebase Authentication (imprescindible)
+### 2.1. Firebase Authentication (imprescindible)
 
 - Manera fàcil i moderna d’autenticar usuaris:
 - Correu + contrasenya
@@ -99,7 +99,7 @@ App de Fitness (Strava-like)
 #### Perfeta per:
 - Login + registre complet en 15 minuts, sense backend.
 
-### 2.2, Cloud Firestore Security Rules
+### 2.2. Cloud Firestore Security Rules
 
 - Sistema per definir permisos:
     - Qui pot llegir?
@@ -121,7 +121,7 @@ App de Fitness (Strava-like)
 
 #### Perfecte per:
 
-- Enviar avisos a moda de “backend real”.
+- Enviar avisos a mode de “backend real”.
 
 ## 4. Eines complementàries (molt útils segons el projecte)
 ### Firebase Storage

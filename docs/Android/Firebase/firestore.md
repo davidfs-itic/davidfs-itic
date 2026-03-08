@@ -4,11 +4,11 @@ Cloud Firestore és una base de dades de tipus NoSQL allotjada al núvol, que fo
 A diferència de les bases de dades relacionals clàssiques (com MySQL o PostgreSQL), Firestore no fa servir taules ni files, sinó que organitza la informació en Documents i Col·leccions.
 
 
-## 1. L'Estructura de Dades
+## 1.1. L'Estructura de Dades
 
 L'arquitectura de Firestore es basa en tres pilars:
 
-- Document: És la unitat bàsica de dades. S'assembla a un fitxer JSON i conté parelles de "clau-valor" (per exemple: nom: "Cadirat", preu: 25).
+- Document: És la unitat bàsica de dades. S'assembla a un fitxer JSON i conté parelles de "clau-valor" (per exemple: nom: "Cadira", preu: 25).
 
 - Col·lecció: És un contenidor de documents. Imagina-ho com una carpeta que guarda molts "fitxers" (documents) del mateix tipus (per exemple, una col·lecció anomenada items).
 
@@ -18,7 +18,7 @@ Jerarquia:
 
 L'estructura segueix sempre el patró Col·lecció > Document > Col·lecció > Document.
 
-## 2. Característiques Principals
+## 1.2. Característiques Principals
 
 - Temps Real: Firestore pot "avisar" a l'aplicació Android cada vegada que una dada canvia al servidor, actualitzant la interfície automàticament sense haver de refrescar.
 
@@ -28,8 +28,19 @@ L'estructura segueix sempre el patró Col·lecció > Document > Col·lecció > D
 
 
 # 2. Inicialitzar Firestore
-Dins del teu Activity, Fragment o ViewModel, obté la instància de la base de dades:
 
+Primer, afegeix la dependència de Firestore al fitxer `app/build.gradle.kts`:
+
+```kotlin
+dependencies {
+    // Firebase BoM (gestiona les versions automàticament)
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    // Firestore
+    implementation("com.google.firebase:firebase-firestore")
+}
+```
+
+Dins del teu Activity, Fragment o ViewModel, obté la instància de la base de dades:
 
 ```kotlin
     val db = Firebase.firestore
@@ -131,16 +142,3 @@ fun obtenirPerCategoria(categoria: String) {
 }
 ```
 
-# 6. Integració amb GitHub
-
-Si el projecte està a GitHub, tingues en compte:
-
-Afegir google-services.json a .gitignore per evitar exposar credencials:
-
-```bash
-# Firebase config
-/app/google-services.json
-```
-
-
-Si treballes en equip, cada desenvolupador hauria de descarregar el seu fitxer google-services.json des de Firebase i col·locar-lo a app/.
