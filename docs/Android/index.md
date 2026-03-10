@@ -1,5 +1,10 @@
 # Introducció al desenvolupament en Android
 
+## Bàsics
+- [Activities](./activities.md)
+- [Fragments](./fragments.md)
+- [La classe Application](./application.md)
+
 
 ## Contingut
 

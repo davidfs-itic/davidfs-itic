@@ -96,3 +96,4 @@ dependencies {
 - [Retrofit](./retrofit.md)
 - [Mp Android Chart](./mpandroidchart.md)
 - [Glide](./glide.md)
+- [DataStore Preferences](./datastore.md)

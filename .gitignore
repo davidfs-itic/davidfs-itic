@@ -19,6 +19,9 @@ __pycache__/
 /site/
 /site/*
 
+#Ignora l'arxiu de claude
+claude.md
+CLAUDE.md
 
 # Ignora els fitxers de sistema operatiu
 .DS_Store

@@ -6,9 +6,12 @@ Continguts:
 - [Funcions: ](./funcions.md)
 - [Classes i Objectes:](./classesobjectes.md)
 - [Null Safety: ](./nullsafety.md)
+- [Col·leccions i operadors funcionals:](./colleccions.md)
 - [Funcions d'extensió:](./fextensio.md)
 - [LiveData: ](./livedata.md)
 - [Coroutines:](./coroutines.md)
+- [Flows:](./flows.md)
+- [StateFlow:](./stateflow.md)
 - [Anotadors:](./anotadors.md)
 
 ## Introducció

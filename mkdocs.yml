@@ -47,16 +47,20 @@ nav:
       - Introducció a Android: Android/index.md
       - Activities: Android/activities.md
       - Fragments: Android/fragments.md
+      - La classe Application: Android/application.md
       - Llenguatge Kotlin: 
         - Introducció a Kotlin: Android/Kotlin/index.md
         - Variables i Constants: Android/Kotlin/variables.md
         - Funcions: Android/Kotlin/funcions.md
         - Classes i Objectes: Android/Kotlin/classesobjectes.md
         - Null Safety: Android/Kotlin/nullsafety.md
+        - Col·leccions: Android/Kotlin/colleccions.md
         - Funcions d'extensió: Android/Kotlin/fextensio.md
         - LiveData: Android/Kotlin/livedata.md
         - Coroutines: Android/Kotlin/coroutines.md
-        - Anotadors: Android/Kotlin/anotadors.md        
+        - Flows: Android/Kotlin/flows.md
+        - StateFlow: Android/Kotlin/stateflow.md
+        - Anotadors: Android/Kotlin/anotadors.md
 #      - Usabilitat:
 #        - Introducció a la Usabilitat: Android/Usabilitat/index.md
 #        - Accessibilitat: Android/Usabilitat/accessibilitat.md
@@ -100,6 +104,7 @@ nav:
         - Introducció a les Llibreries: Android/Llibreries/index.md
         - Retrofit: Android/Llibreries/retrofit.md
         - MPAndroidChart: Android/Llibreries/mpandroidchart.md
+        - DataStore Preferences: Android/Llibreries/datastore.md
         - Firebase:
           - Introducció a Firebase: Android/Firebase/index.md
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
