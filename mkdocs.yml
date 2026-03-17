@@ -105,6 +105,7 @@ nav:
         - Retrofit: Android/Llibreries/retrofit.md
         - MPAndroidChart: Android/Llibreries/mpandroidchart.md
         - DataStore Preferences: Android/Llibreries/datastore.md
+        - Glide: Android/Llibreries/glide.md
         - Firebase:
           - Introducció a Firebase: Android/Firebase/index.md
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
@@ -123,7 +124,9 @@ nav:
       - Enemics amb IA bàsica: Unity/enemics.md
       - Càmera, Fons i So: Unity/audiovisual.md
       - Reconeixement de Veu a Unity: Unity/recveu.md
+      - Meta Quest 3 i VR: Unity/metaquest.md
     - Arduino:
+      - Introducció a Arduino: Arduino/index.md
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
     # - Referències: referencies.md
     - Transversal:
