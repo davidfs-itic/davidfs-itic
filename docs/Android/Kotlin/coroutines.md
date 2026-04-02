@@ -36,7 +36,7 @@ Les corrutines resolen aquest problema executant-se en un fil secundari i tornan
 Exemples de scopes:
 
 Scope |	Ús
-|:----|:----
+:----|:----
 GlobalScope	|corrutina global durant tota l'app
 MainScope	|vinculat a UI
 lifecycleScope	|Android – vinculat al cicle de vida
@@ -85,8 +85,8 @@ Només es pot cridar des de:
 
 Els dispatchers indiquen en quin fil s'executa la corrutina:
 
-Dispatcher|Ús
-|:--------|:---
+|Dispatcher|Ús
+:--------|:---
 Dispatchers.Main	|tasques de UI
 Dispatchers.IO	|fitxers, base de dades, xarxa
 Dispatchers.Default	|càlculs pesats
@@ -122,7 +122,7 @@ val resultat = withContext(Dispatchers.IO) {
 
 ## Diferència entre withContext launch i async
 Funció|	Quan usar-la|	Retorna resultat?
-|:----|:------------|:---------
+:----|:------------|:---------
 launch	|Crear una corrutina nova	|No
 async	|Crear corrutina que retorna un resultat	|Sí, Deferred.await()
 withContext	|Canviar context dins d’una corrutina existent	|Sí, retorna el valor del bloc
