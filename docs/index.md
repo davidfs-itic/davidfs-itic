@@ -15,5 +15,4 @@
 
 ## Git 
 
- - [Enllaç al GIT] (https://github.com/davidfs-itic/)
- 
+ - [Enllaç al GIT](https://github.com/davidfs-itic/)
