@@ -1,5 +1,6 @@
 # Guia Simplificada: DialogFragment amb ViewModel
 
+
 ## Estructura del Projecte
 
 ```

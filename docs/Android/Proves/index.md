@@ -131,3 +131,9 @@ dependencies {
 - [Disseny de proves (TDD)](disseny.md) — Com planificar i dissenyar proves abans de programar.
 - [Tests unitaris](unitaris.md) — Com escriure tests unitaris amb JUnit.
 - [Tests d'integració (UI)](ui.md) — Com escriure tests d'interfície amb Espresso.
+
+## 7. Referències:
+
+https://www.youtube.com/watch?v=_XYHr_dPjlE
+
+https://www.youtube.com/watch?v=_XYHr_dPjlE

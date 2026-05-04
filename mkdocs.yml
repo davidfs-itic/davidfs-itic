@@ -111,8 +111,7 @@ nav:
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
           - Firestore: Android/Firebase/firestore.md
           # - Autenticació: Android/Firebase/autenticacio.md
-          # - FireCloud Messaging: Android/Firebase/fcm.md
-    - Exemples de codi Android: Exemples/index.md
+
     - Unity:
       - Introducció a Unity: Unity/index.md
       - Escena, Tiles i Sprites: Unity/scenesprites.md
@@ -125,6 +124,8 @@ nav:
       - Càmera, Fons i So: Unity/audiovisual.md
       - Reconeixement de Veu a Unity: Unity/recveu.md
       - Meta Quest 3 i VR: Unity/metaquest.md
+          # - FireCloud Messaging: Android/Firebase/fcm.md
+    - Exemples de codi Android: Exemples/index.md
     - Arduino:
       - Introducció a Arduino: Arduino/index.md
       - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
