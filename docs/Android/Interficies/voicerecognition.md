@@ -8,6 +8,26 @@ Passos:
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
+
+!!! warning "Cal demanar el permís en temps d'execució"
+    `RECORD_AUDIO` és un permís perillós: declarar-lo al manifest no és suficient a partir d'Android 6 (API 23). Si no el demanes en temps d'execució, el reconeixement fallarà (`onError`). Cal sol·licitar-lo abans d'iniciar el reconeixedor:
+
+    ```kotlin
+    // Registrar el llançador (com a propietat de l'Activity/Fragment)
+    private val requestPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { concedit ->
+        if (concedit) {
+            // Permís concedit: ja podem iniciar el reconeixement
+        } else {
+            // Permís denegat: informem l'usuari
+        }
+    }
+
+    // Demanar-lo quan calgui (p. ex. en prémer el botó de micròfon):
+    requestPermission.launch(Manifest.permission.RECORD_AUDIO)
+    ```
+
 ### 2. Crear el reconeixedor
 private lateinit var recognizer: SpeechRecognizer
 

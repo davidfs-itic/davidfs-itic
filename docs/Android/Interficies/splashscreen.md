@@ -48,15 +48,19 @@ A la teva activitat principal, has de cridar installSplashScreen() i pots utilit
 
 ```Kotlin
 class MainActivity : AppCompatActivity() {
+
+    // Estat que indica si ja tenim les dades llestes
+    private var dadesCarregades = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // Cridar abans de super.onCreate() i setContentView()
         val splashScreen = installSplashScreen()
 
         // Opcional: Per mantenir-lo a la pantalla durant més temps (p. ex. carregar dades)
-        splashScreen.setKeepOnScreenCondition { 
-            // Retorna 'true' per mantenir el splash screen, 'false' per amagar-lo
-            // Aquí hi aniria la teva lògica de càrrega
-            false 
+        splashScreen.setKeepOnScreenCondition {
+            // Retorna 'true' per mantenir el splash screen, 'false' per amagar-lo.
+            // Mentre les dades no estiguin carregades, el mantenim visible.
+            !dadesCarregades
         }
 
         super.onCreate(savedInstanceState)

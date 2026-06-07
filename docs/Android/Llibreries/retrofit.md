@@ -96,10 +96,10 @@ Els noms dels atributs han de coincidir amb els camps del JSON.
 
 ## 6. Implementació 
 
-### 6.1 Interfície `ItemsService`
+### 6.1 Interfície `ItemService`
 
 ```kotlin
-interface ItemsService {
+interface ItemService {
 
     @GET("items/")
     suspend fun llistaItems(): Response<List<Item>>
@@ -113,7 +113,7 @@ interface ItemsService {
 
 #### Explicació pas a pas
 
-- `interface ItemsService`
+- `interface ItemService`
   - Defineix el **contracte** de comunicació amb l'API.
   - Retrofit crearà automàticament la implementació.
 

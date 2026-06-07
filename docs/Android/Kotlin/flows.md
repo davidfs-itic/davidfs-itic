@@ -61,7 +61,7 @@ Valor rebut: 4
 Valor rebut: 5
 ```
 
-!!! warning "collect es bloquejant"
+!!! warning "collect suspèn la coroutine"
     La funcio `collect` suspen la coroutine fins que el Flow finalitza. Si necessites col·lectar diversos Flows en paral·lel, cal llançar cada `collect` en una coroutine separada amb `launch`.
 
 ## 4. Operadors de transformacio

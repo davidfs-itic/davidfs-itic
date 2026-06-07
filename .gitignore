@@ -22,7 +22,7 @@ __pycache__/
 #Ignora l'arxiu de claude
 claude.md
 CLAUDE.md
-
+auditoria.md
 # Ignora els fitxers de sistema operatiu
 .DS_Store
 .vscode/

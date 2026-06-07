@@ -36,7 +36,8 @@ class Circle(i: Int) {
    }
 }
 ```
-És tècnicament el mateix que 
+
+El bloc `init` forma part del **constructor primari** (el dels parèntesis a la declaració de la classe) i s'executa en construir l'objecte. No s'ha de confondre amb un **constructor secundari**, que es declara amb la paraula `constructor` quan la classe no té constructor primari (o a més d'aquest):
 
 ```kotlin
 class Circle {
@@ -46,7 +47,7 @@ class Circle {
 }
 ```
 ### Getters i Setters
-Es poden sobreescriure els getters i setters per defecte:
+Es pot definir un getter (o setter) personalitzat per a una propietat. En aquest exemple, `fullName` és una propietat calculada: el seu valor es genera cada cop que s'hi accedeix a partir d'altres propietats.
 
 ```kotlin
 class Person(val firstName: String, val lastName:String) {
@@ -139,9 +140,9 @@ El compilador ens avisaria si en el when: falta algun cas, o no els posem tots
 ```kotlin
 fun calcula(op: Operacio): Int {
     return when(op) {
-        Operacio.Suma -> op.a + op.b
-        Operacio.Resta -> op.a - op.b
-        Operacio.Quadrat -> op.a * op.a
+        is Operacio.Suma -> op.a + op.b
+        is Operacio.Resta -> op.a - op.b
+        is Operacio.Quadrat -> op.a * op.a
     }
 }
 ```
@@ -160,6 +161,7 @@ interface Shape {
     fun computeArea() : Double
 }
 class Circle(val radius:Double) : Shape {
+    override val name: String = "Cercle"
     override fun computeArea() = Math.PI * radius * radius
 }
 val c = Circle(3.0)

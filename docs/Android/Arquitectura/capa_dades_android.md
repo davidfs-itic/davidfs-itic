@@ -152,6 +152,9 @@ class RetrofitItemsDataSource : ItemsDataSource {
 }
 ```
 
+!!! warning "Les crides de xarxa han de ser asíncrones"
+    Aquest exemple usa signatures **síncrones** (`getItems(): List<MyItem>`) per simplificar i centrar-se en l'arquitectura per capes. En un projecte real, una font de dades Retrofit **no pot** cridar l'API de manera bloquejant: `Call.execute()` bloqueja el fil i, si es crida des del fil principal, llança `NetworkOnMainThreadException`. La solució és fer les funcions `suspend` (de la font fins al ViewModel) i usar corrutines amb les funcions `suspend` de Retrofit. Vegeu [Retrofit](../Llibreries/retrofit.md) i [Corrutines i Dispatchers](../Kotlin/coroutines.md).
+
 #### Repository
 
 El Repository és una **classe concreta** (sense interface). Rep un DataSource i li delega l'accés a les dades. No sap (ni li importa) si el DataSource és Mock, Retrofit o Room:

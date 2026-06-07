@@ -58,7 +58,7 @@ Objecte que conté la llista: DataSource
 object DataSource {
 
     // Llista de dades en memòria
-    val items: MutableList<MyItem> = listOf(
+    val items: MutableList<MyItem> = mutableListOf(
         MyItem("Element 1", "Subtítol 1"),
         MyItem("Element 2", "Subtítol 2"),
         MyItem("Element 3", "Subtítol 3"),
@@ -77,11 +77,11 @@ object DataSource
 - No s’instancia amb DataSource(), sinó que s’utilitza directament pel nom.
 
 ```kotlin  linenums="1"
-val items: List<MyItem>
+val items: MutableList<MyItem>
 ```
 - És una propietat pública que conté la llista en memòria.
-- El tipus és List<MyItem>, per tant és immutable (no es poden afegir/eliminar elements).
-- Es pot canviar a MutableList<MyItem> si es vol modificar la llista durant l’execució.
+- El tipus és MutableList<MyItem>, per tant es poden afegir/eliminar elements durant l’execució (necessari, per exemple, per afegir o esborrar elements del RecyclerView).
+- Si no cal modificar-la, es pot declarar com a List<MyItem> (immutable) amb listOf(...).
 
 L’objecte DataSource actua com un “mini repositori de dades” senzill, sense base de dades ni API.
 

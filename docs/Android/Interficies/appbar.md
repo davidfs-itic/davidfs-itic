@@ -131,8 +131,9 @@ Tant el tema base com el de l'aplicació tenen appbar (hereten de DarkActionBar)
         <item name="colorPrimary">@color/my_primary_color</item>
         <item name="colorSecondary">@color/my_secondary_color</item>
         <item name="android:textColorPrimary">@color/my_text_primary</item>
-        </style>
-    <style name="Theme.MyCustomApp" parent="Base.Theme.MyCustomApp">
+    </style>
+
+    <style name="Theme.MyCustomApp" parent="Base.Theme.MyCustomApp" />
 
 </resources>
 ```
@@ -159,6 +160,15 @@ Crea un tema que hereti del base però desactivi la barra d’acció (ideal per 
 </style>
 ```
 Així es mantenen tots els colors i estils del tema de l'aplicació, però sense AppBar.​
+
+#### Tema fill amb AppBar personalitzada
+Crea un tema que hereti del base però amb una AppBar amb colors propis (per exemple, per a una pantalla de detall):
+
+```xml
+<style name="Theme.MyCustomApp.AppBar" parent="Theme.MyCustomApp">
+    <item name="colorPrimary">@color/my_detail_color</item>
+</style>
+```
 
 #### Assignar tema per Activity
 Al AndroidManifest.xml pots dir quines activities porten appbar (tema base) i quines no (tema sense barra):

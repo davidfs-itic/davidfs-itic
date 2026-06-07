@@ -156,20 +156,18 @@ Aquesta anotació genera el codi necessari perquè Hilt pugui gestionar la injec
 Es pot observar quan l'aplicació passa a primer pla o a segon pla utilitzant `ProcessLifecycleOwner`:
 
 ```kotlin
-class MyApp : Application(), LifecycleObserver {
+class MyApp : Application(), DefaultLifecycleObserver {
 
     override fun onCreate() {
         super.onCreate()
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onAppForeground() {
+    override fun onStart(owner: LifecycleOwner) {
         // L'aplicació ha passat a primer pla
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onAppBackground() {
+    override fun onStop(owner: LifecycleOwner) {
         // L'aplicació ha passat a segon pla
     }
 }
@@ -274,7 +272,7 @@ class MyApp : Application() {
 
 - **No guardar referencies a Activities o Fragments**: L'objecte `Application` viu durant tota l'execució. Si guarda referencies a components amb cicle de vida curt, es produiran fugues de memoria.
 
-- **Utilitzar `AndroidViewModel` per accedir a Application des d'un ViewModel**: En lloc d'accedir directament a la instancia d'`Application`, utilitza `AndroidViewModel` que rep `Application` al constructor de manera segura. Consulta la documentació sobre [Application ViewModel](./Arquitectura/applicationviewmodel.md).
+- **Mantenir el `Context` fora del ViewModel**: si un ViewModel necessita dades del sistema (preferències, base de dades, etc.), injecta-li un Repository que encapsuli aquest accés en lloc de donar-li el `Context` directament. Així el ViewModel queda desacoblat d'Android i és fàcil de testejar. Consulta [ViewModel de Settings amb injecció manual](./Arquitectura/settingsviewmodel.md).
 
 !!! warning
     La classe `Application` no sobreviu a la mort del procés. Si el sistema operatiu mata el procés per alliberar memoria, tot l'estat emmagatzemat a `Application` es perdrà. Utilitza `SharedPreferences`, `Room` o `DataStore` per persistir dades importants.

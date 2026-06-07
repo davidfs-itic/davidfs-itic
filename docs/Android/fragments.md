@@ -31,7 +31,7 @@ Mostra visual d'una activity amb 2 fragments:
 Els fragments tenen layouts igual que les activities, en xml.
 
 També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau:
-```kolin
+```kotlin
 class NewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,8 @@ class NewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val someInt = requireArguments().getInt("some_int")
         ...
-    }    
+    }
+}
 ```
 
 ### Mètodes essencials:
@@ -164,7 +165,7 @@ class ExempleFragment : Fragment() {
         fun onDataReceived(data: String)
     }
 
-    private var callback: OnDatatListener? = null
+    private var callback: OnDataListener? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -267,7 +268,7 @@ class FragmentB : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val inflater = TransitionInflater.from(requireContext())
-        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+        enterTransition = inflater.inflateTransition(R.transition.slide)
     }
 }
 ```

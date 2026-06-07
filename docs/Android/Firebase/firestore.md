@@ -16,7 +16,7 @@ L'arquitectura de Firestore es basa en tres pilars:
 
 Jerarquia: 
 
-L'estructura segueix sempre el patró Col·lecció > Document > Col·lecció > Document.
+Quan s'aniuen dades, l'estructura alterna el patró Col·lecció > Document > Col·lecció > Document. Una col·lecció pot tenir documents sense subcol·leccions; les subcol·leccions només s'afegeixen quan cal aniuar dades.
 
 ## 1.2. Característiques Principals
 

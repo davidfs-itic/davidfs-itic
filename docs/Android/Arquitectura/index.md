@@ -10,7 +10,7 @@ Cursos (tutorial) de Android: https://developer.android.com/courses/pathways/and
 Elements de l'arquitectura:
 
 - [ViewModel](./viewmodel.md)
-- [Application ViewModel](./applicationviewmodel.md)
+- [ViewModel de Settings (injecció manual)](./settingsviewmodel.md)
 - [Observer](./observer.md)
 - [Capa de Dades en Android]: (./capa_dades_android.md)
 - [Capa de Dades amb Clean Architecture]: (./capa_dades_clean_architecture.md)

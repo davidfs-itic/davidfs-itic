@@ -157,7 +157,7 @@ class UserViewModel : ViewModel() {
     private fun loadUserData() {
         //obtenir l'usuari de manera asíncronta (veure corrutines)
         viewModelScope.launch {
-            _userData.value = "Usuari1"
+            _userData.value = User(name = "Usuari1")
         }
     }
 }
@@ -175,6 +175,34 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
+!!! info "On va el Dispatchers.IO?"
+    `viewModelScope.launch` s'executa per defecte a `Dispatchers.Main`. Tot i així,
+    les funcions `suspend` de Retrofit i Room són *main-safe* i no bloquegen la UI:
+    no cal embolcallar-les amb `withContext(Dispatchers.IO)` dins del ViewModel.
+
+    Quan facis feina bloquejant real (lectura/escriptura de fitxers, càlculs pesats,
+    llibreries que no són `suspend`), el canvi a `Dispatchers.IO` ha d'anar **dins del
+    Repository**, no al ViewModel. Així el ViewModel sempre crida funcions main-safe i
+    no ha de saber en quin fil s'executen.
+
+    ```kotlin
+    // Repository: aquí SÍ es decideix el dispatcher
+    class UserRepository {
+        suspend fun getUser(userId: String): User = withContext(Dispatchers.IO) {
+            // feina bloquejant: fitxers, BBDD no-suspend, etc.
+        }
+    }
+
+    // ViewModel: NO posa Dispatchers.IO; crida funcions main-safe
+    private fun loadUser() {
+        viewModelScope.launch {
+            _user.value = repository.getUser(userId)
+        }
+    }
+    ```
+
+    Veure [Corrutines i Dispatchers](../Kotlin/coroutines.md).
 
 ## 2-Àmbits (Scopes)
 ### ViewModel no compartit (viewModels())
@@ -325,5 +353,5 @@ class UserActivity : AppCompatActivity() {
     }
 }
 ```
-### 4. Recursos
+## 4. Recursos
 [https://www.youtube.com/watch?v=orH4K6qBzvE](https://www.youtube.com/watch?v=orH4K6qBzvE)

@@ -28,7 +28,7 @@ Continguts:
 - Limitacions clau:
     - Sense JOINs: Has de desnormalitzar dades
     - Sense consultes entre col·leccions: Tot en una consulta ha d'estar a la mateixa col·lecció
-    - Restriccions en filtres: No pots filtrar per dos camps diferents sense índex compost
+    - Restriccions en filtres: combinar filtres de rang/desigualtat sobre diversos camps (o filtrar i ordenar per camps diferents) requereix un índex compost
 
 #### Projectes típics:
 

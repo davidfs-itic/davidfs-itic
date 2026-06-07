@@ -97,13 +97,26 @@ Exemple:
 
 ```kotlin
 launch(Dispatchers.IO) {
-    val dades = carregarDades()
+    val dades = llegirFitxerGran() // feina bloquejant: disc, BBDD no-suspend...
     withContext(Dispatchers.Main) {
         // actualitzar UI
         textView.text = dades
     }
 }
 ```
+
+### IO vs Default: quin trio?
+
+- `Dispatchers.IO`: tasques que **esperen** (xarxa, fitxers, base de dades).
+  Té molts fils perquè la majoria estan aturats esperant una resposta.
+- `Dispatchers.Default`: tasques que **usen la CPU** (ordenar llistes grans,
+  processar imatges, càlculs). Limitat al nombre de nuclis del dispositiu.
+
+!!! tip "No sempre cal posar Dispatchers.IO"
+    Moltes llibreries modernes amb funcions `suspend` (Retrofit, Room) ja canvien
+    soles al dispatcher correcte: són *main-safe*. En aquests casos pots cridar-les
+    directament des de `viewModelScope.launch` sense `withContext(Dispatchers.IO)`.
+    Veure [ViewModel](../Arquitectura/viewmodel.md).
 
 ### Què és withContext?
 

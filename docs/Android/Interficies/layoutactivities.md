@@ -27,7 +27,7 @@ que fà que el contingut es posi per sota els systembars.
 Per evitar que el nostre contingut (View) es confongui amb les System bars, s'apliquen uns paddings amb la funció:
 
 ```kotlin
-/ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
     val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
     v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
     insets

@@ -4,7 +4,7 @@
 
 ```kotlin linenum="1"
 class MyAdapter(
-    private val items: List<MyItem>,
+    private var items: List<MyItem>,
     private val onItemClick: (MyItem) -> Unit
 ) : RecyclerView.Adapter<MyViewHolder>() {
 
@@ -30,9 +30,24 @@ class MyAdapter(
 
 ## 2. Des de la Activity:
 
-### Fem un menú per buscar (per exemple un PopUp per categories)
+### Definim els dos menús (XML)
 
-```kotlin
+Primer, el menú de la barra superior (`res/menu/menu_cerca.xml`) amb el botó que obre el desplegable de categories:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_category_button"
+        android:title="Categories"
+        app:showAsAction="ifRoom" />
+</menu>
+```
+
+I el menú del desplegable (`res/menu/popup_categories.xml`) amb les categories:
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
@@ -120,6 +135,10 @@ private fun showCategoryPopupMenu(view: View) {
 
     private fun applyCategoryFilter(category: String) {
         Toast.makeText(this, "Filtrat per: $category", Toast.LENGTH_SHORT).show()
-        // Aquí s'aplica la lògica de filtratge a la RecyclerView o Llista.
+        // Aquí s'aplica la lògica de filtratge i s'actualitza l'adapter, p. ex.:
+        val filtrats = if (category == "Totes") llistaCompleta
+                       else llistaCompleta.filter { it.categoria == category }
+        adapter.updateList(filtrats)
     }
-    ```
+}
+```
