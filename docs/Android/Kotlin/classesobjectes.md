@@ -139,9 +139,9 @@ El compilador ens avisaria si en el when: falta algun cas, o no els posem tots
 ```kotlin
 fun calcula(op: Operacio): Int {
     return when(op) {
-        is Operacio.Suma -> op.a + op.b
-        is Operacio.Resta -> op.a - op.b
-        is Operacio.Quadrat -> op.a * op.a
+        Operacio.Suma -> op.a + op.b
+        Operacio.Resta -> op.a - op.b
+        Operacio.Quadrat -> op.a * op.a
     }
 }
 ```
