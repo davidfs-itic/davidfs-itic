@@ -50,7 +50,7 @@ Continuant en el onCreateOptionsMenu...
 ```kotlin
 
             // 4. Posa el text d'ajuda (hint)
-            searchView.queryHint = "Introdueix el text a cercar..."
+            searchView?.queryHint = "Introdueix el text a cercar..."
 
             //5. Necessitem un objecte que implementi OnQueryTextListener:
             val listener = object : SearchView.OnQueryTextListener {
@@ -66,7 +66,7 @@ Continuant en el onCreateOptionsMenu...
             }
 
             //6. Assignem aquest objecte al listener.
-            searchView.setOnQueryTextListener(listener)
+            searchView?.setOnQueryTextListener(listener)
 
 ```
 

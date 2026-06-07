@@ -66,6 +66,5 @@ Anotador	| Funció	| Descripció	|Exemple
 **Per a Multipart (Fitxers)**
 Anotador	| Funció	| Descripció	|Exemple
 :-----------|:----------|:--------------|:----------------
-Anotador,Funció,Descripció,Exemple
 @Multipart|Fitxers múltiples|Indica que la petició és de tipus multipart i s'utilitza per pujar fitxers amb dades addicionals.|Cal usar-lo a la funció!
 @Part|Part de dades/fitxer|Defineix una part individual d'una petició multipart. Pot ser un camp de dades simple o un fitxer (utilitzant RequestBody).|fun uploadFile(@Part file: RequestBody)

@@ -11,7 +11,7 @@
 - [Navigation Drawer:](./drawermenu.md)
 - [Dialegs:](./dialegs.md)
 - [RecyclerView:](./recyclerview.md)
-[- RecyclerView Afegir i eliminar:](./recyclerviewaddelete.md)
+- [RecyclerView Afegir i eliminar:](./recyclerviewaddelete.md)
 - [Recyclerview filtrat:](./recyclerviewfilter.md)
 - [Menús:](./menus.md)
 - [Splash Screen:](./splashscreen.md)

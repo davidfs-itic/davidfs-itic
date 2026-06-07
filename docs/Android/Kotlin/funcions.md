@@ -69,7 +69,7 @@ Amb :: podem passar la referència a una funció.
 
 ```kotlin
 fun enc2(input:String): String = input.reversed()
-encodeMessage("abc", ::enc2)
+encodeMsg("abc", ::enc2)
 ```
 
 #### Últim paràmetre d'una funció

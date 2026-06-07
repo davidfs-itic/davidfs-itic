@@ -45,7 +45,13 @@ class ImageNotification(private val imageUrl: String) : AppNotification {
         println("Mostrant notificació amb imatge des de: $imageUrl")
     }
 }
-// Podria haver-n'hi més, com ProgressNotification, etc.
+
+class ProgressNotification : AppNotification {
+    override fun show(context: Context) {
+        // Lògica de construcció d'una notificació de progrés
+        println("Mostrant notificació de progrés")
+    }
+}
 ```
 ### 3. El Factory (NotificationFactory)
 Creem un objecte **object** (que actua com un Singleton a Kotlin) amb una funció que decideix quin tipus de producte instanciar basant-se en el parametre type
@@ -63,7 +69,7 @@ object NotificationFactory {
     fun createNotification(type: NotificationType): AppNotification = when (type) {
         is NotificationType.Simple -> SimpleNotification(type.message)
         is NotificationType.Image -> ImageNotification(type.url)
-        NotificationType.Progress -> ProgressNotification() // Assumint que existeix
+        NotificationType.Progress -> ProgressNotification()
     }
 }
 ```

@@ -73,6 +73,6 @@ Beneficis pràctics:
 
 1. L'Activity es pot canviar (Fragment, Compose Screen) sense tocar Adapter
 2. L'Adapter es pot reutilitzar en qualsevol Activity/Fragment
-3. No té memory leaks (no captura 'this' directament dins lambda)
+3. Baix acoblament: l'Adapter només depèn de la interfície, no de la classe concreta de l'Activity
 4. Testejable: mockejar ItemClickListener
 

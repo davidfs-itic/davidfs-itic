@@ -113,8 +113,10 @@ class MainActivity : AppCompatActivity() {
 
         // Quan l'usuari fa swipe, eliminem l'element
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-            val position = viewHolder.adapterPosition
-            adapter.removeAt(position)
+            val position = viewHolder.bindingAdapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                adapter.removeAt(position)
+            }
         }
     }
 }
