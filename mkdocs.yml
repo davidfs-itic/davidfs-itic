@@ -45,10 +45,7 @@ nav:
     - Inici: index.md             # Aquesta serà la primera pàgina
     - Android:  
       - Introducció a Android: Android/index.md
-      - Activities: Android/activities.md
-      - Fragments: Android/fragments.md
-      - La classe Application: Android/application.md
-      - Llenguatge Kotlin: 
+      - Llenguatge Kotlin:
         - Introducció a Kotlin: Android/Kotlin/index.md
         - Variables i Constants: Android/Kotlin/variables.md
         - Funcions: Android/Kotlin/funcions.md
@@ -66,6 +63,9 @@ nav:
 #        - Accessibilitat: Android/Usabilitat/accessibilitat.md
       - Interficies:
         - Introducció a les Interficies: Android/Interficies/index.md
+        - Activities: Android/Interficies/activities.md
+        - Fragments: Android/Interficies/fragments.md
+        - La classe Application: Android/Interficies/application.md
         - Layout en Activities: Android/Interficies/layoutactivities.md
         - Layouts: Android/Interficies/layouts.md
         - Temes i Estils: Android/Interficies/temes.md

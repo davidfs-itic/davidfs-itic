@@ -272,7 +272,7 @@ class MyApp : Application() {
 
 - **No guardar referencies a Activities o Fragments**: L'objecte `Application` viu durant tota l'execució. Si guarda referencies a components amb cicle de vida curt, es produiran fugues de memoria.
 
-- **Mantenir el `Context` fora del ViewModel**: si un ViewModel necessita dades del sistema (preferències, base de dades, etc.), injecta-li un Repository que encapsuli aquest accés en lloc de donar-li el `Context` directament. Així el ViewModel queda desacoblat d'Android i és fàcil de testejar. Consulta [ViewModel de Settings amb injecció manual](./Arquitectura/settingsviewmodel.md).
+- **Mantenir el `Context` fora del ViewModel**: si un ViewModel necessita dades del sistema (preferències, base de dades, etc.), injecta-li un Repository que encapsuli aquest accés en lloc de donar-li el `Context` directament. Així el ViewModel queda desacoblat d'Android i és fàcil de testejar. Consulta [ViewModel de Settings amb injecció manual](../Arquitectura/settingsviewmodel.md).
 
 !!! warning
     La classe `Application` no sobreviu a la mort del procés. Si el sistema operatiu mata el procés per alliberar memoria, tot l'estat emmagatzemat a `Application` es perdrà. Utilitza `SharedPreferences`, `Room` o `DataStore` per persistir dades importants.

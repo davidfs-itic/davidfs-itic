@@ -2,6 +2,9 @@
 
 ## Continguts
 
+- [Activities:](./activities.md)
+- [Fragments:](./fragments.md)
+- [La classe Application:](./application.md)
 - [Layouts:](./layouts.md)
 - [Temes i Estils:](./temes.md)
 - [VieweBinding:](./viewbinding.md)        

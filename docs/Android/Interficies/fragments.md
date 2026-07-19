@@ -199,7 +199,7 @@ Avantatge: Desacobla el fragment de l'activity específica.
 
 ### Amb shared Viewmodels
 
-Vegeu documentació a [Shared Viewmodels](./Arquitectura/viewmodel.md)
+Vegeu documentació a [Shared Viewmodels](../Arquitectura/viewmodel.md)
 
 ## 5-Animació de les transicions entre fragments
 
