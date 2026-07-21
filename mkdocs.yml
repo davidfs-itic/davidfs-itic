@@ -84,6 +84,9 @@ nav:
         - Splash Screen: Android/Interficies/splashscreen.md
         - Dialog Fragment amb ViewModel: Android/Interficies/dialogfragmentviewmodel.md
         - Voice Recognition: Android/Interficies/voicerecognition.md
+        - Jetpack Compose:
+          - Introducció a Jetpack Compose: Android/Interficies/Jetpack_compose/index.md
+          - Layouts en Jetpack Compose: Android/Interficies/Jetpack_compose/layouts.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md

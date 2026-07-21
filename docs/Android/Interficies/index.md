@@ -19,5 +19,7 @@
 - [Menús:](./menus.md)
 - [Splash Screen:](./splashscreen.md)
 - [Voice Recognition:](./voicerecognition.md)
+- [Introducció a Jetpack Compose:](./Jetpack_compose/index.md)
+- [Layouts en Jetpack Compose:](./Jetpack_compose/layouts.md)
 
 

@@ -29,3 +29,6 @@ auditoria.md
 
 # ignora arxius de text ocults de linux
 .*.txt
+
+/temp
+/temp/*
