@@ -4,6 +4,8 @@ Jetpack Compose és el toolkit modern d'Android per construir interfícies d'usu
 
 Documentació oficial: https://developer.android.com/develop/ui/compose/documentation
 
+Exemples i diferències entre Material i Material3: https://www.jetpackcompose.pro/home/guide/
+
 ## 1. Paradigma declaratiu vs. sistema de Views
 
 En el sistema tradicional (XML + Views), l'interfície s'infla una vegada i després cal anar-la actualitzant manualment: `text.setText(...)`, `imageView.setImageResource(...)`, etc. El programador és responsable de mantenir la vista sincronitzada amb les dades.
@@ -101,3 +103,15 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 ## Continguts d'aquesta secció
 
 - [Layouts: Box, Column, Row i ConstraintLayout](./layouts.md)
+- [Estats: mutableStateOf, remember i state hoisting](./estats.md)
+- [El composable Text](./text.md)
+- [El composable TextField](./textfield.md)
+- [El composable Button](./button.md)
+- [Els composables Image i Icon](./imageicon.md)
+- [Els composables de progrés](./progressbar.md)
+- [Switch, Checkbox i RadioButton](./switchcheckboxradiobutton.md)
+- [El composable Slider](./slider.md)
+- [El composable DropdownMenu](./dropdownmenu.md)
+- [LaunchedEffect](./launchedeffect.md)
+- [El composable Scaffold](./scaffold.md)
+- [NavigationDrawer](./navigationdrawer.md)

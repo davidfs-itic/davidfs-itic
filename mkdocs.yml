@@ -87,6 +87,18 @@ nav:
         - Jetpack Compose:
           - Introducció a Jetpack Compose: Android/Interficies/Jetpack_compose/index.md
           - Layouts en Jetpack Compose: Android/Interficies/Jetpack_compose/layouts.md
+          - Estats en Jetpack Compose: Android/Interficies/Jetpack_compose/estats.md
+          - El composable Text: Android/Interficies/Jetpack_compose/text.md
+          - El composable TextField: Android/Interficies/Jetpack_compose/textfield.md
+          - El composable Button: Android/Interficies/Jetpack_compose/button.md
+          - Els composables Image i Icon: Android/Interficies/Jetpack_compose/imageicon.md
+          - Els composables de progrés: Android/Interficies/Jetpack_compose/progressbar.md
+          - Switch, Checkbox i RadioButton: Android/Interficies/Jetpack_compose/switchcheckboxradiobutton.md
+          - El composable Slider: Android/Interficies/Jetpack_compose/slider.md
+          - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
+          - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
+          - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
+          - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md

@@ -21,5 +21,17 @@
 - [Voice Recognition:](./voicerecognition.md)
 - [Introducció a Jetpack Compose:](./Jetpack_compose/index.md)
 - [Layouts en Jetpack Compose:](./Jetpack_compose/layouts.md)
+- [Estats en Jetpack Compose:](./Jetpack_compose/estats.md)
+- [El composable Text:](./Jetpack_compose/text.md)
+- [El composable TextField:](./Jetpack_compose/textfield.md)
+- [El composable Button:](./Jetpack_compose/button.md)
+- [Els composables Image i Icon:](./Jetpack_compose/imageicon.md)
+- [Els composables de progrés:](./Jetpack_compose/progressbar.md)
+- [Switch, Checkbox i RadioButton:](./Jetpack_compose/switchcheckboxradiobutton.md)
+- [El composable Slider:](./Jetpack_compose/slider.md)
+- [El composable DropdownMenu:](./Jetpack_compose/dropdownmenu.md)
+- [LaunchedEffect:](./Jetpack_compose/launchedeffect.md)
+- [El composable Scaffold:](./Jetpack_compose/scaffold.md)
+- [NavigationDrawer:](./Jetpack_compose/navigationdrawer.md)
 
 
