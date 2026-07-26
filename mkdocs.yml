@@ -96,9 +96,14 @@ nav:
           - Switch, Checkbox i RadioButton: Android/Interficies/Jetpack_compose/switchcheckboxradiobutton.md
           - El composable Slider: Android/Interficies/Jetpack_compose/slider.md
           - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
-          - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
           - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
           - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
+          - AlertDialog: Android/Interficies/Jetpack_compose/alertdialog.md
+          - DatePickerDialog: Android/Interficies/Jetpack_compose/datepickerdialog.md
+          - Dialog: Android/Interficies/Jetpack_compose/dialog.md
+          - InteractionSource: Android/Interficies/Jetpack_compose/interactionsource.md
+          - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
+          - DerivedStateOf: Android/Interficies/Jetpack_compose/derivedstateof.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md

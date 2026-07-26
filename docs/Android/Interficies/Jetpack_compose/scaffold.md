@@ -107,12 +107,12 @@ El paràmetre de contingut principal de `Scaffold` no és una lambda `@Composabl
 Scaffold(
     topBar = { TopAppBar(title = { Text("Llista") }) }
 ) { innerPadding ->
-    LazyColumn(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(innerPadding)
     ) {
-        // elements de la llista
+        // contingut
     }
 }
 ```
@@ -124,7 +124,7 @@ Aquest `innerPadding` **s'ha d'aplicar sempre** al contingut arrel, normalment a
 Scaffold(
     topBar = { TopAppBar(title = { Text("Llista") }) }
 ) { innerPadding ->
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize()) {
         // els primers elements queden amagats sota la topBar
     }
 }
@@ -182,12 +182,12 @@ fun PantallaCompleta() {
         },
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { innerPadding ->
-        LazyColumn(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            item { Text("Contingut de la pantalla") }
+            Text("Contingut de la pantalla")
         }
     }
 }

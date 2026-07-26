@@ -112,3 +112,60 @@ Triar una variant o una altra sol dependre de l'amplada de pantalla disponible (
 ## 5. Quan fer-lo servir
 
 Un `NavigationDrawer` té sentit quan l'aplicació té diverses seccions de primer nivell (més de les que caben còmodament en una `NavigationBar` inferior) o quan es vol reservar la part inferior de la pantalla per a altres controls. Per a un nombre reduït de seccions (3-5), sol ser preferible la `NavigationBar` vista a [Scaffold](./scaffold.md#3-bottombar-i-floatingactionbutton), ja que és sempre visible i no requereix cap gest per descobrir-la.
+
+## 6. Exemple complet
+
+```kotlin
+@Composable
+fun PantallaAmbDrawerComplet() {
+    val opcions = listOf("Inici", "Perfil", "Ajustos")
+    var opcioSeleccionada by remember { mutableStateOf(opcions[0]) }
+
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+
+    ModalNavigationDrawer(
+        drawerState = drawerState,
+        drawerContent = {
+            ModalDrawerSheet {
+                Text("La meva app", modifier = Modifier.padding(16.dp))
+                HorizontalDivider()
+                opcions.forEach { opcio ->
+                    NavigationDrawerItem(
+                        label = { Text(opcio) },
+                        selected = (opcio == opcioSeleccionada),
+                        icon = { Icon(Icons.Default.Star, contentDescription = null) },
+                        onClick = {
+                            opcioSeleccionada = opcio
+                            scope.launch { drawerState.close() }
+                        }
+                    )
+                }
+            }
+        }
+    ) {
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    title = { Text(opcioSeleccionada) },
+                    navigationIcon = {
+                        IconButton(onClick = { scope.launch { drawerState.open() } }) {
+                            Icon(Icons.Default.Menu, contentDescription = "Obrir menú")
+                        }
+                    }
+                )
+            }
+        ) { innerPadding ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+            ) {
+                Text("Contingut de la secció: $opcioSeleccionada")
+            }
+        }
+    }
+}
+```
+
+Aquest exemple combina el `DrawerState` per obrir i tancar el panell des de la icona de la `topBar`, el `ModalDrawerSheet` amb els `NavigationDrawerItem` per triar secció, i el `Scaffold` que mostra el contingut corresponent a l'opció seleccionada.

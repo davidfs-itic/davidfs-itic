@@ -19,6 +19,9 @@
 - [Menús:](./menus.md)
 - [Splash Screen:](./splashscreen.md)
 - [Voice Recognition:](./voicerecognition.md)
+
+## Jetpack Compose
+
 - [Introducció a Jetpack Compose:](./Jetpack_compose/index.md)
 - [Layouts en Jetpack Compose:](./Jetpack_compose/layouts.md)
 - [Estats en Jetpack Compose:](./Jetpack_compose/estats.md)
@@ -30,8 +33,13 @@
 - [Switch, Checkbox i RadioButton:](./Jetpack_compose/switchcheckboxradiobutton.md)
 - [El composable Slider:](./Jetpack_compose/slider.md)
 - [El composable DropdownMenu:](./Jetpack_compose/dropdownmenu.md)
-- [LaunchedEffect:](./Jetpack_compose/launchedeffect.md)
 - [El composable Scaffold:](./Jetpack_compose/scaffold.md)
 - [NavigationDrawer:](./Jetpack_compose/navigationdrawer.md)
+- [AlertDialog:](./Jetpack_compose/alertdialog.md)
+- [DatePickerDialog:](./Jetpack_compose/datepickerdialog.md)
+- [Dialog:](./Jetpack_compose/dialog.md)
+- [InteractionSource:](./Jetpack_compose/interactionsource.md)
+- [LaunchedEffect:](./Jetpack_compose/launchedeffect.md)
+- [DerivedStateOf:](./Jetpack_compose/derivedstateof.md)
 
 

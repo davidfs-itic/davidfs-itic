@@ -100,7 +100,7 @@ Modifier
 
 Per aquest motiu, sempre que un component es comporti de manera inesperada (una mida que no és la que s'esperava, un fons que no cobreix el que tocaria...), val la pena revisar l'ordre en què s'han encadenat els modificadors.
 
-## Continguts d'aquesta secció
+## Components bàsics
 
 - [Layouts: Box, Column, Row i ConstraintLayout](./layouts.md)
 - [Estats: mutableStateOf, remember i state hoisting](./estats.md)
@@ -112,6 +112,14 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 - [Switch, Checkbox i RadioButton](./switchcheckboxradiobutton.md)
 - [El composable Slider](./slider.md)
 - [El composable DropdownMenu](./dropdownmenu.md)
-- [LaunchedEffect](./launchedeffect.md)
 - [El composable Scaffold](./scaffold.md)
 - [NavigationDrawer](./navigationdrawer.md)
+- [AlertDialog](./alertdialog.md)
+- [DatePickerDialog](./datepickerdialog.md)
+- [Dialog](./dialog.md)
+
+## Gestió avançada de comportaments
+- [InteractionSource](./interactionsource.md)
+- [LaunchedEffect](./launchedeffect.md)
+- [derivedStateOf](./derivedstateof.md)
+
