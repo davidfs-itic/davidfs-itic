@@ -41,5 +41,9 @@
 - [InteractionSource:](./Jetpack_compose/interactionsource.md)
 - [LaunchedEffect:](./Jetpack_compose/launchedeffect.md)
 - [DerivedStateOf:](./Jetpack_compose/derivedstateof.md)
+- [El composable LazyColumn:](./Jetpack_compose/lazycolumn.md)
+- [LazyColumn: botó Tornar a dalt:](./Jetpack_compose/lazycolumnscrolltop.md)
+- [LazyColumn: cerca i filtrat:](./Jetpack_compose/lazycolumnfilter.md)
+- [LazyColumn: swipe to dismiss:](./Jetpack_compose/lazycolumnswipetodismiss.md)
 
 

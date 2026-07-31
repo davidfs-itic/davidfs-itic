@@ -123,3 +123,9 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 - [LaunchedEffect](./launchedeffect.md)
 - [derivedStateOf](./derivedstateof.md)
 
+## Llistats
+
+- [El composable LazyColumn](./lazycolumn.md)
+- [LazyColumn: botó Tornar a dalt](./lazycolumnscrolltop.md)
+- [LazyColumn: cerca i filtrat](./lazycolumnfilter.md)
+- [LazyColumn: swipe to dismiss](./lazycolumnswipetodismiss.md)

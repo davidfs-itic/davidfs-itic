@@ -104,6 +104,10 @@ nav:
           - InteractionSource: Android/Interficies/Jetpack_compose/interactionsource.md
           - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
           - DerivedStateOf: Android/Interficies/Jetpack_compose/derivedstateof.md
+          - El composable LazyColumn: Android/Interficies/Jetpack_compose/lazycolumn.md
+          - "LazyColumn: botó Tornar a dalt": Android/Interficies/Jetpack_compose/lazycolumnscrolltop.md
+          - "LazyColumn: cerca i filtrat": Android/Interficies/Jetpack_compose/lazycolumnfilter.md
+          - "LazyColumn: swipe to dismiss": Android/Interficies/Jetpack_compose/lazycolumnswipetodismiss.md
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md
