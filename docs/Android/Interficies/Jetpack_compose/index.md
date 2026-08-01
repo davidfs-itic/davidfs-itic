@@ -114,6 +114,7 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 - [El composable DropdownMenu](./dropdownmenu.md)
 - [El composable Scaffold](./scaffold.md)
 - [NavigationDrawer](./navigationdrawer.md)
+- [Navigation Compose](./navigationcompose.md)
 - [AlertDialog](./alertdialog.md)
 - [DatePickerDialog](./datepickerdialog.md)
 - [Dialog](./dialog.md)

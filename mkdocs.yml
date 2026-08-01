@@ -98,6 +98,7 @@ nav:
           - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
           - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
           - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
+          - Navigation Compose: Android/Interficies/Jetpack_compose/navigationcompose.md
           - AlertDialog: Android/Interficies/Jetpack_compose/alertdialog.md
           - DatePickerDialog: Android/Interficies/Jetpack_compose/datepickerdialog.md
           - Dialog: Android/Interficies/Jetpack_compose/dialog.md
