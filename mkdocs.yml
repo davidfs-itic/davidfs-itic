@@ -112,6 +112,7 @@ nav:
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md
+        - ViewModel amb Jetpack Compose: Android/Arquitectura/viewmodelcompose.md
         - ViewModel de Settings (injecció manual): Android/Arquitectura/settingsviewmodel.md
         - Observer: Android/Arquitectura/observer.md
         - Capa de Dades en Android: Android/Arquitectura/capa_dades_android.md

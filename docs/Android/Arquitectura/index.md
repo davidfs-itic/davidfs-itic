@@ -10,6 +10,7 @@ Cursos (tutorial) de Android: https://developer.android.com/courses/pathways/and
 Elements de l'arquitectura:
 
 - [ViewModel](./viewmodel.md)
+- [ViewModel amb Jetpack Compose](./viewmodelcompose.md)
 - [ViewModel de Settings (injecció manual)](./settingsviewmodel.md)
 - [Observer](./observer.md)
 - [Capa de Dades en Android](./capa_dades_android.md)
