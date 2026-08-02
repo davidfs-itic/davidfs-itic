@@ -1,6 +1,6 @@
 # Us de viewmodel amb compose
 
-Documentació oficial: https://developer.android.com/topic/libraries/architecture/viewmodel-compose
+Documentació oficial: https://developer.android.com/topic/libraries/architecture/viewmodel
 
 El [ViewModel](./viewmodel.md) compleix el mateix paper amb Jetpack Compose que amb el sistema de Views: sobreviu als canvis de configuració i separa la lògica de l'estat de la interfície. La diferència és que amb Compose l'estat no s'assigna directament a widgets (`textView.text = ...`), sinó que es llegeix dins de funcions `@Composable`, que es tornen a executar (recomponen) cada vegada que l'estat que llegeixen canvia.
 
@@ -127,5 +127,5 @@ Cal fixar-se que el Composable no calcula en cap moment si el botó ha d'estar a
 
 - [ViewModel](./viewmodel.md)
 - [Estats en Jetpack Compose](../Interficies/Jetpack_compose/estats.md)
-- https://developer.android.com/topic/libraries/architecture/viewmodel-compose
+- https://developer.android.com/topic/libraries/architecture/viewmodel
 - https://developer.android.com/jetpack/compose/state
