@@ -140,14 +140,17 @@ nav:
 
     - Unity:
       - Introducció a Unity: Unity/index.md
-      - Escena, Tiles i Sprites: Unity/scenesprites.md
+      - Tileset, Sprites i Col·lisions: Unity/scenesprites.md
+      - "Assets: importació i organització": Unity/assets.md
       - Scripting C# a Unity: Unity/scripting.md
-      - Físiques i Moviment: Unity/fisiquesmoviment.md
+      - Jugador, Moviment i Salt: Unity/fisiquesmoviment.md
       - Animacions: Unity/animacions.md
+      - Càmera que segueix el jugador: Unity/camera.md
       - Prefabs i Instanciació: Unity/prefabs.md
       - Col·lisions i Triggers: Unity/collisions.md
+      - Objectes interactuables: Unity/interactius.md
       - Enemics amb IA bàsica: Unity/enemics.md
-      - Càmera, Fons i So: Unity/audiovisual.md
+      - Fons i So: Unity/audiovisual.md
       - Reconeixement de Veu a Unity: Unity/recveu.md
       - Meta Quest 3 i VR: Unity/metaquest.md
           # - FireCloud Messaging: Android/Firebase/fcm.md

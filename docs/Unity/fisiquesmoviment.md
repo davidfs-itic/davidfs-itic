@@ -1,46 +1,21 @@
-# Físiques i Moviment
+# Jugador: Moviment i Salt
 
-## Components de físiques
+A [Tileset, Sprites i Col·lisions](scenesprites.md#components-de-fisiques) ja s'ha vist el **Rigidbody 2D** i els **Colliders 2D**. El jugador també necessita un Rigidbody 2D (Body Type **Dynamic**, amb **Freeze Rotation Z** marcat) i un Collider 2D (normalment **CapsuleCollider2D**) per poder-se moure i col·lidir amb el terreny.
 
-### Rigidbody 2D
+## Crear el GameObject del jugador
 
-El **Rigidbody 2D** és el component que permet que un objecte sigui afectat per les físiques (gravetat, forces, col·lisions).
+1. Importar l'sprite (o sprite sheet) del jugador a `Assets/Sprites` (vegeu [Assets](assets.md) i [Sprite Sheets](scenesprites.md#sprite-sheets)).
+2. **Hierarchy → clic dret → Create Empty** (o arrossegar l'sprite directament a l'escena, que ja crea l'objecte amb el **Sprite Renderer**).
+3. Anomenar l'objecte "Player".
+4. **Add Component → Rigidbody 2D**:
+    - Body Type: **Dynamic**.
+    - Constraints → **Freeze Rotation Z** marcat.
+5. **Add Component → Capsule Collider 2D** i ajustar-ne la mida perquè encaixi amb l'sprite (Edit Collider a l'Inspector).
+6. **Tag → Player** (Inspector, desplegable superior).
+7. Posicionar el jugador al punt d'inici del nivell.
 
-Per afegir-lo: seleccionar l'objecte → Inspector → **Add Component → Rigidbody 2D**.
-
-| Body Type | Descripció |
-|-----------|------------|
-| **Dynamic** | Afectat per gravetat i forces. Per al jugador, enemics, projectils. |
-| **Kinematic** | No afectat per forces externes, però es pot moure per codi. Per a plataformes mòbils. |
-| **Static** | No es mou. Per al terreny i obstacles fixos (no cal afegir-lo, és el comportament per defecte dels colliders sense Rigidbody). |
-
-Propietats importants:
-
-- **Gravity Scale**: multiplicador de la gravetat (per defecte 1). Posar 0 per desactivar-la.
-- **Constraints → Freeze Rotation Z**: marcar per evitar que l'objecte roti quan xoca. Imprescindible per a personatges 2D.
-
-### Colliders 2D
-
-Els **Colliders** defineixen la forma física de l'objecte per a les col·lisions.
-
-| Collider | Forma | Ús típic |
-|----------|-------|----------|
-| **BoxCollider2D** | Rectangle | Caixes, plataformes, parets. |
-| **CircleCollider2D** | Cercle | Monedes, boles, projectils. |
-| **CapsuleCollider2D** | Càpsula | Personatges (s'adapta millor a la forma humana). |
-| **PolygonCollider2D** | Polígon personalitzat | Formes irregulars. |
-
-### Tilemap Collider 2D + Composite Collider 2D
-
-Per afegir col·lisions al Tilemap:
-
-1. Seleccionar el Tilemap a la Hierarchy.
-2. **Add Component → Tilemap Collider 2D**.
-    - Això crea un collider individual per cada tile (poc eficient).
-3. **Add Component → Composite Collider 2D**.
-    - Fusiona tots els colliders en un de sol (molt més eficient).
-    - Al Tilemap Collider 2D, marcar **Used By Composite**.
-4. Unity afegirà automàticament un **Rigidbody 2D**. Canviar el Body Type a **Static**.
+!!! warning "El tag Player"
+    Cal assignar el tag **Player** al jugador. Més endavant, scripts com els dels enemics ([Enemics amb IA bàsica](enemics.md)) o dels objectes interactuables ([Objectes interactuables](interactius.md)) l'utilitzen (`CompareTag("Player")`, `FindWithTag("Player")`) per identificar-lo.
 
 ## Moviment
 

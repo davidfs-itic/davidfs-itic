@@ -68,29 +68,20 @@ Quan obrim un projecte, Unity mostra diverses finestres:
 !!! tip "Consell"
     Es poden reorganitzar les finestres arrossegant-les. Si es desordenen, es pot restaurar el layout des de **Window → Layouts → Default**.
 
-## Assets: importar textures i sons
+## Seqüència de temes
 
-Els **Assets** són tots els recursos del projecte: imatges, sons, scripts, animacions, prefabs...
+Aquest curs segueix la construcció d'un joc de plataformes 2D, pas a pas:
 
-### Importar assets al projecte
+1. [Tileset, Sprites i Col·lisions](scenesprites.md): dissenyar el nivell i fer-lo sòlid.
+2. [Assets: importació i organització](assets.md): gestionar els recursos del projecte.
+3. [Scripting C# a Unity](scripting.md): fonaments del llenguatge i el cicle de vida.
+4. [Jugador: Moviment i Salt](fisiquesmoviment.md): moure el personatge amb físiques.
+5. [Animacions](animacions.md): donar vida al personatge.
+6. [Càmera que segueix el jugador](camera.md): mantenir el jugador sempre a la vista.
+7. [Prefabs i Instanciació](prefabs.md): reutilitzar objectes (bales, monedes, enemics...).
+8. [Col·lisions i Triggers](collisions.md): detectar contactes i gestionar la vida.
+9. [Objectes interactuables](interactius.md): monedes, vides, trampes i marcador en pantalla.
+10. [Enemics amb IA bàsica](enemics.md): patrulla, persecució i atac.
+11. [Fons i So](audiovisual.md): ambientar l'escena.
 
-1. Descarregar els assets (textures, sprite sheets, sons).
-2. Arrossegar els fitxers directament a la carpeta **Assets** dins la finestra Project.
-3. Unity els importa automàticament i genera els metadades (fitxers `.meta`).
-
-!!! warning "Important"
-    No moure ni renombrar assets fora de Unity (des de l'explorador de fitxers). Fer-ho sempre des de la finestra **Project** per mantenir les referències.
-
-### Organitzar els assets
-
-Es recomana crear carpetes dins d'Assets per organitzar el projecte:
-
-```
-Assets/
-├── Sprites/
-├── Sounds/
-├── Scripts/
-├── Animations/
-├── Prefabs/
-└── Tiles/
-```
+Com a temes avançats (opcionals), també hi ha [Reconeixement de veu](recveu.md) i [Meta Quest 3 i VR](metaquest.md).
