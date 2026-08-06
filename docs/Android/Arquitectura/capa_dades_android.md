@@ -63,7 +63,7 @@ object DataSource {
 Des de **l'Activity**, es crea la llista d'items, la qual cosa és incorrecte doncs no és la tasca de l'Activity.
 
 ```kotlin
-// A dins de l'Activity:
+// A dins de l'Activity o Composable
 val items = DataSource.items
 ```
 
@@ -84,9 +84,9 @@ Seguint l'arquitectura oficial d'Android, separarem el codi en dues capes:
 ┌──────────────────────────────────────────────────────┐
 │  UI LAYER                                            │
 │  Activity/Fragment → ViewModel                       │
-│  (depèn del Repository)                              │
+│                             │
 └──────────────┬───────────────────────────────────────┘
-               │
+               │ Depèn de
                ▼
 ┌──────────────────────────────────────────────────────┐
 │  DATA LAYER                                          │
