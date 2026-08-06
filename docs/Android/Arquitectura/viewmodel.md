@@ -293,7 +293,7 @@ by viewModels()	| Fragment o ComponentActivity	|Lligat al cicle de vida de la Fr
 by activityViewModels()|	Fragment (només)	|Lligat al cicle de vida de l'Activity que conté el Fragment.|Compartir dades i lògica entre múltiples Fragments dins de la mateixa Activity.
 
 ## 3-ViewModelProvider i Factories
-Quan el ViewModel necessita paràmetres al constructor, és necessari implementar un patró factory, per poder passar les dades. Es fa així:
+Quan el ViewModel necessita paràmetres al constructor (dependències), és necessari implementar un patró factory, per poder passar les dades. Es fa així:
 
 ViewModel amb paràmetres:
 ```kotlin
@@ -317,32 +317,43 @@ class UserViewModel(
 }
 ```
 
-Crear un Factory:
+Crear el Factory com a `companion object`:
+
+La manera recomanada de crear el Factory és definir-lo dins del propi ViewModel, com a `companion object`, utilitzant la funció `viewModelFactory { }` i el bloc `initializer { }` (paquet `androidx.lifecycle.viewmodel`). Així el Factory queda encapsulat amb el ViewModel que construeix, i no cal escriure una classe a part que implementi `ViewModelProvider.Factory` ni fer el `cast` manual amb `as T`:
+
 ```kotlin
-class UserViewModelFactory(
-    private val userId: String,
-    private val repository: UserRepository
-) : ViewModelProvider.Factory {
+class UserViewModel(
     
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return UserViewModel(userId, repository) as T
+    private val repository: UserRepository
+) : ViewModel() {
+
+    private val _user = MutableLiveData<User>()
+    val user: LiveData<User> = _user
+
+    private fun loadUser(val userId: String,) {
+        viewModelScope.launch {
+            _user.value = repository.getUser(userId)
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                UserViewModel(
+                    userId = "usuari123",
+                    repository = UserRepository()
+                )
+            }
+        }
     }
 }
 ```
-Utilitzar el Factory:
+
+Utilitzar el Factory: en comptes de passar-hi una instància, es referencia directament `UserViewModel.Factory`:
 ```kotlin
 class UserActivity : AppCompatActivity() {
     
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory(
-            userId = intent.getStringExtra("USER_ID") ?: "",
-            repository = UserRepository()
-        )
-    }
+    private val viewModel: UserViewModel by viewModels { UserViewModel.Factory }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -353,5 +364,32 @@ class UserActivity : AppCompatActivity() {
     }
 }
 ```
+
+Dins de `initializer { }` es pot construir tota la cadena de dependències que necessiti el ViewModel (repository, data sources, use cases...), no només passar-li paràmetres senzills. Per exemple, en una arquitectura amb Use Cases:
+
+```kotlin
+class LlistatScreenViewModel(
+    private val getItemsUseCase: GetItemsUseCase,
+    private val addItemUseCase: AddItemUseCase
+) : ViewModel() {
+
+    // ...
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val local = ItemsLocalDataSource()
+                val remote = ItemsRemoteDataSource()
+                val repository: ItemsRepository = ItemsRepositoryImpl(local, remote)
+                LlistatScreenViewModel(
+                    getItemsUseCase = GetItemsUseCase(repository),
+                    addItemUseCase = AddItemUseCase(repository)
+                )
+            }
+        }
+    }
+}
+```
+
 ## 4. Recursos
 [https://www.youtube.com/watch?v=orH4K6qBzvE](https://www.youtube.com/watch?v=orH4K6qBzvE)

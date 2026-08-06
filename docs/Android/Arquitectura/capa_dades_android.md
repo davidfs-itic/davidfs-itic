@@ -105,7 +105,9 @@ Els **DataSources** són classes que implementen una interface, la qual cosa per
 
 ## 4. Implementació
 
-### Capa de Dades (Data Layer)
+La implementació dels Datasources, es fà a través d'una interface. Això possibilita que el repositori cridi a les funcions dels datasources, sense saber amb quin datasource concret està treballant. Típicament els datasources poden: llegirItems, afegirItem, esborarItem, etc. Totes aquestes funcions les defineix la interface, i les implementen els Datasources.
+
+Per altra banda, la definició del repositori tindrà com a paràmetre el Datasource Genèric (Interface) i cridarà les seves funcions sense saber exatament amb quin dels datasources està treballant.
 
 #### Interface del DataSource
 
@@ -194,7 +196,7 @@ El DataSource, en canvi, s'encarrega NOMÉS d'obtenir/guardar dades d'una font e
 
 ### Capa UI (UI Layer)
 
-El ViewModel rep el Repository directament:
+El ViewModel rep el Repository  directament:
 
 ```kotlin
 class ItemsViewModel(

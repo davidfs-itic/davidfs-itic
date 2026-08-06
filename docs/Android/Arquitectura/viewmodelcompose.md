@@ -123,7 +123,49 @@ fun ContadorScreen(
 
 Cal fixar-se que el Composable no calcula en cap moment si el botó ha d'estar actiu: només llegeix `uiState.botoTornarActivat`. Tota la lògica (quan incrementar, quan activar el botó) viu al ViewModel, dins de `incrementar()`. Això és el que permet, per exemple, provar `ContadorViewModel` amb un test unitari sense necessitat d'executar cap Composable.
 
-## 5. Recursos
+## 5. ViewModel amb paràmetres al constructor (dependències)
+
+Quan el ViewModel necessita dependències al constructor (repository, use cases...), cal un [Factory](./viewmodel.md#3-viewmodelprovider-i-factories), igual que amb el sistema de Views. La manera recomanada és definir-lo com a `companion object` dins del mateix ViewModel, amb `viewModelFactory { }` i `initializer { }`:
+
+```kotlin
+class LlistatScreenViewModel(
+    private val getItemsUseCase: GetItemsUseCase,
+    private val addItemUseCase: AddItemUseCase
+) : ViewModel() {
+
+    // ...
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val local = ItemsLocalDataSource()
+                val remote = ItemsRemoteDataSource()
+                val repository: ItemsRepository = ItemsRepositoryImpl(local, remote)
+                LlistatScreenViewModel(
+                    getItemsUseCase = GetItemsUseCase(repository),
+                    addItemUseCase = AddItemUseCase(repository)
+                )
+            }
+        }
+    }
+}
+```
+
+Dins d'un Composable, en comptes de `by viewModels { }`, el Factory es passa al paràmetre `factory` de la funció `viewModel()`:
+
+```kotlin
+@Composable
+fun LlistatScreen(
+    viewModel: LlistatScreenViewModel = viewModel(factory = LlistatScreenViewModel.Factory)
+) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    // ...
+}
+```
+
+D'aquesta manera el Composable no necessita saber com es construeixen el repository ni els use cases: només indica quin Factory ha d'utilitzar `viewModel()` per crear la instància.
+
+## 6. Recursos
 
 - [ViewModel](./viewmodel.md)
 - [Estats en Jetpack Compose](../Interficies/Jetpack_compose/estats.md)
