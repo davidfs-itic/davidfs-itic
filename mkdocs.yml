@@ -66,8 +66,8 @@ nav:
         - Activities: Android/Interficies/activities.md
         - Fragments: Android/Interficies/fragments.md
         - La classe Application: Android/Interficies/application.md
-        - Layout en Activities: Android/Interficies/layoutactivities.md
         - Layouts: Android/Interficies/layouts.md
+        - "Edge-to-edge i System Bars": Android/Interficies/layoutactivities.md
         - Temes i Estils: Android/Interficies/temes.md
         - VieweBinding: Android/Interficies/viewbinding.md        
         - Bottom Menu: Android/Interficies/bottommenu.md
@@ -82,7 +82,6 @@ nav:
         - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
         - Menús: Android/Interficies/menus.md
         - Splash Screen: Android/Interficies/splashscreen.md
-        - Dialog Fragment amb ViewModel: Android/Interficies/dialogfragmentviewmodel.md
         - Voice Recognition: Android/Interficies/voicerecognition.md
         - Jetpack Compose:
           - Introducció a Jetpack Compose: Android/Interficies/Jetpack_compose/index.md
@@ -97,12 +96,14 @@ nav:
           - El composable Slider: Android/Interficies/Jetpack_compose/slider.md
           - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
           - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
+          - Theming a Jetpack Compose: Android/Interficies/Jetpack_compose/theming.md
           - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
           - Navigation Compose: Android/Interficies/Jetpack_compose/navigationcompose.md
           - AlertDialog: Android/Interficies/Jetpack_compose/alertdialog.md
           - DatePickerDialog: Android/Interficies/Jetpack_compose/datepickerdialog.md
           - Dialog: Android/Interficies/Jetpack_compose/dialog.md
           - InteractionSource: Android/Interficies/Jetpack_compose/interactionsource.md
+          - Styles API: Android/Interficies/Jetpack_compose/stylesapi.md
           - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
           - DerivedStateOf: Android/Interficies/Jetpack_compose/derivedstateof.md
           - El composable LazyColumn: Android/Interficies/Jetpack_compose/lazycolumn.md
@@ -112,6 +113,7 @@ nav:
       - Arquitectura:
         - Introducció a l'Arquitectura: Android/Arquitectura/index.md
         - ViewModel: Android/Arquitectura/viewmodel.md
+        - Dialog Fragment amb ViewModel: Android/Arquitectura/dialogfragmentviewmodel.md
         - ViewModel amb Jetpack Compose: Android/Arquitectura/viewmodelcompose.md
         - ViewModel de Settings (injecció manual): Android/Arquitectura/settingsviewmodel.md
         - Observer: Android/Arquitectura/observer.md

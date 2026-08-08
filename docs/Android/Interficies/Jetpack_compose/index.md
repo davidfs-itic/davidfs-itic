@@ -113,6 +113,7 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 - [El composable Slider](./slider.md)
 - [El composable DropdownMenu](./dropdownmenu.md)
 - [El composable Scaffold](./scaffold.md)
+- [Theming a Jetpack Compose](./theming.md)
 - [NavigationDrawer](./navigationdrawer.md)
 - [Navigation Compose](./navigationcompose.md)
 - [AlertDialog](./alertdialog.md)
@@ -121,6 +122,7 @@ Per aquest motiu, sempre que un component es comporti de manera inesperada (una 
 
 ## Gestió avançada de comportaments
 - [InteractionSource](./interactionsource.md)
+- [Styles API](./stylesapi.md)
 - [LaunchedEffect](./launchedeffect.md)
 - [derivedStateOf](./derivedstateof.md)
 
