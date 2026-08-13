@@ -8,3 +8,6 @@ exemple
 https://www.youtube.com/watch?v=CXggjg9s4NA
 Interessant per utilitzar interface per retornar un objecte del dialog.
 Minut 15:00
+
+Utilització del dialogfragment amb Viewmodel.
+[DialogFragment amb ViewModel](../Arquitectura/dialogfragmentviewmodel.md)
