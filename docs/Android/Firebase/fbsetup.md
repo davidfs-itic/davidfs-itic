@@ -50,9 +50,17 @@ plugins {
 }
 ```
 
-### Pas 3: Afegir dependències específiques (opcional ara)
+### Pas 3: Afegir el Firebase BoM
 
-Quan utilitzem algun dels serveis concrets de firebase, afegirem algunes dependències. Això estarà explicat en el capítol corresponent al servei.
+El BoM (Bill of Materials) de Firebase permet gestionar les versions de totes les llibreries de Firebase de manera coordinada, sense haver d'indicar la versió de cadascuna per separat. S'afegeix un sol cop al projecte, al bloc `dependencies` de `app/build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+}
+```
+
+Quan utilitzem algun servei concret de Firebase (Analytics, Firestore, etc.), només caldrà afegir la seva dependència corresponent sota aquesta mateixa línia del BoM. Això estarà explicat en el capítol corresponent a cada servei.
 
 ## 5. Sincronització del projecte amb Gradle
 
@@ -85,6 +93,7 @@ Tot i que encara no hem configurat cap servei concret, la millor manera de compr
 2. Afegir l'aplicació Android al projecte Firebase (package name, nickname opcional, SHA-1 opcional).
 3. Descarregar el fitxer `google-services.json` i col·locar-lo a `app/`.
 4. Afegir el plugin `com.google.gms.google-services` al `build.gradle.kts` de projecte i d'app.
-5. Sincronitzar amb Gradle ("Sync Now") i verificar que no hi ha errors.
-6. Afegir `google-services.json` al `.gitignore` si el repositori és públic.
-7. Compilar el projecte per confirmar que la integració funciona.
+5. Afegir el Firebase BoM al `build.gradle.kts` de l'app.
+6. Sincronitzar amb Gradle ("Sync Now") i verificar que no hi ha errors.
+7. Afegir `google-services.json` al `.gitignore` si el repositori és públic.
+8. Compilar el projecte per confirmar que la integració funciona.
