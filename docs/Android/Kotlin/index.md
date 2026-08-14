@@ -2,6 +2,7 @@
 
 Continguts:
 
+- [Qüestionari previ (Java → Kotlin): ](./questionariprevi.md)
 - [Variables i Constants: ](./variables.md)
 - [Funcions: ](./funcions.md)
 - [Classes i Objectes:](./classesobjectes.md)

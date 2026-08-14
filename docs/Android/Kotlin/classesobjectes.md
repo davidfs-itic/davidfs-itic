@@ -64,6 +64,44 @@ class Person(val firstName: String, val lastName:String) {
 - Cada classe té exactament una classe pare, anomenada superclasse
 - Cada subclasse hereta tots els membres de la seva superclasse, inclosos els que la superclasse mateixa ha heretat
 
+#### Classes finals per defecte: la paraula clau `open`
+
+A Java, qualsevol classe es pot heretar tret que es marqui explícitament com a `final`. Kotlin fa exactament el contrari: **totes les classes són `final` per defecte**, és a dir, no es poden heretar.
+
+```kotlin
+class Animal(val nom: String)
+
+// Error de compilació: This type is final, so it cannot be inherited from
+class Gos(nom: String) : Animal(nom)
+```
+
+Per permetre que una classe pugui ser heretada, cal marcar-la explícitament com a `open`:
+
+```kotlin
+open class Animal(val nom: String)
+
+class Gos(nom: String) : Animal(nom)
+```
+
+El mateix passa amb els mètodes i les propietats: també són `final` per defecte, així que cal marcar-los com a `open` a la superclasse perquè una subclasse els pugui sobreescriure amb `override`:
+
+```kotlin
+open class Animal(val nom: String) {
+    open fun fer_soroll() {
+        println("Un animal fa soroll")
+    }
+}
+
+class Gos(nom: String) : Animal(nom) {
+    override fun fer_soroll() {
+        println("$nom lladra")
+    }
+}
+```
+
+!!! info "Per què aquest disseny?"
+    Aquest comportament és intencionat: obliga el programador a decidir explícitament quines classes i mètodes formen part de l'API pensada per ser estesa, evitant herències accidentals que en Java sovint provoquen errors difícils de detectar (el problema conegut com *fragile base class*).
+
 ## Classes especials
 
 ### Data class
@@ -106,6 +144,22 @@ enum class Color(val r: Int, val g: Int, val b: Int) {
 }
 println("" + Color.RED.r + " " + Color.RED.g + " " + Color.RED.b)
 ```
+
+#### when amb enum
+
+Com que el compilador coneix tots els valors possibles d'un `enum`, es pot fer servir `when` com a expressió (retornant un valor) sense necessitat de la branca `else`, sempre que es cobreixin tots els casos:
+
+```kotlin
+fun descripcio(color: Color): String = when (color) {
+    Color.RED -> "Vermell"
+    Color.GREEN -> "Verd"
+    Color.BLUE -> "Blau"
+}
+```
+
+Si més endavant s'afegeix un nou valor a l'enum i s'oblida afegir-lo al `when`, el compilador donarà error. Un `switch` de Java no ofereix aquesta garantia.
+
+Aquesta exhaustivitat és el mateix motiu pel qual el `when` amb sealed classes tampoc necessita `else` (veure més avall): en ambdós casos el compilador coneix per endavant tot el conjunt de possibilitats.
 
 ### Sealed class
 

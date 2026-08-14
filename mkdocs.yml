@@ -47,6 +47,7 @@ nav:
       - Introducció a Android: Android/index.md
       - Llenguatge Kotlin:
         - Introducció a Kotlin: Android/Kotlin/index.md
+        - Qüestionari previ (Java → Kotlin): Android/Kotlin/questionariprevi.md
         - Variables i Constants: Android/Kotlin/variables.md
         - Funcions: Android/Kotlin/funcions.md
         - Classes i Objectes: Android/Kotlin/classesobjectes.md
@@ -137,6 +138,7 @@ nav:
         - Firebase:
           - Introducció a Firebase: Android/Firebase/index.md
           - Setup de Firebase a Android: Android/Firebase/fbsetup.md
+          - Analytics: Android/Firebase/analytics.md
           - Firestore: Android/Firebase/firestore.md
           # - Autenticació: Android/Firebase/autenticacio.md
 

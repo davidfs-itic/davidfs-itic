@@ -3,6 +3,7 @@
 Continguts:
 
 - Setup de Firebase a Android: [Android/Firebase/fbsetup.md](./fbsetup.md)
+- Analytics: [Android/Firebase/analytics.md](./analytics.md)
 - Firestore:  [Android/Firebase/firestore.md](./firestore.md)
 - Autenticació: (Pendent)
 - Storage:  (Pendent)

@@ -11,7 +11,7 @@ Documentació oficial: [Guide to app architecture](https://developer.android.com
 L'exemple desa una preferència senzilla (el **mode fosc**) i el flux de dependències és aquest:
 
 ```
-Activity/Fragment  ──crea──>  SettingsViewModelFactory  ──crea──>  SettingsViewModel
+Activity/Fragment  ──crea──>  SettingsViewModel.Factory  ──crea──>  SettingsViewModel
        │                                                                 │
        │                                                          (rep el Repository)
        │                                                                 │
@@ -20,8 +20,8 @@ Activity/Fragment  ──crea──>  SettingsViewModelFactory  ──crea──
 
 - **SettingsRepository**: capa de dades. És l'únic que coneix el `DataStore`.
 - **SettingsViewModel**: lògica de presentació. Només coneix el Repository (per constructor).
-- **SettingsViewModelFactory**: construeix el ViewModel passant-li el Repository (injecció manual).
-- **Activity/Fragment**: connecta tot, construint el Repository i la Factory.
+- **SettingsViewModel.Factory**: `companion object` dins del mateix ViewModel que el construeix passant-li el Repository (injecció manual).
+- **Activity/Fragment**: només referencia `SettingsViewModel.Factory`, sense conèixer com es construeix el Repository.
 
 ## 2. Capa de dades: el Repository
 
@@ -95,35 +95,58 @@ class SettingsViewModel(
 
 Com que el ViewModel té un paràmetre al constructor (`repository`), el sistema no el pot crear sol amb el constructor buit. Cal una **Factory** que li passi la dependència. Aquest és el patró Factory aplicat a ViewModels (vegeu [Patró Factory](./factory.md)).
 
+En lloc d'una classe a part que implementi `ViewModelProvider.Factory`, la Factory es defineix com a `companion object` dins del mateix `SettingsViewModel`, amb `viewModelFactory { }` i `initializer { }`. Com que el Repository necessita un `Context`, l'obtenim de les `CreationExtras` amb `APPLICATION_KEY`, que Android ja proporciona automàticament (és l'`applicationContext`, no cal passar-lo a mà):
+
 ```kotlin
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
-class SettingsViewModelFactory(
+class SettingsViewModel(
     private val repository: SettingsRepository
-) : ViewModelProvider.Factory {
+) : ViewModel() {
 
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(SettingsViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return SettingsViewModel(repository) as T
+    val modeFosc: StateFlow<Boolean> = repository.modeFosc
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = false
+        )
+
+    fun canviaModeFosc(actiu: Boolean) {
+        viewModelScope.launch {
+            repository.setModeFosc(actiu)
         }
-        throw IllegalArgumentException("ViewModel desconegut: ${modelClass.name}")
+    }
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val application = this[APPLICATION_KEY] as Application
+                SettingsViewModel(SettingsRepository(application))
+            }
+        }
     }
 }
 ```
 
 ## 5. Connectar-ho des de la UI
 
-Finalment, a l'Activity (o Fragment) construïm el Repository i l'injectem a través de la Factory. Fixa't que passem `applicationContext`, **no** `this`, per evitar fugues de memòria.
+Finalment, a l'Activity (o Fragment) només cal referenciar `SettingsViewModel.Factory`; l'Activity ja no necessita saber com es construeix el Repository.
 
 ```kotlin
 class SettingsActivity : AppCompatActivity() {
 
-    // Injecció manual: construïm el Repository i el passem via Factory
-    private val viewModel: SettingsViewModel by viewModels {
-        SettingsViewModelFactory(SettingsRepository(applicationContext))
-    }
+    // Injecció manual, encapsulada dins del companion object del ViewModel
+    private val viewModel: SettingsViewModel by viewModels { SettingsViewModel.Factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -147,7 +170,7 @@ class SettingsActivity : AppCompatActivity() {
 ```
 
 !!! warning "Sempre applicationContext al Repository"
-    Si passes l'Activity (`this`) com a `Context` al Repository i aquest sobreviu a l'Activity, tindràs una fuga de memòria. Usa `applicationContext`, que viu tant com el procés de l'aplicació.
+    Si passessis l'Activity (`this`) com a `Context` al Repository i aquest sobrevisqués a l'Activity, tindries una fuga de memòria. Per això s'utilitza `APPLICATION_KEY` dins de l'`initializer`: sempre retorna l'`applicationContext`, que viu tant com el procés de l'aplicació, i evita haver de passar-lo a mà.
 
 ## 6. Avantatge: testabilitat
 
@@ -163,5 +186,5 @@ Per fer els tests encara més nets, el més habitual és extreure una **interfí
 
 - El ViewModel rep les dependències pel **constructor** (aquí, el Repository).
 - L'accés a dades viu a la **capa de dades** (Repository), que usa `applicationContext`.
-- Les dependències s'**injecten manualment** amb una `ViewModelProvider.Factory`, sense Hilt.
+- Les dependències s'**injecten manualment** amb un `companion object Factory` (`viewModelFactory { initializer { } }`), sense Hilt.
 - Resultat: codi desacoblat i fàcil de testejar.

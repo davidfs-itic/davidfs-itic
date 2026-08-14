@@ -32,3 +32,6 @@ auditoria.md
 
 /temp
 /temp/*
+
+/private/
+/private/*
