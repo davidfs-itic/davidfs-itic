@@ -1,7 +1,9 @@
-# Setup git en android studio
+# Git i Android Studio
 
-# Intro a github actions
+Continguts:
 
-# Setup de una build en github actions
-https://www.youtube.com/watch?v=Zfaev5IOBmI
-
+- Configuració de Git al projecte: [setupgit.md](./setupgit.md)
+- Treballant amb Git: [workinggit.md](./workinggit.md)
+- Treballant amb Git (profes): [workinggitprofes.md](./workinggitprofes.md)
+- Intro a GitHub Actions: (Pendent)
+- Setup d'una build a GitHub Actions: (Pendent) — [vídeo de referència](https://www.youtube.com/watch?v=Zfaev5IOBmI)

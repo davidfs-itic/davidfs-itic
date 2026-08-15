@@ -15,3 +15,4 @@
 - [Proves](./Proves/index.md)
 - [Llibreries](./Llibreries/index.md)
 - [Firebase](./Firebase/index.md)
+- [Git i Android Studio](./Git_android_studio/index.md)

@@ -141,6 +141,11 @@ nav:
           - Analytics: Android/Firebase/analytics.md
           - Firestore: Android/Firebase/firestore.md
           # - Autenticació: Android/Firebase/autenticacio.md
+      - Git i Android Studio:
+        - Introducció: Android/Git_android_studio/index.md
+        - Configuració de Git al projecte: Android/Git_android_studio/setupgit.md
+        - Treballant amb Git: Android/Git_android_studio/workinggit.md
+        - Treballant amb Git (profes): Android/Git_android_studio/workinggitprofes.md
 
     - Unity:
       - Introducció a Unity: Unity/index.md
