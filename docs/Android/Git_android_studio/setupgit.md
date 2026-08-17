@@ -25,7 +25,7 @@ git config --global user.email "el-teu-correu@exemple.com"
 ```
 
 !!! warning "Per què ha de coincidir amb el correu de GitHub"
-    L'opció `--global` desa la configuració per a tots els projectes de l'ordinador, així no cal repetir-ho cada vegada. Si el `user.email` no coincideix amb el correu del teu compte de GitHub, els teus commits no s'atribueixen correctament al teu usuari: apareixen com d'algú desconegut a l'historial i no es compten a les estadístiques de contribució (vegeu com fer-ne el seguiment a [Treballant amb Git](./workinggit.md#61-el-teu-historial-de-commits) o, com a professor, a [Treballant amb Git (profes)](./workinggitprofes.md#3-contribucions-per-usuari)).
+    L'opció `--global` desa la configuració per a tots els projectes de l'ordinador, així no cal repetir-ho cada vegada. Si el `user.email` no coincideix amb el correu del teu compte de GitHub, els teus commits no s'atribueixen correctament al teu usuari: apareixen com d'algú desconegut a l'historial i no es compten a les estadístiques de contribució (vegeu com fer-ne el seguiment a [Treballant amb Git](./workinggit.md#71-el-teu-historial-de-commits) o, com a professor, a [Treballant amb Git (profes)](./workinggitprofes.md#3-contribucions-per-usuari)).
 
 ### 1.2. Crear el repositori remot buit
 

@@ -23,6 +23,9 @@ fun ContadorScreen(
 
 `viewModel()` retorna sempre la mateixa instància mentre el Composable es manté a la mateixa entrada de `NavBackStackEntry` (o a la mateixa Activity si no s'utilitza Navigation Compose), encara que hi hagi recomposicions o canvis de configuració. L'àmbit (scope) segueix les mateixes regles que ja es coneixen de `viewmodel.md`: si el Composable forma part d'un graf de navegació, el ViewModel es pot compartir entre pantalles fent-lo dependre de l'entrada del graf en lloc de la pantalla individual.
 
+!!! info "Dependència necessària"
+    La funció `viewModel()` no forma part del mòdul bàsic de Compose: cal afegir la dependència implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0") al `build.gradle` (Module) perquè estigui disponible.
+
 ## 2. Exposar l'estat: StateFlow enlloc de LiveData
 
 A `viewmodel.md` l'estat s'exposa amb `LiveData`, perquè és el que s'observa còmodament amb `.observe(this) { }` des d'una Activity o Fragment. Dins de Compose, `LiveData` també funciona (amb `observeAsState()`), però `StateFlow` és la opció recomanada perquè és la primitiva d'estat pròpia de les corrutines i s'integra de manera nativa amb Compose.

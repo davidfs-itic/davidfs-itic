@@ -36,7 +36,7 @@ git push -u origin feature/nom-de-la-funcionalitat
 Obre un Pull Request de `feature/nom-de-la-funcionalitat` cap a `dev` a GitHub. Un cop revisat i fusionat, la branca de feature ja no fa falta i es pot esborrar (a GitHub mateix hi ha un botó "Delete branch" un cop fusionat el PR).
 
 !!! tip "Dues persones, mateixa funcionalitat gran"
-    Si una funcionalitat és massa gran per a una sola persona, és millor dividir-la en tasques més petites (i per tant en issues i branques més petites — vegeu la [secció 5](#5-issues-i-pull-requests)) que no pas que dues persones treballin alhora sobre la mateixa branca de feature.
+    Si una funcionalitat és massa gran per a una sola persona, és millor dividir-la en tasques més petites (i per tant en issues i branques més petites — vegeu la [secció 6](#6-issues-i-pull-requests)) que no pas que dues persones treballin alhora sobre la mateixa branca de feature.
 
 ## 2. Fer commits sovint
 
@@ -86,11 +86,29 @@ Un cop la branca de feature (secció 1) està acabada i el Pull Request ha estat
     - **Squash and merge**: combina tots els commits de la branca en un de sol abans de fusionar-lo a `dev`. Recomanat si la branca té molts commits petits tipus "WIP" (secció 2) i es vol que l'historial de `dev` quedi net, amb un commit per feature.
     - **Rebase and merge**: reaplica els commits de la branca sobre `dev` sense crear un commit de fusió. Manté l'historial lineal, però és més avançat i no és necessari per a l'ús habitual en aquest curs.
 
-## 5. Issues i Pull Requests
+## 5. Actualitzar la teva branca de feature amb els canvis de dev
+
+Quan es fusiona la feature d'algú altre a `dev` (secció 4), la resta de l'equip que encara té branques de feature obertes **no rep aquests canvis automàticament**. Si no fas res, la teva branca continua treballant sobre una versió cada cop més antiga de `dev`, i el dia que obris el teu Pull Request et pots trobar un conflicte gran i difícil de resoldre.
+
+Per evitar-ho, és recomanable portar periòdicament els canvis de `dev` a la teva branca de feature, sobretot si la teva tasca s'allarga uns quants dies:
+
+```bash
+git checkout dev
+git pull
+git checkout feature/la-meva-feature
+git merge dev
+```
+
+Si el `merge` provoca un conflicte, es resol de la mateixa manera que qualsevol altre (secció 3): comita primer els teus canvis pendents, resol el conflicte amb l'eina visual d'Android Studio i compila abans de fer `commit`.
+
+!!! tip "Quan fer-ho"
+    No cal fer-ho després de cada petita fusió a `dev`. N'hi ha prou amb actualitzar la teva branca de tant en tant (per exemple, cada dia o quan saps que s'ha fusionat una feature que toca fitxers relacionats amb la teva), i sempre abans d'obrir el Pull Request final.
+
+## 6. Issues i Pull Requests
 
 Un **issue** és una tasca, millora o error que es vol tractar, descrita a GitHub abans de començar-hi a treballar. Un **Pull Request (PR)** és la proposta de canvis concrets (una branca) per resoldre'l. La relació entre tots dos és el que dona traçabilitat al projecte: **què s'havia previst fer** (issue) enfront de **què s'ha acabat entregant** (PR).
 
-### 5.1. Crear un issue
+### 6.1. Crear un issue
 
 A la pestanya **Issues** del repositori a GitHub:
 
@@ -98,7 +116,7 @@ A la pestanya **Issues** del repositori a GitHub:
 - Descripció amb el que cal fer i, si escau, criteris d'acceptació.
 - (Opcional) Assignar-lo a la persona que hi treballarà i afegir-hi etiquetes (`bug`, `feature`, etc.).
 
-### 5.2. Vincular la branca i el PR a l'issue
+### 6.2. Vincular la branca i el PR a l'issue
 
 Al crear la branca de feature (secció 1), pots basar el nom en el número o el tema de l'issue (p. ex. `feature/12-login`). Però el vincle **real** es fa al Pull Request: a la descripció del PR, escriu una paraula clau seguida del número de l'issue:
 
@@ -108,7 +126,7 @@ Closes #12
 
 Quan aquest PR es fusiona a `dev` (o `main`), GitHub **tanca automàticament l'issue #12**. Així no cal tancar-lo manualment i queda registrat quin PR exactament l'ha resolt.
 
-### 5.3. Flux complet
+### 6.3. Flux complet
 
 ```
 Issue #12 "Afegir login"
@@ -125,11 +143,11 @@ Pull Request "Closes #12" ──► revisió ──► merge a dev
    Issue #12 es tanca automàticament
 ```
 
-## 6. Fer un seguiment de la teva pròpia activitat
+## 7. Fer un seguiment de la teva pròpia activitat
 
 Amb accés de lectura o escriptura normal al repositori (no cal cap permís especial) ja pots veure tota la teva activitat, tant en local com a GitHub.
 
-### 6.1. El teu historial de commits
+### 7.1. El teu historial de commits
 
 En local, filtra el `git log` pel teu nom per veure només els teus commits:
 
@@ -142,7 +160,7 @@ A GitHub, la pestanya **Insights → Contributors** del repositori mostra, per a
 !!! warning "Els teus commits no hi surten?"
     Aquestes estadístiques agrupen els commits pel correu electrònic configurat a Git (`git config user.email`). Si aquest correu no coincideix amb el del teu compte de GitHub, els teus commits apareixen com d'un usuari desconegut. Comprova-ho i corregeix-ho si cal (vegeu [Comprova la teva identitat de Git](./setupgit.md#11-comprova-la-teva-identitat-de-git)).
 
-### 6.2. Filtrar les teves Pull Requests i Issues
+### 7.2. Filtrar les teves Pull Requests i Issues
 
 Al cercador de la pestanya **Pull requests** o **Issues** del repositori, pots filtrar pel que és teu:
 
@@ -151,7 +169,7 @@ is:pr author:el-teu-usuari
 is:issue assignee:el-teu-usuari
 ```
 
-### 6.3. El gràfic de contribucions del teu perfil
+### 7.3. El gràfic de contribucions del teu perfil
 
 El teu perfil de GitHub (`github.com/el-teu-usuari`) mostra el típic gràfic de quadrets verds amb la teva activitat diària a tots els repositoris.
 
