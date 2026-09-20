@@ -8,6 +8,8 @@ A diferència de Firestore o Realtime Database, Analytics no serveix per emmagat
 
 Documentació oficial: [Get started with Google Analytics for Android](https://firebase.google.com/docs/analytics/android/get-started)
 
+Recursos: [Beginner's Guide to Analytics Logging on Android With Firebase Analytics](https://www.youtube.com/watch?v=7JankM1LG50)
+
 ## 2. Afegir la dependència
 
 Al fitxer `app/build.gradle.kts`:
