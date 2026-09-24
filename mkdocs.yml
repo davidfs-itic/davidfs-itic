@@ -41,8 +41,11 @@ theme:
 #  //El toc.integrate està de moment desactivat perquè fa que no es vegi el toc a la dreta de la pàgina
 #  - toc.integrate
 
+extra_css:
+  - stylesheets/extra.css
+
 nav:
-    - Inici: index.md             # Aquesta serà la primera pàgina
+    - Inici: index.md            # Aquesta serà la primera pàgina
     - Android:  
       - Introducció a Android: Android/index.md
       - Llenguatge Kotlin:
@@ -68,6 +71,8 @@ nav:
         - Fragments: Android/Interficies/fragments.md
         - La classe Application: Android/Interficies/application.md
         - Layouts: Android/Interficies/layouts.md
+        - LinearLayout: Android/Interficies/linearlayout.md
+        - ConstraintLayout i Chains: Android/Interficies/constraintlayout.md
         - "Edge-to-edge i System Bars": Android/Interficies/layoutactivities.md
         - Temes i Estils: Android/Interficies/temes.md
         - VieweBinding: Android/Interficies/viewbinding.md        

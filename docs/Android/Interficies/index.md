@@ -6,6 +6,8 @@
 - [Fragments:](./fragments.md)
 - [La classe Application:](./application.md)
 - [Layouts:](./layouts.md)
+- [LinearLayout:](./linearlayout.md)
+- [ConstraintLayout i Chains:](./constraintlayout.md)
 - [Edge-to-edge i System Bars:](./layoutactivities.md)
 - [Temes i Estils:](./temes.md)
 - [VieweBinding:](./viewbinding.md)        

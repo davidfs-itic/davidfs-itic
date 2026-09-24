@@ -1,0 +1,4 @@
+/* Ampliar l'amplada màxima del contingut (per defecte 61rem) */
+.md-grid {
+  max-width: 70rem;
+}

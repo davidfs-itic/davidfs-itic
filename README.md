@@ -1,4 +1,4 @@
-# Aqui hi trobareu:
+# Aquí hi trobareu:
 
 ## Apunts dels mòduls:
 
@@ -14,7 +14,7 @@
 
 
 Estan fets amb mkdocs: 
-- [ https://squidfunk.github.io/mkdocs-material/reference/]( https://squid)funk.github.io/mkdocs-material/reference/)
+- [https://squidfunk.github.io/mkdocs-material/reference/](https://squidfunk.github.io/mkdocs-material/reference/)
 
 ## Repositoris amb diferents exemples de desenvolupament en Android.
 
@@ -24,7 +24,7 @@ Estan fets amb mkdocs:
 # Altres:
 
 ## cheatsheet de Git
-https://ndpsoftware.com/git-cheatsheet.html#loc=index;
+[https://ndpsoftware.com/git-cheatsheet.html#loc=index;](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
 
 ## Material de markdown:
 O com s'han fet aquests apunts:
