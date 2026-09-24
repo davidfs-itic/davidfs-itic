@@ -2,3 +2,83 @@
 .md-grid {
   max-width: 70rem;
 }
+
+/* Diagrama de padding i margin (layouts.md) */
+.box-model {
+  margin: 1.5em auto;
+  max-width: 34rem;
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.box-model .bm-zone {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  border-radius: 4px;
+}
+.box-model .bm-top,
+.box-model .bm-bottom {
+  grid-column: 1 / -1;
+  padding: 0.3em 0;
+}
+.box-model .bm-start,
+.box-model .bm-end {
+  writing-mode: vertical-rl;
+  padding: 0 0.4em;
+  align-self: center;
+}
+.box-model .bm-start {
+  transform: rotate(180deg);
+}
+.box-model .bm-inner {
+  min-width: 0;
+}
+.box-model code {
+  font-size: 0.95em;
+}
+/* margin: fora de la vista, sense el fons de la vista */
+.box-model .bm-margin {
+  border: 2px dashed var(--md-default-fg-color--light);
+  background: color-mix(in srgb, var(--md-accent-fg-color) 12%, transparent);
+}
+/* vora de la vista: el fons de la vista cobreix padding i contingut */
+.box-model .bm-view {
+  border: 3px solid var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
+  padding: 0;
+}
+.box-model .bm-view {
+  display: block;
+  position: relative;
+  margin-top: 0.6em;
+}
+/* L'etiqueta de la vora es col·loca damunt de la línia, sense ocupar espai */
+.box-model .bm-view > .bm-top {
+  position: absolute;
+  top: -0.85em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0.5em;
+  background: var(--md-default-bg-color);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.box-model .bm-view > .bm-start,
+.box-model .bm-view > .bm-end,
+.box-model .bm-view > .bm-bottom {
+  display: none;
+}
+.box-model .bm-padding {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent);
+  border-radius: 0;
+}
+.box-model .bm-content {
+  padding: 1.2em 0.5em;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 40%, transparent);
+  font-weight: 700;
+}
+/* Espai perquè l'etiqueta de la vora no toqui paddingTop */
+.box-model .bm-padding > .bm-top {
+  padding-top: 0.8em;
+}

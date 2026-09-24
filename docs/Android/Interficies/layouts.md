@@ -18,14 +18,16 @@ Tots els elements d'una interfície amb Views són objectes de dues classes base
 
 Això forma una **jerarquia de vistes** en forma d'arbre: un `ViewGroup` arrel que conté fills, que al seu torn poden ser altres `ViewGroup` amb més fills.
 
+```mermaid
+graph TD
+    A["ConstraintLayout (arrel)"] --> B(TextView)
+    A --> C[LinearLayout]
+    C --> D(EditText)
+    C --> E(Button)
+    A --> F(ImageView)
 ```
-ConstraintLayout (arrel)
-├── TextView
-├── LinearLayout
-│   ├── EditText
-│   └── Button
-└── ImageView
-```
+
+Els rectangles són `ViewGroup` (contenen altres vistes) i els rectangles arrodonits són `View` (elements finals, sense fills).
 
 ## 2. Fitxers de layout
 
@@ -141,15 +143,32 @@ Tots dos creen espai, però en llocs diferents:
 - **`padding`**: espai **interior**, entre la vora de la vista i el seu contingut. Forma part de la vista (per exemple, el color de fons també s'hi pinta).
 - **`layout_margin`**: espai **exterior**, entre la vora de la vista i els elements que l'envolten. El gestiona el layout pare.
 
-```
-┌────────────── margin ──────────────┐
-│  ┌─────────── vora ─────────────┐  │
-│  │  ┌──────── padding ───────┐  │  │
-│  │  │        contingut       │  │  │
-│  │  └────────────────────────┘  │  │
-│  └──────────────────────────────┘  │
-└────────────────────────────────────┘
-```
+<div class="box-model">
+  <div class="bm-zone bm-margin">
+    <div class="bm-top"><code>layout_marginTop</code></div>
+    <div class="bm-start">Start</div>
+    <div class="bm-inner">
+      <div class="bm-zone bm-view">
+        <div class="bm-top">Vora de la vista</div>
+        <div class="bm-inner">
+          <div class="bm-zone bm-padding">
+            <div class="bm-top"><code>paddingTop</code></div>
+            <div class="bm-start">Start</div>
+            <div class="bm-inner">
+              <div class="bm-content">Contingut (text, imatge...)</div>
+            </div>
+            <div class="bm-end">End</div>
+            <div class="bm-bottom"><code>paddingBottom</code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bm-end">End</div>
+    <div class="bm-bottom"><code>layout_marginBottom</code></div>
+  </div>
+</div>
+
+La línia contínua és la vora de la vista. Tot el que hi ha a dins (el padding i el contingut) forma part de la vista i es pinta amb el seu fons. El margin, amb la línia discontínua, queda a fora: és l'espai que el pare deixa entre aquesta vista i les del voltant.
 
 Es poden indicar per a tots els costats alhora o per a cadascun per separat:
 
