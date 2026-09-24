@@ -1,7 +1,7 @@
 # Classes i objectes en kotlin
 ## Classes
 
-- Son finals per defecte
+- Són finals per defecte
 
 
 ### Absència de New
@@ -119,7 +119,7 @@ Generen automàticament:
 ```kotlin
 data class Alumne(val nom: String, val edat: Int)
 ```
-#### Pair i Triple son dataclasses predefinides:
+#### Pair i Triple són dataclasses predefinides:
 Guarden un parell o tres valors
 
 Accedim a les seves propietat amb .first, .second, .third
