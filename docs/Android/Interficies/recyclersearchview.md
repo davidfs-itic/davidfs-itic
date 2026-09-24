@@ -1,6 +1,6 @@
-## Com aplicar filtres de búsqueda a un RecyclerVew
+## Com aplicar filtres de cerca a un RecyclerView
 
-A través dels ítems del menú i del ActioViewClass, podem posar directament una barra de búsqueda (SearchView en un element del menú)
+A través dels ítems del menú i del ActionViewClass, podem posar directament una barra de cerca (SearchView en un element del menú)
 
 ### En el menú
 Al fitxer, per exemple, res/menu/menu_cerca.xml, afegeix un element <item> utilitzant l'atribut app:actionViewClass amb la classe androidx.appcompat.widget.SearchView.
@@ -72,11 +72,11 @@ Continuant en el onCreateOptionsMenu...
 
 Perquè creem un object, i no simplement li passem una funció lambda, com la majoria de listener?
 
-La resposta és perque el OnQueryTextListener no demana només una funció, sino dues, i per tant, cal especificar quina o quines funcions implementem.
+La resposta és perquè el OnQueryTextListener no demana només una funció, sinó dues, i per tant, cal especificar quina o quines funcions implementem.
 
-En el cas dels botons, per exemple, només hi ha una funció, i kotlin es capaç de decidir, que, si una interficie només té un métode, (i és una interficie de java), es pot passar directament una lambda. 
+En el cas dels botons, per exemple, només hi ha una funció, i kotlin és capaç de decidir, que, si una interfície només té un mètode, (i és una interfície de java), es pot passar directament una lambda. 
 
-Aixó s'anomena **SAM conversion**. 
+Això s'anomena **SAM conversion**. 
 
 Si es vol fer en kotlin, cal crear una **functional interface**, i el codi seria equivalent al de java.
 

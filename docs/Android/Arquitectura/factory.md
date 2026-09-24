@@ -1,7 +1,7 @@
 ## 1. Què és?
 
 El patró Factory és un patró de disseny que proporciona una manera de crear objectes **sense especificar** la classe exacta de l'objecte que crearà.
-En comptes d'aixó, es confia a un métode "factory" que crei i retorni l'objecte, tipicament basat en paràmetres d'entrada o configuració.
+En comptes d'això, es confia a un mètode "factory" que crei i retorni l'objecte, típicament basat en paràmetres d'entrada o configuració.
 
 
 El principi fonamental és que el codi que necessita un objecte, interactua amb una interfície comuna i no necessita saber exactament quina classe concreta s'està instant. El "Factory" és l'entitat responsable de decidir i crear la instància correcta.
@@ -54,7 +54,7 @@ class ProgressNotification : AppNotification {
 }
 ```
 ### 3. El Factory (NotificationFactory)
-Creem un objecte **object** (que actua com un Singleton a Kotlin) amb una funció que decideix quin tipus de producte instanciar basant-se en el parametre type
+Creem un objecte **object** (que actua com un Singleton a Kotlin) amb una funció que decideix quin tipus de producte instanciar basant-se en el paràmetre type
 
 ```Kotlin
 // Usem una 'sealed class' o 'enum' per definir els tipus

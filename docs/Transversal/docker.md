@@ -45,7 +45,7 @@ Verificació 2: podem executar:
 docker ps -a
 ```
 
-I hauriem de veure tots els contenidors engegats:
+I hauríem de veure tots els contenidors engegats:
 
 ```bash
 root@server ~ $ docker ps -a

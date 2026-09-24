@@ -18,10 +18,10 @@ Si examinem l'exemple de recyclerview tal i com està, (passant funcions de call
  - L'Activity fa 3 coses:
  - Presenta UI
  - Gestiona RecyclerView
- - Gestiona negocis (què fer al clic). Aixó últim no ho hauria de fer. No és la serva responsabilitat.
+ - Gestiona negocis (què fer al clic). Això últim no ho hauria de fer. No és la seva responsabilitat.
 
 
-## Sol·lució amb inversió de dependències (Dependency Inversion Principle - DIP)
+## Solució amb inversió de dependències (Dependency Inversion Principle - DIP)
 
 ### 1. Interfície clara i tipada
 ```kotlin

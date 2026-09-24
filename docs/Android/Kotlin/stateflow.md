@@ -1,22 +1,22 @@
 # StateFlow
 
-Un **StateFlow** es un tipus especial de [Flow](./flows.md) dissenyat per representar un **estat** que canvia al llarg del temps. A diferencia d'un Flow normal, un StateFlow sempre te un valor actual i nomes emet quan el valor canvia.
+Un **StateFlow** és un tipus especial de [Flow](./flows.md) dissenyat per representar un **estat** que canvia al llarg del temps. A diferència d'un Flow normal, un StateFlow sempre té un valor actual i només emet quan el valor canvia.
 
-Documentacio oficial: [StateFlow and SharedFlow - Android Developers](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
+Documentació oficial: [StateFlow and SharedFlow - Android Developers](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 
-## 1. Caracteristiques principals
+## 1. Característiques principals
 
-- **Sempre te un valor actual**: requereix un valor inicial al crear-lo.
+- **Sempre té un valor actual**: requereix un valor inicial al crear-lo.
 - **No emet duplicats consecutius**: si s'assigna el mateix valor, no notifica als col·lectors.
-- **Es calent (hot)**: mante el valor encara que no hi hagi col·lectors actius, a diferencia dels Flows normals que son freds (cold).
+- **És calent (hot)**: manté el valor encara que no hi hagi col·lectors actius, a diferència dels Flows normals que són freds (cold).
 - **Ideal per a la UI**: representa l'estat actual de la pantalla al ViewModel.
 
 ## 2. MutableStateFlow vs StateFlow
 
-Segueix el mateix patro que `MutableLiveData` / `LiveData`:
+Segueix el mateix patró que `MutableLiveData` / `LiveData`:
 
-- `MutableStateFlow`: permet modificar el valor. Es mante **privat** dins del ViewModel.
-- `StateFlow`: nomes lectura. S'exposa **public** perque la UI nomes pugui observar.
+- `MutableStateFlow`: permet modificar el valor. Es manté **privat** dins del ViewModel.
+- `StateFlow`: només lectura. S'exposa **públic** perquè la UI només pugui observar.
 
 ```kotlin
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -58,8 +58,8 @@ class ComptadorActivity : AppCompatActivity() {
 }
 ```
 
-!!! warning "Multiples col·lectors"
-    Si necessites observar diversos StateFlows, cal llançar un `launch` separat per a cada `collect`, ja que `collect` suspen la coroutine fins que el Flow finalitza.
+!!! warning "Múltiples col·lectors"
+    Si necessites observar diversos StateFlows, cal llançar un `launch` separat per a cada `collect`, ja que `collect` suspèn la coroutine fins que el Flow finalitza.
 
 ```kotlin
 lifecycleScope.launch {
@@ -95,31 +95,31 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
 }
 ```
 
-### Parametres de stateIn
+### Paràmetres de stateIn
 
-| Parametre | Descripcio |
+| Paràmetre | Descripció |
 |---|---|
 | `scope` | El CoroutineScope on s'executa el Flow. Normalment `viewModelScope` |
-| `started` | Quan comença a col·lectar. `WhileSubscribed(5000)` mante la subscripcio 5 segons despres que l'ultim observador desaparegui |
-| `initialValue` | Valor inicial mentre el Flow encara no ha emes cap valor |
+| `started` | Quan comença a col·lectar. `WhileSubscribed(5000)` manté la subscripció 5 segons després que l'últim observador desaparegui |
+| `initialValue` | Valor inicial mentre el Flow encara no ha emès cap valor |
 
-!!! info "Per que WhileSubscribed(5000)?"
-    El parametre de 5000 ms dona un marge perque, en una rotacio de pantalla, l'Activity es destrueix i es recrea rapidament. Sense aquest marge, el Flow es cancelaria i es reiniciaria innecessariament.
+!!! info "Per què WhileSubscribed(5000)?"
+    El paràmetre de 5000 ms dona un marge perquè, en una rotació de pantalla, l'Activity es destrueix i es recrea ràpidament. Sense aquest marge, el Flow es cancel·laria i es reiniciaria innecessàriament.
 
 ## 5. StateFlow vs LiveData
 
-| Caracteristica | StateFlow | LiveData |
+| Característica | StateFlow | LiveData |
 |---|---|---|
 | Valor inicial | Obligatori | Opcional |
-| Lifecycle-aware | No (cal `lifecycleScope`) | Si, automatic |
-| Duplicats consecutius | No emet | Si emet |
-| Funciona fora d'Android | Si (Kotlin pur) | No |
-| Operadors de transformacio | Tots els de Flow (`map`, `filter`, `combine`...) | Limitats |
-| Fil d'emissio | Qualsevol | Nomes fil principal |
+| Lifecycle-aware | No (cal `lifecycleScope`) | Sí, automàtic |
+| Duplicats consecutius | No emet | Sí emet |
+| Funciona fora d'Android | Sí (Kotlin pur) | No |
+| Operadors de transformació | Tots els de Flow (`map`, `filter`, `combine`...) | Limitats |
+| Fil d'emissió | Qualsevol | Només fil principal |
 
 ## 6. Resum
 
-| Concepte | Us |
+| Concepte | Ús |
 |---|---|
 | `MutableStateFlow` | Estat mutable dins del ViewModel |
 | `StateFlow` | Estat immutable exposat a la UI |

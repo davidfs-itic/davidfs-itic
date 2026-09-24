@@ -184,4 +184,4 @@ El `RecyclerView.Adapter` proporciona diversos mètodes per notificar canvis:
 
 1. Després de modificar la llista, **sempre** notificar l'adapter.
 2. Utilitzar el mètode de notificació adequat per obtenir animacions.
-3. Adaptar el codi en cas que s'estigui utlitzant ViewModel. 
+3. Adaptar el codi en cas que s'estigui utilitzant ViewModel. 

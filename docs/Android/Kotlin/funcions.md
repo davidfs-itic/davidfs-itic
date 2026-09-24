@@ -22,7 +22,7 @@ fun double(x: Int): Int = x * 2
 ### Lambdes i funcions d’ordre superior
 
 Kotlin tracta les funcions com si fossin de "primera classe", o "first class":
-Aixó vol dir que:
+Això vol dir que:
 
 - es poden guardar en variables
 - passar com a paràmetres
@@ -74,7 +74,7 @@ encodeMsg("abc", ::enc2)
 
 #### Últim paràmetre d'una funció
 
-En Kotlin és preferible que si hi ha algun paràmetre que sigui una funció, aquest sigui l'ultim paràmetre:
+En Kotlin és preferible que si hi ha algun paràmetre que sigui una funció, aquest sigui l'últim paràmetre:
 
 ```kotlin
 encodeMessage("acronym", { input -> input.toUpperCase() })

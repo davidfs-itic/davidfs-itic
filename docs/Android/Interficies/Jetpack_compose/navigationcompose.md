@@ -113,17 +113,17 @@ navController.navigate(Llista) {
 ```
 
 - **`popUpTo`**: elimina de la pila totes les destinacions fins a la indicada, útil per evitar acumular pantalles quan es torna a una secció ja visitada (per exemple, en pitjar un item de la `NavigationBar`).
-- **`inclusive`**: si és `true`, també elimina la destinació indicada a `popUpTo`. D'aquesta manera només tindriem a la pila una pantalla. Si ho posem a false, eliminara totes les pantalles anteriors fins a la destinació, però no la destinació per la qual cosa tindriem 2 pantalles seguides iguals a la pila.
+- **`inclusive`**: si és `true`, també elimina la destinació indicada a `popUpTo`. D'aquesta manera només tindríem a la pila una pantalla. Si ho posem a false, eliminara totes les pantalles anteriors fins a la destinació, però no la destinació per la qual cosa tindríem 2 pantalles seguides iguals a la pila.
 - **`launchSingleTop`**: evita crear una nova còpia de la destinació si ja és la que està al capdamunt de la pila.
 
 
 ## 5. Navegació sense arguments entre pantalles.
 
-Hem vist les funcions que permeten navegar, però per a que des de la pantalla Login poguem anar a MyList, tenim 2 aproximacions:
+Hem vist les funcions que permeten navegar, però per a que des de la pantalla Login puguem anar a MyList, tenim 2 aproximacions:
 
-La primera, passar el navController com a paràmetre al LoginScreen. Dins el Codi de logincreen utilitzar-lo per a navegar. Aquesta opció no es molt neta, doncs implica que gairebé totes les pantalles haurien de tenir com argument el navController, i potser la pantalla tindria massa responsabilitat.
+La primera, passar el navController com a paràmetre al LoginScreen. Dins el codi de LoginScreen utilitzar-lo per a navegar. Aquesta opció no és molt neta, doncs implica que gairebé totes les pantalles haurien de tenir com argument el navController, i potser la pantalla tindria massa responsabilitat.
 
-La segona, passar una funció lambda a LoginScren "anarAMylist". Dins la pantalla, es cridarà a la funcio on toqui, però tot el codi de navegació estarà junt amb el navigationHost i el navigationController a la funció AppNavigation:
+La segona, passar una funció lambda a LoginScreen "anarAMylist". Dins la pantalla, es cridarà a la funció on toqui, però tot el codi de navegació estarà junt amb el navigationHost i el navigationController a la funció AppNavigation:
 
 ```kotlin
 @Composable
@@ -139,7 +139,7 @@ fun MyLoginScreen(toMyList:()->Unit){
 }
 ```
 
-D'aquesta manera la navegació queda delegada a la funcio AppNavigation:
+D'aquesta manera la navegació queda delegada a la funció AppNavigation:
 
 ```kotlin
 fun AppNavigation() {

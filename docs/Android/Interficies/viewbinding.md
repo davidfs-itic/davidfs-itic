@@ -19,13 +19,13 @@ android {
 El que farà aquesta característica, és generar, per cada layout, una classe amb el nom del layout+binding, per exemple  per al layout activity_main es farà la classe ActivityMainBinding 
 Aquesta classe, contindrà tantes properties com elements visuals hi hagi en el layout, per exemple botons, textboxes, etc.
 
-També té un métode getRoot() (o en kotlin, directament root) que accedeix al layout principal que conté la resta de la vista (linear o constraint layout)
+També té un mètode getRoot() (o en kotlin, directament root) que accedeix al layout principal que conté la resta de la vista (linear o constraint layout)
 
 Per utilitzar-la, cal:
 
 
 - Crear una variable d'aquest tipus (amb lateinit)
-- Crear la instància de la classe amb el métode static inflate() que crearà l'objecte amb les properties necessàries lligades als objectes que va creant del layout.
+- Crear la instància de la classe amb el mètode static inflate() que crearà l'objecte amb les properties necessàries lligades als objectes que va creant del layout.
 - Utilitzar el setContentView() per a que l'activity es renderitzi a partir dels objectes creats.
 
 Exemple
@@ -51,7 +51,7 @@ binding.btnLogin.setOnClickListener({
 
 # Viewbinding en Fragments
 
-En aquest cas cal crear la variable amb possibilitat de nuls, i que des de fora el fragment sigui readonly. Aixó s'aconsegueix fent la variable nula, i creant un métode get:
+En aquest cas cal crear la variable amb possibilitat de nuls, i que des de fora el fragment sigui readonly. Això s'aconsegueix fent la variable nul·la, i creant un mètode get:
 
 ```kotlin
 // 1. Una variable privada i nul·lable per guardar la referència real
@@ -67,9 +67,9 @@ La vista d'un Fragment pot ser destruïda mentre el Fragment encara és viu.
 
 Això passa, per exemple, quan un usuari navega d'un Fragment A a un Fragment B. El Fragment A es queda a la backstack (està "viu"), però la seva interfície gràfica es destrueix per estalviar recursos.
 
-Si guardem una referència al binding i no la destruïm, realment la vista no es podrà destruir perque encara hi haurà una referència a la vista.
+Si guardem una referència al binding i no la destruïm, realment la vista no es podrà destruir perquè encara hi haurà una referència a la vista.
 
-Aixó fà que haguem de destruïr explicitament la variable en el onDestroy.
+Això fa que haguem de destruir explícitament la variable en el onDestroy.
 
 Exemple de codi complert de viewbinding amb fragments:
 

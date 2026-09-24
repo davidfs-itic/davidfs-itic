@@ -6,7 +6,7 @@ Documentació oficial: https://developer.android.com/topic/libraries/architectur
 ## Informació Viewmodel i livedata
 View model és una arquitectura que permet separar la lògica de la activity, de l'activity mateixa.
 
-La separació és important, perque s'entén que una activity no hauria de saber quines dades s'utilitzen
+La separació és important, perquè s'entén que una activity no hauria de saber quines dades s'utilitzen
 per implementar la lògica, només li cal saber com gestionar la UI. Si volem modificar una variable que no pertany a la UI, ho haurà de fer per la via d'una funció.
 
 El livedata ([veure els apunts en l'apartat de Llenguatge Kotlin](../Kotlin/livedata.md))

@@ -260,7 +260,7 @@ viewModelScope.launch {
 
 ## 7. Retrofit sense certificats (NOMES PER A DEBUG)
 
-Si utlitzem una APi, i aquesta no esta configurada amb cerficats vàlids, Retrofit no ens connectarà.
+Si utilitzem una API, i aquesta no està configurada amb certificats vàlids, Retrofit no ens connectarà.
 
 Caldra afegir una llibreria: okhttp3
 
@@ -272,7 +272,7 @@ dependencies {
 ```
 
 
-Cal fer la seguent modificació a la api:
+Cal fer la següent modificació a la api:
 
 ```kotlin
 class ItemAPI {

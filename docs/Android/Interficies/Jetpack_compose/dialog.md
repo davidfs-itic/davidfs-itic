@@ -144,7 +144,7 @@ fun MyItemDialog(
 
 Punts clau d'aquest disseny:
 
-- **`item` és només el valor inicial**: `titol` i `descripcio` són còpies locals editables (`remember { mutableStateOf(item.titol) }`), seedejades a partir d'`item` quan el diàleg es crea. Mentre l'usuari escriu, l'`item` original no canvia.
+- **`item` és només el valor inicial**: `titol` i `descripcio` són còpies locals editables (`remember { mutableStateOf(item.titol) }`), inicialitzades a partir d'`item` quan el diàleg es crea. Mentre l'usuari escriu, l'`item` original no canvia.
 - **`onConfirm` "recupera" el resultat**: en prémer "Desar", es construeix un nou `Item(titol, descripcio)` i es passa a `onConfirm`. El diàleg mai modifica res per si mateix: només notifica quin hauria de ser el nou valor.
 
 Aquest és el mateix principi de *state hoisting* unidireccional vist a [Estats en Jetpack Compose](./estats.md): l'estat "de veritat" viu fora del diàleg, i el diàleg només el llegeix (per inicialitzar-se) i el proposa (per actualitzar-lo).

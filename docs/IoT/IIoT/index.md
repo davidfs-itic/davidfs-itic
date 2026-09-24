@@ -7,4 +7,4 @@
 
 # Protocols
 
-[Resum dels principals protocols usats en indùstria](protocols.md)
+[Resum dels principals protocols usats en indústria](protocols.md)

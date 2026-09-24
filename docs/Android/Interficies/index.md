@@ -15,7 +15,7 @@
 - [Appbar:](./appbar.md)
 - [Toolbar:](./toolbar.md)
 - [Navigation Drawer:](./drawermenu.md)
-- [Dialegs:](./dialegs.md)
+- [Diàlegs:](./dialegs.md)
 - [RecyclerView:](./recyclerview.md)
 - [RecyclerView Afegir i eliminar:](./recyclerviewaddelete.md)
 - [RecyclerView SwipetoDelete:](./recyclerviewswipetodelete.md)

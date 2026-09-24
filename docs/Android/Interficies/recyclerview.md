@@ -311,7 +311,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-Tot i que s'utilitza una funció (anomenada callback) per passar la lògica de gestió del click en un ítem (recodem que aixó ho gestiona el ViewHolder), no és una pràctica recomenada. Està aquí per simplicitat.
+Tot i que s'utilitza una funció (anomenada callback) per passar la lògica de gestió del click en un ítem (recordem que això ho gestiona el ViewHolder), no és una pràctica recomanada. Està aquí per simplicitat.
 
 Veieu "Exemple inversió de dependències amb RecyclerView" a l'apartat Arquitectura
 

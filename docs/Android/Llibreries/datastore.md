@@ -2,9 +2,9 @@
 
 ## 1. Introducció
 
-**DataStore** es la solució moderna de Google per emmagatzemar dades clau-valor de forma local en aplicacions Android. Substitueix les antigues `SharedPreferences` amb una API asíncrona basada en **Kotlin Coroutines** i **Flow**.
+**DataStore** és la solució moderna de Google per emmagatzemar dades clau-valor de forma local en aplicacions Android. Substitueix les antigues `SharedPreferences` amb una API asíncrona basada en **Kotlin Coroutines** i **Flow**.
 
-DataStore Preferences es ideal per guardar configuracions d'usuari, preferencies de l'aplicació o petites dades que no requereixen una base de dades completa.
+DataStore Preferences és ideal per guardar configuracions d'usuari, preferències de l'aplicació o petites dades que no requereixen una base de dades completa.
 
 Documentació oficial: [DataStore - Android Developers](https://developer.android.com/topic/libraries/architecture/datastore)
 
@@ -15,14 +15,14 @@ Documentació oficial: [DataStore - Android Developers](https://developer.androi
 | API | Síncrona (bloqueja el fil principal) | Asíncrona (Coroutines + Flow) |
 | Seguretat de fils | No garantida | Garantida |
 | Gestió d'errors | Excepcions no controlades | Gestió amb `try/catch` i `Flow` |
-| Transaccional | No | Si |
+| Transaccional | No | Sí |
 
 !!! warning "SharedPreferences obsoletes"
     Google recomana migrar de `SharedPreferences` a `DataStore` en tots els projectes nous. SharedPreferences pot causar bloquejos al fil principal i no gestiona correctament els accessos concurrents.
 
-## 3. Dependencies
+## 3. Dependències
 
-Afegir la dependencia al fitxer `build.gradle.kts` **(Module: app)**:
+Afegir la dependència al fitxer `build.gradle.kts` **(Module: app)**:
 
 ```kotlin
 dependencies {
@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 
-O amb el cataleg de versions `libs.versions.toml`:
+O amb el catàleg de versions `libs.versions.toml`:
 
 ```toml
 [versions]
@@ -48,7 +48,7 @@ dependencies {
 
 ## 4. Crear el DataStore
 
-Es crea una instancia de DataStore com a propietat d'extensió a nivell de fitxer. Normalment es defineix en un fitxer a part o al fitxer de la classe que l'utilitza.
+Es crea una instància de DataStore com a propietat d'extensió a nivell de fitxer. Normalment es defineix en un fitxer a part o al fitxer de la classe que l'utilitza.
 
 ```kotlin
 import android.content.Context
@@ -58,15 +58,15 @@ import androidx.datastore.preferences.preferencesDataStore
 val Context.dataStore by preferencesDataStore(name = "settings")
 ```
 
-!!! info "Per que es una extensio de Context?"
-    DataStore necessita accedir al sistema de fitxers de l'aplicacio per guardar les dades. En Android, qualsevol acces a fitxers locals passa pel `Context` (es qui coneix el directori intern de l'app). Fer-ho com a [funcio d'extensio](../Kotlin/fextensio.md) de `Context` permet que des de qualsevol lloc on tinguis un `Context` (Activity, Service, Application...) puguis escriure `context.dataStore` directament, sense haver de crear cap classe extra ni passar parametres.
+!!! info "Per què és una extensió de Context?"
+    DataStore necessita accedir al sistema de fitxers de l'aplicació per guardar les dades. En Android, qualsevol accés a fitxers locals passa pel `Context` (és qui coneix el directori intern de l'app). Fer-ho com a [funció d'extensió](../Kotlin/fextensio.md) de `Context` permet que des de qualsevol lloc on tinguis un `Context` (Activity, Service, Application...) puguis escriure `context.dataStore` directament, sense haver de crear cap classe extra ni passar paràmetres.
 
-!!! info "Una sola instancia (propietat delegada)"
-    El delegat `preferencesDataStore` (la paraula clau `by`) garanteix que nomes es crea **una unica instancia** del DataStore (patro Singleton). Si cada cop que s'accedis es crees una instancia nova, es corromprien les dades perque hi hauria multiples escriptors al mateix fitxer. Internament, el delegat utilitza un mecanisme lazy i thread-safe.
+!!! info "Una sola instància (propietat delegada)"
+    El delegat `preferencesDataStore` (la paraula clau `by`) garanteix que només es crea **una única instància** del DataStore (patró Singleton). Si cada cop que s'accedís es creés una instància nova, es corromprien les dades perquè hi hauria múltiples escriptors al mateix fitxer. Internament, el delegat utilitza un mecanisme lazy i thread-safe.
 
 ## 5. Definir les claus
 
-Les claus es defineixen amb funcions especifiques segons el tipus de dada:
+Les claus es defineixen amb funcions específiques segons el tipus de dada:
 
 ```kotlin
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -94,7 +94,7 @@ Tipus de claus disponibles:
 
 ## 6. Escriure dades
 
-Per escriure dades s'utilitza la funcio `edit`, que es una funcio **suspend** (necessita una coroutine):
+Per escriure dades s'utilitza la funció `edit`, que és una funció **suspend** (necessita una coroutine):
 
 ```kotlin
 import androidx.datastore.preferences.core.edit
@@ -119,7 +119,7 @@ suspend fun guardarPerfil(context: Context, nom: String, edat: Int) {
 
 ## 7. Llegir dades
 
-La lectura es fa mitjancant un `Flow`, que emet un nou valor cada cop que les dades canvien:
+La lectura es fa mitjançant un `Flow`, que emet un nou valor cada cop que les dades canvien:
 
 ```kotlin
 import kotlinx.coroutines.flow.Flow
@@ -260,7 +260,7 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        // Guardar el nom quan es prem el boto
+        // Guardar el nom quan es prem el botó
         binding.btnGuardar.setOnClickListener {
             val nom = binding.etNom.text.toString()
             viewModel.guardarNom(nom)
@@ -276,7 +276,7 @@ class SettingsActivity : AppCompatActivity() {
 
 ## 9. Esborrar dades
 
-Per esborrar una clau especifica:
+Per esborrar una clau específica:
 
 ```kotlin
 suspend fun esborrarNomUsuari(context: Context) {

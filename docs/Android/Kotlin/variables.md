@@ -7,7 +7,7 @@ Kotlin diferencia clarament entre variables que poden canviar el seu contingut i
 
 ### Declaració
 
-#### val – Variables inmutables
+#### val – Variables immutables
 
 - Representen valors constants o no modificables.
 - Un cop assignades, no es poden canviar.

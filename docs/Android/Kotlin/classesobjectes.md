@@ -202,9 +202,9 @@ fun calcula(op: Operacio): Int {
 ```
 ## Interfícies
 
-- Proporcionen un contracte al qual les classes s'hi han d'adherir (han d'implementar els métodes)
-- Poden contenir implementació per defecte (métodes abstractes i implmenentats)
-- Poden heredar d'altres interfícies
+- Proporcionen un contracte al qual les classes s'hi han d'adherir (han d'implementar els mètodes)
+- Poden contenir implementació per defecte (mètodes abstractes i implementats)
+- Poden heretar d'altres interfícies
 - Poden tenir propietats
 - Permeten múltiples herències
 - Poden contenir membres estàtics en forma de companion objects

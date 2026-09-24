@@ -13,7 +13,7 @@ Aquest mètode és pràctic per a un projecte aïllat, però no escala bé quan 
 
 ## 2. Organitzar els repositoris d'un curs amb una organització
 
-Amb un compte GitHub Pro es pot crear una **organització** (per exemple, `itic-alumnes`) que aculli tots els repositoris del curs. És l'equivalent modern al que oferia GitHub Classroom (ja deprecat) per gestionar molts repositoris d'alumnes alhora.
+Amb un compte GitHub Pro es pot crear una **organització** (per exemple, `itic-alumnes`) que aculli tots els repositoris del curs. És l'equivalent modern al que oferia GitHub Classroom (ja obsolet) per gestionar molts repositoris d'alumnes alhora.
 
 ### 2.1. Per què una organització
 

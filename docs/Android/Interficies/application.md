@@ -262,7 +262,7 @@ class MyApp : Application() {
 }
 ```
 
-## 5. Bones practiques
+## 5. Bones pràctiques
 
 - **No abusar d'Application com a "bossa global"**: Emmagatzemar massa estat a `Application` dificulta el testing i crea acoblaments forts entre components. Prefereix `ViewModel` per a estat de la UI i injecció de dependencies per a serveis compartits.
 
@@ -270,9 +270,9 @@ class MyApp : Application() {
 
 - **Mantenir `onCreate()` lleuger**: Inicialitzacions pesades (com accés a base de dades o xarxa) s'han de fer en segon pla amb coroutines o `WorkManager`.
 
-- **No guardar referencies a Activities o Fragments**: L'objecte `Application` viu durant tota l'execució. Si guarda referencies a components amb cicle de vida curt, es produiran fugues de memoria.
+- **No guardar referències a Activities o Fragments**: L'objecte `Application` viu durant tota l'execució. Si guarda referències a components amb cicle de vida curt, es produiran fugues de memoria.
 
 - **Mantenir el `Context` fora del ViewModel**: si un ViewModel necessita dades del sistema (preferències, base de dades, etc.), injecta-li un Repository que encapsuli aquest accés en lloc de donar-li el `Context` directament. Així el ViewModel queda desacoblat d'Android i és fàcil de testejar. Consulta [ViewModel de Settings amb injecció manual](../Arquitectura/settingsviewmodel.md).
 
 !!! warning
-    La classe `Application` no sobreviu a la mort del procés. Si el sistema operatiu mata el procés per alliberar memoria, tot l'estat emmagatzemat a `Application` es perdrà. Utilitza `SharedPreferences`, `Room` o `DataStore` per persistir dades importants.
+    La classe `Application` no sobreviu a la mort del procés. Si el sistema operatiu mata el procés per alliberar memòria, tot l'estat emmagatzemat a `Application` es perdrà. Utilitza `SharedPreferences`, `Room` o `DataStore` per persistir dades importants.

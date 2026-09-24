@@ -1,20 +1,20 @@
 # Flows
 
-Un **Flow** es un tipus de Kotlin que permet emetre una seqüencia de valors de forma asíncrona al llarg del temps. A diferencia d'una funcio `suspend`, que retorna un sol valor, un Flow pot emetre multiples valors de manera reactiva.
+Un **Flow** és un tipus de Kotlin que permet emetre una seqüència de valors de forma asíncrona al llarg del temps. A diferència d'una funció `suspend`, que retorna un sol valor, un Flow pot emetre múltiples valors de manera reactiva.
 
 Els Flows formen part de la llibreria `kotlinx.coroutines.flow` i estan estretament lligats a les [coroutines](./coroutines.md).
 
-Documentacio oficial: [Kotlin Flows - Android Developers](https://developer.android.com/kotlin/flow)
+Documentació oficial: [Kotlin Flows - Android Developers](https://developer.android.com/kotlin/flow)
 
-## 1. Per que serveixen els Flows?
+## 1. Per què serveixen els Flows?
 
 En aplicacions Android, sovint necessitem observar dades que canvien al llarg del temps:
 
-- Preferencies de l'usuari que es modifiquen (per exemple, amb [DataStore](../Llibreries/datastore.md))
+- Preferències de l'usuari que es modifiquen (per exemple, amb [DataStore](../Llibreries/datastore.md))
 - Resultats d'una consulta a la base de dades que s'actualitzen
 - Dades en temps real d'una API
 
-Un Flow emet un nou valor cada cop que les dades canvien, i els observadors (collectors) reben automaticament l'actualitzacio.
+Un Flow emet un nou valor cada cop que les dades canvien, i els observadors (collectors) reben automàticament l'actualització.
 
 ## 2. Crear un Flow
 
@@ -33,12 +33,12 @@ fun comptador(): Flow<Int> = flow {
 }
 ```
 
-!!! info "Flows son freds (cold)"
-    Un Flow no s'executa fins que algu el **col·lecta** (collect). Cada cop que es crida `collect`, el Flow torna a començar des del principi.
+!!! info "Els Flows són freds (cold)"
+    Un Flow no s'executa fins que algú el **col·lecta** (collect). Cada cop que es crida `collect`, el Flow torna a començar des del principi.
 
 ## 3. Rebre valors amb collect
 
-Per rebre els valors d'un Flow s'utilitza la funcio `collect`, que es una funcio **suspend** i per tant necessita executar-se dins d'una coroutine:
+Per rebre els valors d'un Flow s'utilitza la funció `collect`, que és una funció **suspend** i per tant necessita executar-se dins d'una coroutine:
 
 ```kotlin
 import kotlinx.coroutines.launch
@@ -62,11 +62,11 @@ Valor rebut: 5
 ```
 
 !!! warning "collect suspèn la coroutine"
-    La funcio `collect` suspen la coroutine fins que el Flow finalitza. Si necessites col·lectar diversos Flows en paral·lel, cal llançar cada `collect` en una coroutine separada amb `launch`.
+    La funció `collect` suspèn la coroutine fins que el Flow finalitza. Si necessites col·lectar diversos Flows en paral·lel, cal llançar cada `collect` en una coroutine separada amb `launch`.
 
-## 4. Operadors de transformacio
+## 4. Operadors de transformació
 
-Els Flows es poden transformar amb operadors com `map`, `filter` o `combine`. Aquests operadors funcionen de forma similar als de les [col·leccions](./colleccions.md) de Kotlin, pero aplicats a fluxos asincrons.
+Els Flows es poden transformar amb operadors com `map`, `filter` o `combine`. Aquests operadors funcionen de forma similar als de les [col·leccions](./colleccions.md) de Kotlin, però aplicats a fluxos asíncrons.
 
 ```kotlin
 import kotlinx.coroutines.flow.map
@@ -74,24 +74,24 @@ import kotlinx.coroutines.flow.map
 fun comptadorDoble(): Flow<Int> = comptador().map { it * 2 }
 ```
 
-Per a una explicacio detallada d'aquests operadors, consulteu el document de [col·leccions](./colleccions.md).
+Per a una explicació detallada d'aquests operadors, consulteu el document de [col·leccions](./colleccions.md).
 
 ## 5. Flows vs LiveData
 
-Tant `Flow` com `LiveData` permeten observar canvis en les dades, pero tenen diferencies importants:
+Tant `Flow` com `LiveData` permeten observar canvis en les dades, però tenen diferències importants:
 
-| Caracteristica | LiveData | Flow |
+| Característica | LiveData | Flow |
 |---|---|---|
-| Lifecycle-aware | Si, automatic | No directament (cal `lifecycleScope`) |
-| Valor inicial | Opcional | No te |
-| Operadors de transformacio | Limitats (`map`, `switchMap`) | Molt rics (`map`, `filter`, `combine`, `zip`...) |
-| Funciona fora d'Android | No (depèn del framework Android) | Si (es Kotlin pur) |
-| Emissio | Nomes al fil principal | Des de qualsevol fil |
-| Reactivitat | Un sol valor actiu | Seqüencia de valors al llarg del temps |
+| Lifecycle-aware | Sí, automàtic | No directament (cal `lifecycleScope`) |
+| Valor inicial | Opcional | No en té |
+| Operadors de transformació | Limitats (`map`, `switchMap`) | Molt rics (`map`, `filter`, `combine`, `zip`...) |
+| Funciona fora d'Android | No (depèn del framework Android) | Sí (és Kotlin pur) |
+| Emissió | Només al fil principal | Des de qualsevol fil |
+| Reactivitat | Un sol valor actiu | Seqüència de valors al llarg del temps |
 
 ### Quan utilitzar cada un?
 
-- **LiveData**: Segueix sent valid per exposar dades del ViewModel a la UI de forma senzilla. Es especialment util quan no cal fer transformacions complexes.
+- **LiveData**: Segueix sent vàlid per exposar dades del ViewModel a la UI de forma senzilla. És especialment útil quan no cal fer transformacions complexes.
 - **Flow**: Recomanat per a fonts de dades (repositoris, DataStore, Room) i quan calen transformacions avançades. Al ViewModel, es pot convertir a [StateFlow](./stateflow.md) per exposar-lo a la UI.
 
 ### Exemple comparatiu
@@ -124,4 +124,4 @@ lifecycleScope.launch {
 }
 ```
 
-Per a mes informacio sobre StateFlow, consulteu el document de [StateFlow](./stateflow.md).
+Per a més informació sobre StateFlow, consulteu el document de [StateFlow](./stateflow.md).

@@ -7,7 +7,7 @@ Exemple pas a pas
 - https://cursokotlin.com/capitulo-22-fragments-en-kotlin/
 
 
-## 1-Introducció als Fragments Què són i per què utilitzar-los?
+## 1. Introducció als Fragments: què són i per què utilitzar-los?
 
 Definició: Components reutilitzables d'UI que representen una part d'una pantalla dins d'una Activity. Cada fragment té el seu cicle de vida. Han d'existir dins d'una activity o d'un altre fragment.
 
@@ -24,13 +24,13 @@ Avantatges:
 Mostra visual d'una activity amb 2 fragments:
 ![fragment overview](./Imatges/fragmentlayout.png)
 
-## 2-Anatomia d'un Fragment
+## 2. Anatomia d'un Fragment
 
 ### Estructura bàsica
 
 Els fragments tenen layouts igual que les activities, en xml.
 
-També tenen la seva classe Fragment() de la qual herata i sobreescriu mètodes clau:
+També tenen la seva classe Fragment() de la qual hereta i sobreescriu mètodes clau:
 ```kotlin
 class NewFragment : Fragment() {
 
@@ -67,7 +67,7 @@ Punt important: onDestroyView() es crida abans que onDestroy(), alliberant la vi
 
 Referència: Cicle de vida dels Fragments: https://developer.android.com/guide/fragments/lifecycle
 
-## 3-Implementació Bàsica
+## 3. Implementació Bàsica
 ### Afegir fragments a una Activity
 
 Mètode estàtic: Via XML amb etiqueta (per fragments fixos).
@@ -94,8 +94,8 @@ Des del fragment, podem accedir al fragmentmanager de la app, amb la funció get
 
 Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo.
 
-- **BackStack:** Permet tornar enrrere per tota la pila (stack) de fragments afegits.
-- **Replace:** Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituit.
+- **BackStack:** Permet tornar enrere per tota la pila (stack) de fragments afegits.
+- **Replace:** Substitueix la pila anterior per un altre. Només es pot tornar al fragment substituït.
 
 ![fragmentmanager stack](./Imatges/fragmentstack.png)
 
@@ -121,7 +121,7 @@ Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo
 
 Amb la versió més moderna (segons la documentació de android).
 
-Cal afegir les dependiencies:
+Cal afegir les dependències:
 ```kotlin
 dependencies {
     implementation "androidx.fragment:fragment-ktx:1.6.2"
@@ -141,7 +141,7 @@ private fun addFragment(fragment: Fragment, args: Bundle?) {
 }
 ```
 
-## 4-Comunicació
+## 4. Comunicació
 ### Accedir a l'Activity des del Fragment
 
 De vegades necessitem accedir a l'activity, per exemple si necessitem modificar la appbar o toolbar.
@@ -201,7 +201,7 @@ Avantatge: Desacobla el fragment de l'activity específica.
 
 Vegeu documentació a [Shared Viewmodels](../Arquitectura/viewmodel.md)
 
-## 5-Animació de les transicions entre fragments
+## 5. Animació de les transicions entre fragments
 
 Podem definir les animacions a la carpeta res/anim (tipus anim)
 
@@ -237,7 +237,7 @@ En la transacció que intercanvia els fragments
         )
 ```
 
-### Definir la animacio en entrar o sortir en el onCreate
+### Definir l'animació en entrar o sortir en el onCreate
 
 Es creen els arxius en la carpeta res/transition (type transition)
 

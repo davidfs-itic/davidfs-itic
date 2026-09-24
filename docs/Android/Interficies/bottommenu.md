@@ -36,7 +36,7 @@ Exemple: Recurs de Menú (res/menu/bottom_nav_menu.xml)
         android:title="Avisos" />
 </menu>
 ```
-Exemple: Layout de l'activity (fixeu-vos en la linia ressaltada)
+Exemple: Layout de l'activity (fixeu-vos en la línia ressaltada)
 Es vincula el component amb el menú. (també es pot fer per programació)
 ```XML hl_lines="26"
 <?xml version="1.0" encoding="utf-8"?>
@@ -70,9 +70,9 @@ Es vincula el component amb el menú. (també es pot fer per programació)
 
 
 Exemple: Gestió Manual de la Navegació (Kotlin).
-Cal afegir un listener al component, tal i com fariem amb un botó.
+Cal afegir un listener al component, tal i com faríem amb un botó.
 
-En aquest cas estem utiitzant fragments, però és el mateix amb activities, simplement faríem la gestió de la navegació amb intents i startactivity
+En aquest cas estem utilitzant fragments, però és el mateix amb activities, simplement faríem la gestió de la navegació amb intents i startactivity
 
 ```Kotlin 
 

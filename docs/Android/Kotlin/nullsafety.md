@@ -21,7 +21,7 @@ val nom: String? = null
 En Kotlin, si una variable pot ser null, el compilador obliga el programador a gestionar el cas null abans d’utilitzar-la.
 Aquest sistema evita molts errors freqüents en llenguatges més antics.
 
-### Operadors per gestionar nulabilitat de variables
+### Operadors per gestionar nul·labilitat de variables
 
 #### Operador d’accés segur ?.
 
@@ -32,7 +32,7 @@ val nom: String? = "David"
 println(nom?.length)
 ```
 
-També el compilador sap si hem comprovat la nullabilitat:
+També el compilador sap si hem comprovat la nul·labilitat:
 ```kotlin
 val nom: String? = "David"
 if (nom != null){

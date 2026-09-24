@@ -1,12 +1,12 @@
 # Col·leccions i operadors funcionals
 
-Les **col·leccions** son estructures de dades fonamentals en Kotlin que permeten agrupar i manipular conjunts de valors. Kotlin ofereix una API molt rica d'**operadors funcionals** que es poden aplicar tant a llistes i mapes com a [Flows](./flows.md).
+Les **col·leccions** són estructures de dades fonamentals en Kotlin que permeten agrupar i manipular conjunts de valors. Kotlin ofereix una API molt rica d'**operadors funcionals** que es poden aplicar tant a llistes i mapes com a [Flows](./flows.md).
 
-Documentacio oficial: [Collections overview - Kotlin](https://kotlinlang.org/docs/collections-overview.html)
+Documentació oficial: [Collections overview - Kotlin](https://kotlinlang.org/docs/collections-overview.html)
 
 ## 1. Tipus de col·leccions
 
-Kotlin distingeix entre col·leccions **immutables** (nomes lectura) i **mutables** (lectura i escriptura):
+Kotlin distingeix entre col·leccions **immutables** (només lectura) i **mutables** (lectura i escriptura):
 
 ```kotlin
 // Immutables (recomanades per defecte)
@@ -26,11 +26,11 @@ nomsMutables.add("Laia")
 | Parells clau-valor | `Map` / `mapOf()` | `MutableMap` / `mutableMapOf()` |
 
 !!! info "Immutable per defecte"
-    Es recomanable utilitzar col·leccions immutables sempre que sigui possible. Aixo evita modificacions accidentals i fa el codi mes segur.
+    És recomanable utilitzar col·leccions immutables sempre que sigui possible. Això evita modificacions accidentals i fa el codi més segur.
 
 ## 2. Operador map
 
-Transforma cada element de la col·leccio aplicant una funcio:
+Transforma cada element de la col·lecció aplicant una funció:
 
 ```kotlin
 val noms = listOf("anna", "marc", "laia")
@@ -56,7 +56,7 @@ val nomsAlumnes: List<String> = alumnes.map { it.nom }
 
 ### map en Flows
 
-L'operador `map` tambe funciona amb [Flows](./flows.md), transformant cada valor emes:
+L'operador `map` també funciona amb [Flows](./flows.md), transformant cada valor emès:
 
 ```kotlin
 import kotlinx.coroutines.flow.Flow
@@ -69,7 +69,7 @@ fun temperaturesEnFahrenheit(celsius: Flow<Double>): Flow<Double> {
 
 ## 3. Operador filter
 
-Retorna nomes els elements que compleixen una condicio:
+Retorna només els elements que compleixen una condició:
 
 ```kotlin
 val numeros = listOf(1, 2, 3, 4, 5, 6, 7, 8)
@@ -97,7 +97,7 @@ fun temperaturesAltes(temperatures: Flow<Double>): Flow<Double> {
 
 ## 4. Encadenar operadors
 
-Un dels punts forts de Kotlin es que els operadors es poden encadenar per fer transformacions complexes de forma llegible:
+Un dels punts forts de Kotlin és que els operadors es poden encadenar per fer transformacions complexes de forma llegible:
 
 ```kotlin
 val alumnes = listOf(
@@ -124,11 +124,11 @@ fun nomsAlumnesAprovats(alumnes: Flow<Alumne>): Flow<String> {
 }
 ```
 
-## 5. Altres operadors utils
+## 5. Altres operadors útils
 
 ### forEach
 
-Executa una accio per cada element (no retorna una nova col·leccio):
+Executa una acció per cada element (no retorna una nova col·lecció):
 
 ```kotlin
 noms.forEach { nom ->
@@ -147,7 +147,7 @@ val ordenatsDesc = alumnes.sortedByDescending { it.nota }
 
 ### firstOrNull / find
 
-Retorna el primer element que compleix la condicio, o `null` si no n'hi ha cap:
+Retorna el primer element que compleix la condició, o `null` si no n'hi ha cap:
 
 ```kotlin
 val primerExcellent = alumnes.firstOrNull { it.nota >= 9.0 }
@@ -157,7 +157,7 @@ val primerExcellent2 = alumnes.find { it.nota >= 9.0 }
 
 ### any / all / none
 
-Comproven condicions sobre la col·leccio:
+Comproven condicions sobre la col·lecció:
 
 ```kotlin
 val hiHaSuspesos = alumnes.any { it.nota < 5.0 }    // true
@@ -178,7 +178,7 @@ val perNota = alumnes.groupBy {
 
 ### sumOf
 
-Suma un valor numeric de cada element:
+Suma un valor numèric de cada element:
 
 ```kotlin
 val sumaTotal = alumnes.sumOf { it.nota }
@@ -186,7 +186,7 @@ val sumaTotal = alumnes.sumOf { it.nota }
 
 ## 6. Operador combine (exclusiu de Flows)
 
-L'operador `combine` combina els valors mes recents de dos o mes Flows. Cada cop que un dels Flows emet un nou valor, es recalcula el resultat:
+L'operador `combine` combina els valors més recents de dos o més Flows. Cada cop que un dels Flows emet un nou valor, es recalcula el resultat:
 
 ```kotlin
 import kotlinx.coroutines.flow.combine
@@ -199,7 +199,7 @@ val perfil: Flow<String> = nom.combine(edat) { n, e ->
 }
 ```
 
-Exemple practic amb un ViewModel:
+Exemple pràctic amb un ViewModel:
 
 ```kotlin
 class CercaViewModel : ViewModel() {

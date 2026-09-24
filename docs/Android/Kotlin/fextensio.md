@@ -47,7 +47,7 @@ fun main() {
 }
 ```
 
-D'aquesta manera qualsevol variable del tipus de la classe extesa, pot utilitzar la funció en qualsevol part del codi.
+D'aquesta manera qualsevol variable del tipus de la classe estesa, pot utilitzar la funció en qualsevol part del codi.
 
 ## 3. Què són les Propietats d'Extensió?
 

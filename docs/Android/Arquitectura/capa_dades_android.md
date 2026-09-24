@@ -22,7 +22,7 @@ Qualsevol canvi en com s'obtenen les dades (API, base de dades local, etc.) requ
 
 ### Problemes que pot ocasionar
 
-- Escalabilitat nul·la: Quan el projecte creixi i necessitis múltiples fonts de dades, càrrega asíncrona, caché, o sincronització, aquest codi serà molt difícil de mantenir.
+- Escalabilitat nul·la: Quan el projecte creixi i necessitis múltiples fonts de dades, càrrega asíncrona, memòria cau, o sincronització, aquest codi serà molt difícil de mantenir.
 - Impossibilitat de testing automàtic: Aquest codi fa els tests pràcticament impossibles.
 - Duplicació de codi futura: Sense una arquitectura clara, cada nova funcionalitat similar acabarà repetint patrons, copiant i enganxant codi.
 
@@ -107,7 +107,7 @@ Els **DataSources** són classes que implementen una interface, la qual cosa per
 
 La implementació dels Datasources, es fà a través d'una interface. Això possibilita que el repositori cridi a les funcions dels datasources, sense saber amb quin datasource concret està treballant. Típicament els datasources poden: llegirItems, afegirItem, esborarItem, etc. Totes aquestes funcions les defineix la interface, i les implementen els Datasources.
 
-Per altra banda, la definició del repositori tindrà com a paràmetre el Datasource Genèric (Interface) i cridarà les seves funcions sense saber exatament amb quin dels datasources està treballant.
+Per altra banda, la definició del repositori tindrà com a paràmetre el Datasource Genèric (Interface) i cridarà les seves funcions sense saber exactament amb quin dels datasources està treballant.
 
 #### Interface del DataSource
 
@@ -186,7 +186,7 @@ class ItemsRepository(
 Per què el Repository és útil, si ara mateix només delega al DataSource?
 Perquè quan el projecte creixi, el Repository serà el lloc on afegir:
 
-- Gestió de caché
+- Gestió de memòria cau
 - Combinació de múltiples fonts de dades (local + remota)
 - Decisió de quan usar dades locals vs remotes
 - Transformació de dades entre capes

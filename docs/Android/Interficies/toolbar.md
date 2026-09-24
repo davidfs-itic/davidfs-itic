@@ -9,7 +9,7 @@ El seu propòsit és:
 
 La Toolbar (proporcionada per la biblioteca AndroidX Material Components) és la implementació moderna i flexible de l'AppBar. A diferència de l'antiga ActionBar nativa, la Toolbar pot ser personalitzada amb facilitat.
 
-La utilitzarem quan volguem personalitzar la appbar que apareix per defecte amb els temes.
+La utilitzarem quan vulguem personalitzar la appbar que apareix per defecte amb els temes.
 
 ### Implementació Bàsica
 Per utilitzar una Toolbar, primer s'ha d'afegir al fitxer XML del layout de l'Activity.
