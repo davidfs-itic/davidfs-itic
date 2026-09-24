@@ -20,7 +20,7 @@ val mostrarBoto by remember {
 
 ## 2. Desplaçar-se cap amunt: `animateScrollToItem`
 
-Per tornar a l'inici de la llista amb una animació de scroll, `LazyListState` ofereix `animateScrollToItem(0)`. Com que és una funció `suspend`, cal llançar-la des d'una coroutine amb `rememberCoroutineScope`, el mateix patró ja vist a [Scaffold §5](./scaffold.md#5-snackbarhost):
+Per tornar a l'inici de la llista amb una animació de scroll, `LazyListState` ofereix `animateScrollToItem(0)`. Com que és una funció `suspend`, cal llançar-la des d'una corrutina amb `rememberCoroutineScope`, el mateix patró ja vist a [Scaffold §5](./scaffold.md#5-snackbarhost):
 
 ```kotlin
 val scope = rememberCoroutineScope()

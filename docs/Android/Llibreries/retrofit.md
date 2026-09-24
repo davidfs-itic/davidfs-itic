@@ -7,7 +7,7 @@ En el desenvolupament d'aplicacions Android modernes és molt habitual consumir 
 Retrofit permet:
 - Fer peticions HTTP de manera senzilla
 - Convertir automàticament les respostes JSON en objectes Kotlin
-- Integrar-se fàcilment amb **RecyclerView**, **ViewModel** i **Coroutines**
+- Integrar-se fàcilment amb **RecyclerView**, **ViewModel** i **Corrutines**
 
 Exemple retrofit.
 https://github.com/davidfs-itic/RecyclerView
@@ -121,7 +121,7 @@ interface ItemService {
   - Indica una petició HTTP **GET** a l'endpoint `/items/`.
 
 - `suspend fun llistaItems()`
-  - És una funció **suspend**, per tant s'ha d'executar dins d'una coroutine.
+  - És una funció **suspend**, per tant s'ha d'executar dins d'una corrutina.
   - Permet fer la crida sense bloquejar el fil principal.
 
 - `Response<List<Item>>`
@@ -211,9 +211,9 @@ viewModelScope.launch {
 
 `viewModelScope.launch { ... }`
 
-- Executa el codi dins d'una coroutine.
+- Executa el codi dins d'una corrutina.
 - viewModelScope està lligat al cicle de vida del ViewModel.
- - Quan el ViewModel es destrueix, la coroutine es cancel·la automàticament.
+ - Quan el ViewModel es destrueix, la corrutina es cancel·la automàticament.
  - Evita fuites de memòria (memory leaks).
 
 `try { ... } catch (e: Exception)`

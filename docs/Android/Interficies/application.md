@@ -10,7 +10,7 @@ Documentació oficial: [Application | Android Developers](https://developer.andr
 
 La classe `Application` té un cicle de vida molt senzill:
 
-- **`onCreate()`** — Es crida quan es crea l'aplicació, abans que qualsevol altre component. Es el punt d'entrada principal per a inicialitzacions globals.
+- **`onCreate()`** — Es crida quan es crea l'aplicació, abans que qualsevol altre component. És el punt d'entrada principal per a inicialitzacions globals.
 - **`onTerminate()`** — Només es crida en entorns d'emulació. No es garanteix que s'executi en dispositius reals.
 - **`onLowMemory()`** — Es crida quan el sistema té poca memòria.
 - **`onConfigurationChanged()`** — Es crida quan la configuració del dispositiu canvia (rotació, idioma, etc.).
@@ -268,7 +268,7 @@ class MyApp : Application() {
 
 - **Preferir injecció de dependencies**: Eines com Hilt o Koin gestionen millor les dependencies globals que variables dins d'`Application`.
 
-- **Mantenir `onCreate()` lleuger**: Inicialitzacions pesades (com accés a base de dades o xarxa) s'han de fer en segon pla amb coroutines o `WorkManager`.
+- **Mantenir `onCreate()` lleuger**: Inicialitzacions pesades (com accés a base de dades o xarxa) s'han de fer en segon pla amb corrutines o `WorkManager`.
 
 - **No guardar referències a Activities o Fragments**: L'objecte `Application` viu durant tota l'execució. Si guarda referències a components amb cicle de vida curt, es produiran fugues de memoria.
 

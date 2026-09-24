@@ -2,7 +2,7 @@
 
 Un **Flow** és un tipus de Kotlin que permet emetre una seqüència de valors de forma asíncrona al llarg del temps. A diferència d'una funció `suspend`, que retorna un sol valor, un Flow pot emetre múltiples valors de manera reactiva.
 
-Els Flows formen part de la llibreria `kotlinx.coroutines.flow` i estan estretament lligats a les [coroutines](./coroutines.md).
+Els Flows formen part de la llibreria `kotlinx.coroutines.flow` i estan estretament lligats a les [corrutines](./coroutines.md).
 
 Documentació oficial: [Kotlin Flows - Android Developers](https://developer.android.com/kotlin/flow)
 
@@ -38,7 +38,7 @@ fun comptador(): Flow<Int> = flow {
 
 ## 3. Rebre valors amb collect
 
-Per rebre els valors d'un Flow s'utilitza la funció `collect`, que és una funció **suspend** i per tant necessita executar-se dins d'una coroutine:
+Per rebre els valors d'un Flow s'utilitza la funció `collect`, que és una funció **suspend** i per tant necessita executar-se dins d'una corrutina:
 
 ```kotlin
 import kotlinx.coroutines.launch
@@ -61,8 +61,8 @@ Valor rebut: 4
 Valor rebut: 5
 ```
 
-!!! warning "collect suspèn la coroutine"
-    La funció `collect` suspèn la coroutine fins que el Flow finalitza. Si necessites col·lectar diversos Flows en paral·lel, cal llançar cada `collect` en una coroutine separada amb `launch`.
+!!! warning "collect suspèn la corrutina"
+    La funció `collect` suspèn la corrutina fins que el Flow finalitza. Si necessites col·lectar diversos Flows en paral·lel, cal llançar cada `collect` en una corrutina separada amb `launch`.
 
 ## 4. Operadors de transformació
 

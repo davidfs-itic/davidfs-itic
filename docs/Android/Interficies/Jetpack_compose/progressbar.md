@@ -34,7 +34,7 @@ LinearProgressIndicator(
 !!! info "El paràmetre `progress` és una lambda"
     A les versions actuals de Compose Material 3, `progress` no s'indica com un simple `Float`, sinó com una funció que el retorna (`progress = { progres }`). Aquest disseny permet que Compose llegeixi el valor només quan cal redibuixar l'indicador, sense provocar recomposicions innecessàries d'altres parts de la pantalla. En versions més antigues de la llibreria es pot trobar encara la forma `progress = progres`, directament amb el `Float`.
 
-El valor de `progres` ha d'anar-se actualitzant des del codi que controla l'operació real (per exemple, dins d'una coroutine que llegeix el percentatge d'una baixada), i com que és un `mutableStateOf`, cada actualització recompon automàticament l'indicador.
+El valor de `progres` ha d'anar-se actualitzant des del codi que controla l'operació real (per exemple, dins d'una corrutina que llegeix el percentatge d'una baixada), i com que és un `mutableStateOf`, cada actualització recompon automàticament l'indicador.
 
 ## 3. Personalització
 

@@ -68,7 +68,7 @@ nav:
           - Col·leccions: Android/Kotlin/colleccions.md
           - Funcions d'extensió: Android/Kotlin/fextensio.md
           - LiveData: Android/Kotlin/livedata.md
-          - Coroutines: Android/Kotlin/coroutines.md
+          - Corrutines: Android/Kotlin/coroutines.md
           - Flows: Android/Kotlin/flows.md
           - StateFlow: Android/Kotlin/stateflow.md
           - Anotadors: Android/Kotlin/anotadors.md

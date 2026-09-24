@@ -93,7 +93,7 @@ class MyViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         Log.d("ViewModel", "ViewModel destruït")
-        // Neteja recursos: cancel·lar coroutines, tancar connexions, etc.
+        // Neteja recursos: cancel·lar corrutines, tancar connexions, etc.
     }
 }
 

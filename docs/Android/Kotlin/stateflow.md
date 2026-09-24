@@ -35,7 +35,7 @@ class ComptadorViewModel : ViewModel() {
 
 ## 3. Observar un StateFlow des de la UI
 
-Per recollir els valors d'un StateFlow cal fer-ho dins d'una coroutine, normalment amb `lifecycleScope`:
+Per recollir els valors d'un StateFlow cal fer-ho dins d'una corrutina, normalment amb `lifecycleScope`:
 
 ```kotlin
 import androidx.lifecycle.lifecycleScope
@@ -59,7 +59,7 @@ class ComptadorActivity : AppCompatActivity() {
 ```
 
 !!! warning "Múltiples col·lectors"
-    Si necessites observar diversos StateFlows, cal llançar un `launch` separat per a cada `collect`, ja que `collect` suspèn la coroutine fins que el Flow finalitza.
+    Si necessites observar diversos StateFlows, cal llançar un `launch` separat per a cada `collect`, ja que `collect` suspèn la corrutina fins que el Flow finalitza.
 
 ```kotlin
 lifecycleScope.launch {

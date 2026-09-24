@@ -44,7 +44,7 @@ ModalNavigationDrawer(
 }
 ```
 
-`DrawerValue` només té dos valors possibles, `Closed` i `Open`, però `DrawerState` no és un booleà pla perquè també guarda informació de l'animació (per exemple, la fracció d'obertura mentre l'usuari arrossega el dit). Per obrir o tancar el drawer per codi (per exemple, en prémer una icona de menú a la `topBar`) es criden les seves funcions `open()`/`close()`, que són `suspend` i, per tant, s'han de llançar des d'una coroutine amb `rememberCoroutineScope`:
+`DrawerValue` només té dos valors possibles, `Closed` i `Open`, però `DrawerState` no és un booleà pla perquè també guarda informació de l'animació (per exemple, la fracció d'obertura mentre l'usuari arrossega el dit). Per obrir o tancar el drawer per codi (per exemple, en prémer una icona de menú a la `topBar`) es criden les seves funcions `open()`/`close()`, que són `suspend` i, per tant, s'han de llançar des d'una corrutina amb `rememberCoroutineScope`:
 
 ```kotlin
 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)

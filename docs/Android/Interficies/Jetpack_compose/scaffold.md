@@ -134,7 +134,7 @@ Aquest és, amb diferència, l'error més habitual en començar a fer servir `Sc
 
 ## 5. `snackbarHost`
 
-Un `Snackbar` és un missatge breu que apareix a la part inferior de la pantalla i desapareix automàticament al cap d'uns segons. `Scaffold` en gestiona la posició i l'animació a través del slot `snackbarHost`, però mostrar-lo requereix un estat (`SnackbarHostState`) i, com que `showSnackbar` és una funció `suspend`, cal llançar-la des d'una coroutine:
+Un `Snackbar` és un missatge breu que apareix a la part inferior de la pantalla i desapareix automàticament al cap d'uns segons. `Scaffold` en gestiona la posició i l'animació a través del slot `snackbarHost`, però mostrar-lo requereix un estat (`SnackbarHostState`) i, com que `showSnackbar` és una funció `suspend`, cal llançar-la des d'una corrutina:
 
 ```kotlin
 @Composable

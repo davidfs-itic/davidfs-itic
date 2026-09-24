@@ -93,4 +93,4 @@ fun LlistaAmbBotoDePujada(elements: List<String>) {
 }
 ```
 
-Aquí `derivedStateOf` evita que el `FloatingActionButton` es recomposi a cada píxel de scroll, mentre que `animateScrollToItem` (llançat des d'una coroutine amb `rememberCoroutineScope`, com a [Scaffold](./scaffold.md#5-snackbarhost)) s'encarrega de l'animació de tornada a dalt.
+Aquí `derivedStateOf` evita que el `FloatingActionButton` es recomposi a cada píxel de scroll, mentre que `animateScrollToItem` (llançat des d'una corrutina amb `rememberCoroutineScope`, com a [Scaffold](./scaffold.md#5-snackbarhost)) s'encarrega de l'animació de tornada a dalt.

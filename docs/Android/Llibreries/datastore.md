@@ -2,7 +2,7 @@
 
 ## 1. Introducció
 
-**DataStore** és la solució moderna de Google per emmagatzemar dades clau-valor de forma local en aplicacions Android. Substitueix les antigues `SharedPreferences` amb una API asíncrona basada en **Kotlin Coroutines** i **Flow**.
+**DataStore** és la solució moderna de Google per emmagatzemar dades clau-valor de forma local en aplicacions Android. Substitueix les antigues `SharedPreferences` amb una API asíncrona basada en **corrutines** de Kotlin i **Flow**.
 
 DataStore Preferences és ideal per guardar configuracions d'usuari, preferències de l'aplicació o petites dades que no requereixen una base de dades completa.
 
@@ -12,7 +12,7 @@ Documentació oficial: [DataStore - Android Developers](https://developer.androi
 
 | Característica | SharedPreferences | DataStore Preferences |
 |---|---|---|
-| API | Síncrona (bloqueja el fil principal) | Asíncrona (Coroutines + Flow) |
+| API | Síncrona (bloqueja el fil principal) | Asíncrona (Corrutines + Flow) |
 | Seguretat de fils | No garantida | Garantida |
 | Gestió d'errors | Excepcions no controlades | Gestió amb `try/catch` i `Flow` |
 | Transaccional | No | Sí |
@@ -94,7 +94,7 @@ Tipus de claus disponibles:
 
 ## 6. Escriure dades
 
-Per escriure dades s'utilitza la funció `edit`, que és una funció **suspend** (necessita una coroutine):
+Per escriure dades s'utilitza la funció `edit`, que és una funció **suspend** (necessita una corrutina):
 
 ```kotlin
 import androidx.datastore.preferences.core.edit
