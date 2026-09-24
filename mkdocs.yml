@@ -7,6 +7,11 @@ plugins:
     - awesome-pages
 markdown_extensions:
   - admonition
+  - attr_list             # Atributs als elements (botons, mida d'icones)
+  - md_in_html            # Markdown dins d'HTML (grid cards de la portada)
+  - pymdownx.emoji:       # Icones del tema (Material, Simple Icons, Octicons)
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.details      # For collapsible admonitions
   - pymdownx.superfences  # For nested content
   - toc:
@@ -46,178 +51,180 @@ extra_css:
 
 nav:
     - Inici: index.md            # Aquesta serà la primera pàgina
-    - Android:  
-      - Introducció a Android: Android/index.md
-      - Llenguatge Kotlin:
-        - Introducció a Kotlin: Android/Kotlin/index.md
-        - Qüestionari previ (Java → Kotlin): Android/Kotlin/questionariprevi.md
-        - Variables i Constants: Android/Kotlin/variables.md
-        - Funcions: Android/Kotlin/funcions.md
-        - Classes i Objectes: Android/Kotlin/classesobjectes.md
-        - Null Safety: Android/Kotlin/nullsafety.md
-        - Col·leccions: Android/Kotlin/colleccions.md
-        - Funcions d'extensió: Android/Kotlin/fextensio.md
-        - LiveData: Android/Kotlin/livedata.md
-        - Coroutines: Android/Kotlin/coroutines.md
-        - Flows: Android/Kotlin/flows.md
-        - StateFlow: Android/Kotlin/stateflow.md
-        - Anotadors: Android/Kotlin/anotadors.md
-#      - Usabilitat:
-#        - Introducció a la Usabilitat: Android/Usabilitat/index.md
-#        - Accessibilitat: Android/Usabilitat/accessibilitat.md
-      - Interficies:
-        - Introducció a les Interficies: Android/Interficies/index.md
-        - Activities: Android/Interficies/activities.md
-        - Fragments: Android/Interficies/fragments.md
-        - La classe Application: Android/Interficies/application.md
-        - Layouts: Android/Interficies/layouts.md
-        - LinearLayout: Android/Interficies/linearlayout.md
-        - ConstraintLayout i Chains: Android/Interficies/constraintlayout.md
-        - "Edge-to-edge i System Bars": Android/Interficies/layoutactivities.md
-        - Temes i Estils: Android/Interficies/temes.md
-        - VieweBinding: Android/Interficies/viewbinding.md        
-        - Bottom Menu: Android/Interficies/bottommenu.md
-        - Appbar: Android/Interficies/appbar.md
-        - Toolbar: Android/Interficies/toolbar.md
-        - Navigation Drawer: Android/Interficies/drawermenu.md
-        - Dialegs: Android/Interficies/dialegs.md
-        - RecyclerView: Android/Interficies/recyclerview.md
-        - RecyclerView Afegir i eliminar: Android/Interficies/recyclerviewaddelete.md
-        - RecyclerView SwipetoDelete: Android/Interficies/recyclerviewswipetodelete.md
-        - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
-        - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
-        - Menús: Android/Interficies/menus.md
-        - Splash Screen: Android/Interficies/splashscreen.md
-        - Voice Recognition: Android/Interficies/voicerecognition.md
-        - Jetpack Compose:
-          - Introducció a Jetpack Compose: Android/Interficies/Jetpack_compose/index.md
-          - Layouts en Jetpack Compose: Android/Interficies/Jetpack_compose/layouts.md
-          - Estats en Jetpack Compose: Android/Interficies/Jetpack_compose/estats.md
-          - El composable Text: Android/Interficies/Jetpack_compose/text.md
-          - El composable TextField: Android/Interficies/Jetpack_compose/textfield.md
-          - El composable Button: Android/Interficies/Jetpack_compose/button.md
-          - Els composables Image i Icon: Android/Interficies/Jetpack_compose/imageicon.md
-          - Els composables de progrés: Android/Interficies/Jetpack_compose/progressbar.md
-          - Switch, Checkbox i RadioButton: Android/Interficies/Jetpack_compose/switchcheckboxradiobutton.md
-          - El composable Slider: Android/Interficies/Jetpack_compose/slider.md
-          - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
-          - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
-          - Theming a Jetpack Compose: Android/Interficies/Jetpack_compose/theming.md
-          - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
-          - Navigation Compose: Android/Interficies/Jetpack_compose/navigationcompose.md
-          - AlertDialog: Android/Interficies/Jetpack_compose/alertdialog.md
-          - DatePickerDialog: Android/Interficies/Jetpack_compose/datepickerdialog.md
-          - Dialog: Android/Interficies/Jetpack_compose/dialog.md
-          - InteractionSource: Android/Interficies/Jetpack_compose/interactionsource.md
-          - Styles API: Android/Interficies/Jetpack_compose/stylesapi.md
-          - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
-          - DerivedStateOf: Android/Interficies/Jetpack_compose/derivedstateof.md
-          - El composable LazyColumn: Android/Interficies/Jetpack_compose/lazycolumn.md
-          - "LazyColumn: botó Tornar a dalt": Android/Interficies/Jetpack_compose/lazycolumnscrolltop.md
-          - "LazyColumn: cerca i filtrat": Android/Interficies/Jetpack_compose/lazycolumnfilter.md
-          - "LazyColumn: swipe to dismiss": Android/Interficies/Jetpack_compose/lazycolumnswipetodismiss.md
-      - Arquitectura:
-        - Introducció a l'Arquitectura: Android/Arquitectura/index.md
-        - ViewModel: Android/Arquitectura/viewmodel.md
-        - Dialog Fragment amb ViewModel: Android/Arquitectura/dialogfragmentviewmodel.md
-        - ViewModel amb Jetpack Compose: Android/Arquitectura/viewmodelcompose.md
-        - ViewModel de Settings (injecció manual): Android/Arquitectura/settingsviewmodel.md
-        - Observer: Android/Arquitectura/observer.md
-        - Capa de Dades en Android: Android/Arquitectura/capa_dades_android.md
-        - Capa de Dades amb Clean Architecture: Android/Arquitectura/capa_dades_clean_architecture.md
-        - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
-        - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
-        - Patró Factory: Android/Arquitectura/factory.md
-        - Principis SOLID: Android/Arquitectura/solid.md
-      - Proves:
-        - Introducció al Testing: Android/Proves/index.md
-        - Disseny de Proves (TDD): Android/Proves/disseny.md
-        - Tests Unitaris: Android/Proves/unitaris.md
-        - Tests d'Integració (UI): Android/Proves/ui.md
-      - Llibreries:
-        - Introducció a les Llibreries: Android/Llibreries/index.md
-        - Retrofit: Android/Llibreries/retrofit.md
-        - MPAndroidChart: Android/Llibreries/mpandroidchart.md
-        - DataStore Preferences: Android/Llibreries/datastore.md
-        - Glide: Android/Llibreries/glide.md
-        - Firebase:
-          - Introducció a Firebase: Android/Firebase/index.md
-          - Setup de Firebase a Android: Android/Firebase/fbsetup.md
-          - Analytics: Android/Firebase/analytics.md
-          - Firestore: Android/Firebase/firestore.md
-          # - Autenticació: Android/Firebase/autenticacio.md
+    - Desenvolupament mòbil:
+      - Android:  
+        - Introducció a Android: Android/index.md
+        - Llenguatge Kotlin:
+          - Introducció a Kotlin: Android/Kotlin/index.md
+          - Qüestionari previ (Java → Kotlin): Android/Kotlin/questionariprevi.md
+          - Variables i Constants: Android/Kotlin/variables.md
+          - Funcions: Android/Kotlin/funcions.md
+          - Classes i Objectes: Android/Kotlin/classesobjectes.md
+          - Null Safety: Android/Kotlin/nullsafety.md
+          - Col·leccions: Android/Kotlin/colleccions.md
+          - Funcions d'extensió: Android/Kotlin/fextensio.md
+          - LiveData: Android/Kotlin/livedata.md
+          - Coroutines: Android/Kotlin/coroutines.md
+          - Flows: Android/Kotlin/flows.md
+          - StateFlow: Android/Kotlin/stateflow.md
+          - Anotadors: Android/Kotlin/anotadors.md
+  #      - Usabilitat:
+  #        - Introducció a la Usabilitat: Android/Usabilitat/index.md
+  #        - Accessibilitat: Android/Usabilitat/accessibilitat.md
+        - Interficies:
+          - Introducció a les Interficies: Android/Interficies/index.md
+          - Activities: Android/Interficies/activities.md
+          - Fragments: Android/Interficies/fragments.md
+          - La classe Application: Android/Interficies/application.md
+          - Layouts: Android/Interficies/layouts.md
+          - LinearLayout: Android/Interficies/linearlayout.md
+          - ConstraintLayout i Chains: Android/Interficies/constraintlayout.md
+          - "Edge-to-edge i System Bars": Android/Interficies/layoutactivities.md
+          - Temes i Estils: Android/Interficies/temes.md
+          - VieweBinding: Android/Interficies/viewbinding.md        
+          - Bottom Menu: Android/Interficies/bottommenu.md
+          - Appbar: Android/Interficies/appbar.md
+          - Toolbar: Android/Interficies/toolbar.md
+          - Navigation Drawer: Android/Interficies/drawermenu.md
+          - Dialegs: Android/Interficies/dialegs.md
+          - RecyclerView: Android/Interficies/recyclerview.md
+          - RecyclerView Afegir i eliminar: Android/Interficies/recyclerviewaddelete.md
+          - RecyclerView SwipetoDelete: Android/Interficies/recyclerviewswipetodelete.md
+          - Recyclerview filtrat: Android/Interficies/recyclerviewfilter.md
+          - RecyclerView amb searchview: Android/Interficies/recyclersearchview.md
+          - Menús: Android/Interficies/menus.md
+          - Splash Screen: Android/Interficies/splashscreen.md
+          - Voice Recognition: Android/Interficies/voicerecognition.md
+        - Arquitectura:
+          - Introducció a l'Arquitectura: Android/Arquitectura/index.md
+          - ViewModel: Android/Arquitectura/viewmodel.md
+          - Dialog Fragment amb ViewModel: Android/Arquitectura/dialogfragmentviewmodel.md
+          - ViewModel amb Jetpack Compose: Android/Arquitectura/viewmodelcompose.md
+          - ViewModel de Settings (injecció manual): Android/Arquitectura/settingsviewmodel.md
+          - Observer: Android/Arquitectura/observer.md
+          - Capa de Dades en Android: Android/Arquitectura/capa_dades_android.md
+          - Capa de Dades amb Clean Architecture: Android/Arquitectura/capa_dades_clean_architecture.md
+          - Inversió de Dependències: Android/Arquitectura/inversiodependencies.md
+          - Exemple DIP recycler: Android/Arquitectura/recyclerinversio.md 
+          - Patró Factory: Android/Arquitectura/factory.md
+          - Principis SOLID: Android/Arquitectura/solid.md
+        - Proves:
+          - Introducció al Testing: Android/Proves/index.md
+          - Disseny de Proves (TDD): Android/Proves/disseny.md
+          - Tests Unitaris: Android/Proves/unitaris.md
+          - Tests d'Integració (UI): Android/Proves/ui.md
+        - Llibreries:
+          - Introducció a les Llibreries: Android/Llibreries/index.md
+          - Retrofit: Android/Llibreries/retrofit.md
+          - MPAndroidChart: Android/Llibreries/mpandroidchart.md
+          - DataStore Preferences: Android/Llibreries/datastore.md
+          - Glide: Android/Llibreries/glide.md
+          - Firebase:
+            - Introducció a Firebase: Android/Firebase/index.md
+            - Setup de Firebase a Android: Android/Firebase/fbsetup.md
+            - Analytics: Android/Firebase/analytics.md
+            - Firestore: Android/Firebase/firestore.md
+            # - Autenticació: Android/Firebase/autenticacio.md
+      - Jetpack Compose:
+        - Introducció a Jetpack Compose: Android/Interficies/Jetpack_compose/index.md
+        - Layouts en Jetpack Compose: Android/Interficies/Jetpack_compose/layouts.md
+        - Estats en Jetpack Compose: Android/Interficies/Jetpack_compose/estats.md
+        - El composable Text: Android/Interficies/Jetpack_compose/text.md
+        - El composable TextField: Android/Interficies/Jetpack_compose/textfield.md
+        - El composable Button: Android/Interficies/Jetpack_compose/button.md
+        - Els composables Image i Icon: Android/Interficies/Jetpack_compose/imageicon.md
+        - Els composables de progrés: Android/Interficies/Jetpack_compose/progressbar.md
+        - Switch, Checkbox i RadioButton: Android/Interficies/Jetpack_compose/switchcheckboxradiobutton.md
+        - El composable Slider: Android/Interficies/Jetpack_compose/slider.md
+        - El composable DropdownMenu: Android/Interficies/Jetpack_compose/dropdownmenu.md
+        - El composable Scaffold: Android/Interficies/Jetpack_compose/scaffold.md
+        - Theming a Jetpack Compose: Android/Interficies/Jetpack_compose/theming.md
+        - NavigationDrawer: Android/Interficies/Jetpack_compose/navigationdrawer.md
+        - Navigation Compose: Android/Interficies/Jetpack_compose/navigationcompose.md
+        - AlertDialog: Android/Interficies/Jetpack_compose/alertdialog.md
+        - DatePickerDialog: Android/Interficies/Jetpack_compose/datepickerdialog.md
+        - Dialog: Android/Interficies/Jetpack_compose/dialog.md
+        - InteractionSource: Android/Interficies/Jetpack_compose/interactionsource.md
+        - Styles API: Android/Interficies/Jetpack_compose/stylesapi.md
+        - LaunchedEffect: Android/Interficies/Jetpack_compose/launchedeffect.md
+        - DerivedStateOf: Android/Interficies/Jetpack_compose/derivedstateof.md
+        - El composable LazyColumn: Android/Interficies/Jetpack_compose/lazycolumn.md
+        - "LazyColumn: botó Tornar a dalt": Android/Interficies/Jetpack_compose/lazycolumnscrolltop.md
+        - "LazyColumn: cerca i filtrat": Android/Interficies/Jetpack_compose/lazycolumnfilter.md
+        - "LazyColumn: swipe to dismiss": Android/Interficies/Jetpack_compose/lazycolumnswipetodismiss.md
+      - Exemples de codi Android: Exemples/index.md
+    - Videojocs:
+      - Unity:
+        - Introducció a Unity: Unity/index.md
+        - Tileset, Sprites i Col·lisions: Unity/scenesprites.md
+        - "Assets: importació i organització": Unity/assets.md
+        - Scripting C# a Unity: Unity/scripting.md
+        - Jugador, Moviment i Salt: Unity/fisiquesmoviment.md
+        - Animacions: Unity/animacions.md
+        - Càmera que segueix el jugador: Unity/camera.md
+        - Prefabs i Instanciació: Unity/prefabs.md
+        - Col·lisions i Triggers: Unity/collisions.md
+        - Objectes interactuables: Unity/interactius.md
+        - Enemics amb IA bàsica: Unity/enemics.md
+        - Fons i So: Unity/audiovisual.md
+        - Reconeixement de Veu a Unity: Unity/recveu.md
+        - Meta Quest 3 i VR: Unity/metaquest.md
+            # - FireCloud Messaging: Android/Firebase/fcm.md
+    - Sistemes encastats:
+      - Arduino:
+        - Introducció a Arduino: Arduino/index.md
+        - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
+      # - Referències: referencies.md
+      - IoT: 
+        - Introducció a l'IoT: IoT/index.md
+        - Guia Oracle Cloud: IoT/oracle.md
+        - Backends IoT:
+          - Grafana: IoT/contenidors/grafana.md
+          - InfluxDB: IoT/contenidors/influxdb3.md
+          - MQTT: IoT/contenidors/mqtt.md
+          - Node-RED: IoT/contenidors/nodered.md
+          - Telegraf: IoT/contenidors/telegraf.md
+          - ThingsBoard: IoT/contenidors/thingsboard.md
+          - ChirpStack: IoT/contenidors/chirpstack.md      
+        - IIoT (Internet Industrial de les Coses):
+          - Introducció a l'IIoT: IoT/IIoT/index.md
+          - Protocols Industrials: IoT/IIoT/protocols.md
+          - Modbus TCP: IoT/IIoT/modbus-tcp.md
+          - Ethernet/IP: IoT/IIoT/ethernet-ip.md
+          - Fins: IoT/IIoT/fins.md
+          # - Introducció a l'IIoT: IoT/iiot/index.md
+          # - Protocols Industrials: IoT/iiot/protocols.md
+          # - Plataformes IIoT: IoT/iiot/plataformes.md
+          # - Casos d'Ús IIoT: IoT/iiot/casos.md
+          # - Recursos IIoT: IoT/iiot/recursos.md
+      #   - Introducció a l'IoT: IoT/introduccio.md
+      #   - Dispositius IoT:
+      #     - Sensors IoT: IoT/sensors.md
+      #     - Raspberry Pi: IoT/raspberrypi.md
+      #     - Arduino IoT: IoT/arduinoiot.md
+
+      #   - Protocols IoT:
+      #     - HTTP/HTTPS: IoT/http.md
+      #     - MQTT: IoT/mqttprotocol.md
+      #     - CoAP: IoT/coap.md
+      #     - LoRaWAN: IoT/lorawan.md
+      #     - Sigfox: IoT/sigfox.md
+      #     - NB-IoT: IoT/nbiot.md
+      #     - Zigbee: IoT/zigbee.md
+      #   - IIoT (Internet Industrial de les Coses):
+      #     - Introducció a l'IIoT: IoT/iiot/introduccio.md
+      #     - Protocols Industrials: IoT/iiot/protocols.md
+      #     - Plataformes IIoT: IoT/iiot/plataformes.md
+      #     - Casos d'Ús IIoT: IoT/iiot/casos.md
+      #   - Seguretat IoT: IoT/seguretat.md
+    - Eines transversals:
+      #- Git i GitHub: Transversal/gitgithub.md
+      - Docker: Transversal/docker.md
       - Git i Android Studio:
         - Introducció: Android/Git_android_studio/index.md
         - Configuració de Git al projecte: Android/Git_android_studio/setupgit.md
         - Treballant amb Git: Android/Git_android_studio/workinggit.md
         - Treballant amb Git (profes): Android/Git_android_studio/workinggitprofes.md
-
-    - Unity:
-      - Introducció a Unity: Unity/index.md
-      - Tileset, Sprites i Col·lisions: Unity/scenesprites.md
-      - "Assets: importació i organització": Unity/assets.md
-      - Scripting C# a Unity: Unity/scripting.md
-      - Jugador, Moviment i Salt: Unity/fisiquesmoviment.md
-      - Animacions: Unity/animacions.md
-      - Càmera que segueix el jugador: Unity/camera.md
-      - Prefabs i Instanciació: Unity/prefabs.md
-      - Col·lisions i Triggers: Unity/collisions.md
-      - Objectes interactuables: Unity/interactius.md
-      - Enemics amb IA bàsica: Unity/enemics.md
-      - Fons i So: Unity/audiovisual.md
-      - Reconeixement de Veu a Unity: Unity/recveu.md
-      - Meta Quest 3 i VR: Unity/metaquest.md
-          # - FireCloud Messaging: Android/Firebase/fcm.md
-    - Exemples de codi Android: Exemples/index.md
-    - Arduino:
-      - Introducció a Arduino: Arduino/index.md
-      - Instal·lació de l'IDE d'Arduino: Arduino/instalacio.md
-    # - Referències: referencies.md
-    - IoT: 
-      - Introducció a l'IoT: IoT/index.md
-      - Guia Oracle Cloud: IoT/oracle.md
-      - Backends IoT:
-        - Grafana: IoT/contenidors/grafana.md
-        - InfluxDB: IoT/contenidors/influxdb3.md
-        - MQTT: IoT/contenidors/mqtt.md
-        - Node-RED: IoT/contenidors/nodered.md
-        - Telegraf: IoT/contenidors/telegraf.md
-        - ThingsBoard: IoT/contenidors/thingsboard.md
-        - ChirpStack: IoT/contenidors/chirpstack.md      
-      - IIoT (Internet Industrial de les Coses):
-        - Introducció a l'IIoT: IoT/IIoT/index.md
-        - Protocols Industrials: IoT/IIoT/protocols.md
-        - Modbus TCP: IoT/IIoT/modbus-tcp.md
-        - Ethernet/IP: IoT/IIoT/ethernet-ip.md
-        - Fins: IoT/IIoT/fins.md
-        # - Introducció a l'IIoT: IoT/iiot/index.md
-        # - Protocols Industrials: IoT/iiot/protocols.md
-        # - Plataformes IIoT: IoT/iiot/plataformes.md
-        # - Casos d'Ús IIoT: IoT/iiot/casos.md
-        # - Recursos IIoT: IoT/iiot/recursos.md
-    #   - Introducció a l'IoT: IoT/introduccio.md
-    #   - Dispositius IoT:
-    #     - Sensors IoT: IoT/sensors.md
-    #     - Raspberry Pi: IoT/raspberrypi.md
-    #     - Arduino IoT: IoT/arduinoiot.md
-
-    #   - Protocols IoT:
-    #     - HTTP/HTTPS: IoT/http.md
-    #     - MQTT: IoT/mqttprotocol.md
-    #     - CoAP: IoT/coap.md
-    #     - LoRaWAN: IoT/lorawan.md
-    #     - Sigfox: IoT/sigfox.md
-    #     - NB-IoT: IoT/nbiot.md
-    #     - Zigbee: IoT/zigbee.md
-    #   - IIoT (Internet Industrial de les Coses):
-    #     - Introducció a l'IIoT: IoT/iiot/introduccio.md
-    #     - Protocols Industrials: IoT/iiot/protocols.md
-    #     - Plataformes IIoT: IoT/iiot/plataformes.md
-    #     - Casos d'Ús IIoT: IoT/iiot/casos.md
-    #   - Seguretat IoT: IoT/seguretat.md
-    - Transversal:
-      #- Git i GitHub: Transversal/gitgithub.md
-      - Docker: Transversal/docker.md
       #- Kubernetes: Transversal/kubernetes.md
       #- DevOps: Transversal/devops.md
       #- Metodologies Àgils: Transversal/metodologiesagils.md
