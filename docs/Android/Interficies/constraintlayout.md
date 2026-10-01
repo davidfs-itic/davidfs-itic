@@ -177,111 +177,7 @@ android:layout_width="0dp"
 app:layout_constraintWidth_percent="0.6"
 ```
 
-## 5. Guidelines
-
-Una `Guideline` és una línia invisible, horitzontal o vertical, que serveix com a punt de referència per a altres restriccions. No es mostra a l'aplicació.
-
-La seva posició es pot indicar amb una distància des de l'inici (`layout_constraintGuide_begin`), des del final (`layout_constraintGuide_end`) o en percentatge (`layout_constraintGuide_percent`).
-
-```xml
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideMeitat"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.5" />
-
-<Button
-    android:id="@+id/btnEsquerra"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Esquerra"
-    app:layout_constraintEnd_toStartOf="@id/guideMeitat"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-<Button
-    android:id="@+id/btnDreta"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Dreta"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/guideMeitat"
-    app:layout_constraintTop_toTopOf="parent" />
-```
-
-Cada botó ocupa la meitat de l'amplada: un a l'esquerra i l'altre a la dreta de la guia vertical situada al 50%.
-
-## 6. Barriers
-
-Una `Barrier` també és una línia invisible, però la seva posició no és fixa: es col·loca automàticament a la vora de la vista **més gran** d'un grup. És útil quan les mides de les vistes depenen del contingut (per exemple, textos traduïts a idiomes diferents).
-
-Cas típic: un formulari amb etiquetes a l'esquerra i camps a la dreta. Els camps han de començar just després de l'etiqueta més llarga, sigui quina sigui:
-
-```xml
-<TextView
-    android:id="@+id/lblNom"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Nom:"
-    app:layout_constraintBaseline_toBaselineOf="@id/edtNomForm"
-    app:layout_constraintStart_toStartOf="parent" />
-
-<TextView
-    android:id="@+id/lblCorreu"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Correu electrònic:"
-    app:layout_constraintBaseline_toBaselineOf="@id/edtCorreuForm"
-    app:layout_constraintStart_toStartOf="parent" />
-
-<androidx.constraintlayout.widget.Barrier
-    android:id="@+id/barrierEtiquetes"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:barrierDirection="end"
-    app:constraint_referenced_ids="lblNom,lblCorreu" />
-
-<EditText
-    android:id="@+id/edtNomForm"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/barrierEtiquetes"
-    app:layout_constraintTop_toTopOf="parent" />
-
-<EditText
-    android:id="@+id/edtCorreuForm"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/barrierEtiquetes"
-    app:layout_constraintTop_toBottomOf="@id/edtNomForm" />
-```
-
-- `barrierDirection="end"`: la barrera es col·loca al final (dreta) de l'etiqueta més ampla.
-- `constraint_referenced_ids`: les vistes que controlen la posició de la barrera, separades per comes i **sense** `@id/`.
-
-## 7. Group
-
-Un `Group` permet canviar la visibilitat de diverses vistes alhora, sense que deixin de ser fills directes del `ConstraintLayout`:
-
-```xml
-<androidx.constraintlayout.widget.Group
-    android:id="@+id/grupFormulari"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:constraint_referenced_ids="lblNom,lblCorreu,edtNomForm,edtCorreuForm" />
-```
-
-```kotlin
-// Amaga totes les vistes del grup
-binding.grupFormulari.isVisible = false
-```
-
-## 8. Chains
+## 5. Chains
 
 Una **chain** (cadena) és un grup de vistes lligades **entre elles en totes dues direccions** al llarg d'un eix. El `ConstraintLayout` tracta la cadena com un bloc i reparteix l'espai entre els seus elements segons l'estil de la cadena. És l'equivalent, dins d'un `ConstraintLayout`, del que es fa amb un [LinearLayout](./linearlayout.md), però sense niar layouts.
 
@@ -435,9 +331,9 @@ Funcionen exactament igual, però amb `Top` i `Bottom`. Un ús habitual és cent
 
 Els marges entre els elements de la cadena es respecten, i el bloc sencer queda centrat verticalment.
 
-## 9. Exemple complet: pantalla de login
+## 6. Exemple complet: pantalla de login
 
-Aquest exemple combina restriccions bàsiques, una guia, mides `0dp` i una chain horitzontal amb pes, tot en un sol nivell de jerarquia:
+Aquest exemple combina restriccions bàsiques, mides `0dp` i una chain horitzontal amb pes, tot en un sol nivell de jerarquia:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -449,21 +345,15 @@ Aquest exemple combina restriccions bàsiques, una guia, mides `0dp` i una chain
     android:layout_height="match_parent"
     android:padding="24dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideSuperior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
-
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="96dp"
         android:layout_height="96dp"
+        android:layout_marginTop="48dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideSuperior" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTitol"
@@ -539,11 +429,11 @@ Aquest exemple combina restriccions bàsiques, una guia, mides `0dp` i una chain
 Observacions:
 
 - Totes les vistes són fills directes del `ConstraintLayout`: no hi ha cap layout niat.
-- El logo no queda enganxat a dalt, sinó a la guia del 15% de l'alçada, de manera que la posició s'adapta a la mida de la pantalla.
+- El logo està centrat horitzontalment perquè té restriccions a `Start` i `End` del pare, i separat de la part superior amb un marge de 48dp.
 - Els camps de text fan servir `0dp` amb restriccions a totes dues bandes en lloc de `match_parent`.
 - El text *Has oblidat la contrasenya?* només té restricció a `End`, per això queda alineat a la dreta.
 - Els dos botons formen una chain amb pes i es reparteixen l'amplada a parts iguals.
 
-## 10. ConstraintLayout a Jetpack Compose
+## 7. ConstraintLayout a Jetpack Compose
 
-Jetpack Compose també té un `ConstraintLayout`, amb els mateixos conceptes (restriccions, guies, barreres i chains) però declarats en Kotlin. Vegeu [Layouts en Jetpack Compose](./Jetpack_compose/layouts.md#6-constraintlayout).
+Jetpack Compose també té un `ConstraintLayout`, amb els mateixos conceptes (restriccions, chains...) però declarats en Kotlin. Vegeu [Layouts en Jetpack Compose](./Jetpack_compose/layouts.md#6-constraintlayout).

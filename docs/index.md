@@ -110,5 +110,5 @@ Cada tema combina l'explicació dels conceptes amb exemples de codi funcionals.
 
 - [Jetpack Compose](Android/Interficies/Jetpack_compose/index.md): interfícies declaratives amb layouts, estats, components, navegació i LazyColumn.
 - [Layouts](Android/Interficies/layouts.md): conceptes comuns dels layouts amb Views.
-- [LinearLayout](Android/Interficies/linearlayout.md): orientació, pesos i exemple de pantalla de preferències.
-- [ConstraintLayout i Chains](Android/Interficies/constraintlayout.md): restriccions, guidelines, barriers i chains.
+- [LinearLayout](Android/Interficies/linearlayout.md): orientació, pesos, gravity i layout_gravity, i exemple de pantalla de preferències.
+- [ConstraintLayout i Chains](Android/Interficies/constraintlayout.md): restriccions, bias, mida de les vistes i chains.

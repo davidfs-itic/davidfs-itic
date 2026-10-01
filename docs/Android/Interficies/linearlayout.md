@@ -2,7 +2,7 @@
 
 `LinearLayout` és un `ViewGroup` que col·loca els seus fills un darrere l'altre en una sola direcció: en **vertical** (un a sota de l'altre) o en **horitzontal** (un al costat de l'altre). És el layout més senzill d'entendre i és molt adequat per a formularis, barres de botons o qualsevol grup d'elements alineats.
 
-Els conceptes comuns a tots els layouts (`layout_width`, `dp`, padding, margin, `gravity`...) estan explicats a [Layouts](./layouts.md).
+Els conceptes comuns a tots els layouts (`layout_width`, `dp`, padding, margin...) estan explicats a [Layouts](./layouts.md).
 
 Documentació oficial: [https://developer.android.com/develop/ui/views/layout/linear](https://developer.android.com/develop/ui/views/layout/linear)
 
@@ -176,7 +176,28 @@ Per defecte, el total de pesos és la suma dels pesos dels fills. Amb `android:w
 
 ## 4. Gravity i layout_gravity
 
-La diferència general entre `gravity` i `layout_gravity` s'explica a [Layouts](./layouts.md#5-gravity-i-layout_gravity). En un `LinearLayout` s'apliquen així:
+Són dos atributs que es confonen sovint, perquè tots dos serveixen per alinear:
+
+- **`android:gravity`**: com es col·loca el **contingut dins de la vista**. En un `TextView` alinea el text; en un `LinearLayout` alinea tots els fills.
+- **`android:layout_gravity`**: com es col·loca la **vista dins del seu pare**. Com tots els atributs amb prefix `layout_`, l'interpreta el pare, i només té efecte si el pare és un `LinearLayout` o un `FrameLayout`. En un `ConstraintLayout` no fa res (l'alineació es fa amb restriccions).
+
+Els valors més habituals són `start`, `end`, `top`, `bottom`, `center`, `center_horizontal` i `center_vertical`, i es poden combinar amb `|`: `android:gravity="center_vertical|end"`.
+
+### gravity en una vista
+
+En un `TextView` més gran que el seu text, `gravity` decideix on es dibuixa el text:
+
+```xml
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:text="Text centrat dins del TextView" />
+```
+
+El `TextView` ocupa tota l'amplada i 100dp d'alçada, i el text queda al centre d'aquest rectangle.
+
+### gravity i layout_gravity en un LinearLayout
 
 - **`android:gravity`** al `LinearLayout`: alinea **tots els fills en bloc**. Per exemple, `center` agrupa tots els fills al centre de la pantalla.
 - **`android:layout_gravity`** a un fill: alinea **només aquell fill**, i només en l'eix **perpendicular** a l'orientació. En un `LinearLayout` vertical es pot moure un fill a l'esquerra, al centre o a la dreta, però no amunt o avall (la posició vertical la decideix l'ordre dels fills).
@@ -437,11 +458,11 @@ Observacions:
 !!! info "Molts nivells de niuament"
     Cada fila té dos nivells de `LinearLayout` (la fila i el bloc de textos) dins de la secció, que està dins del `LinearLayout` principal. Per a una pantalla petita no és cap problema, però mostra per què, en pantalles més complexes, és millor fer servir un `ConstraintLayout` (vegeu la [secció 7](#7-limitacions)).
 
-Els textos estan escrits directament per simplificar l'exemple; en una aplicació real s'haurien de posar a `strings.xml` (vegeu [Layouts](./layouts.md#10-leditor-de-layouts-dandroid-studio)).
+Els textos estan escrits directament per simplificar l'exemple; en una aplicació real s'haurien de posar a `strings.xml` (vegeu [Layouts](./layouts.md#9-leditor-de-layouts-dandroid-studio)).
 
 ## 7. Limitacions
 
-`LinearLayout` és molt pràctic per a disposicions en fila o en columna, però quan la pantalla és més complexa obliga a niar molts `LinearLayout` els uns dins dels altres. Això fa l'XML més difícil de llegir i empitjora el rendiment, sobretot si es fan servir pesos en diversos nivells (vegeu [Layouts](./layouts.md#9-rendiment-evitar-el-niuament-excessiu)).
+`LinearLayout` és molt pràctic per a disposicions en fila o en columna, però quan la pantalla és més complexa obliga a niar molts `LinearLayout` els uns dins dels altres. Això fa l'XML més difícil de llegir i empitjora el rendiment, sobretot si es fan servir pesos en diversos nivells (vegeu [Layouts](./layouts.md#8-rendiment-evitar-el-niuament-excessiu)).
 
 En aquests casos és millor fer servir un [ConstraintLayout](./constraintlayout.md), que permet posicionar tots els elements en un sol nivell.
 
