@@ -219,29 +219,3 @@ Per a llistes llargues o dinàmiques no es fa servir un `ScrollView` amb molts e
 
 Vegeu [Layouts en Jetpack Compose](./Jetpack_compose/layouts.md).
 
-## 8. Rendiment: evitar el niuament excessiu
-
-Cada `ViewGroup` que s'afegeix a la jerarquia s'ha de mesurar i col·locar. Si es nien molts layouts (un `LinearLayout` dins d'un altre, dins d'un altre...), la pantalla triga més a dibuixar-se, sobretot si s'utilitzen pesos (`layout_weight`), que obliguen a mesurar els fills dues vegades.
-
-Recomanacions:
-
-- Mantenir la jerarquia tan plana com sigui possible.
-- Per a pantalles complexes, fer servir un `ConstraintLayout` en lloc de nivells de `LinearLayout`.
-- Reutilitzar blocs de layout repetits (una capçalera, un peu...) definint-los en un fitxer propi i incloent-los amb `<include>`:
-
-```xml
-<include
-    android:id="@+id/capcalera"
-    layout="@layout/capcalera" />
-```
-
-## 9. L'editor de layouts d'Android Studio
-
-En obrir un fitxer de layout, Android Studio ofereix tres modes (a la cantonada superior dreta):
-
-- **Code**: només l'XML.
-- **Split**: l'XML i la previsualització alhora. És el mode més recomanable per aprendre, perquè es veu l'efecte de cada atribut.
-- **Design**: editor visual amb la paleta de components, l'arbre de components (*Component Tree*) i el panell d'atributs.
-
-!!! info "Textos a `strings.xml`"
-    Els textos no s'haurien d'escriure directament al layout (`android:text="Enviar"`), sinó a `res/values/strings.xml` i referenciar-los (`android:text="@string/enviar"`). Així es poden traduir a altres idiomes. Android Studio avisa d'aquest cas amb un *warning* de *hardcoded string*.
