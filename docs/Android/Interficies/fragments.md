@@ -170,26 +170,37 @@ El patró típic és:
 - El **fragment** només avisa que la seva tasca ha finalitzat. No sap quin fragment s'ha de carregar després.
 - L'**activity** rep l'avís i decideix què fer: és l'única que fa transaccions sobre el contenidor.
 
-L'avís es fa a través d'una interfície que implementa l'activity.
+L'avís es fa a través d'una interfície definida dins del mateix fragment, que l'activity implementa.
 
-### Interfície
+### Fragment
 
-Permet al fragment indicar que ja ha acabat la seva feina:
+El fragment defineix la interfície `Listener` i, quan ha acabat la seva tasca (en aquest cas, en prémer el botó), ho comunica a la seva activity:
 
 ```kotlin
-// PrimerFragmentListener.kt
-interface PrimerFragmentListener {
-    fun onFragmentFinalitzat()
+// PrimerFragment.kt
+class PrimerFragment : Fragment(R.layout.fragment_primer) {
+
+    interface Listener {
+        fun onFragmentFinalitzat()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
+            (requireActivity() as Listener).onFragmentFinalitzat()
+        }
+    }
 }
 ```
 
 ### Activity
 
-L'activity carrega el primer fragment i, quan rep l'avís, el substitueix pel segon:
+L'activity implementa `PrimerFragment.Listener`, carrega el primer fragment i, quan rep l'avís, el substitueix pel segon:
 
 ```kotlin
 // MainActivity.kt
-class MainActivity : AppCompatActivity(), PrimerFragmentListener {
+class MainActivity : AppCompatActivity(), PrimerFragment.Listener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -214,24 +225,6 @@ class MainActivity : AppCompatActivity(), PrimerFragmentListener {
 ```
 
 Gràcies a `addToBackStack(null)`, en prémer el botó enrere es torna a `PrimerFragment`.
-
-### Fragment
-
-Quan el fragment ha acabat (en aquest cas, en prémer el botó), ho comunica a la seva activity:
-
-```kotlin
-// PrimerFragment.kt
-class PrimerFragment : Fragment(R.layout.fragment_primer) {
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
-            (requireActivity() as PrimerFragmentListener).onFragmentFinalitzat()
-        }
-    }
-}
-```
 
 !!! info "Avantatge"
     El fragment no depèn de l'activity ni dels altres fragments: només comunica que ha finalitzat. Així el mateix `PrimerFragment` es pot reutilitzar en una altra activity que decideixi fer una cosa diferent quan acabi.

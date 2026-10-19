@@ -1,7 +1,7 @@
 # Configuració de Temes i Mode Fosc a Android (Views)
 
 
-Aquesta guia recull el procés pas a pas per crear un tema personalitzat a Android mitjançant l'herència del tema principal de Material Components, configurant tant el mode clar com el mode fosc, incloent colors per a superfícies i textos.
+Aquesta guia recull el procés pas a pas per crear un tema personalitzat a Android mitjançant l'herència del tema principal de Material 3, configurant tant el mode clar com el mode fosc, incloent colors per a superfícies i textos.
 
 ## Referències
 
@@ -14,7 +14,10 @@ https://developer.android.com/codelabs/basic-android-kotlin-training-change-app-
 
 Abans de posar-te a escriure codi, tingues en compte aquests consells fonamentals:
 
-1. **No reinventis la roda (Utilitza Material Components):** Hereta sempre dels temes oficials (com `Theme.MaterialComponents.DayNight.NoActionBar`). Així ja tindràs integrat el suport per a mode fosc, accessibilitat i estils estàndard.
+1. **No reinventis la roda (Utilitza Material 3):** Hereta sempre dels temes oficials (com `Theme.Material3.DayNight.NoActionBar`). Així ja tindràs integrat el suport per a mode fosc, accessibilitat i estils estàndard.
+
+    !!! info "Material 3 Expressive"
+        Material 3 Expressive és una evolució de Material 3 amb formes, animacions i tipografia més expressives. Per fer-lo servir cal la versió `1.14.0` o posterior de la llibreria `com.google.android.material:material` i heretar de `Theme.Material3Expressive.DayNight.NoActionBar` en lloc de `Theme.Material3.DayNight.NoActionBar`. Els atributs de color (`colorPrimary`, `colorSurface`, etc.) són els mateixos, així que la resta de la guia continua sent vàlida. Més informació: [Getting started with Material Components for Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
 
 2. **Canvia només els atributs clau:** Limita't al principi a modificar només els colors essencials (`colorPrimary`, `colorSecondary`, `android:windowBackground`, `colorSurface` i `colorOnSurface`) per mantenir la coherència visual sense complicacions.
 
@@ -69,15 +72,15 @@ Crea o actualitza el fitxer a la ruta `res/values/colors.xml` amb la teua paleta
 </resources>
 ```
 
-## Pas 2: Crea el tema principal heretant de Material (`res/values/themes.xml`)
+## Pas 2: Crea el tema principal heretant de Material 3 (`res/values/themes.xml`)
 
-Crea el tema principal de la teua aplicació fent que **hereti directament** de `Theme.MaterialComponents.DayNight.NoActionBar`, incorporant `colorSurface` i `colorOnSurface`:
+Crea el tema principal de la teua aplicació fent que **hereti directament** de `Theme.Material3.DayNight.NoActionBar`, incorporant `colorSurface` i `colorOnSurface`:
 
 ```xml
 <resources xmlns:tools="http://schemas.android.com/tools">
     
-    <!-- El nostre tema hereta directament del tema principal de Material -->
-    <style name="Theme.LaMevaApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- El nostre tema hereta directament del tema principal de Material 3 -->
+    <style name="Theme.LaMevaApp" parent="Theme.Material3.DayNight.NoActionBar">
         
         <!-- Definim els atributs personalitzats per al mode clar -->
         <item name="colorPrimary">@color/blau_marca</item>
@@ -100,8 +103,8 @@ Crea una carpeta nova anomenada `values-night` dins de `res/` (si no existeix) i
 ```xml
 <resources xmlns:tools="http://schemas.android.com/tools">
     
-    <!-- Mateix nom de tema, mantenint l'herència de Material DayNight -->
-    <style name="Theme.LaMevaApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Mateix nom de tema, mantenint l'herència de Material 3 DayNight -->
+    <style name="Theme.LaMevaApp" parent="Theme.Material3.DayNight.NoActionBar">
         
         <!-- Definim els atributs adaptats per al mode fosc -->
         <item name="colorPrimary">@color/blau_marca_fosc</item>

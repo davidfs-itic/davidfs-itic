@@ -47,7 +47,7 @@ Temes Sense Barra: Si voleu eliminar-la (per exemple, per substituir-la per una 
 
 Theme.AppCompat.NoActionBar
 
-Theme.MaterialComponents.Light.NoActionBar
+Theme.Material3.Light.NoActionBar
 
 Per accedir a la appbar si es configura a través del tema, podem obtenir una referència així:
 
@@ -127,7 +127,7 @@ Tant el tema base com el de l'aplicació tenen appbar (hereten de DarkActionBar)
 ```XML
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Base.Theme.MyCustomApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Base.Theme.MyCustomApp" parent="Theme.Material3.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/my_primary_color</item>
         <item name="colorSecondary">@color/my_secondary_color</item>
         <item name="android:textColorPrimary">@color/my_text_primary</item>
