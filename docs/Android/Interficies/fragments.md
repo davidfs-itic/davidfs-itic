@@ -157,51 +157,86 @@ val activity = activity
 (requireActivity() as AppCompatActivity).supportActionBar?.title = "Nou Títol"
 ```
 
-### Patró de Callbacks
-```kotlin
-class ExempleFragment : Fragment() {
-
-    interface OnDataListener {
-        fun onDataReceived(data: String)
-    }
-
-    private var callback: OnDataListener? = null
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnDataListener) {
-            callback = context
-        } else {
-            throw RuntimeException("$context must implement OnDataListener")
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        callback = null
-    }
-
-    // Exemple: algú prem un botó al fragment
-    private fun enviarDades() {
-        callback?.onDataReceived("Hola des del fragment!")
-    }
-}
-
-class MainActivity : AppCompatActivity(), ExempleFragment.OnDataListener {
-
-    override fun onDataReceived(data: String) {
-        // Fer alguna cosa amb les dades rebudes
-        Log.d("MainActivity", data)
-    }
-}
-```
-Avantatge: Desacobla el fragment de l'activity específica.
-
 ### Amb shared Viewmodels
 
 Vegeu documentació a [Shared Viewmodels](../Arquitectura/viewmodel.md)
 
-## 5. Animació de les transicions entre fragments
+## 5. Navegar d'un fragment a un altre
+
+Un cas molt habitual és tenir una activity amb un sol `FragmentContainerView` on es van intercanviant fragments: en fer click a un botó del primer fragment, es carrega el segon fragment al mateix lloc.
+
+El patró típic és:
+
+- El **fragment** només avisa que la seva tasca ha finalitzat. No sap quin fragment s'ha de carregar després.
+- L'**activity** rep l'avís i decideix què fer: és l'única que fa transaccions sobre el contenidor.
+
+L'avís es fa a través d'una interfície que implementa l'activity.
+
+### Interfície
+
+Permet al fragment indicar que ja ha acabat la seva feina:
+
+```kotlin
+// PrimerFragmentListener.kt
+interface PrimerFragmentListener {
+    fun onFragmentFinalitzat()
+}
+```
+
+### Activity
+
+L'activity carrega el primer fragment i, quan rep l'avís, el substitueix pel segon:
+
+```kotlin
+// MainActivity.kt
+class MainActivity : AppCompatActivity(), PrimerFragmentListener {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Fragment inicial (només la primera vegada, no en girar la pantalla)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                add(R.id.fragmentContainerView, PrimerFragment())
+            }
+        }
+    }
+
+    override fun onFragmentFinalitzat() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace(R.id.fragmentContainerView, SegonFragment())
+            addToBackStack(null)
+        }
+    }
+}
+```
+
+Gràcies a `addToBackStack(null)`, en prémer el botó enrere es torna a `PrimerFragment`.
+
+### Fragment
+
+Quan el fragment ha acabat (en aquest cas, en prémer el botó), ho comunica a la seva activity:
+
+```kotlin
+// PrimerFragment.kt
+class PrimerFragment : Fragment(R.layout.fragment_primer) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
+            (requireActivity() as PrimerFragmentListener).onFragmentFinalitzat()
+        }
+    }
+}
+```
+
+!!! info "Avantatge"
+    El fragment no depèn de l'activity ni dels altres fragments: només comunica que ha finalitzat. Així el mateix `PrimerFragment` es pot reutilitzar en una altra activity que decideixi fer una cosa diferent quan acabi.
+
+## 6. Animació de les transicions entre fragments
 
 Podem definir les animacions a la carpeta res/anim (tipus anim)
 
