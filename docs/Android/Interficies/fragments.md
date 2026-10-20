@@ -131,6 +131,12 @@ private fun addFragment(fragment: Fragment, args: Bundle?) {
 }
 ```
 
+Per exemple, des de l'activity:
+
+```kotlin
+addFragment(SegonFragment(), null)
+```
+
 ## 4. Comunicació
 ### Accedir a l'Activity des del Fragment
 
