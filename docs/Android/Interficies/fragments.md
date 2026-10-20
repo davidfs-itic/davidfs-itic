@@ -163,16 +163,77 @@ Vegeu documentació a [Shared Viewmodels](../Arquitectura/viewmodel.md)
 
 ## 5. Navegar d'un fragment a un altre
 
-Un cas molt habitual és tenir una activity amb un sol `FragmentContainerView` on es van intercanviant fragments: en fer click a un botó del primer fragment, es carrega el segon fragment al mateix lloc.
+Un cas molt habitual és tenir una activity amb un sol `FragmentContainerView` on es van intercanviant fragments: en fer click a un botó del primer fragment, es carrega el segon fragment al mateix lloc, i en prémer el botó enrere es torna al primer.
 
-El patró típic és:
+Hi ha dues maneres de fer-ho, segons qui fa la transacció:
+
+- **Opció 1:** el mateix fragment fa la transacció amb `parentFragmentManager`.
+- **Opció 2:** el fragment avisa l'activity a través d'una interfície, i és l'activity qui fa la transacció.
+
+En els dos casos, l'activity carrega el primer fragment de la mateixa manera:
+
+```kotlin
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Fragment inicial (només la primera vegada, no en girar la pantalla)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                add(R.id.fragmentContainerView, PrimerFragment())
+            }
+        }
+    }
+}
+```
+
+### Opció 1: Navegar amb parentFragmentManager
+
+Des d'un fragment, `parentFragmentManager` retorna el `FragmentManager` que el gestiona. Si el fragment està dins d'una activity, és el mateix `supportFragmentManager` de l'activity (vegeu [FragmentManager i FragmentTransaction](#fragmentmanager-i-fragmenttransaction)). Per tant, el fragment pot substituir-se a si mateix pel següent fragment:
+
+```kotlin
+// PrimerFragment.kt
+class PrimerFragment : Fragment(R.layout.fragment_primer) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace(R.id.fragmentContainerView, SegonFragment())
+                addToBackStack(null)
+            }
+        }
+    }
+}
+```
+
+L'activity no ha de fer res més: només carrega el primer fragment, com hem vist abans.
+
+Gràcies a `addToBackStack(null)`, en prémer el botó enrere es torna a `PrimerFragment`.
+
+!!! warning "Inconvenients"
+    Aquesta opció és la més senzilla, però el fragment queda lligat a l'activity on es fa servir:
+
+    - Ha de conèixer l'id del contenidor (`R.id.fragmentContainerView`), que pertany al layout de l'activity.
+    - Decideix ell mateix quin és el fragment següent (`SegonFragment`).
+
+    Si volem reutilitzar `PrimerFragment` en una altra activity, amb un altre contenidor o que hagi d'anar a un altre fragment, caldrà modificar-lo.
+
+### Opció 2: Navegar a través de l'activity amb una interfície
+
+Per evitar els inconvenients anteriors, repartim les responsabilitats:
 
 - El **fragment** només avisa que la seva tasca ha finalitzat. No sap quin fragment s'ha de carregar després.
 - L'**activity** rep l'avís i decideix què fer: és l'única que fa transaccions sobre el contenidor.
 
 L'avís es fa a través d'una interfície definida dins del mateix fragment, que l'activity implementa.
 
-### Fragment
+#### Fragment
 
 El fragment defineix la interfície `Listener` i, quan ha acabat la seva tasca (en aquest cas, en prémer el botó), ho comunica a la seva activity:
 
@@ -188,13 +249,25 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
-            (requireActivity() as Listener).onFragmentFinalitzat()
+            val activity = requireActivity()
+
+            // Comprovem que l'activity implementa la interfície
+            if (activity is Listener) {
+                (activity as Listener).onFragmentFinalitzat()
+            } else {
+                throw IllegalStateException("${activity::class.simpleName} ha d'implementar PrimerFragment.Listener")
+            }
         }
     }
 }
 ```
 
-### Activity
+!!! note "Typecast no necessari"
+    Dins de l'`if (activity is Listener)`, Kotlin ja sap que `activity` és de tipus `Listener` (*smart cast*), així que el typecast `(activity as Listener)` no és necessari i Android Studio el marca amb l'avís "No cast needed". L'hem deixat per fer més explícit que estem cridant un mètode de la interfície, però també es pot escriure directament `activity.onFragmentFinalitzat()`.
+
+    Més informació: [Type checks and casts](https://kotlinlang.org/docs/typecasts.html#smart-casts)
+
+#### Activity
 
 L'activity implementa `PrimerFragment.Listener`, carrega el primer fragment i, quan rep l'avís, el substitueix pel segon:
 
