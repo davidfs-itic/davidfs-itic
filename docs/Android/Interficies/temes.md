@@ -6,9 +6,10 @@ Aquesta guia recull el procés pas a pas per crear un tema personalitzat a Andro
 ## Referències
 
 Documentació 
-https://developer.android.com/develop/ui/views/theming/themes
+[https://developer.android.com/develop/ui/views/theming/themes](https://developer.android.com/develop/ui/views/theming/themes)
+
 Codelab:
-https://developer.android.com/codelabs/basic-android-kotlin-training-change-app-theme?hl=es-419#0
+[https://developer.android.com/codelabs/basic-android-kotlin-training-change-app-theme?hl=es-419#0](https://developer.android.com/codelabs/basic-android-kotlin-training-change-app-theme?hl=es-419#0)
 
 ## Bones pràctiques per començar amb els temes a Android
 
@@ -21,7 +22,7 @@ Abans de posar-te a escriure codi, tingues en compte aquests consells fonamental
 
 2. **Canvia només els atributs clau:** Limita't al principi a modificar només els colors essencials (`colorPrimary`, `colorSecondary`, `android:windowBackground`, `colorSurface` i `colorOnSurface`) per mantenir la coherència visual sense complicacions.
 
-3. **Fes servir referències `?attr/` als Layouts:** No posis colors fixos al XML de les vistes (com `#FFFFFF`). Utilitza atributs del tema perquè el sistema pugui alternar entre el mode clar i fosc de manera automàtica.
+3. **Fes servir referències `?attr/` als Layouts:** No posis colors fixos al XML de les vistes (com `#FFFFFF`). Utilitza atributs del tema perquè el sistema pugui alternar entre el mode clar i fosc de manera automàtica, per exemple `?attr/colorSurface`
 
 4. **Mantén els fitxers nets i ordenats:** Separa els valors "bruts" a `colors.xml` i assigna'ls als atributs dins de `themes.xml`, de manera que puguis modificar la paleta global des d'un sol lloc.
 
