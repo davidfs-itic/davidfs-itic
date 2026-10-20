@@ -119,25 +119,15 @@ Hi ha 2 maneres de carregar un fragment, afegint-lo a l'stack, o reemplaçant-lo
     }
 ```
 
-Amb la versió més moderna (segons la documentació de android).
-
-Cal afegir les dependències:
-```kotlin
-dependencies {
-    implementation "androidx.fragment:fragment-ktx:1.6.2"
-    // o la versió més recent disponible
-}
-```
-
-i el codi es transforma en el següent:
+La documentació d'Android recomana cridar també `setReorderingAllowed(true)`. A més, com que cada mètode de la transacció retorna la mateixa `FragmentTransaction`, les crides es poden encadenar sense guardar-la en una variable:
 
 ```kotlin
 private fun addFragment(fragment: Fragment, args: Bundle?) {
-    supportFragmentManager.commit {
-        setReorderingAllowed(true)
-        add(R.id.fragmentbottom, fragment::class.java, args)
-        addToBackStack(null)
-    }
+    supportFragmentManager.beginTransaction()
+        .setReorderingAllowed(true)
+        .add(R.id.fragmentbottom, fragment::class.java, args)
+        .addToBackStack(null)
+        .commit()
 }
 ```
 
@@ -182,9 +172,9 @@ class MainActivity : AppCompatActivity() {
 
         // Fragment inicial (només la primera vegada, no en girar la pantalla)
         if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                add(R.id.fragmentContainerView, PrimerFragment())
-            }
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, PrimerFragment())
+                .commit()
         }
     }
 }
@@ -202,11 +192,11 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btnAcceptar).setOnClickListener {
-            parentFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace(R.id.fragmentContainerView, SegonFragment())
-                addToBackStack(null)
-            }
+            parentFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, SegonFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }
@@ -281,18 +271,18 @@ class MainActivity : AppCompatActivity(), PrimerFragment.Listener {
 
         // Fragment inicial (només la primera vegada, no en girar la pantalla)
         if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                add(R.id.fragmentContainerView, PrimerFragment())
-            }
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, PrimerFragment())
+                .commit()
         }
     }
 
     override fun onFragmentFinalitzat() {
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            replace(R.id.fragmentContainerView, SegonFragment())
-            addToBackStack(null)
-        }
+        supportFragmentManager.beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(R.id.fragmentContainerView, SegonFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }
 ```
