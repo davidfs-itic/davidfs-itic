@@ -15,7 +15,7 @@ Per utilitzar un RecyclerView cal:
 
 - Una llista de dades (en memòria, en aquest exemple).
 - Un layout XML per a la pantalla que conté el RecyclerView.
-- Un layout XML per a cada fila (ítem) de la llista.
+- Un layout XML que representara cada ítem de la llista.
 - Un Adapter amb un ViewHolder per “pintar” les dades a cada fila.
 
 ## 2. Model de dades (data class i llista)
