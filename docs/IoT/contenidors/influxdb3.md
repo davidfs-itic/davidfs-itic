@@ -61,7 +61,7 @@ services:
       - /opt/docker/influxdb3/data:/var/lib/influxdb3
       - /opt/docker/influxdb3/plugins:/plugins
     environment:
-      - INFLUXDB3_NODE_IDENTIFER_PREFIX=iot-node
+      - INFLUXDB3_NODE_IDENTIFIER_PREFIX=iot-node
     networks:
       - xarxa_IOT
 
