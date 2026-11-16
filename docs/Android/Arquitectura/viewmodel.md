@@ -277,6 +277,11 @@ class DetailFragment : Fragment() {
 }
 ```
 
+!!! info "Per què viewLifecycleOwner i no this als Fragments?"
+    Als Fragments s'utilitza sempre `viewLifecycleOwner` en lloc de `this` en observar un `LiveData`.
+    La vista d'un Fragment es pot destruir i recrear (per exemple, en navegar entre pantalles amb el *back stack*) mentre la instància de la classe `Fragment` continua viva en memòria.
+    Amb `viewLifecycleOwner`, la subscripció s'elimina automàticament en destruir la vista (`onDestroyView`), evitant fuites de memòria i observadors duplicats.
+
 Quan utilitzar-ho:
 
 - Comunicació entre Fragments
@@ -322,31 +327,35 @@ Crear el Factory com a `companion object`:
 La manera recomanada de crear el Factory és definir-lo dins del propi ViewModel, com a `companion object`, utilitzant la funció `viewModelFactory { }` i el bloc `initializer { }` (paquet `androidx.lifecycle.viewmodel`). Així el Factory queda encapsulat amb el ViewModel que construeix, i no cal escriure una classe a part que implementi `ViewModelProvider.Factory` ni fer el `cast` manual amb `as T`:
 
 ```kotlin
-class UserViewModel(
+   class UserViewModel(
+        private val userId: String,
+        private val repository: UserRepository
+    ) : ViewModel() {
     
-    private val repository: UserRepository
-) : ViewModel() {
-
-    private val _user = MutableLiveData<User>()
-    val user: LiveData<User> = _user
-
-    private fun loadUser(val userId: String,) {
-        viewModelScope.launch {
-            _user.value = repository.getUser(userId)
+        private val _user = MutableLiveData<User>()
+        val user: LiveData<User> = _user
+    
+        init {
+            loadUser()
         }
-    }
 
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                UserViewModel(
-                    userId = "usuari123",
-                    repository = UserRepository()
-                )
+        private fun loadUser() {
+            viewModelScope.launch {
+                _user.value = repository.getUser(userId)
+            }
+        }
+
+        companion object {
+            val Factory: ViewModelProvider.Factory = viewModelFactory {
+                initializer {
+                    UserViewModel(
+                        userId = "usuari123",
+                        repository = UserRepository()
+                    )
+                }
             }
         }
     }
-}
 ```
 
 Utilitzar el Factory: en comptes de passar-hi una instància, es referencia directament `UserViewModel.Factory`:
