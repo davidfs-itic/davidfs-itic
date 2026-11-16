@@ -31,9 +31,9 @@ sudo mkdir -p /opt/docker/influxdb3/data
 sudo mkdir -p /opt/docker/influxdb3/plugins
 
 # Directoris per la UI
-mkdir -p /opt/docker/influxdb3/ui/db
-mkdir -p /opt/docker/influxdb3/ui/config
-mkdir -p /opt/docker/influxdb3/ui/ssl
+sudo mkdir -p /opt/docker/influxdb3/ui/db
+sudo mkdir -p /opt/docker/influxdb3/ui/config
+sudo mkdir -p /opt/docker/influxdb3/ui/ssl
 
 # Permisos
 sudo chown -R 1000:1000 /opt/docker/influxdb3/
