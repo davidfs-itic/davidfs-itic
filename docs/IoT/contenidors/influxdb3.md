@@ -129,7 +129,7 @@ docker exec -it influxdb3 influxdb3 create database IoT --token apiv3_EL_TEU_TOK
 | Servei | URL | Descripció |
 |--------|-----|------------|
 | InfluxDB3 API | `http://localhost:8181` | API HTTP |
-| InfluxDB3-UI | `http://localhost:8888` | Interfície web |
+| InfluxDB3-UI | `http://localhost:8080` | Interfície web |
 
 ## Comandes útils
 
