@@ -70,7 +70,7 @@ services:
     container_name: influxdb3-ui
     restart: unless-stopped
     ports:
-      - "8888:8888"
+      - "8080:8080"
     volumes:
       - /opt/docker/influxdb3/ui/db:/app/db
       - /opt/docker/influxdb3/ui/config:/app/config
@@ -149,4 +149,4 @@ docker exec -it influxdb3 influxdb3 delete database NOM_DB --token apiv3_TOKEN
 | Port | Servei | Descripció |
 |------|--------|------------|
 | 8181 | InfluxDB3 | API HTTP |
-| 8888 | InfluxDB3-UI | Interfície web |
+| 8080 | InfluxDB3-UI | Interfície web |
