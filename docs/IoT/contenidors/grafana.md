@@ -6,9 +6,9 @@ Grafana és una plataforma open source per a visualització i monitorització de
 
 ### Característiques principals
 
-- Suport per múltiples fonts de dades (InfluxDB, Prometheus, MySQL, PostgreSQL, etc.)
-- Dashboards interactius i personalitzables
-- Sistema d'alertes
+- Suport per múltiples fonts de dades (InfluxDB, Prometheus, MySQL, PostgreSQL, etc.).
+- Dashboards interactius i personalitzables.
+- Sistema d'alertes.
 
 
 ## Instal·lació amb Docker
