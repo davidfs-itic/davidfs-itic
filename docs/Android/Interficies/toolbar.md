@@ -120,36 +120,73 @@ Exemple 2.3: Gestió de Clics (Kotlin)
 }
 ```
 ## 3. Gestió de la Navegació a l'AppBar
-### El Botó "Up"
-El botó "Up" (representat típicament per una fletxa cap a l'esquerra: $\leftarrow$) és una convenció de disseny que permet a l'usuari navegar cap amunt en la jerarquia lògica de l'aplicació, fins a la pantalla pare. 
+### El botó "Up"
+El botó "Up" és la fletxa cap a l'esquerra que apareix a l'inici de la Toolbar. Permet a l'usuari pujar en la jerarquia de l'aplicació, és a dir, tornar a la pantalla pare de la pantalla actual. Per exemple, des de la pantalla de detall d'un producte es puja a la llista de productes.
 
-És diferent del botó "Enrere" del sistema, que navega pel registre històric (back stack).
+És diferent del botó "Enrere" del sistema:
 
-### Integració de la Navegació
+- **Enrere** torna a la pantalla anterior, sigui quina sigui, seguint l'historial (back stack).
+- **Up** torna sempre a la pantalla pare, encara que l'usuari hagi arribat a la pantalla actual des d'un altre lloc (per exemple, des d'una notificació).
 
-Quan s'utilitza la Toolbar com a Action Bar, el sistema pot gestionar automàticament el comportament del botó "Up" basant-se en la definició de l'Activity al fitxer AndroidManifest.xml (especificant l'Activity pare amb android:parentActivityName).
+En una aplicació senzilla, on sempre s'arriba a la pantalla de detall des de la llista, els dos botons acaben fent el mateix.
 
-Si no s'utilitza la Navigation Library, es pot habilitar el botó manualment i gestionar el seu clic:
+Hi ha dues maneres de fer funcionar el botó "Up": deixar que Android ho faci automàticament a partir del manifest, o gestionar el clic nosaltres.
 
-Exemple: Habilitació del Botó "Up" (Kotlin)
-```Kotlin
+### Opció 1: Activity pare al manifest (automàtic)
+
+Al fitxer `AndroidManifest.xml`, indiquem quina és l'Activity pare amb l'atribut `android:parentActivityName`:
+
+```xml
+<activity
+    android:name=".DetailActivity"
+    android:parentActivityName=".MainActivity" />
+```
+
+A l'Activity, només cal mostrar la fletxa amb `setDisplayHomeAsUpEnabled(true)`. No cal escriure cap codi per gestionar el clic: `AppCompatActivity` ja sap a quina Activity ha de tornar.
+
+```kotlin
 class DetailActivity : AppCompatActivity() {
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // ...
-        
-        // Habilita el botó "Up" a la Toolbar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) 
+        setContentView(R.layout.activity_detail)
+
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+
+        // Mostra la fletxa "Up" a la Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-    
-    // Gestió manual del clic al botó "Up"
+}
+```
+
+!!! warning "L'Activity pare es torna a crear"
+    Amb aquesta opció, Android tanca les Activities que hi ha a sobre de la pare i, per defecte, també destrueix la pare i la torna a crear. Es perd el seu estat: la posició de l'scroll, el text escrit en un camp, etc. Si l'usuari ha de trobar la pantalla tal com la va deixar, feu servir l'opció 2.
+
+### Opció 2: Gestionar el clic manualment
+
+Si no declarem `parentActivityName` al manifest, hem de gestionar el clic de la fletxa nosaltres. El botó "Up" arriba a `onOptionsItemSelected()` com qualsevol altre element del menú, amb l'id `android.R.id.home`.
+
+El més habitual és tancar l'Activity actual amb `finish()`. Així tornem a la pantalla anterior, que es manté tal com estava:
+
+```kotlin
+class DetailActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_detail)
+
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+
+        // Mostra la fletxa "Up" a la Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    // Gestió manual del clic a la fletxa "Up"
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                // El mètode navigateUpFromSameTask() de l'Activity Manager 
-                // compleix la funció del botó "Up"
-                NavUtils.navigateUpFromSameTask(this) 
+                // Tanca aquesta Activity i torna a l'anterior
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -157,6 +194,22 @@ class DetailActivity : AppCompatActivity() {
     }
 }
 ```
+
+Fixeu-vos que l'id és `android.R.id.home` (amb el prefix `android.`), no `R.id.home`. Aquest id el defineix Android, no nosaltres, i no apareix a cap fitxer de menú.
+
+!!! info "Cal configurar la Toolbar abans"
+    `supportActionBar` només existeix després de cridar `setSupportActionBar()`. Si la crida no s'ha fet abans, `supportActionBar` és `null` i la fletxa no apareix (gràcies a l'operador `?.`, no peta, però tampoc fa res).
+
+### Quina opció triar
+
+| | Opció 1: manifest | Opció 2: `finish()` |
+|---|---|---|
+| Codi a l'Activity | Només `setDisplayHomeAsUpEnabled` | També `onOptionsItemSelected` |
+| On torna | Sempre a l'Activity pare | A la pantalla anterior |
+| Estat de la pantalla on torna | Es perd (es torna a crear) | Es conserva |
+
+!!! info "Botó Enrere amb Fragments"
+    Tot el que hem vist en aquesta secció serveix per navegar entre Activities. Si l'aplicació té una sola Activity i canvia de pantalla amb Fragments, la fletxa s'ha de mostrar o amagar segons els Fragments que hi ha al back stack. Vegeu [Toolbar amb Fragments i botó Enrere](./toolbarnavback.md).
 ## 4. Actualització Dinàmica dels Menús
 De vegades, l'estat d'un ítem de menú (p. ex., canviar una icona de "No Favorit" a "Favorit") ha de canviar mentre l'Activity està oberta.
 ### Invalidació del Menú

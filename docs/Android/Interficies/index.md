@@ -14,6 +14,7 @@
 - [Bottom Menu:](./bottommenu.md)
 - [Appbar:](./appbar.md)
 - [Toolbar:](./toolbar.md)
+- [Toolbar amb Fragments i botó Enrere:](./toolbarnavback.md)
 - [Navigation Drawer:](./drawermenu.md)
 - [Diàlegs:](./dialegs.md)
 - [RecyclerView:](./recyclerview.md)
