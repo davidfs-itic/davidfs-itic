@@ -36,20 +36,20 @@ app/
 │  • Valida les dades                                                                │
 │  • Modifica TasksList                                                              │
 │  • Emet LiveData<TascaAction> (AFEGIDA/MODIFICADA/ELIMINADA)                       │
-│  • Emet LiveData<String?> (errorMessage)                                           │
+│  • Emet LiveData<AfegirTascaState> (Idle/Success/Error)                            │
 └───┬─────────────────────────────────────────┬─────────────────┬────────────────────┘
     │                                         ▲                 │
-    │  observa tascaActionEvent               │ AfegirTasca VM  │ observa errorMessage
+    │  observa tascaActionEvent               │ AfegirTasca VM  │ observa afegirState
     │                                         │                 │
     ▼                                         │                 ▼
 ┌──────────────────────────────────┐         ┌──────────────────────────────────────┐
 │        HomeFragment              │         │   AfegirTascaDialog                  │
 │                                  │         │                                      │
-│  • Observa tascaActionEvent      │         │  • Observa errorMessage              │
+│  • Observa tascaActionEvent      │         │  • Observa afegirState               │
 │  • Actualitza RecyclerView       │────────▶│  • Mostra Toast d'error              │
 │  • Mostra Toast de confirmació   │         │  • Crida viewModel                   │
 │  • Crida dialogs                 │         │    amb dades del formulari           │
-│                                  │         │                                      │
+│                                  │         │  • Es tanca si l'estat és Success    │
 └──────────────────────────────────┘         └──────────────────────────────────────┘
 
 
@@ -121,39 +121,47 @@ import cat.ivha.sparklestask.model.Task
 
 class TasksViewModel : ViewModel() {
     
-    // Tipus d'acció realitzada
+    // Tipus d'acció realitzada (l'observa HomeFragment)
     enum class TascaAction {
         AFEGIDA, MODIFICADA, ELIMINADA, NONE
     }
+
+    // Estat del formulari d'afegir (l'observa AfegirTascaDialog)
+    sealed class AfegirTascaState {
+        object Idle : AfegirTascaState()
+        object Success : AfegirTascaState()
+        data class Error(val missatge: String) : AfegirTascaState()
+    }
     
-    // Event per notificar canvis
+    // Event per notificar canvis a la llista
     private val _tascaActionEvent = MutableLiveData<TascaAction>()
     val tascaActionEvent: LiveData<TascaAction> = _tascaActionEvent
     
-    // Missatge d'error si la validació falla
-    private val _errorMessage = MutableLiveData<String?>()
-    val errorMessage: LiveData<String?> = _errorMessage
+    // Estat del formulari: Idle, Success o Error
+    private val _afegirState = MutableLiveData<AfegirTascaState>(AfegirTascaState.Idle)
+    val afegirState: LiveData<AfegirTascaState> = _afegirState
     
     /**
-     * Afegeix una nova tasca amb validació
+     * Afegeix una nova tasca amb validació.
+     * El resultat es comunica a través de afegirState.
      */
-    fun afegirTasca(title: String, points: String, data: String): Boolean {
+    fun afegirTasca(title: String, points: String, data: String) {
         // Validació
         if (title.isBlank()) {
-            _errorMessage.value = "El nom és obligatori"
-            return false
+            _afegirState.value = AfegirTascaState.Error("El nom és obligatori")
+            return
         }
         
         val pointsInt = points.toIntOrNull()
         if (pointsInt == null) {
-            _errorMessage.value = "Els punts han de ser un número"
-            return false
+            _afegirState.value = AfegirTascaState.Error("Els punts han de ser un número")
+            return
         }
         
         val dataLong = data.toLongOrNull()
         if (dataLong == null) {
-            _errorMessage.value = "La data no és vàlida"
-            return false
+            _afegirState.value = AfegirTascaState.Error("La data no és vàlida")
+            return
         }
         
         // Crear i afegir la tasca
@@ -165,9 +173,8 @@ class TasksViewModel : ViewModel() {
         )
         
         TasksList.addTask(novaTasca)
+        _afegirState.value = AfegirTascaState.Success
         _tascaActionEvent.value = TascaAction.AFEGIDA
-        _errorMessage.value = null
-        return true
     }
     
    
@@ -179,10 +186,10 @@ class TasksViewModel : ViewModel() {
     }
     
     /**
-     * Reseteja el missatge d'error
+     * Torna el formulari a l'estat inicial
      */
-    fun resetError() {
-        _errorMessage.value = null
+    fun resetAfegirState() {
+        _afegirState.value = AfegirTascaState.Idle
     }
 }
 ```
@@ -247,12 +254,8 @@ class AfegirTascaDialog : DialogFragment() {
             val points = etPoints.text.toString()
             val data = etData.text.toString()
             
-            // Crida al ViewModel (ell valida)
-            val success = viewModel.afegirTasca(title, points, data)
-            
-            if (success) {
-                dismiss()
-            }
+            // Crida al ViewModel (ell valida i actualitza afegirState)
+            viewModel.afegirTasca(title, points, data)
         }
 
         btnCancelar.setOnClickListener {
@@ -261,10 +264,19 @@ class AfegirTascaDialog : DialogFragment() {
     }
 
     private fun observeViewModel() {
-        viewModel.errorMessage.observe(this) { error ->
-            error?.let {
-                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-                viewModel.resetError()
+        viewModel.afegirState.observe(this) { state ->
+            when (state) {
+                is TasksViewModel.AfegirTascaState.Error -> {
+                    Toast.makeText(requireContext(), state.missatge, Toast.LENGTH_SHORT).show()
+                    viewModel.resetAfegirState()
+                }
+                TasksViewModel.AfegirTascaState.Success -> {
+                    viewModel.resetAfegirState()
+                    dismiss()
+                }
+                TasksViewModel.AfegirTascaState.Idle -> {
+                    // No fer res
+                }
             }
         }
     }
@@ -287,9 +299,7 @@ class AfegirTascaDialog : DialogFragment() {
 package cat.ivha.sparklestask.ui.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -300,7 +310,6 @@ import cat.ivha.sparklestask.R
 import cat.ivha.sparklestask.adapter.TasksAdapter
 import cat.ivha.sparklestask.data.TasksList
 import cat.ivha.sparklestask.ui.dialogs.AfegirTascaDialog
-import cat.ivha.sparklestask.ui.dialogs.ModificarTascaDialog
 import cat.ivha.sparklestask.viewmodel.TasksViewModel
 
 class HomeFragment : Fragment(R.layout.home_rv) {
@@ -310,14 +319,6 @@ class HomeFragment : Fragment(R.layout.home_rv) {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TasksAdapter
     private lateinit var btnAfegir: Button
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.home_rv, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
