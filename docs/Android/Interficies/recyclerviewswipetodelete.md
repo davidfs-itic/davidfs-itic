@@ -136,8 +136,16 @@ class MainActivity : AppCompatActivity() {
 **`onSwiped(viewHolder, direction)`**
 
 - Es crida quan l'usuari completa el gest de swipe.
-- `viewHolder.adapterPosition` ens dóna la posició de la fila dins la llista.
+- `viewHolder.bindingAdapterPosition` ens dóna la posició actual de la fila dins la llista.
+- Si la fila s'està eliminant o encara no té una posició vàlida, retorna `RecyclerView.NO_POSITION`. Per això ho comprovem abans d'eliminar.
 - Cridem `adapter.removeAt(position)` per eliminar l'element.
+
+!!! info "Per què `bindingAdapterPosition` i no el `position` de `onBindViewHolder`?"
+    El paràmetre `position` de `onBindViewHolder` només és vàlid en el moment del bind. Per això allà el fem servir directament per llegir `items[position]`.
+
+    El swipe passa més tard. Entre el bind i el gest, la llista pot haver canviat (s'han afegit o eliminat altres elements) i la posició que la fila tenia aleshores ja no seria correcta. `bindingAdapterPosition` consulta la posició **en aquest moment**, i per això és la que cal fer servir dins de callbacks com `onSwiped` o un listener de clic.
+
+    `adapterPosition` és la versió antiga d'aquest mètode i està obsoleta (*deprecated*).
 
 **`attachToRecyclerView(recyclerView)`**
 
