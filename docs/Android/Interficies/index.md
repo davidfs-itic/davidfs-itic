@@ -20,6 +20,7 @@
 - [RecyclerView Afegir i eliminar:](./recyclerviewaddelete.md)
 - [RecyclerView SwipetoDelete:](./recyclerviewswipetodelete.md)
 - [Recyclerview filtrat:](./recyclerviewfilter.md)
+- [Recyclerview filtrat amb diàleg:](./recyclerviewfilterdialog.md)
 - [RecyclerView amb searchview:](./recyclersearchview.md)
 - [Menús:](./menus.md)
 - [Splash Screen:](./splashscreen.md)
