@@ -68,6 +68,7 @@ services:
   influxdb3-ui:
     image: influxdata/influxdb3-ui:1.4.0
     container_name: influxdb3-ui
+    command: ["--mode=admin"]
     restart: unless-stopped
     ports:
       - "8080:80"
