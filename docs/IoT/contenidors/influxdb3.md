@@ -66,11 +66,11 @@ services:
       - xarxa_IOT
 
   influxdb3-ui:
-    image: influxdata/influxdb3-ui:latest
+    image: influxdata/influxdb3-ui:1.4.0
     container_name: influxdb3-ui
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8080:80"
     volumes:
       - /opt/docker/influxdb3/ui/db:/app/db
       - /opt/docker/influxdb3/ui/config:/app/config
