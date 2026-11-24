@@ -287,7 +287,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
 
         // 2. Configurar LayoutManager (com es col·loquen les files)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // 3. Crear llista de dades (des de DataSource o directament)
         val items = DataSource.items
