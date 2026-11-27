@@ -215,22 +215,125 @@ class ItemsViewModel(
 
 ### Com es connecta tot
 
-A l'hora de crear les instàncies, decidim quina implementació del DataSource utilitzem:
+Totes les classes anteriors reben les seves dependències pel constructor: el Repository rep el DataSource, i el ViewModel rep el Repository. Cap d'elles crea les seves pròpies dependències. Per tant, falta una peça que creï les instàncies en l'ordre correcte i que decideixi quin DataSource concret s'utilitza.
+
+Aquesta peça **no ha de ser l'Activity**. Si l'Activity fes `ItemsRepository(RetrofitItemsDataSource())`, tornaria a saber d'on venen les dades i tornaríem a tenir l'acoblament de la secció 1. A més, l'Activity es destrueix i es recrea (per exemple, en girar la pantalla), i cada vegada crearia un Repository nou.
+
+Hi ha dues maneres habituals de fer-ho: a la Factory del ViewModel, o en un contenidor a la classe `Application`.
+
+#### Opció 1: a la Factory del ViewModel
+
+Com que `ItemsViewModel` té un paràmetre al constructor, no es pot crear amb un simple `by viewModels()`: cal una Factory (vegeu [ViewModelProvider i Factories](./viewmodel.md#3-viewmodelprovider-i-factories)). La Factory és el lloc on es munta tota la cadena DataSource → Repository → ViewModel:
 
 ```kotlin
-// Triem el DataSource segons l'entorn
-val dataSource: ItemsDataSource = if (isTesting) {
-    MockItemsDataSource()
-} else {
-    RetrofitItemsDataSource()
+class ItemsViewModel(
+    private val repository: ItemsRepository
+) : ViewModel() {
+
+    fun getItems(): List<MyItem> = repository.getItems()
+
+    fun addItem(item: MyItem) = repository.addItem(item)
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                // Aquí és on es tria el DataSource concret
+                val dataSource: ItemsDataSource = MockItemsDataSource()
+                val repository = ItemsRepository(dataSource)
+                ItemsViewModel(repository)
+            }
+        }
+    }
 }
-
-// Creem el Repository amb el DataSource triat
-val repository = ItemsRepository(dataSource)
-
-// Ja podem fer servir el repository independentment de la font de dades
-repository.addItem(MyItem(5, "Nou element", "Subtítol nou"))
 ```
+
+L'Activity només referencia la Factory. No sap res del Repository ni del DataSource:
+
+```kotlin
+class ItemsActivity : AppCompatActivity() {
+
+    private val viewModel: ItemsViewModel by viewModels { ItemsViewModel.Factory }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_items)
+
+        val items = viewModel.getItems()
+        // ... configurar el RecyclerView amb items
+    }
+}
+```
+
+Per passar de Mock a Retrofit només cal canviar una línia de la Factory: `val dataSource: ItemsDataSource = RetrofitItemsDataSource()`. El Repository, el ViewModel i l'Activity no canvien.
+
+!!! warning "Limitació"
+    Cada Factory crea el seu propi Repository. Si dos ViewModels diferents utilitzen `ItemsRepository`, cadascun tindrà una instància diferent. Amb el `MockItemsDataSource`, això vol dir dues llistes separades: un element afegit des d'una pantalla no apareixeria a l'altra. Quan el Repository s'ha de compartir, cal l'opció 2.
+
+#### Opció 2: un contenidor a la classe Application
+
+La documentació oficial proposa crear un **contenidor de dependències** (`AppContainer`) que es crea una sola vegada, a la classe `Application`, i que conté les instàncies compartides per tota l'app.
+
+[Veure la documentació oficial d'injecció de dependències manual](https://developer.android.com/training/dependency-injection/manual)
+
+```kotlin
+// Fitxer: AppContainer.kt
+class AppContainer {
+    // Aquí és on es tria el DataSource concret
+    private val dataSource: ItemsDataSource = MockItemsDataSource()
+
+    // Una única instància del Repository per a tota l'app
+    val itemsRepository = ItemsRepository(dataSource)
+}
+```
+
+```kotlin
+// Fitxer: MyApplication.kt
+class MyApplication : Application() {
+    val container = AppContainer()
+}
+```
+
+Perquè Android utilitzi aquesta classe, cal indicar-ho al `AndroidManifest.xml`:
+
+```xml
+<application
+    android:name=".MyApplication"
+    ... >
+```
+
+La Factory del ViewModel ja no crea el Repository, sinó que l'obté del contenidor:
+
+```kotlin
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+
+class ItemsViewModel(
+    private val repository: ItemsRepository
+) : ViewModel() {
+
+    // ...
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val app = this[APPLICATION_KEY] as MyApplication
+                ItemsViewModel(app.container.itemsRepository)
+            }
+        }
+    }
+}
+```
+
+L'Activity és exactament igual que a l'opció 1 (`by viewModels { ItemsViewModel.Factory }`). Ara, tots els ViewModels que demanin `itemsRepository` reben la mateixa instància, i el DataSource es tria en un únic lloc de l'app.
+
+#### I en els tests?
+
+En un test unitari no es fa servir cap Factory ni cap `Application`: el mateix test crea els objectes amb el DataSource que necessita.
+
+```kotlin
+val viewModel = ItemsViewModel(ItemsRepository(MockItemsDataSource()))
+```
+
+Aquest és l'avantatge principal de rebre les dependències pel constructor: qui crea l'objecte decideix la implementació (vegeu també [Avantatge: testabilitat](./settingsviewmodel.md#6-avantatge-testabilitat)).
 
 ## 5. Capa de Domini (opcional)
 
@@ -301,16 +404,45 @@ class ItemsRepository(
 }
 ```
 
+Si dibuixem les dependències (la fletxa vol dir "coneix" o "depèn de"), es veu clarament què canvia.
+
+**Sense DIP**, el Repository apunta directament a una classe concreta:
+
 ```
-                    ItemsDataSource (interface)
-                   ╱                          ╲
-                  ╱   depèn de      implementa ╲
-                 ╱                               ╲
-    ItemsRepository              MockItemsDataSource
-    (mòdul alt nivell)           RetrofitItemsDataSource
-                                 RoomItemsDataSource
-                                 (mòduls baix nivell)
+┌──────────────────────────┐
+│ ItemsRepository          │  mòdul d'alt nivell
+└────────────┬─────────────┘
+             │ depèn de
+             ▼
+┌──────────────────────────┐
+│ MockItemsDataSource      │  mòdul de baix nivell
+└──────────────────────────┘
 ```
+
+**Amb DIP**, entre els dos apareix la interface, i totes les fletxes hi apunten:
+
+```
+┌──────────────────────────┐
+│ ItemsRepository          │  mòdul d'alt nivell
+└────────────┬─────────────┘
+             │ depèn de
+             ▼
+┌──────────────────────────┐
+│ «interface»              │  abstracció
+│ ItemsDataSource          │
+└──────────────────────────┘
+             ▲
+             │ implementen
+┌────────────┴─────────────┐
+│ MockItemsDataSource      │  mòduls de baix nivell
+│ RetrofitItemsDataSource  │
+│ RoomItemsDataSource      │
+└──────────────────────────┘
+```
+
+Fixa't en la fletxa de sota. Sense DIP, la fletxa anava **del Repository cap al DataSource concret**. Ara la fletxa surt **dels DataSources concrets cap a la interface**: la dependència s'ha invertit. D'aquí ve el nom del principi.
+
+El Repository només coneix `ItemsDataSource`; no sap que existeixen `MockItemsDataSource`, `RetrofitItemsDataSource` ni `RoomItemsDataSource`. Els DataSources concrets, en canvi, sí que coneixen la interface, perquè l'han d'implementar.
 
 Tant el mòdul d'alt nivell (Repository) com els de baix nivell (DataSources concrets) depenen de l'abstracció. Això és el principi DIP:
 
